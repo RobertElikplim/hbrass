@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>HBRASS</head>
-
+<head>
+    <title>Hbrass</title>
+    <style><%@include file="../css/style.css"%></style>
+</head>
 <body>
-
-
-
 </body>
 
 </html>
