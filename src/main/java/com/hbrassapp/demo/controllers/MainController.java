@@ -1,11 +1,17 @@
 package com.hbrassapp.demo.controllers;
 
-import com.hbrassapp.demo.Models.employeerepo;
+import com.hbrassapp.demo.Models.*;
+import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Optional;
+import java.util.UUID;
 
 
 @Controller
@@ -13,12 +19,333 @@ public class MainController {
 
     @Autowired
     employeerepo employeeRepo;
+    @Autowired
+    BrokerCompany brokerCompanyRepo;
+    @Autowired
+    BrokerContractRepo brokerContractRepo;
+    @Autowired
+    BrokerInfoRepo brokerInfoRepo;
+    @Autowired
+    ClientRepo clientRepo;
+    @Autowired
+    CountryRepo countryRepo;
+    @Autowired
+    DotInspectionRepo dotInspectionRepo;
+    @Autowired
+    DropOffLocation dropOffLocationRepo;
+    @Autowired
+    EmergencyContactRepo emergencyContactRepo;
+    @Autowired
+    employeerepo employeerepo;
+    @Autowired
+    EmployeeStatusRepo employeeStatusRepo;
+    @Autowired
+    IFTA_StickerRepo ifta_stickerRepo;
+    @Autowired
+    IncomeRepo incomeRepo;
+    @Autowired
+    InsuranceRepo insuranceRepo;
+    @Autowired
+    InvoiceRepo invoiceRepo;
+    @Autowired
+    InvoiceStatusRepo invoiceStatusRepo;
+    @Autowired
+    LoadBoardRepo loadBoardRepo;
+    @Autowired
+    LoadsRepo loadsRepo;
+    @Autowired
+    MaintenanceRepo maintenanceRepo;
+    @Autowired
+    MiscellaneousRepo miscellaneousRepo;
+    @Autowired
+    OfficePositionRepo officePositionRepo;
+    @Autowired
+    PayrollRepo payrollRepo;
+    @Autowired
+    PickUpLocationRepo pickUpLocationRepo;
+    @Autowired
+    ScheduleRepo scheduleRepo;
+    @Autowired
+    StatesRepo statesRepo;
+    @Autowired
+    SystemLoginRepo systemLoginRepo;
+    @Autowired
+    TireRepo tireRepo;
+    @Autowired
+    TireVendorRepo tireVendorRepo;
+    @Autowired
+    TrailerRepo trailerRepo;
+    @Autowired
+    TripExpenseRepo tripExpenseRepo;
+    @Autowired
+    TruckDriverRepo truckDriverRepo;
+    @Autowired
+    TruckRepo truckRepo;
+    @Autowired
+    TruckLogRepo truckLogRepo;
+    @Autowired
+    VendorRepo vendorRepo;
 
-@RequestMapping(value="/")
-    public ModelAndView start() {
-    ModelAndView mv = new ModelAndView("index");
-    mv.addObject("employeeList", employeeRepo.findAll());
+
+
+
+
+    @RequestMapping(value="/tables")
+    public ModelAndView viewTables() {
+    ModelAndView mv = new ModelAndView("tables");
     return mv;
 }
+
+    @RequestMapping(value="/brokerCompany")
+    public ModelAndView viewBrokerCompany() {
+        ModelAndView mv = new ModelAndView("brokerCompany");
+        mv.addObject("brokerCompanyList", brokerCompanyRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/brokerContracts")
+    public ModelAndView viewContracts() {
+        ModelAndView mv = new ModelAndView("brokerContracts");
+        mv.addObject("brokerContractList", brokerContractRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/brokerInfo")
+    public ModelAndView viewBrokerInfo() {
+        ModelAndView mv = new ModelAndView("brokerInfo");
+        mv.addObject("brokerInfoList", brokerInfoRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/client")
+    public ModelAndView viewClient() {
+        ModelAndView mv = new ModelAndView("client");
+        mv.addObject("clientList", clientRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/country")
+    public ModelAndView viewCountry() {
+        ModelAndView mv = new ModelAndView("country");
+        mv.addObject("countryList", countryRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/dotInspection")
+    public ModelAndView viewDotInspection() {
+        ModelAndView mv = new ModelAndView("dotInpection");
+        mv.addObject("dotInspectionList", dotInspectionRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/DropOffLocation")
+    public ModelAndView viewDropOffLocation() {
+        ModelAndView mv = new ModelAndView("DropOffLocation");
+        mv.addObject("DropOffLocationList", dropOffLocationRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/emergencyContacts")
+    public ModelAndView viewemergencyContacts() {
+        ModelAndView mv = new ModelAndView("emergencyContacts");
+        mv.addObject("emergencyContactsList", emergencyContactRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/employee")
+    public ModelAndView viewEmployee() {
+        ModelAndView mv = new ModelAndView("employee");
+        mv.addObject("employeeList", employeeRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/employeeStatus")
+    public ModelAndView viewemployeeStatus() {
+        ModelAndView mv = new ModelAndView("employeeStatus");
+        mv.addObject("employeeStatusList", employeeStatusRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/iftaSticker")
+    public ModelAndView viewiftaSticker() {
+        ModelAndView mv = new ModelAndView("iftaSticker");
+        mv.addObject("iftaStickerList", ifta_stickerRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/income")
+    public ModelAndView viewincome() {
+        ModelAndView mv = new ModelAndView("income");
+        mv.addObject("incomeList", incomeRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/insurance")
+    public ModelAndView viewinsurance() {
+        ModelAndView mv = new ModelAndView("insurance");
+        mv.addObject("insuranceList", insuranceRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/invoice")
+    public ModelAndView viewinvoice() {
+        ModelAndView mv = new ModelAndView("invoice");
+        mv.addObject("invoiceList", invoiceRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/invoiceStatus")
+    public ModelAndView viewinvoiceStatus() {
+        ModelAndView mv = new ModelAndView("invoiceStatus");
+        mv.addObject("invoiceStatusList", invoiceStatusRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/loadBoard")
+    public ModelAndView viewloadBoard() {
+        ModelAndView mv = new ModelAndView("loadBoard");
+        mv.addObject("loadBoardList", loadBoardRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/loads")
+    public ModelAndView viewLoads() {
+        ModelAndView mv = new ModelAndView("loads");
+        mv.addObject("loadsList", loadsRepo.findAll());
+        return mv;
+    }
+    @RequestMapping(value="/maintenance")
+    public ModelAndView viewmaintenance() {
+        ModelAndView mv = new ModelAndView("maintenance");
+        mv.addObject("maintenanceList", maintenanceRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/miscellaneous")
+    public ModelAndView viewmiscellaneous() {
+        ModelAndView mv = new ModelAndView("miscellaneous");
+        mv.addObject("miscellaneousList", miscellaneousRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/officePosition")
+    public ModelAndView viewofficePosition() {
+        ModelAndView mv = new ModelAndView("officePosition");
+        mv.addObject("officePositionList", officePositionRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/payroll")
+    public ModelAndView viewpayroll() {
+        ModelAndView mv = new ModelAndView("payroll");
+        mv.addObject("payrollList", payrollRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/puLocation")
+    public ModelAndView viewpuLocation() {
+        ModelAndView mv = new ModelAndView("puLocation");
+        mv.addObject("puLocationList", pickUpLocationRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/schedule")
+    public ModelAndView viewschedule() {
+        ModelAndView mv = new ModelAndView("schedule");
+        mv.addObject("scheduleList", scheduleRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/states")
+    public ModelAndView viewstates() {
+        ModelAndView mv = new ModelAndView("states");
+        mv.addObject("statesList", statesRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/tire")
+    public ModelAndView viewtire() {
+        ModelAndView mv = new ModelAndView("tire");
+        mv.addObject("tireList", tireRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/tireVendor")
+    public ModelAndView viewtireVendor() {
+        ModelAndView mv = new ModelAndView("tireVendor");
+        mv.addObject("tireVendorList", tireVendorRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/trailer")
+    public ModelAndView viewtrailer() {
+        ModelAndView mv = new ModelAndView("trailer");
+        mv.addObject("trailerList", trailerRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/tripExpense")
+    public ModelAndView viewtripExpense() {
+        ModelAndView mv = new ModelAndView("tripExpense");
+        mv.addObject("tripExpenseList", tripExpenseRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/truck")
+    public ModelAndView viewtruck() {
+        ModelAndView mv = new ModelAndView("truck");
+        mv.addObject("truckList", truckRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/truckDriver")
+    public ModelAndView viewtruckDriver() {
+        ModelAndView mv = new ModelAndView("truckDriver");
+        mv.addObject("truckDriverList", truckDriverRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/truckLog")
+    public ModelAndView viewtruckLog() {
+        ModelAndView mv = new ModelAndView("truckLog");
+        mv.addObject("truckLogList", truckLogRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value="/vendor")
+    public ModelAndView viewvendor() {
+        ModelAndView mv = new ModelAndView("vendor");
+        mv.addObject("vendorList", vendorRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value ="/editBrokerCompany/{id}", method = RequestMethod.GET)
+    public ModelAndView editBrokerCompany(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editBrokerCompany");
+
+            Optional<Broker_Company> brokerCompanyRecord = brokerCompanyRepo.findById(id);
+            Broker_Company brokerCompany = brokerCompanyRecord.get();
+            mv.addObject("Broker_Company", brokerCompany);
+            return mv;
+        }
+
+    @RequestMapping(value = "/submitBrokerCompany", method = RequestMethod.POST)
+    public ModelAndView changesBrokerCompany(@RequestParam("brokerID") String id, @RequestParam("brokerName") String brokerName, @RequestParam("streetAddress") String streetAddress,
+                                @RequestParam("stateCode") String stateCode, @RequestParam("zipCode") String zipCode, @RequestParam("phoneNumber") String phoneNumber,
+                                @RequestParam("email") String email) {
+        ModelAndView mv = new ModelAndView("redirect:/brokerCompany");
+
+        Broker_Company brokerCompany = new Broker_Company();
+        brokerCompany.setBroker_Name(brokerName);
+        brokerCompany.setStreet_Address(streetAddress);
+        brokerCompany.setState_Code(stateCode);
+        brokerCompany.setZip_Code(zipCode);
+        brokerCompany.setPhone_Number(phoneNumber);
+        brokerCompany.setEmail_Address(email);
+        brokerCompanyRepo.save(brokerCompany);
+        return mv;
+    }
+
+    @RequestMapping(value = "/addBrokerCompany")
+    public ModelAndView addBrokerCompany() {
+        ModelAndView mv = new ModelAndView("addBrokerCompany");
+        return mv;
+    }
+
+    @RequestMapping(value = "/deleteBrokerCompany/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteBrokerCompany(@PathVariable("id") String id) {
+       ModelAndView mv = new ModelAndView("redirect:/brokerCompany");
+       brokerCompanyRepo.deleteById(id);
+       return mv;
+    }
+
 
 }

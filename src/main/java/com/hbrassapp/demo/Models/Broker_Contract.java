@@ -20,19 +20,19 @@ public class Broker_Contract {
     @Column(name = "Fare")
     private String Fare;
     @Column(name = "Commission")
-    private String Commission;
+    private String Comission;
     @Column(name = "Contract_Status")
     private String Contract_Status;
     @Column(name = "Contract_Form")
     private String Contract_Form;
 
-    public Broker_Contract(String broker_Contract_ID, String invoice_ID, String broker_ID, String rate, String fare, String commission, String contract_Status, String contract_Form) {
+    public Broker_Contract(String broker_Contract_ID, String invoice_ID, String broker_ID, String rate, String fare, String comission, String contract_Status, String contract_Form) {
         Broker_Contract_ID = broker_Contract_ID;
         Invoice_ID = invoice_ID;
         Broker_ID = broker_ID;
         Rate = rate;
         Fare = fare;
-        Commission = commission;
+        Comission = comission;
         Contract_Status = contract_Status;
         Contract_Form = contract_Form;
     }
@@ -81,12 +81,12 @@ public class Broker_Contract {
         Fare = fare;
     }
 
-    public String getCommission() {
-        return Commission;
+    public String getComission() {
+        return Comission;
     }
 
-    public void setCommission(String commission) {
-        Commission = commission;
+    public void setComission(String comission) {
+        Comission = comission;
     }
 
     public String getContract_Status() {

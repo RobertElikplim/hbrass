@@ -6,19 +6,8 @@
     <style><%@include file="../css/style.css"%></style>
 </head>
 <body>
-<table>
-    <tr>
-        <th>Country</th>
-        <th>Date</th>
-    </tr>
-    <tr>
-        <c:forEach var = "employee" items = "${employeeList}">
 
-        <td>${employee.getFirst_Name()}</td>
-        <td>${employee.getLast_Name()}</td>
+<h2><a href="/tables">Table Management</a></h2>
 
-    </tr>
-    </c:forEach>
-</table>
 </body>
 </html>
