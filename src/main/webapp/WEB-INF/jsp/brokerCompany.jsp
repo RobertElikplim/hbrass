@@ -19,7 +19,7 @@
         <th></th><th></th>
     </tr>
 
-
+    <tr>
 <c:forEach var = "Broker_Company" items = "${brokerCompanyList}">
 
     <td>${Broker_Company.getBroker_ID()}</td>

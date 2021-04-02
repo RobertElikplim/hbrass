@@ -1,14 +1,11 @@
 package com.hbrassapp.demo.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Broker_Contract")
 public class Broker_Contract {
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Broker_Contract_ID")
     private String Broker_Contract_ID;
     @Column(name = "Invoice_ID")
@@ -20,7 +17,7 @@ public class Broker_Contract {
     @Column(name = "Fare")
     private String Fare;
     @Column(name = "Commission")
-    private String Comission;
+    private String Commission;
     @Column(name = "Contract_Status")
     private String Contract_Status;
     @Column(name = "Contract_Form")
@@ -32,7 +29,7 @@ public class Broker_Contract {
         Broker_ID = broker_ID;
         Rate = rate;
         Fare = fare;
-        Comission = comission;
+        Commission = comission;
         Contract_Status = contract_Status;
         Contract_Form = contract_Form;
     }
@@ -81,12 +78,12 @@ public class Broker_Contract {
         Fare = fare;
     }
 
-    public String getComission() {
-        return Comission;
+    public String getCommission() {
+        return Commission;
     }
 
-    public void setComission(String comission) {
-        Comission = comission;
+    public void setCommission(String commission) {
+        Commission = commission;
     }
 
     public String getContract_Status() {

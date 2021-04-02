@@ -27,14 +27,16 @@
         <td>${Broker_Contract.getBroker_ID()}</td>
         <td>${Broker_Contract.getRate()}</td>
         <td>${Broker_Contract.getFare()}</td>
-        <td>${Broker_Contract.getComission()}</td>
+        <td>${Broker_Contract.getCommission()}</td>
         <td>${Broker_Contract.getContract_Status()}</td>
         <td>${Broker_Contract.getContract_Form()}</td>
+        <td><a href="/editBrokerContract/${Broker_Contract.getBroker_Contract_ID()}">Edit</a></td>
+        <td><a href="/deleteBrokerContract/${Broker_Contract.getBroker_Contract_ID()}">Delete</a></td>
 
         </tr>
     </c:forEach>
 </table>
-<
+
 
 
 </body>
