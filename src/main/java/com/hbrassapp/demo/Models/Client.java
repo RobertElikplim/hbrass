@@ -41,9 +41,7 @@ public class Client {
 
     }
 
-    public String getClient_ID() {
-        return Client_ID;
-    }
+    public String getClient_ID() { return Client_ID; }
 
     public void setClient_ID(String client_ID) {
         Client_ID = client_ID;

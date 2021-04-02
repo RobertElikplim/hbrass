@@ -21,16 +21,16 @@
 
     <c:forEach var = "Client" items = "${clientList}">
 
-        <td>${Client.getClient_ID}</td>
-        <td>${Client.getClient_Name}</td>
-        <td>${Client.getStreet_Address}</td>
-        <td>${Client.getCity}</td>
-        <td>${Client.getState_Code}</td>
-        <td>${Client.getZip_Code}</td>
-        <td>${Client.getPhone_Number}</td>
-        <td>${Client.getEmail}</td>
-        <td><a href="/editClient/${Client.getClient_ID}">Edit</a></td>
-        <td><a href="/deleteClient/${Client.getClient_ID}">Delete</a></td>
+        <td>${Client.getClient_ID()}</td>
+        <td>${Client.getClient_Name()}</td>
+        <td>${Client.getStreet_Address()}</td>
+        <td>${Client.getCity()}</td>
+        <td>${Client.getState_Code()}</td>
+        <td>${Client.getZip_Code()}</td>
+        <td>${Client.getPhone_Number()}</td>
+        <td>${Client.getEmail()}</td>
+        <td><a href="/editClient/${Client.getClient_ID()}">Edit</a></td>
+        <td><a href="/deleteClient/${Client.getClient_ID()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
