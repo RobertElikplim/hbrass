@@ -1,10 +1,7 @@
 package com.hbrassapp.demo.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "Broker_Contract")
+import org.springframework.data.repository.CrudRepository;
 
-public interface TruckRepo {
+public interface TruckRepo extends CrudRepository<Truck, String> {
 }
