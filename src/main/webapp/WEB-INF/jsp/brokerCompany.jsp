@@ -18,20 +18,17 @@
         <th>Email Address</th>
         <th></th><th></th>
     </tr>
-
-    <tr>
 <c:forEach var = "Broker_Company" items = "${brokerCompanyList}">
-
-    <td>${Broker_Company.getBroker_ID()}</td>
-    <td>${Broker_Company.getBroker_Name()}</td>
-    <td>${Broker_Company.getStreet_Address()}</td>
-    <td>${Broker_Company.getState_Code()}</td>
-    <td>${Broker_Company.getZip_Code()}</td>
-    <td>${Broker_Company.getPhone_Number()}</td>
-    <td>${Broker_Company.getEmail_Address()}</td>
-    <td><a href="/editBrokerCompany/${Broker_Company.getBroker_ID()}">Edit</a></td>
-    <td><a href="/deleteBrokerCompany/${Broker_Company.getBroker_ID()}">Delete</a></td>
-
+    <tr>
+        <td>${Broker_Company.getBroker_ID()}</td>
+        <td>${Broker_Company.getBroker_Name()}</td>
+        <td>${Broker_Company.getStreet_Address()}</td>
+        <td>${Broker_Company.getState_Code()}</td>
+        <td>${Broker_Company.getZip_Code()}</td>
+        <td>${Broker_Company.getPhone_Number()}</td>
+        <td>${Broker_Company.getEmail_Address()}</td>
+        <td><a href="/editBrokerCompany/${Broker_Company.getBroker_ID()}">Edit</a></td>
+        <td><a href="/deleteBrokerCompany/${Broker_Company.getBroker_ID()}">Delete</a></td>
     </tr>
 </c:forEach>
 </table>
