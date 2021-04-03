@@ -370,7 +370,7 @@ public class MainController {
 
     //BROKER CONTRACTS
 
-    @RequestMapping(value = "/editBrokerContract/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/editBrokerContracts/{id}", method = RequestMethod.GET)
     public ModelAndView editBrokerContracts(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editBrokerContracts");
 
@@ -397,8 +397,8 @@ public class MainController {
             brokerContract.setFare(fare);
             brokerContract.setCommission(commission);
             brokerContract.setContract_Status(status);
-            brokerContract.setContract_Form("None");
             brokerContractRepo.save(brokerContract);
+
         } else {
             brokerContract.setBroker_Contract_ID(contractID);
             brokerContract.setInvoice_ID(invoiceID);
@@ -407,11 +407,131 @@ public class MainController {
             brokerContract.setFare(fare);
             brokerContract.setCommission(commission);
             brokerContract.setContract_Status(status);
-            brokerContract.setContract_Form("None");
             brokerContractRepo.save(brokerContract);
 
         }
         return mv;
     }
+
+    @RequestMapping(value = "/deleteBrokerContract/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteBrokerContract(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/brokerContracts");
+        brokerContractRepo.deleteById(id);
+        return mv;
+    }
+
+    //Broker Info
+
+    @RequestMapping(value = "/editBrokerInfo/{id}", method = RequestMethod.GET)
+    public ModelAndView editBrokerInfo(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editBrokerInfo");
+
+        Optional<Broker_Info> brokerInfoRecord = brokerInfoRepo.findById(id);
+        Broker_Info brokerInfo = brokerInfoRecord.get();
+        mv.addObject("Broker_Info", brokerInfo);
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitBrokerInfo", method = RequestMethod.POST)
+    public ModelAndView submitBrokerInfo(@RequestParam("contactID") String contactID, @RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
+                                            @RequestParam("email") String email, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("brokerID") String brokerID)
+    {
+        ModelAndView mv = new ModelAndView("redirect:/brokerInfo");
+        Broker_Info brokerInfo = new Broker_Info();
+        if (contactID.isEmpty()) {
+            brokerInfo.setFirstName(firstName);
+            brokerInfo.setLastName(lastName);
+            brokerInfo.setEmail(email);
+            brokerInfo.setPhoneNumber(phoneNumber);
+            brokerInfo.setBrokerID(brokerID);
+            brokerInfoRepo.save(brokerInfo);
+        }
+        else {
+            brokerInfo.setContact_ID(contactID);
+            brokerInfo.setFirstName(firstName);
+            brokerInfo.setLastName(lastName);
+            brokerInfo.setEmail(email);
+            brokerInfo.setPhoneNumber(phoneNumber);
+            brokerInfo.setBrokerID(brokerID);
+            brokerInfoRepo.save(brokerInfo);
+        }
+        return mv;
+
+    }
+
+    @RequestMapping(value = "/addBrokerInfo")
+    public ModelAndView addBrokerInfo() {
+        ModelAndView mv = new ModelAndView("addBrokerInfo");
+        return mv;
+    }
+
+    @RequestMapping(value = "/deleteBrokerInfo/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteBrokerInfo(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/brokerInfo");
+        brokerInfoRepo.deleteById(id);
+        return mv;
+    }
+
+    //Client
+
+    @RequestMapping(value = "/editClient/{id}", method = RequestMethod.GET)
+    public ModelAndView editClient(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editClient");
+        Optional<Client> clientInfoRecord = clientRepo.findById(id);
+        Client client = clientInfoRecord.get();
+        mv.addObject("Client", client);
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitClient", method = RequestMethod.POST)
+    public ModelAndView submitClient(@RequestParam("clientID") String clientID, @RequestParam("clientName") String clientName,@RequestParam("streetAddress") String streetAddress,
+                                     @RequestParam("city")String city, @RequestParam("stateCode") String stateCode, @RequestParam("zipCode") String zipCode,
+                                     @RequestParam("phoneNumber") String phoneNumber, @RequestParam("email") String email) {
+        ModelAndView mv = new ModelAndView("redirect:/client");
+        Client client = new Client();
+        if (clientID.isEmpty()) {
+            client.setClient_Name(clientName);
+            client.setStreet_Address(streetAddress);
+            client.setCity(city);
+            client.setState_Code(stateCode);
+            client.setZip_Code(zipCode);
+            client.setPhone_Number(phoneNumber);
+            client.setEmail(email);
+            clientRepo.save(client);
+        }
+        else {
+            client.setClient_ID(clientID);
+            client.setClient_Name(clientName);
+            client.setStreet_Address(streetAddress);
+            client.setCity(city);
+            client.setState_Code(stateCode);
+            client.setZip_Code(zipCode);
+            client.setPhone_Number(phoneNumber);
+            client.setEmail(email);
+            clientRepo.save(client);
+        }
+
+        return mv;
+    }
+
+    @RequestMapping(value = "/addClient")
+    public ModelAndView addClient() {
+        ModelAndView mv = new ModelAndView("addClient");
+        return mv;
+    }
+
+    @RequestMapping(value = "/deleteClient/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteClient(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/client");
+        try {
+            clientRepo.deleteById(id);
+        }
+        catch (Exception ex) {
+
+            }
+        return mv;
+
+    }
+
 
 }

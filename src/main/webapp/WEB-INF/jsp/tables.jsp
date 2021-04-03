@@ -11,7 +11,7 @@
 <ul>
     <li><a href="/brokerCompany">Broker Companies</a></li>
     <li><a href="/brokerContracts">Broker Contracts</a></li>
-    <li><a href="/brokerInfo">Broker Contacts</a></li>
+    <li><a href="/brokerInfo">Broker Info</a></li>
     <li><a href="/client">Clients</a></li>
     <li><a href="/country">Countries</a></li>
     <li><a href="/dotInspection">DOT Inspections</a></li>

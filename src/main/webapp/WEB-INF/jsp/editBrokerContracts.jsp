@@ -26,7 +26,7 @@
         <td><input type="text" name="fare" value="${Broker_Contract.getFare()}"></td>
         <td><input type="text" name="commission" value="${Broker_Contract.getCommission()}"></td>
         <td><input type="text" name="contractStatus" value="${Broker_Contract.getContract_Status()}"></td>
-        <td><input type="text" name="form" value="${Broker_Contract.getContract_Form()}"></td>
+        <td><input type="text" name="form"></td>
     </tr>
 </table>
 <input type="submit" value="Submit Changes">
