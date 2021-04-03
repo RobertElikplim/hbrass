@@ -30,9 +30,8 @@
         <td>${Broker_Contract.getCommission()}</td>
         <td>${Broker_Contract.getContract_Status()}</td>
         <td>${Broker_Contract.getContract_Form()}</td>
-        <td><a href="/editBrokerContract/${Broker_Contract.getBroker_Contract_ID()}">Edit</a></td>
+        <td><a href="/editBrokerContracts/${Broker_Contract.getBroker_Contract_ID()}">Edit</a></td>
         <td><a href="/deleteBrokerContract/${Broker_Contract.getBroker_Contract_ID()}">Delete</a></td>
-
         </tr>
     </c:forEach>
 </table>

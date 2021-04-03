@@ -7,7 +7,7 @@ import java.util.UUID;
 @Table
 public class Broker_Info {
 
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Contact_ID")
     private String contact_ID;
     @Column(name ="First_Name")
