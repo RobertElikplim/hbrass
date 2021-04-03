@@ -18,6 +18,8 @@ public class Maintenance {
     private String serviceDate;
     @Column (name = "Type_Of_Service")
     private String service;
+    @Column (name = "Service_Fee")
+    private String serviceFee;
     @Column (name = "Truck_ID_VIN")
     private String truckIDVIN;
 
@@ -25,11 +27,12 @@ public class Maintenance {
 
     }
 
-    public Maintenance(String maintenanceID, String mileage, String serviceDate, String service, String truckIDVIN) {
+    public Maintenance(String maintenanceID, String mileage, String serviceDate, String service, String serviceFee, String truckIDVIN) {
         this.maintenanceID = maintenanceID;
         this.mileage = mileage;
         this.serviceDate = serviceDate;
         this.service = service;
+        this.serviceFee = serviceFee;
         this.truckIDVIN = truckIDVIN;
     }
 
@@ -63,6 +66,14 @@ public class Maintenance {
 
     public void setService(String service) {
         this.service = service;
+    }
+
+    public String getServiceFee() {
+        return serviceFee;
+    }
+
+    public void setServiceFee(String serviceFee) {
+        this.serviceFee = serviceFee;
     }
 
     public String getTruckIDVIN() {

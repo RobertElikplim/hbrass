@@ -21,17 +21,19 @@
     </tr>
 
     <c:forEach var = "Vendor" items = "${vendorList}">
-        <td>${Vendor.getVendor_ID()}</td>
-        <td>${Vendor.getVendor_Name()}</td>
-        <td>${Vendor.getPhone_Number()}</td>
-        <td>${Vendor.getStreet_Address()}</td>
-        <td>${Vendor.getCity()}</td>
-        <td>${Vendor.getState_Code()}</td>
-        <td>${Vendor.getZip_Code()}</td>
-        <td>${Vendor.getEmail()}</td>
-        <td>${Vendor.getVendor_Tracker()}</td>
-        <td><a href="/editClient/${Vendor.getVendor_ID()}">Edit</a></td>
-        <td><a href="/deleteClient/${Vendor.getVendor_ID()}">Delete</a></td>
+        <tr>
+            <td>${Vendor.getVendor_ID()}</td>
+            <td>${Vendor.getVendor_Name()}</td>
+            <td>${Vendor.getPhone_Number()}</td>
+            <td>${Vendor.getStreet_Address()}</td>
+            <td>${Vendor.getCity()}</td>
+            <td>${Vendor.getState_Code()}</td>
+            <td>${Vendor.getZip_Code()}</td>
+            <td>${Vendor.getEmail()}</td>
+            <td>${Vendor.getVendor_Tracker()}</td>
+            <td><a href="/editClient/${Vendor.getVendor_ID()}">Edit</a></td>
+            <td><a href="/deleteClient/${Vendor.getVendor_ID()}">Delete</a></td>
+        </tr>
     </c:forEach>
 </table>
 

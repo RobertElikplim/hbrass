@@ -22,7 +22,7 @@ public class Pick_Up_location {
     private String city;
     @Column(name = "State_Code")
     private String stateCode;
-    @Column(name = "ZipCode")
+    @Column(name = "Zip_Code")
     private String zipCode;
 
     public Pick_Up_location (){
