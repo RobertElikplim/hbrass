@@ -273,16 +273,16 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/trailer")
+    @RequestMapping(value = "/Trailer")
     public ModelAndView viewtrailer() {
-        ModelAndView mv = new ModelAndView("trailer");
+        ModelAndView mv = new ModelAndView("Trailer");
         mv.addObject("trailerList", trailerRepo.findAll());
         return mv;
     }
 
-    @RequestMapping(value = "/tripExpense")
+    @RequestMapping(value = "/TripExpense")
     public ModelAndView viewtripExpense() {
-        ModelAndView mv = new ModelAndView("tripExpense");
+        ModelAndView mv = new ModelAndView("TripExpense");
         mv.addObject("tripExpenseList", tripExpenseRepo.findAll());
         return mv;
     }
