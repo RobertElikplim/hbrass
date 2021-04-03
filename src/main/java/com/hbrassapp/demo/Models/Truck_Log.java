@@ -6,9 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "Truck_Log")
 public class Truck_Log {
-
     @Id
     @Column(name = "Log_ID")
     private String logID;

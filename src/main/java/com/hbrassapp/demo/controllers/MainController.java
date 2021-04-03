@@ -287,9 +287,9 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/truck")
+    @RequestMapping(value = "/Truck")
     public ModelAndView viewtruck() {
-        ModelAndView mv = new ModelAndView("truck");
+        ModelAndView mv = new ModelAndView("Truck");
         mv.addObject("truckList", truckRepo.findAll());
         return mv;
     }
@@ -297,20 +297,20 @@ public class MainController {
     @RequestMapping(value = "/truckDriver")
     public ModelAndView viewtruckDriver() {
         ModelAndView mv = new ModelAndView("truckDriver");
-        mv.addObject("truckDriverList", truckDriverRepo.findAll());
+        mv.addObject("truckdriverList", truckDriverRepo.findAll());
         return mv;
     }
 
-    @RequestMapping(value = "/truckLog")
+    @RequestMapping(value = "/trucklog")
     public ModelAndView viewtruckLog() {
-        ModelAndView mv = new ModelAndView("truckLog");
-        mv.addObject("truckLogList", truckLogRepo.findAll());
+        ModelAndView mv = new ModelAndView("trucklog");
+        mv.addObject("trucklogList", truckLogRepo.findAll());
         return mv;
     }
 
-    @RequestMapping(value = "/vendor")
+    @RequestMapping(value = "/Vendors")
     public ModelAndView viewvendor() {
-        ModelAndView mv = new ModelAndView("vendor");
+        ModelAndView mv = new ModelAndView("Vendors");
         mv.addObject("vendorList", vendorRepo.findAll());
         return mv;
     }

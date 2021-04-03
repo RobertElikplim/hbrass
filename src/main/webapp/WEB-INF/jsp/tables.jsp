@@ -37,10 +37,10 @@
     <li><a href="/tireVendor">Tire Vendors</a></li>
     <li><a href="/trailer">Trailers</a></li>
     <li><a href="/tripExpense">Trip Expense</a></li>
-    <li><a href="/truck">Trucks</a></li>
+    <li><a href="/Truck">Trucks</a></li>
     <li><a href="/truckDriver">Truck Drivers</a></li>
-    <li><a href="/truckLog">Truck Log</a></li>
-    <li><a href="/vendor">Vendors</a></li>
+    <li><a href="/trucklog">Truck Log</a></li>
+    <li><a href="/Vendors">Vendors</a></li>
 
 </ul>
 </body>
