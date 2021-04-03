@@ -308,9 +308,9 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/vendor")
+    @RequestMapping(value = "/Vendors")
     public ModelAndView viewvendor() {
-        ModelAndView mv = new ModelAndView("vendor");
+        ModelAndView mv = new ModelAndView("Vendors");
         mv.addObject("vendorList", vendorRepo.findAll());
         return mv;
     }
