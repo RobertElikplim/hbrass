@@ -533,5 +533,10 @@ public class MainController {
 
     }
 
-
+    @RequestMapping(value = "/deleteIncome/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteIncome(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/income");
+        incomeRepo.deleteById(id);
+        return mv;
+    }
 }

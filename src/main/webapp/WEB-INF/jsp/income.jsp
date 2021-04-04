@@ -26,8 +26,8 @@
             <td>${Income.getInsurance()}</td>
             <td>${Income.getTrip_Expense_ID()}</td>
             <td>${Income.getTotal_Income()}</td>
-            <td><a href="/editIncome/${Income.getIncome_ID()}">Edit</a></td>
-            <td><a href="/deleteIncome/${Income.getIncome_ID()}">Delete</a></td>
+            <td><a href="/editIncome/${Income.getIncome_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteIncome/${Income.getIncome_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>
