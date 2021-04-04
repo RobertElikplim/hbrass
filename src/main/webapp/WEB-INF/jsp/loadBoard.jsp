@@ -9,19 +9,19 @@
 
 <table>
     <tr>
-        <th>Tire Vendor ID</th>
-        <th>Username</th>
-        <th>Privileges</th>
-        <th>Password</th>
+        <th>Load Board ID</th>
+        <th>Board Name</th>
+        <th>Website</th>
+        <th>Subscribed</th>
     </tr>
-    <c:forEach var = "System_Login" items = "${systemLoginList}">
+    <c:forEach var = "Load_Board" items = "${loadBoardList}">
         <tr>
-            <td>${System_Login.getLoginID()}</td>
-            <td>${System_Login.getUsername()}</td>
-            <td>${System_Login.getPrivileges()}</td>
-            <td>${System_Login.getPassword()}</td>
-            <td><a href="/editSystem_Login/${System_Login.getLoginID()}">Edit</a></td>
-            <td><a href="/deleteSystem_Login/${System_Login.getLoginID()}">Delete</a></td>
+            <td>${Load_Board.getLoadBoardID()}</td>
+            <td>${Load_Board.getBoardName()}</td>
+            <td>${Load_Board.getWebsite()}</td>
+            <td>${Load_Board.getSubscribed()}</td>
+            <td><a href="/editLoad_Board/${Load_Board.getLoadBoardID()}">Edit</a></td>
+            <td><a href="/deleteLoad_Board/${Load_Board.getLoadBoardID()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

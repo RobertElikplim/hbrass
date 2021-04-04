@@ -16,8 +16,8 @@
         <tr>
             <td>${Tire_Vendor.getTire_Vendor_ID()}</td>
             <td>${Tire_Vendor.getVendor_ID()}</td>
-            <td><a href="/editTruck_Log/${Tire_Vendor.getTire_Vendor_ID()}">Edit</a></td>
-            <td><a href="/deleteTruck_Log/${Tire_Vendor.getTire_Vendor_ID()}">Delete</a></td>
+            <td><a href="/editTire_Vendor/${Tire_Vendor.getTire_Vendor_ID()}">Edit</a></td>
+            <td><a href="/deleteTire_Vendor/${Tire_Vendor.getTire_Vendor_ID()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

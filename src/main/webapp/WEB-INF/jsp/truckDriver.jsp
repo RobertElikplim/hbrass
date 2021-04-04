@@ -18,8 +18,8 @@
             <td>${Truck_Driver.getDriver_ID()}</td>
             <td>${Truck_Driver.getLicense_Type()}</td>
             <td>${Truck_Driver.getState_Code()}</td>
-            <td><a href="/editTruck_Log/${Truck_Driver.getDriver_ID()}">Edit</a></td>
-            <td><a href="/deleteTruck_Log/${Truck_Driver.getDriver_ID()}">Delete</a></td>
+            <td><a href="/editTruck_Driver/${Truck_Driver.getDriver_ID()}">Edit</a></td>
+            <td><a href="/deleteTruck_Driver/${Truck_Driver.getDriver_ID()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

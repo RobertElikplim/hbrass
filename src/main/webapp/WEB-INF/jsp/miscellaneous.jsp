@@ -18,8 +18,8 @@
             <td>${Miscellaneous.getMiscellaneous_ID()}</td>
             <td>${Miscellaneous.getCost()}</td>
             <td>${Miscellaneous.getDescription()}</td>
-            <td><a href="/editSystem_Login/${Miscellaneous.getMiscellaneous_ID()}">Edit</a></td>
-            <td><a href="/deleteSystem_Login/${Miscellaneous.getMiscellaneous_ID()}">Delete</a></td>
+            <td><a href="/editMiscellaneous/${Miscellaneous.getMiscellaneous_ID()}">Edit</a></td>
+            <td><a href="/deleteMiscellaneous/${Miscellaneous.getMiscellaneous_ID()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
