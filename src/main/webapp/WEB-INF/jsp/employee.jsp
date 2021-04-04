@@ -3,11 +3,11 @@
 <html>
 <head>
     <title>Hbrass</title>
-    <style><%@include file="../css/style.css"%></style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 
-<table>
+<table class="w3-table-all">
     <tr>
         <th>Employee ID</th>
         <th>First Name</th>

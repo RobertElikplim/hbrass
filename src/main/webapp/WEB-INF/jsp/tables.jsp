@@ -20,6 +20,9 @@
     <li><a href="/employee">Employees</a></li>
     <li><a href="/employeeStatus">Employee Status</a></li>
     <li><a href="/iftaSticker">IFTA Sticker</a></li>
+    <li><a href="/incident">Incident</a></li>
+    <li><a href="/incidentStatus">Incident Status</a></li>
+    <li><a href="/incidentType">Incident Type</a></li>
     <li><a href="/income">Income</a></li>
     <li><a href="/insurance">Insurance</a></li>
     <li><a href="/invoice">Invoices</a></li>
