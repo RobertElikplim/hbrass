@@ -26,8 +26,8 @@
             <td>${Drop_Off_Location.getCity()}</td>
             <td>${Drop_Off_Location.getState_Code()}</td>
             <td>${Drop_Off_Location.getZip_Code()}</td>
-            <td><a href="/editDrop_Off_Location/${Drop_Off_Location.getDrop_Off_ID()}">Edit</a></td>
-            <td><a href="/deleteDrop_Off_Location/${Drop_Off_Location.getDrop_Off_ID()}">Delete</a></td>
+            <td><a href="/editDrop_Off_Location/${Drop_Off_Location.getDrop_Off_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteDrop_Off_Location/${Drop_Off_Location.getDrop_Off_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

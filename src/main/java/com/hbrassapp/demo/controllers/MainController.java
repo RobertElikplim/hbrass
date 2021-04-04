@@ -539,4 +539,22 @@ public class MainController {
         incomeRepo.deleteById(id);
         return mv;
     }
+    @RequestMapping(value = "/deleteDrop_Off_Location/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteDOL(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/dropOffLocation");
+        dropOffLocationRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteMiscellaneous/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteMisc(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/miscellaneous");
+        miscellaneousRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteDot_Inspection/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteDOT(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/dotInspection");
+        dotInspectionRepo.deleteById(id);
+        return mv;
+    }
 }

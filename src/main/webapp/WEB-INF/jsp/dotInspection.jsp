@@ -20,8 +20,8 @@
             <td>${Dot_Inspection.getTruck_ID_VIN()}</td>
             <td>${Dot_Inspection.getDot_Certification_Date()}</td>
             <td>${Dot_Inspection.getDot_Expiration_Date()}</td>
-            <td><a href="/editDot_Inspection/${Dot_Inspection.getDot_Inspection_ID()}">Edit</a></td>
-            <td><a href="/deleteDot_Inspection/${Dot_Inspection.getDot_Inspection_ID()}">Delete</a></td>
+            <td><a href="/editDot_Inspection/${Dot_Inspection.getDot_Inspection_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteDot_Inspection/${Dot_Inspection.getDot_Inspection_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>
