@@ -3,9 +3,9 @@
 <html>
 <head>
     <title>Hbrass</title>
-    <style><%@include file="../css/style.css"%></style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body>
+<body style="text-align: center;">
 
 <h1>Table Management</h1>
 <ul>

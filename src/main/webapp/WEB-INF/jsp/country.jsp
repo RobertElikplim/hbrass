@@ -3,10 +3,10 @@
 <html>
 <head>
     <title>Hbrass</title>
-    <style><%@include file="../css/style.css"%></style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body>
-<table>
+<body style="text-align: center;">
+<table class="w3-table-all">
     <tr>
         <th>Country Code</th>
         <th>Country</th>

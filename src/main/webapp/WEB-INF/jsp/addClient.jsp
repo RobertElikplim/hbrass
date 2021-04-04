@@ -3,11 +3,12 @@
 <html>
 <head>
     <title>Hbrass</title>
-    <style><%@include file="../css/style.css"%></style>
-</head>
-<body>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<table>
+</head>
+<body style="text-align: center;">
+
+<table class="w3-table-all">
     <tr>
         <th>Client ID</th>
         <th>Client Name</th>
