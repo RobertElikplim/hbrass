@@ -36,8 +36,8 @@
             <td>${Loads.getTotal_Miles()}</td>
             <td>${Loads.getDriver_Pay()}</td>
             <td>${Loads.getRemarks()}</td>
-            <td><a href="/editLoads/${Loads.getLoad_ID()}">Edit</a></td>
-            <td><a href="/deleteLoads/${Loads.getLoad_ID()}">Delete</a></td>
+            <td><a href="/editLoads/${Loads.getLoad_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteLoads/${Loads.getLoad_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

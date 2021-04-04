@@ -20,8 +20,8 @@
             <td>${System_Login.getUsername()}</td>
             <td>${System_Login.getPrivileges()}</td>
             <td>${System_Login.getPassword()}</td>
-            <td><a href="/editSystem_Login/${System_Login.getLoginID()}">Edit</a></td>
-            <td><a href="/deleteSystem_Login/${System_Login.getLoginID()}">Delete</a></td>
+            <td><a href="/editSystem_Login/${System_Login.getLoginID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteSystem_Login/${System_Login.getLoginID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

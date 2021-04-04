@@ -29,8 +29,8 @@
         <td>${Client.getZip_Code()}</td>
         <td>${Client.getPhone_Number()}</td>
         <td>${Client.getEmail()}</td>
-        <td><a href="/editClient/${Client.getClient_ID()}">Edit</a></td>
-        <td><a href="/deleteClient/${Client.getClient_ID()}">Delete</a></td>
+        <td><a href="/editClient/${Client.getClient_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+        <td><a href="/deleteClient/${Client.getClient_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

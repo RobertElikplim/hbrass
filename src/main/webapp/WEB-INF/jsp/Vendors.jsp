@@ -31,8 +31,8 @@
             <td>${Vendor.getZip_Code()}</td>
             <td>${Vendor.getEmail()}</td>
             <td>${Vendor.getVendor_Tracker()}</td>
-            <td><a href="/editVendor/${Vendor.getVendor_ID()}">Edit</a></td>
-            <td><a href="/deleteVendor/${Vendor.getVendor_ID()}">Delete</a></td>
+            <td><a href="/editVendor/${Vendor.getVendor_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteVendor/${Vendor.getVendor_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

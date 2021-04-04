@@ -36,8 +36,8 @@
             <td>${employee.getPosition_ID()}</td>
             <td>${employee.getDriver_ID()}</td>
             <td>${employee.getEmergency_Contact_ID()}</td>
-            <td><a href="/editemployee/${employee.getEmployee_ID()}">Edit</a></td>
-            <td><a href="/deleteemployee/${employee.getEmployee_ID()}">Delete</a></td>
+            <td><a href="/editemployee/${employee.getEmployee_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteemployee/${employee.getEmployee_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

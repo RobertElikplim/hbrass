@@ -22,8 +22,8 @@
             <td>${Schedule.getTimeOffRequest()}</td>
             <td>${Schedule.getVacationStart()}</td>
             <td>${Schedule.getVacationEnd()}</td>
-            <td><a href="/editSchedule/${Schedule.getScheduleID()}">Edit</a></td>
-            <td><a href="/deleteSchedule/${Schedule.getScheduleID()}">Delete</a></td>
+            <td><a href="/editSchedule/${Schedule.getScheduleID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteSchedule/${Schedule.getScheduleID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

@@ -20,8 +20,8 @@
             <td>${IFTA_Sticker.getTruck_ID_VIN()}</td>
             <td>${IFTA_Sticker.getIFTA_Status()}</td>
             <td>${IFTA_Sticker.getIFTA_Expiration_Date()}</td>
-            <td><a href="/editIFTA_Sticker/${IFTA_Sticker.getIFTA_ID()}">Edit</a></td>
-            <td><a href="/deleteIFTA_Sticker/${IFTA_Sticker.getIFTA_ID()}">Delete</a></td>
+            <td><a href="/editIFTA_Sticker/${IFTA_Sticker.getIFTA_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteIFTA_Sticker/${IFTA_Sticker.getIFTA_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

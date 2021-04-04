@@ -22,8 +22,8 @@
             <td>${Invoice.getBrokerContractID()}</td>
             <td>${Invoice.getInvoiceDate()}</td>
             <td>${Invoice.getInvoiceStatusID()}</td>
-            <td><a href="/editInvoice/${Invoice.getInvoiceID()}">Edit</a></td>
-            <td><a href="/deleteInvoice/${Invoice.getInvoiceID()}">Delete</a></td>
+            <td><a href="/editInvoice/${Invoice.getInvoiceID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteInvoice/${Invoice.getInvoiceID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

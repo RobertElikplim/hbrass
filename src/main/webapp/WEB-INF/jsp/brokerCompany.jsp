@@ -27,8 +27,8 @@
         <td>${Broker_Company.getZip_Code()}</td>
         <td>${Broker_Company.getPhone_Number()}</td>
         <td>${Broker_Company.getEmail_Address()}</td>
-        <td><a href="/editBrokerCompany/${Broker_Company.getBroker_ID()}">Edit</a></td>
-        <td><a href="/deleteBrokerCompany/${Broker_Company.getBroker_ID()}">Delete</a></td>
+        <td><a href="/editBrokerCompany/${Broker_Company.getBroker_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+        <td><a href="/deleteBrokerCompany/${Broker_Company.getBroker_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
     </tr>
 </c:forEach>
 </table>

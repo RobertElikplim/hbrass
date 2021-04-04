@@ -24,8 +24,8 @@
             <td>${Maintenance.getService()}</td>
             <td>${Maintenance.getServiceFee()}</td>
             <td>${Maintenance.getTruckIDVIN()}</td>
-            <td><a href="/editMaintenance/${Maintenance.getMaintenanceID()}">Edit</a></td>
-            <td><a href="/deleteMaintenance/${Maintenance.getMaintenanceID()}">Delete</a></td>
+            <td><a href="/editMaintenance/${Maintenance.getMaintenanceID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteMaintenance/${Maintenance.getMaintenanceID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

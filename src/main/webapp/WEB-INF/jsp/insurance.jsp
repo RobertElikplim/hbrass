@@ -18,8 +18,8 @@
             <td>${Insurance.getInsurance_ID()}</td>
             <td>${Insurance.getInsurance_Type()}</td>
             <td>${Insurance.getCoverage_Expiration()}</td>
-            <td><a href="/editInsurance/${Insurance.getInsurance_ID()}">Edit</a></td>
-            <td><a href="/deleteInsurance/${Insurance.getInsurance_ID()}">Delete</a></td>
+            <td><a href="/editInsurance/${Insurance.getInsurance_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteInsurance/${Insurance.getInsurance_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

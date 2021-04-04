@@ -26,8 +26,8 @@
             <td>${Truck.getMake()}</td>
             <td>${Truck.getModel()}</td>
             <td>${Truck.getPolicy_Number()}</td>
-            <td><a href="/editTruck/${Truck.getTruck_ID_VIN()}">Edit</a></td>
-            <td><a href="/deleteTruck/${Truck.getTruck_ID_VIN()}">Delete</a></td>
+            <td><a href="/editTruck/${Truck.getTruck_ID_VIN()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteTruck/${Truck.getTruck_ID_VIN()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

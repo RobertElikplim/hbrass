@@ -23,8 +23,8 @@
             <td>${Truck_Log.getDriverID()}</td>
             <td>${Truck_Log.getUsDotID()}</td>
             <td>${Truck_Log.getFuelLevel()}</td>
-            <td><a href="/editTruck_Log/${Truck_Log.getLogID()}">Edit</a></td>
-            <td><a href="/deleteTruck_Log/${Truck_Log.getLogID()}">Delete</a></td>
+            <td><a href="/editTruck_Log/${Truck_Log.getLogID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteTruck_Log/${Truck_Log.getLogID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

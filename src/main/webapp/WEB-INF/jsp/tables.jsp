@@ -5,10 +5,10 @@
     <title>Hbrass</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body style="text-align: center;">
+<body style="text-align: left;">
 
 <h1>Table Management</h1>
-<ul>
+<ol>
     <li><a href="/brokerCompany">Broker Companies</a></li>
     <li><a href="/brokerContracts">Broker Contracts</a></li>
     <li><a href="/brokerInfo">Broker Info</a></li>
@@ -41,7 +41,6 @@
     <li><a href="/truckDriver">Truck Drivers</a></li>
     <li><a href="/trucklog">Truck Log</a></li>
     <li><a href="/Vendors">Vendors</a></li>
-
-</ul>
+</ol>
 </body>
 </html>

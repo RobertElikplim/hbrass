@@ -26,8 +26,8 @@
             <td>${Trip_Expense.getRepair_Expense()}</td>
             <td>${Trip_Expense.getTotal_Expense()}</td>
             <td>${Trip_Expense.getLoad_ID()}</td>
-            <td><a href="/editTrip_Expense/${Trip_Expense.getTrip_Expense_ID()}">Edit</a></td>
-            <td><a href="/deleteTrip_Expense/${Trip_Expense.getTrip_Expense_ID()}">Delete</a></td>
+            <td><a href="/editTrip_Expense/${Trip_Expense.getTrip_Expense_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteTrip_Expense/${Trip_Expense.getTrip_Expense_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

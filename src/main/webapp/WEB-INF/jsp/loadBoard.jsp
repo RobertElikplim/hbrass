@@ -20,8 +20,8 @@
             <td>${Load_Board.getBoardName()}</td>
             <td>${Load_Board.getWebsite()}</td>
             <td>${Load_Board.getSubscribed()}</td>
-            <td><a href="/editLoad_Board/${Load_Board.getLoadBoardID()}">Edit</a></td>
-            <td><a href="/deleteLoad_Board/${Load_Board.getLoadBoardID()}">Delete</a></td>
+            <td><a href="/editLoad_Board/${Load_Board.getLoadBoardID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteLoad_Board/${Load_Board.getLoadBoardID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

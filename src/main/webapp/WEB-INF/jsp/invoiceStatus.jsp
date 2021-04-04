@@ -16,8 +16,8 @@
         <tr>
             <td>${Invoice_Status.getInvoice_ID()}</td>
             <td>${Invoice_Status.getInvoice_Status()}</td>
-            <td><a href="/editInvoice_Status/${Invoice_Status.getInvoice_ID()}">Edit</a></td>
-            <td><a href="/deleteInvoice_Status/${Invoice_Status.getInvoice_ID()}">Delete</a></td>
+            <td><a href="/editInvoice_Status/${Invoice_Status.getInvoice_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteInvoice_Status/${Invoice_Status.getInvoice_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

@@ -26,8 +26,8 @@
             <td>${Pick_Up_Location.getCity()}</td>
             <td>${Pick_Up_Location.getStateCode()}</td>
             <td>${Pick_Up_Location.getZipCode()}</td>
-            <td><a href="/editPick_Up_Location/${Pick_Up_Location.getPickUpID()}">Edit</a></td>
-            <td><a href="/deletePick_Up_Location/${Pick_Up_Location.getPickUpID()}">Delete</a></td>
+            <td><a href="/editPick_Up_Location/${Pick_Up_Location.getPickUpID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deletePick_Up_Location/${Pick_Up_Location.getPickUpID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

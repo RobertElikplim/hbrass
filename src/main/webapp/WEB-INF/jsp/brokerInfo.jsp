@@ -27,8 +27,8 @@
                 <td>${Broker_Info.getEmail()}</td>
                 <td>${Broker_Info.getPhoneNumber()}</td>
                 <td>${Broker_Info.getBrokerID()}</td>
-                <td><a href="/editBrokerInfo/${Broker_Info.getContact_ID()}">Edit</a></td>
-                <td><a href="/deleteBrokerInfo/${Broker_Info.getContact_ID()}">Delete</a></td>
+                <td><a href="/editBrokerInfo/${Broker_Info.getContact_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+                <td><a href="/deleteBrokerInfo/${Broker_Info.getContact_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
             </tr>
     </c:forEach>
 </table>

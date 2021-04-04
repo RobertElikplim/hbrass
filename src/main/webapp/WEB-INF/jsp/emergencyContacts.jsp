@@ -24,8 +24,8 @@
             <td>${Emergency_Contact.getRelationship()}</td>
             <td>${Emergency_Contact.getPhone_Number()}</td>
             <td>${Emergency_Contact.getStreet_Address()}</td>
-            <td><a href="/editEmergency_Contact/${Emergency_Contact.getEmergency_Contact_ID()}">Edit</a></td>
-            <td><a href="/deleteEmergency_Contact/${Emergency_Contact.getEmergency_Contact_ID()}">Delete</a></td>
+            <td><a href="/editEmergency_Contact/${Emergency_Contact.getEmergency_Contact_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteEmergency_Contact/${Emergency_Contact.getEmergency_Contact_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

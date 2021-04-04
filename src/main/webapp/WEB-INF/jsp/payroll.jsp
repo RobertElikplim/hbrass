@@ -24,8 +24,8 @@
             <td>${Payroll.getPayment_Type()}</td>
             <td>${Payroll.getPay_Period_Start()}</td>
             <td>${Payroll.getPay_Period_End()}</td>
-            <td><a href="/editPayroll/${Payroll.getPayroll_ID()}">Edit</a></td>
-            <td><a href="/deletePayroll/${Payroll.getPayroll_ID()}">Delete</a></td>
+            <td><a href="/editPayroll/${Payroll.getPayroll_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deletePayroll/${Payroll.getPayroll_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>
