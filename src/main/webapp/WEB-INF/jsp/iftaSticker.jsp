@@ -9,19 +9,19 @@
 
 <table>
     <tr>
-        <th>Tire Vendor ID</th>
-        <th>Username</th>
-        <th>Privileges</th>
-        <th>Password</th>
+        <th>IFTA ID</th>
+        <th>VIN</th>
+        <th>IFTA Status</th>
+        <th>Expiration Date</th>
     </tr>
-    <c:forEach var = "System_Login" items = "${systemLoginList}">
+    <c:forEach var = "IFTA_Sticker" items = "${iftaStickerList}">
         <tr>
-            <td>${System_Login.getLoginID()}</td>
-            <td>${System_Login.getUsername()}</td>
-            <td>${System_Login.getPrivileges()}</td>
-            <td>${System_Login.getPassword()}</td>
-            <td><a href="/editSystem_Login/${System_Login.getLoginID()}">Edit</a></td>
-            <td><a href="/deleteSystem_Login/${System_Login.getLoginID()}">Delete</a></td>
+            <td>${IFTA_Sticker.getIFTA_ID()}</td>
+            <td>${IFTA_Sticker.getTruck_ID_VIN()}</td>
+            <td>${IFTA_Sticker.getIFTA_Status()}</td>
+            <td>${IFTA_Sticker.getIFTA_Expiration_Date()}</td>
+            <td><a href="/editIFTA_Sticker/${IFTA_Sticker.getIFTA_ID()}">Edit</a></td>
+            <td><a href="/deleteIFTA_Sticker/${IFTA_Sticker.getIFTA_ID()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

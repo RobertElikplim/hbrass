@@ -9,19 +9,21 @@
 
 <table>
     <tr>
-        <th>Tire Vendor ID</th>
-        <th>Username</th>
-        <th>Privileges</th>
-        <th>Password</th>
+        <th>Invoice ID</th>
+        <th>Client ID</th>
+        <th>Broker Contract ID</th>
+        <th>Date</th>
+        <th>Status</th>
     </tr>
-    <c:forEach var = "System_Login" items = "${systemLoginList}">
+    <c:forEach var = "Invoice" items = "${invoiceList}">
         <tr>
-            <td>${System_Login.getLoginID()}</td>
-            <td>${System_Login.getUsername()}</td>
-            <td>${System_Login.getPrivileges()}</td>
-            <td>${System_Login.getPassword()}</td>
-            <td><a href="/editSystem_Login/${System_Login.getLoginID()}">Edit</a></td>
-            <td><a href="/deleteSystem_Login/${System_Login.getLoginID()}">Delete</a></td>
+            <td>${Invoice.getInvoiceID()}</td>
+            <td>${Invoice.getClientID()}</td>
+            <td>${Invoice.getBrokerContractID()}</td>
+            <td>${Invoice.getInvoiceDate()}</td>
+            <td>${Invoice.getInvoiceStatusID()}</td>
+            <td><a href="/editInvoice/${Invoice.getInvoiceID()}">Edit</a></td>
+            <td><a href="/deleteInvoice/${Invoice.getInvoiceID()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

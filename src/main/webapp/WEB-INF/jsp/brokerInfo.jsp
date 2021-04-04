@@ -17,20 +17,17 @@
         <th>Broker ID</th>
         <th></th><th></th>
     </tr>
-
-    <tr>
         <c:forEach var = "Broker_Info" items = "${brokerInfoList}">
-
-        <td>${Broker_Info.getContact_ID()}</td>
-            <td>${Broker_Info.getFirstName()}</td>
-            <td>${Broker_Info.getLastName()}</td>
-            <td>${Broker_Info.getEmail()}</td>
-            <td>${Broker_Info.getPhoneNumber()}</td>
-            <td>${Broker_Info.getBrokerID()}</td>
-        <td><a href="/editBrokerInfo/${Broker_Info.getContact_ID()}">Edit</a></td>
-        <td><a href="/deleteBrokerInfo/${Broker_Info.getContact_ID()}">Delete</a></td>
-
-    </tr>
+            <tr>
+                <td>${Broker_Info.getContact_ID()}</td>
+                <td>${Broker_Info.getFirstName()}</td>
+                <td>${Broker_Info.getLastName()}</td>
+                <td>${Broker_Info.getEmail()}</td>
+                <td>${Broker_Info.getPhoneNumber()}</td>
+                <td>${Broker_Info.getBrokerID()}</td>
+                <td><a href="/editBrokerInfo/${Broker_Info.getContact_ID()}">Edit</a></td>
+                <td><a href="/deleteBrokerInfo/${Broker_Info.getContact_ID()}">Delete</a></td>
+            </tr>
     </c:forEach>
 </table>
 <a href="/addBrokerInfo">Add New Record</a>

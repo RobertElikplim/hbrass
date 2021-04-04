@@ -9,19 +9,25 @@
 
 <table>
     <tr>
-        <th>Tire Vendor ID</th>
-        <th>Username</th>
-        <th>Privileges</th>
-        <th>Password</th>
+        <th>Income ID</th>
+        <th>Load ID</th>
+        <th>Load Fare</th>
+        <th>Commission</th>
+        <th>Insurance</th>
+        <th>Trip Expense ID</th>
+        <th>Total Income</th>
     </tr>
-    <c:forEach var = "System_Login" items = "${systemLoginList}">
+    <c:forEach var = "Income" items = "${incomeList}">
         <tr>
-            <td>${System_Login.getLoginID()}</td>
-            <td>${System_Login.getUsername()}</td>
-            <td>${System_Login.getPrivileges()}</td>
-            <td>${System_Login.getPassword()}</td>
-            <td><a href="/editSystem_Login/${System_Login.getLoginID()}">Edit</a></td>
-            <td><a href="/deleteSystem_Login/${System_Login.getLoginID()}">Delete</a></td>
+            <td>${Income.getIncome_ID()}</td>
+            <td>${Income.getLoad_ID()}</td>
+            <td>${Income.getLoad_Fare()}</td>
+            <td>${Income.getCommission()}</td>
+            <td>${Income.getInsurance()}</td>
+            <td>${Income.getTrip_Expense_ID()}</td>
+            <td>${Income.getTotal_Income()}</td>
+            <td><a href="/editIncome/${Income.getIncome_ID()}">Edit</a></td>
+            <td><a href="/deleteIncome/${Income.getIncome_ID()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

@@ -9,19 +9,17 @@
 
 <table>
     <tr>
-        <th>Tire Vendor ID</th>
-        <th>Username</th>
-        <th>Privileges</th>
-        <th>Password</th>
+        <th>Insurance ID</th>
+        <th>Insurance Type</th>
+        <th>Expiration</th>
     </tr>
-    <c:forEach var = "System_Login" items = "${systemLoginList}">
+    <c:forEach var = "Insurance" items = "${invoiceList}">
         <tr>
-            <td>${System_Login.getLoginID()}</td>
-            <td>${System_Login.getUsername()}</td>
-            <td>${System_Login.getPrivileges()}</td>
-            <td>${System_Login.getPassword()}</td>
-            <td><a href="/editSystem_Login/${System_Login.getLoginID()}">Edit</a></td>
-            <td><a href="/deleteSystem_Login/${System_Login.getLoginID()}">Delete</a></td>
+            <td>${Insurance.getInsurance_ID()}</td>
+            <td>${Insurance.getInsurance_Type()}</td>
+            <td>${Insurance.getCoverage_Expiration()}</td>
+            <td><a href="/editInsurance/${Insurance.getInsurance_ID()}">Edit</a></td>
+            <td><a href="/deleteInsurance/${Insurance.getInsurance_ID()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
