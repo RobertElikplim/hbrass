@@ -1,15 +1,12 @@
 package com.hbrassapp.demo.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Load_Board {
 
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Load_Board_ID")
     private String loadBoardID;
     @Column(name = "Board_Name")

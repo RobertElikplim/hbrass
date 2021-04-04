@@ -14,7 +14,7 @@
         <th>Broker ID</th>
         <th>Rate</th>
         <th>Fare</th>
-        <th>Commision</th>
+        <th>Commission</th>
         <th>Contract Status</th>
         <th>Contract Form</th>
     </tr>

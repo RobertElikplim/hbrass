@@ -13,7 +13,7 @@
         <th>Insurance Type</th>
         <th>Expiration</th>
     </tr>
-    <c:forEach var = "Insurance" items = "${invoiceList}">
+    <c:forEach var = "Insurance" items = "${insuranceList}">
         <tr>
             <td>${Insurance.getInsurance_ID()}</td>
             <td>${Insurance.getInsurance_Type()}</td>

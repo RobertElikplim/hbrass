@@ -128,15 +128,15 @@ public class MainController {
 
     @RequestMapping(value = "/dotInspection")
     public ModelAndView viewDotInspection() {
-        ModelAndView mv = new ModelAndView("dotInpection");
+        ModelAndView mv = new ModelAndView("dotInspection");
         mv.addObject("dotInspectionList", dotInspectionRepo.findAll());
         return mv;
     }
 
-    @RequestMapping(value = "/DropOffLocation")
+    @RequestMapping(value = "/dropOffLocation")
     public ModelAndView viewDropOffLocation() {
-        ModelAndView mv = new ModelAndView("DropOffLocation");
-        mv.addObject("DropOffLocationList", dropOffLocationRepo.findAll());
+        ModelAndView mv = new ModelAndView("dropOffLocation");
+        mv.addObject("dropOffLocationList", dropOffLocationRepo.findAll());
         return mv;
     }
 

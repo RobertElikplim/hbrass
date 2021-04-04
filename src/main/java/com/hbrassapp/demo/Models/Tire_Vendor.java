@@ -1,14 +1,11 @@
 package com.hbrassapp.demo.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Tire_Vendor")
 public class Tire_Vendor {
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Tire_Vendor_ID")
     private String Tire_Vendor_ID;
     @Column(name = "Vendor_ID")

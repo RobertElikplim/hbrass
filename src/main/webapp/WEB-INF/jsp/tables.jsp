@@ -15,7 +15,7 @@
     <li><a href="/client">Clients</a></li>
     <li><a href="/country">Countries</a></li>
     <li><a href="/dotInspection">DOT Inspections</a></li>
-    <li><a href="/DropOffLocation">Drop Off Locations</a></li>
+    <li><a href="/dropOffLocation">Drop Off Locations</a></li>
     <li><a href="/emergencyContacts">Emergency Contacts</a></li>
     <li><a href="/employee">Employees</a></li>
     <li><a href="/employeeStatus">Employee Status</a></li>

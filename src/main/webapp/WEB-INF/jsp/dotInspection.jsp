@@ -14,7 +14,7 @@
         <th>Certification Date</th>
         <th>Expiration Date</th>
     </tr>
-    <c:forEach var = "Dot_Inspection" items = "${dotInsepectionList}">
+    <c:forEach var = "Dot_Inspection" items = "${dotInspectionList}">
         <tr>
             <td>${Dot_Inspection.getDot_Inspection_ID()}</td>
             <td>${Dot_Inspection.getTruck_ID_VIN()}</td>
