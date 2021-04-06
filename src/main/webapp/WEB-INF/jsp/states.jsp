@@ -7,6 +7,9 @@
     <%--<style><%@include file="../css/style.css"%></style>--%>
 </head>
 <body>
+<form method="post" action="/tables">
+    <input type="submit" value="Table Management">
+</form>
 
 <table class="w3-table-all">
     <tr>

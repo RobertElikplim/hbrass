@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
+<form method="post" action="/tables">
+    <input type="submit" value="Table Management">
+</form>
 
 <table class="w3-table-all">
 

@@ -7,6 +7,10 @@
     <%--<style><%@include file="../css/style.css"%></style>--%>
 </head>
 <body>
+<form method="post" action="/tables">
+    <input type="submit" value="Table Management">
+</form>
+
 <form method="post" action="/submitDOL">
     <h3>Fields with * are required</h3>
     <input type="hidden" name="dropOffID">

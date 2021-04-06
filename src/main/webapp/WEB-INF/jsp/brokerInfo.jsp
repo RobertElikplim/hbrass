@@ -7,7 +7,10 @@
 
 </head>
 < <body style="text-align: center;">
->
+<form method="post" action="/tables">
+    <input type="submit" value="Table Management">
+</form>
+
 
 <table class="w3-table-all">
     <tr>
