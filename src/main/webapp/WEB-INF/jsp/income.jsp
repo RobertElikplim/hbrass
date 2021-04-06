@@ -11,7 +11,7 @@
     <input type="submit" value="Table Management">
 </form>
 
-<form method="post" action="/submitDOL">
+<form method="post" action="/submitIncome">
     <h3>Fields with * are required</h3>
     <input type="hidden" name="incomeID">
     <input type="hidden" name="loadID" >
