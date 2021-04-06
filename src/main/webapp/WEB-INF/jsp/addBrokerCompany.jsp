@@ -21,11 +21,11 @@
     <form method="post" action="/submitBrokerCompany">
         <input type="hidden" name="brokerID">
         <td>Auto Generated</td>
-        <td><input type="text" name="brokerName" value="*"></td>
-        <td><input type="text" name="streetAddress" value="*"></td>
-        <td><input type="text" name="stateCode" value="*"></td>
-        <td><input type="text" name="zipCode" value="*"></td>
-        <td><input type="text" name="phoneNumber" value="*"></td>
+        <td><input type="text" name="brokerName" placeholder="*"></td>
+        <td><input type="text" name="streetAddress" placeholder="*"></td>
+        <td><input type="text" name="stateCode" placeholder="*"></td>
+        <td><input type="text" name="zipCode" placeholder="*"></td>
+        <td><input type="text" name="phoneNumber" placeholder="*"></td>
         <td><input type="text" name="email"></td>
         </tr>
 </table>

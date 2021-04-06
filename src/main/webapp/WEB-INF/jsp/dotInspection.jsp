@@ -17,9 +17,9 @@
             <td>Expiration Date</td>
         </tr>
         <tr>
-            <td><input type="text" name="vin" value="*"></td>
-            <td><input type="date" name="cDate" value="*"></td>
-            <td><input type="date" name="eDate" value="*"></td>
+            <td><input type="text" name="vin" placeholder="*"></td>
+            <td><input type="date" name="cDate" placeholder="*"></td>
+            <td><input type="date" name="eDate" placeholder="*"></td>
         </tr>
     </table>
     <input type="submit" value="Submit Changes">

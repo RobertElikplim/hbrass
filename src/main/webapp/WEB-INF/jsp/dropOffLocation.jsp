@@ -20,11 +20,11 @@
             <td>Zip Code</td>
         </tr>
         <tr>
-            <td><input type="text" name="tCode" value="*"> </td>
-            <td><input type="date" name="dDate" value="*"></td>
-            <td><input type="text" name="sAddy" value="*"></td>
+            <td><input type="text" name="tCode" placeholder="*"> </td>
+            <td><input type="date" name="dDate" placeholder="*"></td>
+            <td><input type="text" name="sAddy" placeholder="*"></td>
             <td><input type="text" name="dCity"></td>
-            <td><input type="text" name="sCode" value="*"></td>
+            <td><input type="text" name="sCode" placeholder="*"></td>
             <td><input type="text" name="zCode"></td>
         </tr>
     </table>

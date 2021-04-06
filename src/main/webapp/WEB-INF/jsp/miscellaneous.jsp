@@ -16,8 +16,8 @@
             <td>Description</td>
         </tr>
         <tr>
-            <td><input type="text" name="cost" value="*"> </td>
-            <td><input type="text" name="desc" value="*"></td>
+            <td><input type="text" name="cost" placeholder="*"> </td>
+            <td><input type="text" name="desc" placeholder="*"></td>
         </tr>
     </table>
     <input type="submit" value="Submit Changes">
