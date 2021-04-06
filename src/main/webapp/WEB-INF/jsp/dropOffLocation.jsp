@@ -7,7 +7,31 @@
     <%--<style><%@include file="../css/style.css"%></style>--%>
 </head>
 <body>
-
+<form method="post" action="/submitDOL">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="dropOffID">
+    <table>
+        <tr>
+            <td>Drop Off Tracker Code</td>
+            <td>Drop Off Date</td>
+            <td>Street Address</td>
+            <td>City</td>
+            <td>State Code</td>
+            <td>Zip Code</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="tCode" value="*"> </td>
+            <td><input type="date" name="dDate" value="*"></td>
+            <td><input type="text" name="sAddy" value="*"></td>
+            <td><input type="text" name="dCity"></td>
+            <td><input type="text" name="sCode" value="*"></td>
+            <td><input type="text" name="zCode"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit Changes">
+    <br>
+    <br>
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Drop Off ID</th>

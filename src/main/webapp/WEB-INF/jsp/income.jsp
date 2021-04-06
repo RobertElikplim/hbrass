@@ -7,7 +7,8 @@
     <%--<style><%@include file="../css/style.css"%></style>--%>
 </head>
 <body>
-<form method="post" action="/submitIncome">
+
+<form method="post" action="/submitDOL">
     <h3>Fields with * are required</h3>
     <input type="hidden" name="incomeID">
     <input type="hidden" name="loadID" >

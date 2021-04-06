@@ -627,6 +627,54 @@ public class MainController {
         }
         return mv;
     }
+    @RequestMapping(value = "/submitMisc", method = RequestMethod.POST)
+    public ModelAndView addIncome(@RequestParam("miscID") String miscID,
+                                  @RequestParam("cost") String cost,
+                                  @RequestParam("desc") String desc) {
+        ModelAndView mv = new ModelAndView("redirect:/miscellaneous");
+        Miscellaneous misc = new Miscellaneous();
+        if (miscID.isEmpty()) {
+            misc.setCost(cost);
+            misc.setDescription(desc);
+            miscellaneousRepo.save(misc);
+        } else {
+            misc.setMiscellaneous_ID(miscID);
+            misc.setCost(cost);
+            misc.setDescription(desc);
+            miscellaneousRepo.save(misc);
+        }
+        return mv;
+    }
+    @RequestMapping(value = "/submitDOL", method = RequestMethod.POST)
+    public ModelAndView addDropOffLocation(@RequestParam("dropOffID") String dropOffID,
+                                  @RequestParam("tCode") String tCode,
+                                  @RequestParam("dDate") String dDate,
+                                  @RequestParam("sAddy") String sAddy,
+                                  @RequestParam("dCity") String dCity,
+                                  @RequestParam("sCode") String sCode,
+                                  @RequestParam("zCode") String zCode) {
+        ModelAndView mv = new ModelAndView("redirect:/dropOffLocation");
+        Drop_Off_Location dol = new Drop_Off_Location();
+        if (dropOffID.isEmpty()) {
+            dol.setDrop_Off_Tracker_Code(tCode);
+            dol.setDrop_Off_Date(dDate);
+            dol.setStreet_Address(sAddy);
+            dol.setCity(dCity);
+            dol.setState_Code(sCode);
+            dol.setZip_Code(zCode);
+            dropOffLocationRepo.save(dol);
+        } else {
+            dol.setDrop_Off_ID(dropOffID);
+            dol.setDrop_Off_Tracker_Code(tCode);
+            dol.setDrop_Off_Date(dDate);
+            dol.setStreet_Address(sAddy);
+            dol.setCity(dCity);
+            dol.setState_Code(sCode);
+            dol.setZip_Code(zCode);
+            dropOffLocationRepo.save(dol);
+        }
+        return mv;
+    }
     @RequestMapping(value = "/editIncome/{id}", method = RequestMethod.GET)
     public ModelAndView editIncome(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editIncome");
@@ -641,6 +689,22 @@ public class MainController {
         Optional<Dot_Inspection> editDI = dotInspectionRepo.findById(id);
         Dot_Inspection dinspection = editDI.get();
         mv.addObject("Dot_Inspection", dinspection);
+        return mv;
+    }
+    @RequestMapping(value = "/editDrop_Off_Location/{id}", method = RequestMethod.GET)
+    public ModelAndView editDOL(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editDOL");
+        Optional<Drop_Off_Location> editDrol = dropOffLocationRepo.findById(id);
+        Drop_Off_Location dol = editDrol.get();
+        mv.addObject("Drop_Off_Location", dol);
+        return mv;
+    }
+    @RequestMapping(value = "/editMiscellaneous/{id}", method = RequestMethod.GET)
+    public ModelAndView editMisc(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editMisc");
+        Optional<Miscellaneous> editMisc = miscellaneousRepo.findById(id);
+        Miscellaneous misc = editMisc.get();
+        mv.addObject("Miscellaneous", misc);
         return mv;
     }
 }

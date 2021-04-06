@@ -18,8 +18,8 @@
         </tr>
         <tr>
             <td><input type="text" name="vin" value="*"></td>
-            <td><input type="text" name="cDate" value="*"></td>
-            <td><input type="text" name="eDate" value="*"></td>
+            <td><input type="date" name="cDate" value="*"></td>
+            <td><input type="date" name="eDate" value="*"></td>
         </tr>
     </table>
     <input type="submit" value="Submit Changes">

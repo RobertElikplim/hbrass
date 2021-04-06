@@ -7,7 +7,23 @@
     <%--<style><%@include file="../css/style.css"%></style>--%>
 </head>
 <body>
-
+<form method="post" action="/submitMisc">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="miscID">
+    <table>
+        <tr>
+            <td>Cost</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="cost" value="*"> </td>
+            <td><input type="text" name="desc" value="*"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit Changes">
+    <br>
+    <br>
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Miscellaneous ID</th>

@@ -16,8 +16,8 @@
         </tr>
         <tr>
             <td><input type="text" name="vin" value ="${Dot_Inspection.getTruck_ID_VIN()}"></td>
-            <td><input type="text" name="cDate" value ="${Dot_Inspection.getDot_Certification_Date()}"></td>
-            <td><input type="text" name="eDate" value ="${Dot_Inspection.getDot_Expiration_Date()}"></td>
+            <td><input type="date" name="cDate" value ="${Dot_Inspection.getDot_Certification_Date()}"></td>
+            <td><input type="date" name="eDate" value ="${Dot_Inspection.getDot_Expiration_Date()}"></td>
         </tr>
         <br>
     </table>
