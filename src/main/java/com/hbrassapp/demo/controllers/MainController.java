@@ -328,8 +328,12 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitBrokerCompany", method = RequestMethod.POST)
-    public ModelAndView changesBrokerCompany(@RequestParam("brokerID") String id, @RequestParam("brokerName") String brokerName, @RequestParam("streetAddress") String streetAddress,
-                                             @RequestParam("stateCode") String stateCode, @RequestParam("zipCode") String zipCode, @RequestParam("phoneNumber") String phoneNumber,
+    public ModelAndView changesBrokerCompany(@RequestParam("brokerID") String id,
+                                             @RequestParam("brokerName") String brokerName,
+                                             @RequestParam("streetAddress") String streetAddress,
+                                             @RequestParam("stateCode") String stateCode,
+                                             @RequestParam("zipCode") String zipCode,
+                                             @RequestParam("phoneNumber") String phoneNumber,
                                              @RequestParam("email") String email) {
         ModelAndView mv = new ModelAndView("redirect:/brokerCompany");
 
@@ -382,8 +386,12 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitBrokerContract", method = RequestMethod.POST)
-    public ModelAndView changesBrokerContract(@RequestParam("contractID") String contractID, @RequestParam("invoiceID") String invoiceID, @RequestParam("brokerID") String brokerID,
-                                              @RequestParam("rate") String rate, @RequestParam("fare") String fare, @RequestParam("commission") String commission,
+    public ModelAndView changesBrokerContract(@RequestParam("contractID") String contractID,
+                                              @RequestParam("invoiceID") String invoiceID,
+                                              @RequestParam("brokerID") String brokerID,
+                                              @RequestParam("rate") String rate,
+                                              @RequestParam("fare") String fare,
+                                              @RequestParam("commission") String commission,
                                               @RequestParam("contractStatus") String status) {
 
         ModelAndView mv = new ModelAndView("redirect:/brokerContracts");
@@ -433,8 +441,12 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitBrokerInfo", method = RequestMethod.POST)
-    public ModelAndView submitBrokerInfo(@RequestParam("contactID") String contactID, @RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
-                                            @RequestParam("email") String email, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("brokerID") String brokerID)
+    public ModelAndView submitBrokerInfo(@RequestParam("contactID") String contactID,
+                                         @RequestParam("firstName") String firstName,
+                                         @RequestParam("lastName") String lastName,
+                                         @RequestParam("email") String email,
+                                         @RequestParam("phoneNumber") String phoneNumber,
+                                         @RequestParam("brokerID") String brokerID)
     {
         ModelAndView mv = new ModelAndView("redirect:/brokerInfo");
         Broker_Info brokerInfo = new Broker_Info();
@@ -484,9 +496,14 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitClient", method = RequestMethod.POST)
-    public ModelAndView submitClient(@RequestParam("clientID") String clientID, @RequestParam("clientName") String clientName,@RequestParam("streetAddress") String streetAddress,
-                                     @RequestParam("city")String city, @RequestParam("stateCode") String stateCode, @RequestParam("zipCode") String zipCode,
-                                     @RequestParam("phoneNumber") String phoneNumber, @RequestParam("email") String email) {
+    public ModelAndView submitClient(@RequestParam("clientID") String clientID,
+                                     @RequestParam("clientName") String clientName,
+                                     @RequestParam("streetAddress") String streetAddress,
+                                     @RequestParam("city")String city,
+                                     @RequestParam("stateCode") String stateCode,
+                                     @RequestParam("zipCode") String zipCode,
+                                     @RequestParam("phoneNumber") String phoneNumber,
+                                     @RequestParam("email") String email) {
         ModelAndView mv = new ModelAndView("redirect:/client");
         Client client = new Client();
         if (clientID.isEmpty()) {
@@ -551,10 +568,79 @@ public class MainController {
         miscellaneousRepo.deleteById(id);
         return mv;
     }
+
     @RequestMapping(value = "/deleteDot_Inspection/{id}", method = RequestMethod.GET)
     public ModelAndView deleteDOT(@PathVariable("id") String id){
         ModelAndView mv = new ModelAndView("redirect:/dotInspection");
         dotInspectionRepo.deleteById(id);
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitIncome", method = RequestMethod.POST)
+    public ModelAndView addIncome(@RequestParam("incomeID") String incomeID,
+                                  @RequestParam("loadID") String loadID,
+                                  @RequestParam("loadFare") String loadFare,
+                                  @RequestParam("commission") String commission,
+                                  @RequestParam("insurance") String insurance,
+                                  @RequestParam("tripExpenseID") String tripExpenseID,
+                                  @RequestParam("totalIncome") String totalIncome) {
+        ModelAndView mv = new ModelAndView("redirect:/income");
+        Income income = new Income();
+        if (incomeID.isEmpty() && loadID.isEmpty() && tripExpenseID.isEmpty()) {
+           // income.setLoad_ID(loadID);
+            income.setLoad_Fare(loadFare);
+            income.setCommission(commission);
+            income.setInsurance(insurance);
+           // income.setTrip_Expense_ID(tripExpenseID);
+            income.setTotal_Income(totalIncome);
+            incomeRepo.save(income);
+        } else {
+            income.setIncome_ID(incomeID);
+            income.setLoad_ID(loadID);
+            income.setLoad_Fare(loadFare);
+            income.setCommission(commission);
+            income.setInsurance(insurance);
+            income.setTrip_Expense_ID(tripExpenseID);
+            income.setTotal_Income(totalIncome);
+            incomeRepo.save(income);
+        }
+        return mv;
+    }
+    @RequestMapping(value = "/submitDotInspection", method = RequestMethod.POST)
+    public ModelAndView addIncome(@RequestParam("dotInspectionID") String dotInspectionID,
+                                  @RequestParam("vin") String vin,
+                                  @RequestParam("cDate") String cDate,
+                                  @RequestParam("eDate") String eDate) {
+        ModelAndView mv = new ModelAndView("redirect:/dotInspection");
+        Dot_Inspection dinspection = new Dot_Inspection();
+        if (dotInspectionID.isEmpty()) {
+            dinspection.setTruck_ID_VIN(vin);
+            dinspection.setDot_Certification_Date(cDate);
+            dinspection.setDot_Expiration_Date(eDate);
+            dotInspectionRepo.save(dinspection);
+        } else {
+            dinspection.setDot_Inspection_ID(dotInspectionID);
+            dinspection.setTruck_ID_VIN(vin);
+            dinspection.setDot_Certification_Date(cDate);
+            dinspection.setDot_Expiration_Date(eDate);
+            dotInspectionRepo.save(dinspection);
+        }
+        return mv;
+    }
+    @RequestMapping(value = "/editIncome/{id}", method = RequestMethod.GET)
+    public ModelAndView editIncome(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editIncome");
+        Optional<Income> editIncomeTable = incomeRepo.findById(id);
+        Income income = editIncomeTable.get();
+        mv.addObject("Income", income);
+        return mv;
+    }
+    @RequestMapping(value = "/editDot_Inspection/{id}", method = RequestMethod.GET)
+    public ModelAndView editDI(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editDotInspection");
+        Optional<Dot_Inspection> editDI = dotInspectionRepo.findById(id);
+        Dot_Inspection dinspection = editDI.get();
+        mv.addObject("Dot_Inspection", dinspection);
         return mv;
     }
 }

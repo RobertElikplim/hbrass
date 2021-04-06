@@ -7,7 +7,25 @@
     <%--<style><%@include file="../css/style.css"%></style>--%>
 </head>
 <body>
-
+<form method="post" action="/submitDotInspection">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="dotInspectionID">
+    <table>
+        <tr>
+            <td>VIN</td>
+            <td>Certification Date</td>
+            <td>Expiration Date</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="vin" value="*"></td>
+            <td><input type="text" name="cDate" value="*"></td>
+            <td><input type="text" name="eDate" value="*"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit Changes">
+    <br>
+    <br>
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Dot Inspection ID</th>

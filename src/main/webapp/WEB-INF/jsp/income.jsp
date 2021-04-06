@@ -7,7 +7,29 @@
     <%--<style><%@include file="../css/style.css"%></style>--%>
 </head>
 <body>
-
+<form method="post" action="/submitIncome">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="incomeID">
+    <input type="hidden" name="loadID" >
+    <input type="hidden" name="tripExpenseID" >
+    <table>
+        <tr>
+            <td>Load Fare</td>
+            <td>Commission</td>
+            <td>Insurance</td>
+            <td>Total Income</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="loadFare" value="*"> </td>
+            <td><input type="text" name="commission" value="*"></td>
+            <td><input type="text" name="insurance" value="*"></td>
+            <td><input type="text" name="totalIncome"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit Changes">
+    <br>
+    <br>
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Income ID</th>
@@ -32,28 +54,5 @@
         </tr>
     </c:forEach>
 </table>
-<table>
-    <tr>
-        <th>Income ID</th>
-        <th>Load ID</th>
-        <th>Load Fare</th>
-        <th>Commission</th>
-        <th>Insurance</th>
-        <th>Trip Expense ID</th>
-        <th>Total Income</th>
-    </tr>
-    <h3>Fields with * are required</h3>
-    <form method="post" action="/submitIncome">
-        <td>
-            <input type="hidden" name="brokerID">
-        <td>Auto Generated</td>
-        <td><input type="text" name="loadFare" value="*"></td>
-        <td><input type="text" name="commission" value="*"></td>
-        <td><input type="text" name="insurance" value="*"></td>
-        <td><input type="text" name="total income"></td>
-        </td>
-    </form>
-</table>
-<input type="submit" value="Submit Changes">
 </body>
 </html>
