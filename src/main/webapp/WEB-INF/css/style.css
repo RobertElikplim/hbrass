@@ -1,0 +1,28 @@
+.fm{
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: forestgreen;
+    font-family: "Arial Black";
+}
+.tb{
+    border-bottom: 1px solid green;
+    color: forestgreen;
+    padding: 8px 0;
+    background: whitesmoke;
+}
+.btn{
+    width: 50%;
+    border: 2px solid greenyellow;
+    color: green;
+    padding: 5px;
+    cursor: pointer;
+    margin: 12px 0;
+    font-family: "Arial Black";
+}
+.ns{
+    border: none;
+
+}

@@ -32,7 +32,7 @@
             <td><input type="text" name="zCode"></td>
         </tr>
     </table>
-    <input type="submit" value="Submit Changes">
+    <input type="submit" value="Add Entry">
     <br>
     <br>
 </form>

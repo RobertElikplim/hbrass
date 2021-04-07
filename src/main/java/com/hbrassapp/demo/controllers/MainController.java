@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
+import java.util.UUID;
 
 
 @Controller
@@ -84,6 +85,19 @@ public class MainController {
     @Autowired
     VendorRepo vendorRepo;
 
+
+    @RequestMapping("/")
+    public ModelAndView view(){
+        ModelAndView mv = new ModelAndView("signin");
+        mv.addObject("thelist",systemLoginRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value = "/signup")
+    public ModelAndView register(){
+        ModelAndView mv = new ModelAndView("signup");
+        return mv;
+    }
 
     @RequestMapping(value = "/tables")
     public ModelAndView viewTables() {
@@ -708,4 +722,57 @@ public class MainController {
         mv.addObject("Miscellaneous", misc);
         return mv;
     }
+
+
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    public ModelAndView lin(@RequestParam("id") String id,
+                            @RequestParam("uname") String uname,
+                            @RequestParam("pwd") String pwd) {
+        System_Login login;
+        try{
+            Optional<System_Login> login1 = systemLoginRepo.findByUname(uname);
+            login = login1.get();
+            String userpassword = login.getPassword();
+            if (pwd.equals(userpassword) && login.getPrivileges().equals("0")) {
+                ModelAndView mv = new ModelAndView("tables");
+                mv.addObject("welcome","Welcome" + " " + login.getUsername());
+                return mv;
+            }else if(pwd.equals(userpassword) && login.getPrivileges().equals("1")) {
+                ModelAndView mv = new ModelAndView("index");
+                mv.addObject("welcome", "Welcome" + " " + login.getUsername());
+                return mv;
+            }
+             else{
+                ModelAndView mv = new ModelAndView("signin");
+                mv.addObject("msg","Username and or password is incorrect! ");
+                return mv;
+            }
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+            ModelAndView mv = new ModelAndView("redirect:/");
+            return mv;
+        }
+    }
+
+    @RequestMapping(value = "/save1", method = RequestMethod.POST)
+    public ModelAndView save(@RequestParam("id") String id,
+                             @RequestParam("uname") String uname,
+                             @RequestParam("pwd") String pwd,
+                             @RequestParam("admin") String admin) {
+        ModelAndView mv = new ModelAndView("signup");
+        System_Login register;
+        if (!id.isEmpty()) {
+            Optional<System_Login> signIn = systemLoginRepo.findById(uname.toString());
+            register = signIn.get();
+        } else {
+            register = new System_Login();
+        }
+        register.setUsername(uname);
+        register.setPassword(pwd);
+        register.setPrivileges(admin);
+        systemLoginRepo.save(register);
+        mv.addObject("thelist", systemLoginRepo.findAll());
+        return mv;
+    }
+
 }
