@@ -18,7 +18,7 @@
         <th>Incident Type ID</th>
         <th>Remarks</th>
     </tr>
-    <c:forEach var = "Incident" items = "${IncidentList}">
+    <c:forEach var = "incident" items = "${incidentList}">
         <tr>
             <td>${Incident.getIncident_ID}</td>
             <td>${Incident.getLoad_ID}</td>
