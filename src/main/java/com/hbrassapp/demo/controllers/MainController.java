@@ -41,6 +41,8 @@ public class MainController {
     @Autowired
     IFTA_StickerRepo ifta_stickerRepo;
     @Autowired
+    IncidentRepo incidentRepo;
+    @Autowired
     IncomeRepo incomeRepo;
     @Autowired
     InsuranceRepo insuranceRepo;
@@ -180,6 +182,14 @@ public class MainController {
     public ModelAndView viewiftaSticker() {
         ModelAndView mv = new ModelAndView("iftaSticker");
         mv.addObject("iftaStickerList", ifta_stickerRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value = "/incident")
+    public ModelAndView viewincident()
+    {
+        ModelAndView mv = new ModelAndView("incident");
+        mv.addObject("incidentList", incidentRepo.findAll());
         return mv;
     }
 
