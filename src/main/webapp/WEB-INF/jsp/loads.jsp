@@ -8,7 +8,39 @@
 <form method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
+<form method="post" action="/addLoads">
+    <input type="hidden" name="loadID">
+    <table>
+        <tr>
+            <td>Date</td>
+            <td>Pick UP ID</td>
+            <td>Drop Off ID</td>
+            <td>VIN</td>
+            <td>Trailer ID</td>
+            <td>Driver ID</td>
+            <td>Dead Head</td>
+            <td>Loaded Miles</td>
+            <td>Total Miles</td>
+            <td>Driver Pay</td>
+            <td>Remarks</td>
+        </tr>
+        <tr>
+            <td><input type="date" name="dateLoads"></td>
+            <td><input type="text" name="pickUP"></td>
+            <td><input type="text" name="dropOff"></td>
+            <td><input type="text" name="vinNumber"></td>
+            <td><input type="text" name="trailerID"></td>
+            <td><input type="text" name="driverID"></td>
+            <td><input type="text" name="deadHD"></td>
+            <td><input type="text" name="loadedMiles"></td>
+            <td><input type="text" name="totalMiles"></td>
+            <td><input type="text" name="driverPay"></td>
+            <td><input type="text" name="remarks"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Load">
 
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Load ID</th>

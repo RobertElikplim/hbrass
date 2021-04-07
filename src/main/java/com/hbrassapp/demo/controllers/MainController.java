@@ -155,6 +155,7 @@ public class MainController {
         return mv;
     }
 
+
     @RequestMapping(value = "/emergencyContacts")
     public ModelAndView viewemergencyContacts() {
         ModelAndView mv = new ModelAndView("emergencyContacts");
@@ -351,7 +352,6 @@ public class MainController {
                                              @RequestParam("phoneNumber") String phoneNumber,
                                              @RequestParam("email") String email) {
         ModelAndView mv = new ModelAndView("redirect:/brokerCompany");
-
         Broker_Company brokerCompany = new Broker_Company();
         if (id.isEmpty()) {
             brokerCompany.setBroker_Name(brokerName);
@@ -373,6 +373,54 @@ public class MainController {
         }
         return mv;
     }
+
+    @RequestMapping(value = "/addLoads", method = RequestMethod.POST)
+    public ModelAndView changesLoads(@RequestParam("loadID") String id,
+                                     @RequestParam("dateLoads") String dateLoads,
+                                     @RequestParam("pickUP") String pickUP,
+                                     @RequestParam("dropOff") String dropOff,
+                                     @RequestParam("vinNumber") String vinNumber,
+                                     @RequestParam("trailerID") String trailerID,
+                                     @RequestParam("driverID") String driverID,
+                                     @RequestParam("deadHD") String deadHD,
+                                     @RequestParam("loadedMiles") String loadedMiles,
+                                     @RequestParam("totalMiles") String totalMiles,
+                                     @RequestParam("driverPay") String driverPay,
+                                     @RequestParam("remarks") String remarks) {
+        ModelAndView mv = new ModelAndView("redirect:/loads");
+        Loads loads = new Loads();
+        if (id.isEmpty()) {
+            loads.setDate(dateLoads);
+            loads.setPick_Up_ID(pickUP);
+            loads.setDrop_Off_ID(dropOff);
+            loads.setTruck_ID_VIN(vinNumber);
+            loads.setTrailer_ID(trailerID);
+            loads.setDriver_ID(driverID);
+            loads.setDead_Head(deadHD);
+            loads.setLoaded_Miles(loadedMiles);
+            loads.setTotal_Miles(totalMiles);
+            loads.setDriver_Pay(driverPay);
+            loads.setRemarks(remarks);
+            loadsRepo.save(loads);
+        } else {
+            loads.setLoad_ID(id);
+            loads.setDate(dateLoads);
+            loads.setPick_Up_ID(pickUP);
+            loads.setDrop_Off_ID(dropOff);
+            loads.setTruck_ID_VIN(vinNumber);
+            loads.setTrailer_ID(trailerID);
+            loads.setDriver_ID(driverID);
+            loads.setDead_Head(deadHD);
+            loads.setLoaded_Miles(loadedMiles);
+            loads.setTotal_Miles(totalMiles);
+            loads.setDriver_Pay(driverPay);
+            loads.setRemarks(remarks);
+            loadsRepo.save(loads);
+        }
+        return mv;
+    }
+
+
 
     @RequestMapping(value = "/addBrokerCompany")
     public ModelAndView addBrokerCompany() {
@@ -714,6 +762,7 @@ public class MainController {
         mv.addObject("Drop_Off_Location", dol);
         return mv;
     }
+
     @RequestMapping(value = "/editMiscellaneous/{id}", method = RequestMethod.GET)
     public ModelAndView editMisc(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editMisc");
@@ -774,5 +823,8 @@ public class MainController {
         mv.addObject("thelist", systemLoginRepo.findAll());
         return mv;
     }
+
+
+
 
 }

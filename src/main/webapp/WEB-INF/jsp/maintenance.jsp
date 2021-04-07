@@ -8,7 +8,9 @@
 <form method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
+<form>
 
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Maintenance ID</th>
