@@ -854,12 +854,7 @@ public class MainController {
         return mv;
     }
 
-
-
-
-    //Emergency Contacts
-
-
+    //Emergency Contact
 
     @RequestMapping(value = "/submitEmergencyContact", method = RequestMethod.POST)
     public ModelAndView changesEmergencyContact(@RequestParam("EmergencyContactID") String EmergencyContactID,
