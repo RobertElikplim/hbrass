@@ -43,6 +43,10 @@ public class MainController {
     @Autowired
     IncidentRepo incidentRepo;
     @Autowired
+    IncidentStatusRepo incidentStatusRepo;
+    @Autowired
+    IncidentTypeRepo incidentTypeRepo;
+    @Autowired
     IncomeRepo incomeRepo;
     @Autowired
     InsuranceRepo insuranceRepo;
@@ -191,6 +195,22 @@ public class MainController {
     {
         ModelAndView mv = new ModelAndView("incident");
         mv.addObject("incidentList", incidentRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value = "/incidentStatus")
+    public ModelAndView viewincidentStatus()
+    {
+        ModelAndView mv = new ModelAndView("incidentStatus");
+        mv.addObject("incidentStatusList", incidentStatusRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value = "/incidentType")
+    public ModelAndView viewincidentType()
+    {
+        ModelAndView mv = new ModelAndView("incidentType");
+        mv.addObject("incidentTypeList", incidentTypeRepo.findAll());
         return mv;
     }
 
