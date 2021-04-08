@@ -18,14 +18,14 @@
         <th>Incident Type ID</th>
         <th>Remarks</th>
     </tr>
-    <c:forEach var = "incident" items = "${incidentList}">
+    <c:forEach var = "Incident" items = "${incidentList}">
         <tr>
-            <td>${Incident.getIncident_ID}</td>
-            <td>${Incident.getLoad_ID}</td>
+            <td>${Incident.getIncident_ID()}</td>
+            <td>${Incident.getLoad_ID()}</td>
             <td>${Incident.getEmployee_ID()}</td>
             <td>${Incident.getIncident_Status_ID()}</td>
-            <td>${Incident.getIncident_Type_ID}</td>
-            <td>${Incident.getRemarks}</td>
+            <td>${Incident.getIncident_Type_ID()}</td>
+            <td>${Incident.getRemarks()}</td>
             <td><a href="/editIncident/${Incident.getIncident_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
             <td><a href="/deleteIncident/${Incident.getIncident_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
