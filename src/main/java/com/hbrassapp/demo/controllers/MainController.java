@@ -92,6 +92,7 @@ public class MainController {
     VendorRepo vendorRepo;
 
 
+    //Methods to display pages
     @RequestMapping("/")
     public ModelAndView view(){
         ModelAndView mv = new ModelAndView("signin");
@@ -918,4 +919,20 @@ public class MainController {
         }
         return mv;
     }
+    //Incident
+    @RequestMapping(value = "/editIncident/{id}", method = RequestMethod.GET) //Method to edit entry
+    public ModelAndView editIncident(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editIncident");
+        Optional<Incident> editIncidentTable = incidentRepo.findById(id);
+        Incident incident = editIncidentTable.get();
+        mv.addObject("Incident", incident);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteIncident/{id}", method = RequestMethod.GET) //Method to delete entry
+    public ModelAndView deleteIncident(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/incident");
+        incidentRepo.deleteById(id);
+        return mv;
+    }
+
 }
