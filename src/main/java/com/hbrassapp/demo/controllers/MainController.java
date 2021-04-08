@@ -857,4 +857,41 @@ public class MainController {
 
 
 
+    //Emergency Contacts
+
+
+
+    @RequestMapping(value = "/submitEmergencyContact", method = RequestMethod.POST)
+    public ModelAndView changesEmergencyContact(@RequestParam("EmergencyContactID") String EmergencycontactID,
+                                              @RequestParam("FirstName") String FirstName,
+                                              @RequestParam("LastName") String LastName,
+                                              @RequestParam("Relationship") String Relationship,
+                                              @RequestParam("PhoneNumber") String PhoneNumber,
+                                              @RequestParam("StreetAddress") String StreetAddress) {
+
+        ModelAndView mv = new ModelAndView("redirect:/emergencyContacts");
+
+        Emergency_Contact emergencyContact = new Emergency_Contact();
+
+        if (EmergencycontactID.isEmpty()) {
+            emergencyContact.setFirst_Name(FirstName);
+            emergencyContact.setLast_Name(LastName);
+            emergencyContact.setRelationship(Relationship);
+            emergencyContact.setPhone_Number(PhoneNumber);
+            emergencyContact.setStreet_Address(StreetAddress);
+            emergencyContactRepo.save(emergencyContact);
+
+        } else {
+            emergencyContact.setEmergency_Contact_ID(EmergencycontactID);
+            emergencyContact.setFirst_Name(FirstName);
+            emergencyContact.setLast_Name(LastName);
+            emergencyContact.setRelationship(Relationship);
+            emergencyContact.setPhone_Number(PhoneNumber);
+            emergencyContact.setStreet_Address(StreetAddress);
+            emergencyContactRepo.save(emergencyContact);
+
+
+        }
+        return mv;
+    }
 }
