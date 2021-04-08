@@ -3,7 +3,7 @@ package com.hbrassapp.demo.Models;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name="Maintenance")
 public class Maintenance {
 
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)

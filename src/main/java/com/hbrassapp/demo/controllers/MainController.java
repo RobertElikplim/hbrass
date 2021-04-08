@@ -768,6 +768,35 @@ public class MainController {
         }
         return mv;
     }
+    @RequestMapping(value = "/submitMaintenance", method = RequestMethod.POST)
+    public ModelAndView addMaintenance(@RequestParam("MaintenanceID") String MaintenanceID,
+                                           @RequestParam("Mileage") String Mileage,
+                                           @RequestParam("ServiceDate") String ServiceDate,
+                                           @RequestParam("Service") String Service,
+                                           @RequestParam("ServiceFee") String ServiceFee,
+                                           @RequestParam("TruckIdVin") String TruckIdVin)
+            {
+        ModelAndView mv = new ModelAndView("redirect:/maintenance");
+        Maintenance maintenance = new Maintenance();
+        if (MaintenanceID.isEmpty()) {
+            maintenance.setMileage(Mileage);
+            maintenance.setServiceDate(ServiceDate);
+            maintenance.setService(Service);
+            maintenance.setServiceFee(ServiceFee);
+            maintenance.setTruckIDVIN(TruckIdVin);
+            maintenanceRepo.save(maintenance);
+        } else {
+            maintenance.setMaintenanceID(MaintenanceID);
+            maintenance.setMileage(Mileage);
+            maintenance.setServiceDate(ServiceDate);
+            maintenance.setService(Service);
+            maintenance.setServiceFee(ServiceFee);
+            maintenance.setTruckIDVIN(TruckIdVin);
+            maintenanceRepo.save(maintenance);
+        }
+        return mv;
+    }
+
     @RequestMapping(value = "/editIncome/{id}", method = RequestMethod.GET)
     public ModelAndView editIncome(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editIncome");
