@@ -862,7 +862,7 @@ public class MainController {
 
 
     @RequestMapping(value = "/submitEmergencyContact", method = RequestMethod.POST)
-    public ModelAndView changesEmergencyContact(@RequestParam("EmergencyContactID") String EmergencycontactID,
+    public ModelAndView changesEmergencyContact(@RequestParam("EmergencyContactID") String EmergencyContactID,
                                               @RequestParam("FirstName") String FirstName,
                                               @RequestParam("LastName") String LastName,
                                               @RequestParam("Relationship") String Relationship,
@@ -873,7 +873,7 @@ public class MainController {
 
         Emergency_Contact emergencyContact = new Emergency_Contact();
 
-        if (EmergencycontactID.isEmpty()) {
+        if (EmergencyContactID.isEmpty()) {
             emergencyContact.setFirst_Name(FirstName);
             emergencyContact.setLast_Name(LastName);
             emergencyContact.setRelationship(Relationship);
@@ -882,7 +882,7 @@ public class MainController {
             emergencyContactRepo.save(emergencyContact);
 
         } else {
-            emergencyContact.setEmergency_Contact_ID(EmergencycontactID);
+            emergencyContact.setEmergency_Contact_ID(EmergencyContactID);
             emergencyContact.setFirst_Name(FirstName);
             emergencyContact.setLast_Name(LastName);
             emergencyContact.setRelationship(Relationship);

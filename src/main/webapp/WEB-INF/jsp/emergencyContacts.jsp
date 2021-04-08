@@ -13,7 +13,6 @@
 <form method="post" action="/submitEmergencyContact">
     <h3>Fields with * are required</h3>
     <input type="hidden" name="EmergencyContactID">
-
     <table>
         <tr>
             <td>First Name</td>
