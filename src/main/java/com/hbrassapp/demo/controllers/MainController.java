@@ -829,6 +829,23 @@ public class MainController {
         return mv;
     }
 
+
+    @RequestMapping(value = "/submitIncidentType", method = RequestMethod.POST)
+    public ModelAndView addMaintenance(@RequestParam("IncidentTypeID") String IncidentTypeID,
+                                       @RequestParam("TypeOfIncident") String TypeOfIncident) {
+        ModelAndView mv = new ModelAndView("redirect:/incidentType");
+        Incident_Type incident_type = new Incident_Type();
+        if (IncidentTypeID.isEmpty()) {
+            incident_type.setType_of_Incident(TypeOfIncident);
+            incidentTypeRepo.save(incident_type);
+        } else {
+            incident_type.setIncident_Type_ID(IncidentTypeID);
+            incident_type.setType_of_Incident(TypeOfIncident);
+            incidentTypeRepo.save(incident_type);
+        }
+        return mv;
+    }
+
     @RequestMapping(value = "/editIncome/{id}", method = RequestMethod.GET)
     public ModelAndView editIncome(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editIncome");
@@ -965,6 +982,68 @@ public class MainController {
         incidentRepo.deleteById(id);
         return mv;
     }
+    @RequestMapping(value = "/editMaintenance/{id}", method = RequestMethod.GET) //Method to edit entry
+    public ModelAndView editMaintenance(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editMaintenance");
+        Optional<Maintenance> editMaintenance = maintenanceRepo.findById(id);
+        Maintenance maintenance = editMaintenance.get();
+        mv.addObject("Maintenance", maintenance);
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitIncident", method = RequestMethod.POST) //Method to create new entry
+    public ModelAndView addIncident(@RequestParam("incidentID") String incidentID,
+                                  @RequestParam("loadID") String loadID,
+                                  @RequestParam("employeeID") String employeeID,
+                                  @RequestParam("remarks") String remarks)
+                                   {
+        ModelAndView mv = new ModelAndView("redirect:/incident");
+        Incident incident = new Incident();
+        if (incidentID.isEmpty()) {
+            //incident.setLoad_ID(loadID);
+            //incident.setEmployee_ID(employeeID);
+            incident.setRemarks(remarks);
+            incidentRepo.save(incident);
+        } else {
+            //incident.setLoad_ID(loadID)
+            //incident.setEmployee_ID(employeeID);
+            incident.setRemarks(remarks);
+            incidentRepo.save(incident);
+        }
+        return mv;
+    }
+
+    //Incident Type Methods
+    @RequestMapping(value = "/editIncidentType/{id}", method = RequestMethod.GET) //Method to edit entry
+    public ModelAndView editIncidentType(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editIncidentType");
+        Optional<Incident_Type> editIncidentTypeTable = incidentTypeRepo.findById(id);
+        Incident_Type incidentType = editIncidentTypeTable.get();
+        mv.addObject("IncidentType", incidentType);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteIncidentType/{id}", method = RequestMethod.GET) //Method to delete entry
+    public ModelAndView deleteIncidentType(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/incidentType");
+        incidentTypeRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/submitIncidentType", method = RequestMethod.POST) //Method to create new entry
+    public ModelAndView addIncidentType(@RequestParam("incidentTypeID") String incidentTypeID,
+                                    @RequestParam("incidentType") String incidentType) {
+        ModelAndView mv = new ModelAndView("redirect:/incidentType");
+        Incident_Type incident_type = new Incident_Type();
+        if (incidentTypeID.isEmpty()) {
+            incident_type.setType_of_Incident(incidentType);
+            incidentTypeRepo.save(incident_type);
+        } else {
+            incident_type.setType_of_Incident(incidentType);
+            incidentTypeRepo.save(incident_type);
+        }
+        return mv;
+    }
+
+
 
     @RequestMapping(value = "/submitInvoiceStatus", method = RequestMethod.POST)
     public ModelAndView addInvoiceStatus(@RequestParam("invoiceStatusID") String invoiceStatusID,
