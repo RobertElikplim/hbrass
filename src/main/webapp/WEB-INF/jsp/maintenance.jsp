@@ -13,7 +13,7 @@
 
 <form method="post" action="/submitMaintenance">
     <h3>Fields with * are required</h3>
-    <input type="hidden" name="MaintenanceID">
+    <input type="hidden" name="MantenanceID">
 
     <table>
         <tr>

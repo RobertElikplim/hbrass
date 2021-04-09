@@ -9,6 +9,24 @@
     <input type="submit" value="Table Management">
 </form>
 
+
+
+<form method="post" action="/submitIncidentType">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="IncidentTypeID">
+    <table>
+        <tr>
+            <td>TypeOfIncident</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="TypeOfIncident" placeholder="*"> </td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Entry">
+    <br>
+    <br>
+</form>
+
 <table class="w3-table-all">
     <tr>
         <th>Incident Type ID</th>
