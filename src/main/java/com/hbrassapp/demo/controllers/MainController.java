@@ -798,6 +798,37 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/submitPickUpLocation", method = RequestMethod.POST)
+    public ModelAndView addPickUpLocation(@RequestParam("PickUpLocationID") String PickUpLocationID,
+                                       @RequestParam("PickUpTrackerCode") String PickUpTrackerCode,
+                                       @RequestParam("PickUpDate") String PickUpDate,
+                                       @RequestParam("StreetAddress") String StreetAddress,
+                                       @RequestParam("City") String City,
+                                          @RequestParam("StateCode") String StateCode,
+                                       @RequestParam("Zipcode") String Zipcode) {
+        ModelAndView mv = new ModelAndView("redirect:/puLocation");
+        Pick_Up_location pul = new Pick_Up_location();
+        if (PickUpLocationID.isEmpty()) {
+            pul.setPuTrackerCode(PickUpTrackerCode);
+            pul.setPuDate(PickUpDate);
+            pul.setStreetAddress(StreetAddress);
+            pul.setCity(City);
+            pul.setStateCode(StateCode);
+            pul.setZipCode(Zipcode);
+            pickUpLocationRepo.save(pul);
+        } else {
+            pul.setPickUpID(PickUpLocationID);
+            pul.setPuTrackerCode(PickUpTrackerCode);
+            pul.setPuDate(PickUpDate);
+            pul.setStreetAddress(StreetAddress);
+            pul.setCity(City);
+            pul.setStateCode(StateCode);
+            pul.setZipCode(Zipcode);
+            pickUpLocationRepo.save(pul);
+        }
+        return mv;
+    }
+
     @RequestMapping(value = "/editIncome/{id}", method = RequestMethod.GET)
     public ModelAndView editIncome(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editIncome");
