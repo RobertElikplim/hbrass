@@ -43,6 +43,10 @@ public class MainController {
     @Autowired
     IncidentRepo incidentRepo;
     @Autowired
+    IncidentStatusRepo incidentStatusRepo;
+    @Autowired
+    IncidentTypeRepo incidentTypeRepo;
+    @Autowired
     IncomeRepo incomeRepo;
     @Autowired
     InsuranceRepo insuranceRepo;
@@ -88,6 +92,7 @@ public class MainController {
     VendorRepo vendorRepo;
 
 
+    //Methods to display pages
     @RequestMapping("/")
     public ModelAndView view(){
         ModelAndView mv = new ModelAndView("signin");
@@ -191,6 +196,22 @@ public class MainController {
     {
         ModelAndView mv = new ModelAndView("incident");
         mv.addObject("incidentList", incidentRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value = "/incidentStatus")
+    public ModelAndView viewincidentStatus()
+    {
+        ModelAndView mv = new ModelAndView("incidentStatus");
+        mv.addObject("incidentStatusList", incidentStatusRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value = "/incidentType")
+    public ModelAndView viewincidentType()
+    {
+        ModelAndView mv = new ModelAndView("incidentType");
+        mv.addObject("incidentTypeList", incidentTypeRepo.findAll());
         return mv;
     }
 
@@ -431,42 +452,6 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/addVendors", method = RequestMethod.POST)
-    public ModelAndView changesVendor(@RequestParam("vendorID") String vendorID,
-                                     @RequestParam("nameVendor") String nameVendor,
-                                     @RequestParam("vendorPhoneNumber") String vendorPhoneNumber,
-                                     @RequestParam("vendorStreetAddress") String vendorStreetAddress,
-                                     @RequestParam("vendorCity") String vendorCity,
-                                     @RequestParam("vendorStateCode") String vendorStateCode,
-                                     @RequestParam("vendorZipCode") String vendorZipCode,
-                                     @RequestParam("vendorEmail") String vendorEmail,
-                                     @RequestParam("vendorTracker") String vendorTracker){
-        ModelAndView mv = new ModelAndView("redirect:/Vendors");
-        Vendor Vendors = new Vendor();
-        if (vendorID.isEmpty()) {
-            Vendors.setVendor_Name(nameVendor);
-            Vendors.setPhone_Number(vendorPhoneNumber);
-            Vendors.setStreet_Address(vendorStreetAddress);
-            Vendors.setCity(vendorCity);
-            Vendors.setState_Code(vendorStateCode);
-            Vendors.setZip_Code(vendorZipCode);
-            Vendors.setEmail(vendorEmail);
-            Vendors.setVendor_Tracker(vendorTracker);
-            vendorRepo.save(Vendors);
-        } else {
-            Vendors.setVendor_ID(vendorID);
-            Vendors.setVendor_Name(nameVendor);
-            Vendors.setPhone_Number(vendorPhoneNumber);
-            Vendors.setStreet_Address(vendorStreetAddress);
-            Vendors.setCity(vendorCity);
-            Vendors.setState_Code(vendorStateCode);
-            Vendors.setZip_Code(vendorZipCode);
-            Vendors.setEmail(vendorEmail);
-            Vendors.setVendor_Tracker(vendorTracker);
-            vendorRepo.save(Vendors);
-        }
-        return mv;
-    }
 
     @RequestMapping(value = "/addBrokerCompany")
     public ModelAndView addBrokerCompany() {
@@ -784,6 +769,66 @@ public class MainController {
         }
         return mv;
     }
+    @RequestMapping(value = "/submitMaintenance", method = RequestMethod.POST)
+    public ModelAndView addMaintenance(@RequestParam("MaintenanceID") String MaintenanceID,
+                                           @RequestParam("Mileage") String Mileage,
+                                           @RequestParam("ServiceDate") String ServiceDate,
+                                           @RequestParam("Service") String Service,
+                                           @RequestParam("ServiceFee") String ServiceFee,
+                                           @RequestParam("TruckIdVin") String TruckIdVin)
+            {
+        ModelAndView mv = new ModelAndView("redirect:/maintenance");
+        Maintenance maintenance = new Maintenance();
+        if (MaintenanceID.isEmpty()) {
+            maintenance.setMileage(Mileage);
+            maintenance.setServiceDate(ServiceDate);
+            maintenance.setService(Service);
+            maintenance.setServiceFee(ServiceFee);
+            maintenance.setTruckIDVIN(TruckIdVin);
+            maintenanceRepo.save(maintenance);
+        } else {
+            maintenance.setMaintenanceID(MaintenanceID);
+            maintenance.setMileage(Mileage);
+            maintenance.setServiceDate(ServiceDate);
+            maintenance.setService(Service);
+            maintenance.setServiceFee(ServiceFee);
+            maintenance.setTruckIDVIN(TruckIdVin);
+            maintenanceRepo.save(maintenance);
+        }
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitPickUpLocation", method = RequestMethod.POST)
+    public ModelAndView addPickUpLocation(@RequestParam("PickUpLocationID") String PickUpLocationID,
+                                       @RequestParam("PickUpTrackerCode") String PickUpTrackerCode,
+                                       @RequestParam("PickUpDate") String PickUpDate,
+                                       @RequestParam("StreetAddress") String StreetAddress,
+                                       @RequestParam("City") String City,
+                                          @RequestParam("StateCode") String StateCode,
+                                       @RequestParam("Zipcode") String Zipcode) {
+        ModelAndView mv = new ModelAndView("redirect:/puLocation");
+        Pick_Up_location pul = new Pick_Up_location();
+        if (PickUpLocationID.isEmpty()) {
+            pul.setPuTrackerCode(PickUpTrackerCode);
+            pul.setPuDate(PickUpDate);
+            pul.setStreetAddress(StreetAddress);
+            pul.setCity(City);
+            pul.setStateCode(StateCode);
+            pul.setZipCode(Zipcode);
+            pickUpLocationRepo.save(pul);
+        } else {
+            pul.setPickUpID(PickUpLocationID);
+            pul.setPuTrackerCode(PickUpTrackerCode);
+            pul.setPuDate(PickUpDate);
+            pul.setStreetAddress(StreetAddress);
+            pul.setCity(City);
+            pul.setStateCode(StateCode);
+            pul.setZipCode(Zipcode);
+            pickUpLocationRepo.save(pul);
+        }
+        return mv;
+    }
+
     @RequestMapping(value = "/editIncome/{id}", method = RequestMethod.GET)
     public ModelAndView editIncome(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editIncome");
@@ -853,38 +898,71 @@ public class MainController {
     public ModelAndView save(@RequestParam("id") String id,
                              @RequestParam("uname") String uname,
                              @RequestParam("pwd") String pwd,
-                             @RequestParam("admin") String admin){
-            ModelAndView mv = new ModelAndView("signup");
-            System_Login register;
-            if (!id.isEmpty()) {
-                Optional<System_Login> signIn = systemLoginRepo.findById(uname.toString());
-                register = signIn.get();
-            } else {
-                register = new System_Login();
-            }
-            register.setUsername(uname);
-            register.setPassword(pwd);
-            register.setPrivileges(admin);
-            systemLoginRepo.save(register);
-            mv.addObject("thelist", systemLoginRepo.findAll());
-            return mv;
-        }
-    @RequestMapping(value = "/submitDriverTruck", method = RequestMethod.POST)
-    public ModelAndView addDriverTruck(@RequestParam("truckDriverID") String truckDriverID,
-                                       @RequestParam("driverLicenseType") String driverLicenseType,
-                                       @RequestParam("driverStateCode") String driverStateCode) {
-        ModelAndView mv = new ModelAndView("redirect:/truckDriver");
-        Truck_Driver tdriver = new Truck_Driver();
-        if (truckDriverID.isEmpty()) {
-            tdriver.setLicense_Type(driverLicenseType);
-            tdriver.setState_Code(driverStateCode);
-            truckDriverRepo.save(tdriver);
+                             @RequestParam("admin") String admin) {
+        ModelAndView mv = new ModelAndView("signup");
+        System_Login register;
+        if (!id.isEmpty()) {
+            Optional<System_Login> signIn = systemLoginRepo.findById(uname.toString());
+            register = signIn.get();
         } else {
-            tdriver.setDriver_ID(truckDriverID);
-            tdriver.setLicense_Type(driverLicenseType);
-            tdriver.setState_Code(driverStateCode);
-            truckDriverRepo.save(tdriver);
+            register = new System_Login();
         }
+        register.setUsername(uname);
+        register.setPassword(pwd);
+        register.setPrivileges(admin);
+        systemLoginRepo.save(register);
+        mv.addObject("thelist", systemLoginRepo.findAll());
+        return mv;
+    }
+
+    //Emergency Contact
+
+    @RequestMapping(value = "/submitEmergencyContact", method = RequestMethod.POST)
+    public ModelAndView changesEmergencyContact(@RequestParam("EmergencyContactID") String EmergencyContactID,
+                                              @RequestParam("FirstName") String FirstName,
+                                              @RequestParam("LastName") String LastName,
+                                              @RequestParam("Relationship") String Relationship,
+                                              @RequestParam("PhoneNumber") String PhoneNumber,
+                                              @RequestParam("StreetAddress") String StreetAddress) {
+
+        ModelAndView mv = new ModelAndView("redirect:/emergencyContacts");
+
+        Emergency_Contact emergencyContact = new Emergency_Contact();
+
+        if (EmergencyContactID.isEmpty()) {
+            emergencyContact.setFirst_Name(FirstName);
+            emergencyContact.setLast_Name(LastName);
+            emergencyContact.setRelationship(Relationship);
+            emergencyContact.setPhone_Number(PhoneNumber);
+            emergencyContact.setStreet_Address(StreetAddress);
+            emergencyContactRepo.save(emergencyContact);
+
+        } else {
+            emergencyContact.setEmergency_Contact_ID(EmergencyContactID);
+            emergencyContact.setFirst_Name(FirstName);
+            emergencyContact.setLast_Name(LastName);
+            emergencyContact.setRelationship(Relationship);
+            emergencyContact.setPhone_Number(PhoneNumber);
+            emergencyContact.setStreet_Address(StreetAddress);
+            emergencyContactRepo.save(emergencyContact);
+
+
+        }
+        return mv;
+    }
+    //Incident
+    @RequestMapping(value = "/editIncident/{id}", method = RequestMethod.GET) //Method to edit entry
+    public ModelAndView editIncident(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editIncident");
+        Optional<Incident> editIncidentTable = incidentRepo.findById(id);
+        Incident incident = editIncidentTable.get();
+        mv.addObject("Incident", incident);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteIncident/{id}", method = RequestMethod.GET) //Method to delete entry
+    public ModelAndView deleteIncident(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/incident");
+        incidentRepo.deleteById(id);
         return mv;
     }
 

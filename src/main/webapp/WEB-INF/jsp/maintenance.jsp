@@ -8,9 +8,34 @@
 <form method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
-<form>
 
+
+
+<form method="post" action="/submitMaintenance">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="MaintenanceID">
+
+    <table>
+        <tr>
+            <td>Mileage</td>
+            <td>ServiceDate</td>
+            <td>Service</td>
+            <td>ServiceFee</td>
+            <td>VIN</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="Mileage" placeholder="*"> </td>
+            <td><input type="date" name="ServiceDate" placeholder="*"></td>
+            <td><input type="text" name="Service" placeholder="*"></td>
+            <td><input type="text" name="ServiceFee"></td>
+            <td><input type="text" name="TruckIdVin"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Entry">
+    <br>
+    <br>
 </form>
+
 <table class="w3-table-all">
     <tr>
         <th>Maintenance ID</th>

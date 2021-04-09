@@ -10,6 +10,29 @@
     <input type="submit" value="Table Management">
 </form>
 
+<form method="post" action="/submitEmergencyContact">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="EmergencyContactID">
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Relationship</td>
+            <td>Phone Number</td>
+            <td>Street Address</td>
+        </tr>
+        <tr>
+          <td><input type="text" name="FirstName" placeholder =  "*" > </td>
+            <td><input type="text" name="LastName" placeholder =  "*"> </td>
+            <td><input type="text" name="Relationship" placeholder =  "*" > </td>
+            <td><input type="text" name="PhoneNumber" placeholder =  "*"> </td>
+            <td><input type="text" name="StreetAddress" placeholder =  "*" ></td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Entry">
+    <br>
+    <br>
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Emergency Contact ID</th>
