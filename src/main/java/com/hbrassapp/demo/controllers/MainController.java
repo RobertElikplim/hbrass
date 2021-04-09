@@ -1024,4 +1024,26 @@ public class MainController {
         }
         return mv;
     }
+
+    @RequestMapping(value = "/submitInsuranceTable", method = RequestMethod.POST)
+    public ModelAndView addIns(@RequestParam("insureID") String insureID,
+                                         @RequestParam("insuranceID") String insuranceID,
+                                         @RequestParam("insuranceType") String insuranceType,
+                                         @RequestParam("coverageExpiration") String coverageExpiration){
+
+        ModelAndView mv = new ModelAndView("redirect:/invoiceStatus");
+        Insurance insur = new Insurance();
+        if (insureID.isEmpty()) {
+            insur.setInsurance_ID(insuranceID);
+            insur.setInsurance_Type(insuranceType);
+            insur.setCoverage_Expiration(coverageExpiration);
+            insuranceRepo.save(insur);
+        } else {
+            insur.setInsurance_ID(insuranceID);
+            insur.setInsurance_Type(insuranceType);
+            insur.setCoverage_Expiration(coverageExpiration);
+            insuranceRepo.save(insur);
+        }
+        return mv;
+    }
 }
