@@ -9,7 +9,33 @@
 <form method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
+<form method="post" action="/addVendors">
+    <input type="hidden" name="vendorID">
+    <table>
+        <tr>
+            <td>Vendor Name</td>
+            <td>Phone Number</td>
+            <td>Street Address</td>
+            <td>City</td>
+            <td>State Code</td>
+            <td>Zip Code</td>
+            <td>Email</td>
+            <td>Vendor Tracker</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="nameVendor"></td>
+            <td><input type="text" name="vendorPhoneNumber"></td>
+            <td><input type="text" name="vendorStreetAddress"></td>
+            <td><input type="text" name="vendorCity"></td>
+            <td><input type="text" name="vendorStateCode"></td>
+            <td><input type="text" name="vendorZipCode"></td>
+            <td><input type="text" name="vendorEmail"></td>
+            <td><input type="text" name="vendorTracker"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Vendor">
 
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Vendor ID</th>
