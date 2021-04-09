@@ -23,7 +23,6 @@
             <td><input type="text" name="Service" value ="${Maintenance.getService()}"></td>
             <td><input type="text" name="ServiceFee" value ="${Maintenance.getServiceFee()}"></td>
             <td><input type="text" name="TruckIdVin" value ="${Maintenance.getTruckIDVIN()}"></td>
-
         </tr>
         <br>
     </table>
