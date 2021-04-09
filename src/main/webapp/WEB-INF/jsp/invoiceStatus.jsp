@@ -8,7 +8,21 @@
 <form method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
-
+<form method="post" action="/submitInvoiceStatus">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="invoiceStatusID" >
+    <table>
+        <tr>
+            <td>Invoice Status</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="invoiceStatus" placeholder="*"> </td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Entry">
+    <br>
+    <br>
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Invoice Status ID</th>

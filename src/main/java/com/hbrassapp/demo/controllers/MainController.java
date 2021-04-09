@@ -966,4 +966,20 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/submitInvoiceStatus", method = RequestMethod.POST)
+    public ModelAndView addInvoiceStatus(@RequestParam("invoiceStatusID") String invoiceStatusID,
+                                  @RequestParam("invoiceStatus") String invoiceStatus){
+
+        ModelAndView mv = new ModelAndView("redirect:/invoiceStatus");
+        Invoice_Status invoiceStat = new Invoice_Status();
+        if (invoiceStatusID.isEmpty()) {
+            invoiceStat.setInvoice_Status(invoiceStatus);
+            invoiceStatusRepo.save(invoiceStat);
+        } else {
+            invoiceStat.setInvoice_ID(invoiceStatusID);
+            invoiceStat.setInvoice_Status(invoiceStatus);
+            invoiceStatusRepo.save(invoiceStat);
+        }
+        return mv;
+    }
 }
