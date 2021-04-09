@@ -431,6 +431,42 @@ public class MainController {
     }
 
 
+    @RequestMapping(value = "/addVendors", method = RequestMethod.POST)
+    public ModelAndView changesVendor(@RequestParam("vendorID") String vendorID,
+                                     @RequestParam("nameVendor") String nameVendor,
+                                     @RequestParam("vendorPhoneNumber") String vendorPhoneNumber,
+                                     @RequestParam("vendorStreetAddress") String vendorStreetAddress,
+                                     @RequestParam("vendorCity") String vendorCity,
+                                     @RequestParam("vendorStateCode") String vendorStateCode,
+                                     @RequestParam("vendorZipCode") String vendorZipCode,
+                                     @RequestParam("vendorEmail") String vendorEmail,
+                                     @RequestParam("vendorTracker") String vendorTracker){
+        ModelAndView mv = new ModelAndView("redirect:/Vendors");
+        Vendor Vendors = new Vendor();
+        if (vendorID.isEmpty()) {
+            Vendors.setVendor_Name(nameVendor);
+            Vendors.setPhone_Number(vendorPhoneNumber);
+            Vendors.setStreet_Address(vendorStreetAddress);
+            Vendors.setCity(vendorCity);
+            Vendors.setState_Code(vendorStateCode);
+            Vendors.setZip_Code(vendorZipCode);
+            Vendors.setEmail(vendorEmail);
+            Vendors.setVendor_Tracker(vendorTracker);
+            vendorRepo.save(Vendors);
+        } else {
+            Vendors.setVendor_ID(vendorID);
+            Vendors.setVendor_Name(nameVendor);
+            Vendors.setPhone_Number(vendorPhoneNumber);
+            Vendors.setStreet_Address(vendorStreetAddress);
+            Vendors.setCity(vendorCity);
+            Vendors.setState_Code(vendorStateCode);
+            Vendors.setZip_Code(vendorZipCode);
+            Vendors.setEmail(vendorEmail);
+            Vendors.setVendor_Tracker(vendorTracker);
+            vendorRepo.save(Vendors);
+        }
+        return mv;
+    }
 
     @RequestMapping(value = "/addBrokerCompany")
     public ModelAndView addBrokerCompany() {
@@ -817,24 +853,39 @@ public class MainController {
     public ModelAndView save(@RequestParam("id") String id,
                              @RequestParam("uname") String uname,
                              @RequestParam("pwd") String pwd,
-                             @RequestParam("admin") String admin) {
-        ModelAndView mv = new ModelAndView("signup");
-        System_Login register;
-        if (!id.isEmpty()) {
-            Optional<System_Login> signIn = systemLoginRepo.findById(uname.toString());
-            register = signIn.get();
-        } else {
-            register = new System_Login();
+                             @RequestParam("admin") String admin){
+            ModelAndView mv = new ModelAndView("signup");
+            System_Login register;
+            if (!id.isEmpty()) {
+                Optional<System_Login> signIn = systemLoginRepo.findById(uname.toString());
+                register = signIn.get();
+            } else {
+                register = new System_Login();
+            }
+            register.setUsername(uname);
+            register.setPassword(pwd);
+            register.setPrivileges(admin);
+            systemLoginRepo.save(register);
+            mv.addObject("thelist", systemLoginRepo.findAll());
+            return mv;
         }
-        register.setUsername(uname);
-        register.setPassword(pwd);
-        register.setPrivileges(admin);
-        systemLoginRepo.save(register);
-        mv.addObject("thelist", systemLoginRepo.findAll());
+    @RequestMapping(value = "/submitDriverTruck", method = RequestMethod.POST)
+    public ModelAndView addDriverTruck(@RequestParam("truckDriverID") String truckDriverID,
+                                       @RequestParam("driverLicenseType") String driverLicenseType,
+                                       @RequestParam("driverStateCode") String driverStateCode) {
+        ModelAndView mv = new ModelAndView("redirect:/truckDriver");
+        Truck_Driver tdriver = new Truck_Driver();
+        if (truckDriverID.isEmpty()) {
+            tdriver.setLicense_Type(driverLicenseType);
+            tdriver.setState_Code(driverStateCode);
+            truckDriverRepo.save(tdriver);
+        } else {
+            tdriver.setDriver_ID(truckDriverID);
+            tdriver.setLicense_Type(driverLicenseType);
+            tdriver.setState_Code(driverStateCode);
+            truckDriverRepo.save(tdriver);
+        }
         return mv;
     }
-
-
-
 
 }

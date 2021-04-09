@@ -9,7 +9,24 @@
 <form method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
-
+<form method="post" action="/submitDriverTruck">
+    <h3>Fields with * are required</h3>
+    <table>
+        <tr>
+            <td>Driver License</td>
+            <td>License Type</td>
+            <td>State Code</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="truckDriverID" placeholder="*"></td>
+            <td><input type="text" name="driverLicenseType" placeholder="*"> </td>
+            <td><input type="text" name="driverStateCode" placeholder="*"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Entry">
+    <br>
+    <br>
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Driver ID</th>
