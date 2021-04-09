@@ -9,6 +9,35 @@
     <input type="submit" value="Table Management">
 </form>
 
+
+
+<form method="post" action="/submitPickUpLocation">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="PickUpLocationID">
+
+    <table>
+        <tr>
+            <td>PickUpTrackerCode</td>
+            <td>PickUpDate</td>
+            <td>StreetAddress</td>
+            <td>City</td>
+            <td>StateCode</td>
+            <td>Zipcode</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="PickUpTrackerCode" placeholder="*"> </td>
+            <td><input type="date" name="PickUpDate" placeholder="*"></td>
+            <td><input type="text" name="StreetAddress" placeholder="*"></td>
+            <td><input type="text" name="City"></td>
+            <td><input type="text" name="StateCode"></td>
+            <td><input type="text" name="Zipcode"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Entry">
+    <br>
+    <br>
+</form>
+
 <table class="w3-table-all">
     <tr>
         <th>Pick Up ID</th>
