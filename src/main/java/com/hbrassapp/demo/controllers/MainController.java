@@ -829,23 +829,6 @@ public class MainController {
         return mv;
     }
 
-
-    @RequestMapping(value = "/submitIncidentType", method = RequestMethod.POST)
-    public ModelAndView addMaintenance(@RequestParam("IncidentTypeID") String IncidentTypeID,
-                                       @RequestParam("TypeOfIncident") String TypeOfIncident) {
-        ModelAndView mv = new ModelAndView("redirect:/incidentType");
-        Incident_Type incident_type = new Incident_Type();
-        if (IncidentTypeID.isEmpty()) {
-            incident_type.setType_of_Incident(TypeOfIncident);
-            incidentTypeRepo.save(incident_type);
-        } else {
-            incident_type.setIncident_Type_ID(IncidentTypeID);
-            incident_type.setType_of_Incident(TypeOfIncident);
-            incidentTypeRepo.save(incident_type);
-        }
-        return mv;
-    }
-
     @RequestMapping(value = "/editIncome/{id}", method = RequestMethod.GET)
     public ModelAndView editIncome(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editIncome");
@@ -991,27 +974,7 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/submitIncident", method = RequestMethod.POST) //Method to create new entry
-    public ModelAndView addIncident(@RequestParam("incidentID") String incidentID,
-                                  @RequestParam("loadID") String loadID,
-                                  @RequestParam("employeeID") String employeeID,
-                                  @RequestParam("remarks") String remarks)
-                                   {
-        ModelAndView mv = new ModelAndView("redirect:/incident");
-        Incident incident = new Incident();
-        if (incidentID.isEmpty()) {
-            //incident.setLoad_ID(loadID);
-            //incident.setEmployee_ID(employeeID);
-            incident.setRemarks(remarks);
-            incidentRepo.save(incident);
-        } else {
-            //incident.setLoad_ID(loadID)
-            //incident.setEmployee_ID(employeeID);
-            incident.setRemarks(remarks);
-            incidentRepo.save(incident);
-        }
-        return mv;
-    }
+
 
     //Incident Type Methods
     @RequestMapping(value = "/editIncidentType/{id}", method = RequestMethod.GET) //Method to edit entry
