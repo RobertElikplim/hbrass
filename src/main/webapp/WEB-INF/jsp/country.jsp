@@ -17,7 +17,7 @@
             <td>Country </td>
         </tr>
         <tr>
-            <td><select type="" name="cc">
+            <td><select name="cc">
                     <option data-countryCode="GB" value="44" >UK (+44)</option>
                     <option data-countryCode="US" value="1">USA (+1)</option>
                     <option data-countryCode="DZ" value="213">Algeria (+213)</option>
