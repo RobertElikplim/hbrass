@@ -11,6 +11,7 @@
 </form>
 <form method="post" action="/submitDriverTruck">
     <h3>Fields with * are required</h3>
+    <input type="hidden" name="truckDriverID">
     <table>
         <tr>
             <td>Driver License</td>
@@ -18,7 +19,7 @@
             <td>State Code</td>
         </tr>
         <tr>
-            <td><input type="text" name="truckDriverID" placeholder="*"></td>
+            <td><input type="text" name="driverID" placeholder="*"></td>
             <td><input type="text" name="driverLicenseType" placeholder="*"> </td>
             <td><input type="text" name="driverStateCode" placeholder="*"></td>
         </tr>
