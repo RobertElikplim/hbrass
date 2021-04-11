@@ -1264,4 +1264,12 @@ public class MainController {
         mv.addObject("Trailer", trailer);
         return mv;
     }
+    @RequestMapping(value = "/editTire/{id}", method = RequestMethod.GET)
+    public ModelAndView editTires(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editTire");
+        Optional<Tire> editTire = tireRepo.findById(id);
+        Tire tire = editTire.get();
+        mv.addObject("Tire", tire);
+        return mv;
+    }
 }
