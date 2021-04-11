@@ -1163,4 +1163,44 @@ public class MainController {
         }
         return mv;
     }
+
+    @RequestMapping(value = "/editInsurance/{insureID}", method = RequestMethod.GET)
+    public ModelAndView editIns(@PathVariable("insureID") String insureID) {
+        ModelAndView mv = new ModelAndView("editinsurance");
+        Optional<Insurance> editINS = insuranceRepo.findById(insureID);
+        Insurance insr = editINS.get();
+        mv.addObject("Insurance", insr);
+        return mv;
+    }
+
+    @RequestMapping(value = "/deleteInsurance/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteINS(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/insurance");
+        insuranceRepo.deleteById(id);
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitDriverTruck", method = RequestMethod.POST)
+    public ModelAndView addTdriver(@RequestParam("truckDriverID") String truckDriverID,
+                                   @RequestParam("driverID") String driverID,
+                                   @RequestParam("driverLicenseType") String driverLicenseType,
+                                   @RequestParam("driverStateCode") String driverStateCode) {
+
+        ModelAndView mv = new ModelAndView("redirect:/truckDriver");
+        Truck_Driver trudriv = new Truck_Driver();
+        if (truckDriverID.isEmpty()) {
+            trudriv.setDriver_ID(driverID);
+            trudriv.setLicense_Type(driverLicenseType);
+            trudriv.setState_Code(driverStateCode);
+            truckDriverRepo.save(trudriv);
+        } else {
+            trudriv.setTruck_Driver_ID(truckDriverID);
+            trudriv.setDriver_ID(driverID);
+            trudriv.setLicense_Type(driverLicenseType);
+            trudriv.setState_Code(driverStateCode);
+            truckDriverRepo.save(trudriv);
+        }
+        return mv;
+    }
+
 }
