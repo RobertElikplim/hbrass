@@ -1114,14 +1114,17 @@ public class MainController {
         return mv;
     }
     @RequestMapping(value = "/submitCountry", method = RequestMethod.POST)
-    public ModelAndView addCountry(@RequestParam("cc") String cc,
+    public ModelAndView addCountry(@RequestParam("colID") String colID,
+                                   @RequestParam("cc") String cc,
                                    @RequestParam("c") String c){
         ModelAndView mv = new ModelAndView("redirect:/country");
         Country country = new Country();
-        if (cc.isEmpty()) {
+        if (colID.isEmpty()) {
+            country.setCountry_Code(cc);
             country.setCountry_Name(c);
             countryRepo.save(country);
         } else {
+            country.setColumn_ID(colID);
             country.setCountry_Code(cc);
             country.setCountry_Name(c);
             countryRepo.save(country);
