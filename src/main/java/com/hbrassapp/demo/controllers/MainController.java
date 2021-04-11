@@ -1264,12 +1264,21 @@ public class MainController {
         mv.addObject("Trailer", trailer);
         return mv;
     }
+
     @RequestMapping(value = "/editTire/{id}", method = RequestMethod.GET)
     public ModelAndView editTires(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editTire");
         Optional<Tire> editTire = tireRepo.findById(id);
         Tire tire = editTire.get();
         mv.addObject("Tire", tire);
+        return mv;
+    }
+    @RequestMapping(value = "/editEmployee_Status/{id}", method = RequestMethod.GET)
+    public ModelAndView editES(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editEmployeeStatus");
+        Optional<Employee_Status> editEs = employeeStatusRepo.findById(id);
+        Employee_Status employeeStatus = editEs.get();
+        mv.addObject("Employee_Status", employeeStatus);
         return mv;
     }
 }
