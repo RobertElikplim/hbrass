@@ -1047,10 +1047,33 @@ public class MainController {
         }
         return mv;
     }
-    @RequestMapping(value = "/editTruck_Driver/{id}", method = RequestMethod.GET)
-    public ModelAndView editTruckDriver(@PathVariable("id") String id) {
+    @RequestMapping(value = "/submitDriverTruck", method = RequestMethod.POST)
+    public ModelAndView addTdriver(@RequestParam("truckDriverID") String truckDriverID,
+                                   @RequestParam("driverID") String driverID,
+                                   @RequestParam("driverLicenseType") String driverLicenseType,
+                                   @RequestParam("driverStateCode") String driverStateCode) {
+
+        ModelAndView mv = new ModelAndView("redirect:/truckDriver");
+        Truck_Driver trudriv = new Truck_Driver();
+        if (truckDriverID.isEmpty()) {
+            trudriv.setDriver_ID(driverID);
+            trudriv.setLicense_Type(driverLicenseType);
+            trudriv.setState_Code(driverStateCode);
+            truckDriverRepo.save(trudriv);
+        } else {
+            trudriv.setTruck_Driver_ID(truckDriverID);
+            trudriv.setDriver_ID(driverID);
+            trudriv.setLicense_Type(driverLicenseType);
+            trudriv.setState_Code(driverStateCode);
+            truckDriverRepo.save(trudriv);
+        }
+        return mv;
+    }
+
+    @RequestMapping(value = "/editTruck_Driver/{truckDriverID}", method = RequestMethod.GET)
+    public ModelAndView editTruckDriver(@PathVariable("truckDriverID") String truckDriverID) {
         ModelAndView mv = new ModelAndView("editTruckDriver");
-        Optional<Truck_Driver> editTD = truckDriverRepo.findById(id);
+        Optional<Truck_Driver> editTD = truckDriverRepo.findById(truckDriverID);
         Truck_Driver tdv = editTD.get();
         mv.addObject("Truck_Driver", tdv);
         return mv;
