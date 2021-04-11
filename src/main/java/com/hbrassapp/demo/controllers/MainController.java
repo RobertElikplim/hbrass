@@ -1114,7 +1114,7 @@ public class MainController {
         return mv;
     }
     @RequestMapping(value = "/submitCountry", method = RequestMethod.POST)
-    public ModelAndView addTrailer(@RequestParam("cc") String cc,
+    public ModelAndView addCountry(@RequestParam("cc") String cc,
                                    @RequestParam("c") String c){
         ModelAndView mv = new ModelAndView("redirect:/country");
         Country country = new Country();
@@ -1143,6 +1143,7 @@ public class MainController {
         truckDriverRepo.deleteById(id);
         return mv;
     }
+
     @RequestMapping(value = "/submitEmployeeStatus", method = RequestMethod.POST)
     public ModelAndView addEmpStatus(@RequestParam("empID") String empID,
                                      @RequestParam("eStatus") String eStatus){
@@ -1159,5 +1160,4 @@ public class MainController {
         }
         return mv;
     }
-
 }
