@@ -1203,4 +1203,40 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/addVendors", method = RequestMethod.POST)
+    public ModelAndView changesVendor(@RequestParam("vendorID") String vendorID,
+                                      @RequestParam("nameVendor") String nameVendor,
+                                      @RequestParam("vendorPhoneNumber") String vendorPhoneNumber,
+                                      @RequestParam("vendorStreetAddress") String vendorStreetAddress,
+                                      @RequestParam("vendorCity") String vendorCity,
+                                      @RequestParam("vendorStateCode") String vendorStateCode,
+                                      @RequestParam("vendorZipCode") String vendorZipCode,
+                                      @RequestParam("vendorEmail") String vendorEmail,
+                                      @RequestParam("vendorTracker") String vendorTracker){
+        ModelAndView mv = new ModelAndView("redirect:/Vendors");
+        Vendor Vendors = new Vendor();
+        if (vendorID.isEmpty()) {
+            Vendors.setVendor_Name(nameVendor);
+            Vendors.setPhone_Number(vendorPhoneNumber);
+            Vendors.setStreet_Address(vendorStreetAddress);
+            Vendors.setCity(vendorCity);
+            Vendors.setState_Code(vendorStateCode);
+            Vendors.setZip_Code(vendorZipCode);
+            Vendors.setEmail(vendorEmail);
+            Vendors.setVendor_Tracker(vendorTracker);
+            vendorRepo.save(Vendors);
+        } else {
+            Vendors.setVendor_ID(vendorID);
+            Vendors.setVendor_Name(nameVendor);
+            Vendors.setPhone_Number(vendorPhoneNumber);
+            Vendors.setStreet_Address(vendorStreetAddress);
+            Vendors.setCity(vendorCity);
+            Vendors.setState_Code(vendorStateCode);
+            Vendors.setZip_Code(vendorZipCode);
+            Vendors.setEmail(vendorEmail);
+            Vendors.setVendor_Tracker(vendorTracker);
+            vendorRepo.save(Vendors);
+        }
+        return mv;
+    }
 }
