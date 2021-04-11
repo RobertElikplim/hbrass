@@ -27,7 +27,7 @@
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Changes">
+    <input type="submit" value="Submit Change">
     <br>
 </form>
 </body>
