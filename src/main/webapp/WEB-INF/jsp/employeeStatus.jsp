@@ -9,7 +9,21 @@
 <form method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
-
+<form method="post" action="/submitEmployeeStatus">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="empID">
+    <table>
+        <tr>
+            <td>Employee Status</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="eStatus" placeholder="*"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Entry">
+    <br>
+    <br>
+</form>
 <table>
     <tr>
         <th>Employee ID</th>
