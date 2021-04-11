@@ -6,24 +6,22 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body style="text-align: center;">
-<form method="post" action="/submitDOL">
-    <td><input type="hidden" name="dropOffID" value="${Drop_Off_Location.getDrop_Off_ID()}"></td>
+<form method="post" action="/submitTrailer">
+    <td><input type="hidden" name="cID" value="${Trailer.getColumn_ID()}"></td>
     <table class="w3-table-all">
         <tr>
-            <td>Drop Off Tracker Code</td>
-            <td>Drop Off Date</td>
-            <td>Street Address</td>
-            <td>City</td>
-            <td>State Code</td>
-            <td>Zip Code</td>
+            <td>Trailer ID</td>
+            <td>Trailer Code</td>
+            <td>Type of Trailer</td>
+            <td>Weight of Trailer</td>
+            <td>License Plate</td>
         </tr>
         <tr>
-            <td><input type="text" name="tCode" value ="${Drop_Off_Location.getDrop_Off_Tracker_Code()}"></td>
-            <td><input type="date" name="dDate" value ="${Drop_Off_Location.getDrop_Off_Date()}"></td>
-            <td><input type="text" name="sAddy" value ="${Drop_Off_Location.getStreet_Address()}"></td>
-            <td><input type="text" name="dCity" value ="${Drop_Off_Location.getCity()}"></td>
-            <td><input type="text" name="sCode" value ="${Drop_Off_Location.getState_Code()}"></td>
-            <td><input type="text" name="zCode" value ="${Drop_Off_Location.getZip_Code()}"></td>
+            <td><input type="text" name="trailerID" value ="${Trailer.getTrailer_ID()}"></td>
+            <td><input type="text" name="tc" value ="${Trailer.getTrailer_Code()}"></td>
+            <td><input type="text" name="tot" value ="${Trailer.getType_Of_Trailer()}"></td>
+            <td><input type="text" name="weight" value ="${Trailer.getWeight_Of_Trailer()}"></td>
+            <td><input type="text" name="lcp" value ="${Trailer.getLicense_Plate()}"></td>
         </tr>
         <br>
     </table>
