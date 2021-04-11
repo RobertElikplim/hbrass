@@ -1047,91 +1047,33 @@ public class MainController {
         }
         return mv;
     }
-    @RequestMapping(value = "/submitIfta", method = RequestMethod.POST)
-    public ModelAndView addIfta(@RequestParam("iftaID") String iftaID,
-                                @RequestParam("ifta") String ifta,
-                                @RequestParam("vin") String vin,
-                                @RequestParam("eDate") String eDate){
+    @RequestMapping(value = "/submitDriverTruck", method = RequestMethod.POST)
+    public ModelAndView addTdriver(@RequestParam("truckDriverID") String truckDriverID,
+                                   @RequestParam("driverID") String driverID,
+                                   @RequestParam("driverLicenseType") String driverLicenseType,
+                                   @RequestParam("driverStateCode") String driverStateCode) {
 
-        ModelAndView mv = new ModelAndView("redirect:/iftaSticker");
-        IFTA_Sticker iftas = new IFTA_Sticker();
-        if (iftaID.isEmpty()) {
-            iftas.setIFTA_Status(ifta);
-            iftas.setTruck_ID_VIN(vin);
-            iftas.setIFTA_Expiration_Date(eDate);
-            ifta_stickerRepo.save(iftas);
+        ModelAndView mv = new ModelAndView("redirect:/truckDriver");
+        Truck_Driver trudriv = new Truck_Driver();
+        if (truckDriverID.isEmpty()) {
+            trudriv.setDriver_ID(driverID);
+            trudriv.setLicense_Type(driverLicenseType);
+            trudriv.setState_Code(driverStateCode);
+            truckDriverRepo.save(trudriv);
         } else {
-            iftas.setIFTA_ID(iftaID);
-            iftas.setIFTA_Status(ifta);
-            iftas.setTruck_ID_VIN(vin);
-            iftas.setIFTA_Expiration_Date(eDate);
-            ifta_stickerRepo.save(iftas);
-        }
-        return mv;
-    }
-    @RequestMapping(value = "/submitTire", method = RequestMethod.POST)
-    public ModelAndView addIfta(@RequestParam("tireID") String tireID,
-                                @RequestParam("tire") String tire){
-
-        ModelAndView mv = new ModelAndView("redirect:/tire");
-        Tire tire1 = new Tire();
-        if (tireID.isEmpty()) {
-            tire1.setTire_Name(tire);
-            tireRepo.save(tire1);
-        } else {
-            tire1.setTire_ID(tireID);
-            tire1.setTire_Name(tire);
-            tireRepo.save(tire1);
+            trudriv.setTruck_Driver_ID(truckDriverID);
+            trudriv.setDriver_ID(driverID);
+            trudriv.setLicense_Type(driverLicenseType);
+            trudriv.setState_Code(driverStateCode);
+            truckDriverRepo.save(trudriv);
         }
         return mv;
     }
 
-    @RequestMapping(value = "/submitTrailer", method = RequestMethod.POST)
-    public ModelAndView addTrailer(@RequestParam("cID") String cID,
-                                   @RequestParam("trailerID") String trailerID,
-                                   @RequestParam("tc") String tc,
-                                   @RequestParam("tot") String tot,
-                                   @RequestParam("weight") String weight,
-                                   @RequestParam("lcp") String lcp){
-        ModelAndView mv = new ModelAndView("redirect:/Trailer");
-        Trailer trailer = new Trailer();
-        if (cID.isEmpty()) {
-            trailer.setTrailer_ID(trailerID);
-            trailer.setTrailer_Code(tc);
-            trailer.setType_Of_Trailer(tot);
-            trailer.setWeight_Of_Trailer(weight);
-            trailer.setLicense_Plate(lcp);
-            trailerRepo.save(trailer);
-        } else {
-            trailer.setColumn_ID(cID);
-            trailer.setTrailer_ID(trailerID);
-            trailer.setTrailer_Code(tc);
-            trailer.setType_Of_Trailer(tot);
-            trailer.setWeight_Of_Trailer(weight);
-            trailer.setLicense_Plate(lcp);
-            trailerRepo.save(trailer);
-        }
-        return mv;
-    }
-    @RequestMapping(value = "/submitCountry", method = RequestMethod.POST)
-    public ModelAndView addTrailer(@RequestParam("cc") String cc,
-                                   @RequestParam("c") String c){
-        ModelAndView mv = new ModelAndView("redirect:/country");
-        Country country = new Country();
-        if (cc.isEmpty()) {
-            country.setCountry_Name(c);
-            countryRepo.save(country);
-        } else {
-            country.setCountry_Code(cc);
-            country.setCountry_Name(c);
-            countryRepo.save(country);
-        }
-        return mv;
-    }
-    @RequestMapping(value = "/editTruck_Driver/{id}", method = RequestMethod.GET)
-    public ModelAndView editTruckDriver(@PathVariable("id") String id) {
+    @RequestMapping(value = "/editTruck_Driver/{truckDriverID}", method = RequestMethod.GET)
+    public ModelAndView editTruckDriver(@PathVariable("truckDriverID") String truckDriverID) {
         ModelAndView mv = new ModelAndView("editTruckDriver");
-        Optional<Truck_Driver> editTD = truckDriverRepo.findById(id);
+        Optional<Truck_Driver> editTD = truckDriverRepo.findById(truckDriverID);
         Truck_Driver tdv = editTD.get();
         mv.addObject("Truck_Driver", tdv);
         return mv;
@@ -1143,21 +1085,6 @@ public class MainController {
         truckDriverRepo.deleteById(id);
         return mv;
     }
-    @RequestMapping(value = "/submitEmployeeStatus", method = RequestMethod.POST)
-    public ModelAndView addEmpStatus(@RequestParam("empID") String empID,
-                                     @RequestParam("eStatus") String eStatus){
 
-        ModelAndView mv = new ModelAndView("redirect:/employeeStatus");
-        Employee_Status es = new Employee_Status();
-        if (empID.isEmpty()) {
-            es.setEmployee_Status(eStatus);
-            employeeStatusRepo.save(es);
-        } else {
-            es.setEmployee_ID(empID);
-            es.setEmployee_Status(eStatus);
-            employeeStatusRepo.save(es);
-        }
-        return mv;
-    }
 
 }
