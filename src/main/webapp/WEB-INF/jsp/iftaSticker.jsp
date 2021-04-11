@@ -9,6 +9,25 @@
     <input type="submit" value="Table Management">
 </form>
 
+<form method="post" action="/submitIfta">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="iftaID">
+    <table>
+        <tr>
+            <td>Status</td>
+            <td>VIN</td>
+            <td>Expiration Date</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="ifta" placeholder="*"> </td>
+            <td><input type="text" name="vin" placeholder="*"></td>
+            <td><input type="date" name="eDate" placeholder="*"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Entry">
+    <br>
+    <br>
+</form>
 <table class="w3-table-all">
     <tr>
         <th>IFTA ID</th>

@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table(name = "Trailer")
 public class Trailer {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "Column_ID")
+    private String Column_ID ;
     @Column(name = "Trailer_ID")
     private String Trailer_ID ;
     @Column(name = "Trailer_Code")
@@ -16,6 +18,10 @@ public class Trailer {
     private String Weight_Of_Trailer ;
     @Column(name = "License_Plate")
     private String License_Plate ;
+
+    public Trailer(String column_ID) {
+        Column_ID = column_ID;
+    }
 
     public Trailer(String trailer_ID, String trailer_Code, String type_Of_Trailer, String weight_Of_Trailer, String license_Plate) {
         Trailer_ID = trailer_ID;
@@ -63,6 +69,14 @@ public class Trailer {
 
     public String getLicense_Plate() {
         return License_Plate;
+    }
+
+    public String getColumn_ID() {
+        return Column_ID;
+    }
+
+    public void setColumn_ID(String column_ID) {
+        Column_ID = column_ID;
     }
 
     public void setLicense_Plate(String license_Plate) {

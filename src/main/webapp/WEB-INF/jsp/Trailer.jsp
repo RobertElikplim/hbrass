@@ -8,7 +8,29 @@
 <form method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
-
+<form method="post" action="/submitTrailer">
+    <h3>Fields with * are required</h3>
+    <input type="hidden" name="cID">
+    <table>
+        <tr>
+            <td>Trailer ID</td>
+            <td>Trailer Code</td>
+            <td>Type of Trailer</td>
+            <td>Weight of Trailer</td>
+            <td>License Plate</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="trailerID" placeholder="*"> </td>
+            <td><input type="text" name="tc" placeholder="*"> </td>
+            <td><input type="text" name="tot" placeholder="*"> </td>
+            <td><input type="text" name="weight" placeholder="*"> </td>
+            <td><input type="text" name="lcp" placeholder="*"> </td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Entry">
+    <br>
+    <br>
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Trailer ID</th>
