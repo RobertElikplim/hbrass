@@ -1239,4 +1239,21 @@ public class MainController {
         }
         return mv;
     }
+    @RequestMapping(value = "/editIFTA_Sticker/{id}", method = RequestMethod.GET)
+    public ModelAndView editIFTA(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editIFTA");
+        Optional<IFTA_Sticker> editIS = ifta_stickerRepo.findById(id);
+        IFTA_Sticker iftas = editIS.get();
+        mv.addObject("IFTA_Sticker", iftas);
+        return mv;
+    }
+
+    @RequestMapping(value = "/editCountry/{id}", method = RequestMethod.GET)
+    public ModelAndView editCountries(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editCountry");
+        Optional<Country> editCC = countryRepo.findById(id);
+        Country country = editCC.get();
+        mv.addObject("Country", country);
+        return mv;
+    }
 }

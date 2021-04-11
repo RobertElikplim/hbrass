@@ -11,7 +11,7 @@
 </form>
 <form method="post" action="/submitCountry">
     <h3>Fields with * are required</h3>
-        <input type="hidden" name="colID">
+    <input type="hidden" name="colID">
     <table>
         <tr>
             <td>Country Code</td>
@@ -35,11 +35,10 @@
         <c:forEach var = "Country" items = "${countryList}">
         <td>${Country.getCountry_Code()}</td>
         <td>${Country.getCountry_Name()}</td>
+            <td><a href="/editCountry/${Country.getColumn_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteCountry/${Country.getColumn_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
     </tr>
     </c:forEach>
 </table>
-
-
-
 </body>
 </html>
