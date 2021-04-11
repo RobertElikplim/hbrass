@@ -17,16 +17,20 @@
             <td>Phone Number</td>
             <td>Street Address</td>
             <td>City</td>
-            <td>State Code</td>
-            <td>Zip Code</td>
-            <td>Email</td>
-            <td>Vendor Tracker</td>
         </tr>
         <tr>
             <td><input type="text" name="nameVendor"></td>
             <td><input type="text" name="vendorPhoneNumber"></td>
             <td><input type="text" name="vendorStreetAddress"></td>
             <td><input type="text" name="vendorCity"></td>
+        </tr>
+        <tr>
+            <td>State Code</td>
+            <td>Zip Code</td>
+            <td>Email</td>
+            <td>Vendor Tracker</td>
+        </tr>
+        <tr>
             <td><input type="text" name="vendorStateCode"></td>
             <td><input type="text" name="vendorZipCode"></td>
             <td><input type="text" name="vendorEmail"></td>
