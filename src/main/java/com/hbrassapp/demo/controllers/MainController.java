@@ -1047,6 +1047,21 @@ public class MainController {
         }
         return mv;
     }
+    @RequestMapping(value = "/editTruck_Driver/{id}", method = RequestMethod.GET)
+    public ModelAndView editTruckDriver(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editTruckDriver");
+        Optional<Truck_Driver> editTD = truckDriverRepo.findById(id);
+        Truck_Driver tdv = editTD.get();
+        mv.addObject("Truck_Driver", tdv);
+        return mv;
+    }
+
+    @RequestMapping(value = "/deleteTruck_Driver/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteTD(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/truckDriver");
+        truckDriverRepo.deleteById(id);
+        return mv;
+    }
 
 
 }
