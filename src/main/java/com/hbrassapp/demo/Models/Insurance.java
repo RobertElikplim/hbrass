@@ -6,7 +6,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Insurance")
 public class Insurance {
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "Insure_ID")
+    private String Insure_ID;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Insurance_ID")
     private String Insurance_ID;
@@ -14,8 +16,6 @@ public class Insurance {
     private String Insurance_Type;
     @Column(name = "Coverage_Expiration")
     private String Coverage_Expiration;
-    @Column(name = "Insure_ID")
-    private String Insure_ID;
 
     public Insurance() {
     }
