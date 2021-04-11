@@ -33,16 +33,16 @@
         <th>Insurance ID</th>
         <th>Insurance Type</th>
         <th>Expiration</th>
-        <th>Insure_ID</th>
+        <th>Insure ID</th>
     </tr>
     <c:forEach var = "Insurance" items = "${insuranceList}">
         <tr>
             <td>${Insurance.getInsurance_ID()}</td>
             <td>${Insurance.getInsurance_Type()}</td>
             <td>${Insurance.getCoverage_Expiration()}</td>
-            <td>${Insurance.getInsure_ID}</td>
-            <td><a href="/editInsurance/${Insurance.getInsurance_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
-            <td><a href="/deleteInsurance/${Insurance.getInsurance_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
+            <td>${Insurance.getInsure_ID()}</td>
+            <td><a href="/editInsurance/${Insurance.getInsure_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteInsurance/${Insurance.getInsure_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>

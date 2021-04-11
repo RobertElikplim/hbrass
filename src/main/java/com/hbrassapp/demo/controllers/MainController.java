@@ -1026,12 +1026,12 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitInsuranceTable", method = RequestMethod.POST)
-    public ModelAndView addIns(@RequestParam("insureID") String insureID,
+    public ModelAndView addInsu(@RequestParam("insureID") String insureID,
                                          @RequestParam("insuranceID") String insuranceID,
                                          @RequestParam("insuranceType") String insuranceType,
                                          @RequestParam("coverageExpiration") String coverageExpiration){
 
-        ModelAndView mv = new ModelAndView("redirect:/invoiceStatus");
+        ModelAndView mv = new ModelAndView("redirect:/insurance");
         Insurance insur = new Insurance();
         if (insureID.isEmpty()) {
             insur.setInsurance_ID(insuranceID);
@@ -1039,6 +1039,7 @@ public class MainController {
             insur.setCoverage_Expiration(coverageExpiration);
             insuranceRepo.save(insur);
         } else {
+            insur.setInsure_ID(insureID);
             insur.setInsurance_ID(insuranceID);
             insur.setInsurance_Type(insuranceType);
             insur.setCoverage_Expiration(coverageExpiration);
@@ -1046,4 +1047,6 @@ public class MainController {
         }
         return mv;
     }
+
+
 }
