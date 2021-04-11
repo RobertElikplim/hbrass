@@ -30,17 +30,19 @@
 </form>
 <table class="w3-table-all">
     <tr>
+        <th>Truck Driver ID</th>
         <th>Driver ID</th>
         <th>License Type</th>
         <th>State Code</th>
     </tr>
     <c:forEach var = "Truck_Driver" items = "${truckdriverList}">
         <tr>
+            <td>${Truck_Driver.getTruck_Driver_ID()}</td>
             <td>${Truck_Driver.getDriver_ID()}</td>
             <td>${Truck_Driver.getLicense_Type()}</td>
             <td>${Truck_Driver.getState_Code()}</td>
-            <td><a href="/editTruck_Driver/${Truck_Driver.getDriver_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
-            <td><a href="/deleteTruck_Driver/${Truck_Driver.getDriver_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
+            <td><a href="/editTruck_Driver/${Truck_Driver.getTruck_Driver_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteTruck_Driver/${Truck_Driver.getTruck_Driver_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>
