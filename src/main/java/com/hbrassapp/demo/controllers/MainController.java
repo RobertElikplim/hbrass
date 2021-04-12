@@ -112,11 +112,23 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/tables1")
+    public ModelAndView viewTables1() {
+        ModelAndView mv = new ModelAndView("tables1");
+        return mv;
+    }
 
     @RequestMapping(value = "/brokerCompany")
     public ModelAndView viewBrokerCompany() {
         ModelAndView mv = new ModelAndView("brokerCompany");
         mv.addObject("brokerCompanyList", brokerCompanyRepo.findAll());
+        return mv;
+    }
+
+    @RequestMapping(value = "/systemLogin")
+    public ModelAndView viewSysLog() {
+        ModelAndView mv = new ModelAndView("systemLogin");
+        mv.addObject("systemLoginList", systemLoginRepo.findAll());
         return mv;
     }
 
@@ -874,11 +886,11 @@ public class MainController {
             login = login1.get();
             String userpassword = login.getPassword();
             if (pwd.equals(userpassword) && login.getPrivileges().equals("0")) {
-                ModelAndView mv = new ModelAndView("tables");
+                ModelAndView mv = new ModelAndView("index");
                 mv.addObject("welcome","Welcome" + " " + login.getUsername());
                 return mv;
             }else if(pwd.equals(userpassword) && login.getPrivileges().equals("1")) {
-                ModelAndView mv = new ModelAndView("index");
+                ModelAndView mv = new ModelAndView("admin");
                 mv.addObject("welcome", "Welcome" + " " + login.getUsername());
                 return mv;
             }
@@ -1288,5 +1300,4 @@ public class MainController {
         vendorRepo.deleteById(id);
         return mv;
     }
-
 }

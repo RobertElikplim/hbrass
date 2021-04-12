@@ -11,7 +11,7 @@
 
 <table class="w3-table-all">
     <tr>
-        <th>Tire Vendor ID</th>
+        <th>Login ID</th>
         <th>Username</th>
         <th>Privileges</th>
         <th>Password</th>
