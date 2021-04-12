@@ -25,11 +25,6 @@
             <td>VIN</td>
             <td>Trailer ID</td>
             <td>Driver ID</td>
-            <td>Dead Head</td>
-            <td>Loaded Miles</td>
-            <td>Total Miles</td>
-            <td>Driver Pay</td>
-            <td>Remarks</td>
         </tr>
         <tr>
             <td><input type="date" name="dateLoads"></td>
@@ -38,6 +33,15 @@
             <td><input type="text" name="vinNumber"></td>
             <td><input type="text" name="trailerID"></td>
             <td><input type="text" name="driverID"></td>
+        </tr>
+        <tr>
+            <td>Dead Head</td>
+            <td>Loaded Miles</td>
+            <td>Total Miles</td>
+            <td>Driver Pay</td>
+            <td>Remarks</td>
+        </tr>
+        <tr>
             <td><input type="text" name="deadHD"></td>
             <td><input type="text" name="loadedMiles"></td>
             <td><input type="text" name="totalMiles"></td>

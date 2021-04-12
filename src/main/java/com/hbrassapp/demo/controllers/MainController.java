@@ -17,8 +17,6 @@ import java.util.UUID;
 public class MainController {
 
     @Autowired
-    employeerepo employeeRepo;
-    @Autowired
     BrokerCompany brokerCompanyRepo;
     @Autowired
     BrokerContractRepo brokerContractRepo;
@@ -191,7 +189,7 @@ public class MainController {
     @RequestMapping(value = "/employee")
     public ModelAndView viewEmployee() {
         ModelAndView mv = new ModelAndView("employee");
-        mv.addObject("employeeList", employeeRepo.findAll());
+        mv.addObject("employeeList", employeerepo.findAll());
         return mv;
     }
 
@@ -1306,4 +1304,51 @@ public class MainController {
         vendorRepo.deleteById(id);
         return mv;
     }
+
+    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+    public ModelAndView addEmp(@RequestParam("empID") String empID,
+                                     @RequestParam("fName") String fName,
+                                     @RequestParam("lName") String lName,
+                                     @RequestParam("pNumber") String pNumber,
+                                     @RequestParam("eMail") String eMail,
+                                     @RequestParam("sAddy") String sAddy,
+                                     @RequestParam("city") String city,
+                                     @RequestParam("sCode") String sCode,
+                                     @RequestParam("zCode") String zCode,
+                                     @RequestParam("posID") String posID,
+                                     @RequestParam("driverID") String driverID,
+                                     @RequestParam("eCon") String eCon) {
+        ModelAndView mv = new ModelAndView("redirect:/loads");
+        employee emp = new employee();
+        if (empID.isEmpty()) {
+            emp.setFirst_Name(fName);
+            emp.setLast_Name(lName);
+            emp.setPhone_Number(pNumber);
+            emp.setEmail(eMail);
+            emp.setStreet_Address(sAddy);
+            emp.setCity(city);
+            emp.setState_Code(sCode);
+            emp.setZip_Code(zCode);
+            emp.setPosition_ID(posID);
+            emp.setDriver_ID(driverID);
+            emp.setEmergency_Contact_ID(eCon);
+            employeerepo.save(emp);
+        } else {
+            emp.setEmployee_ID(empID);
+            emp.setFirst_Name(fName);
+            emp.setLast_Name(lName);
+            emp.setPhone_Number(pNumber);
+            emp.setEmail(eMail);
+            emp.setStreet_Address(sAddy);
+            emp.setCity(city);
+            emp.setState_Code(sCode);
+            emp.setZip_Code(zCode);
+            emp.setPosition_ID(posID);
+            emp.setDriver_ID(driverID);
+            emp.setEmergency_Contact_ID(eCon);
+            employeerepo.save(emp);
+        }
+        return mv;
+    }
+
 }

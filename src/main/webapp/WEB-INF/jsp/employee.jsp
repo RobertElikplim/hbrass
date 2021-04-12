@@ -14,7 +14,43 @@
 <form class="tbm" method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
+<form method="post" action="/addEmployee">
+    <input type="hidden" name="empID">
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Phone Number</td>
+            <td>Email</td>
+            <td>Street Address</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="fName"></td>
+            <td><input type="text" name="lName"></td>
+            <td><input type="text" name="pNumber"></td>
+            <td><input type="text" name="eMail"></td>
+            <td><input type="text" name="sAddy"></td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>State Code</td>
+            <td>Zip Code</td>
+            <td>Position ID</td>
+            <td>Driver ID</td>
+            <td>Emergency Contact ID</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="city"></td>
+            <td><input type="text" name="sCode"></td>
+            <td><input type="text" name="zCode"></td>
+            <td><input type="text" name="posID"></td>
+            <td><input type="text" name="driverID"></td>
+            <td><input type="text" name="eCon"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Add Employee">
 
+</form>
 <table class="w3-table-all">
     <tr>
         <th>Employee ID</th>
