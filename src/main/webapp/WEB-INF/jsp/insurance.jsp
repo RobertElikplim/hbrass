@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-<form method="post" action="/tables">
+<form class="fmm" action="/back">
+    <input type="submit" class="log" value="Logout">
+</form>
+
+<form class="tbm" method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
 <form method="post" action="/submitInsuranceTable">

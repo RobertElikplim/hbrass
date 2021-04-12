@@ -7,7 +7,11 @@
     <%--<style><%@include file="../css/style.css"%></style>--%>
 </head>
 <body>
-<form method="post" action="/tables">
+<form class="fmm" action="/back">
+    <input type="submit" class="log" value="Logout">
+</form>
+
+<form class="tbm" method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
 

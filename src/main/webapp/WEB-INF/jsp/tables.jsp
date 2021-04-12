@@ -7,6 +7,10 @@
 </head>
 <body style="text-align: left;">
 
+<form class="fmm" action="/back">
+    <input type="submit" class="log" value="Logout">
+</form>
+
 <h1>Table Management</h1>
 <ol>
     <li><a href="/brokerCompany">Broker Companies</a></li>

@@ -7,7 +7,11 @@
 
 </head>
 < <body style="text-align: center;">
-<form method="post" action="/tables">
+<form class="fmm" action="/back">
+    <input type="submit" class="log" value="Logout">
+</form>
+
+<form class="tbm" method="post" action="/tables">
     <input type="submit" value="Table Management">
 </form>
 
