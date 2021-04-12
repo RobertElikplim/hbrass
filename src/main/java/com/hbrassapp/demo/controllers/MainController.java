@@ -1272,4 +1272,21 @@ public class MainController {
         mv.addObject("Tire", tire);
         return mv;
     }
+
+    @RequestMapping(value = "/editVendor/{id}", method = RequestMethod.GET)
+    public ModelAndView editVEND(@PathVariable("id") String vendorID) {
+        ModelAndView mv = new ModelAndView("editV");
+        Optional<Vendor> editVDE = vendorRepo.findById(vendorID);
+        Vendor ven = editVDE.get();
+        mv.addObject("Vendor", ven);
+        return mv;
+    }
+
+    @RequestMapping(value = "/deleteVendor/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteVDE(@PathVariable("id") String id){
+        ModelAndView mv = new ModelAndView("redirect:/Vendors");
+        vendorRepo.deleteById(id);
+        return mv;
+    }
+
 }
