@@ -26,3 +26,19 @@
     border: none;
 
 }
+.fmm{
+    font-family: "Arial Black";
+    float: right;
+}
+.tbm{
+    font-family: "Arial Black";
+    float: left;
+}
+.log{
+    border: 2px solid forestgreen;
+    color: green;
+    padding: 5px;
+    cursor: pointer;
+    margin: 12px 0;
+    font-family: "Arial Black";
+}

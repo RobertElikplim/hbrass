@@ -10,7 +10,7 @@
 <h2><a href="/tables">Table Management</a></h2>
 <br>
 <br>
-<h2><a href="/systemLogin">Login Access Management</a></h2>
+<h2><a href="/systemLogin">System Access Management</a></h2>
 
 </body>
 </html>

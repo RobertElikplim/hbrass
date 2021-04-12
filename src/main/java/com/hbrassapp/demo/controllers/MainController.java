@@ -106,6 +106,12 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/back")
+    public ModelAndView logout(){
+        ModelAndView mv = new ModelAndView("signin");
+        return mv;
+    }
+
     @RequestMapping(value = "/tables")
     public ModelAndView viewTables() {
         ModelAndView mv = new ModelAndView("tables");
