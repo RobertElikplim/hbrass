@@ -3,7 +3,9 @@
 <html>
 <head>
     <title>Hbrass</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style><%@include file="../css/style.css"%></style>
+</head>
 <body>
 <form class="fmm" action="/back">
     <input type="submit" class="log" value="Logout">
