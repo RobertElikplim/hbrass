@@ -1318,7 +1318,7 @@ public class MainController {
                                      @RequestParam("posID") String posID,
                                      @RequestParam("driverID") String driverID,
                                      @RequestParam("eCon") String eCon) {
-        ModelAndView mv = new ModelAndView("redirect:/loads");
+        ModelAndView mv = new ModelAndView("redirect:/employee");
         employee emp = new employee();
         if (empID.isEmpty()) {
             emp.setFirst_Name(fName);
@@ -1348,6 +1348,22 @@ public class MainController {
             emp.setEmergency_Contact_ID(eCon);
             employeerepo.save(emp);
         }
+        return mv;
+    }
+
+    @RequestMapping(value = "/deleteEmployee/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteEMP(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/employee");
+        brokerCompanyRepo.deleteById(id);
+        return mv;
+    }
+
+    @RequestMapping(value = "/editEmployee/{id}", method = RequestMethod.GET)
+    public ModelAndView editEmployee(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editEmployee");
+        Optional<employee> emp = employeerepo.findById(id);
+        employee empl = emp.get();
+        mv.addObject("employee", empl);
         return mv;
     }
 
