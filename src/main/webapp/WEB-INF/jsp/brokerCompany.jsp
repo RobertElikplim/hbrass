@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>Hbrass</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -50,7 +49,6 @@
     </tr>
 </c:forEach>
 </table>
-</div>
 <a href="/addBrokerCompany">Add New Record</a>
 </body>
 </html>

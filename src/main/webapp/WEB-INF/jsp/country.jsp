@@ -4,16 +4,26 @@
 <head>
     <title>Hbrass</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style><%@include file="../css/style.css"%></style><title>Hbrass</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style><%@include file="../css/style.css"%></style>
 </head>
 <body>
-<form class="fmm" action="/back">
-    <input type="submit" class="log" value="Logout">
-</form>
-
-<form class="tbm" method="post" action="/tables">
-    <input type="submit" value="Table Management">
-</form>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <h1 class="navbar-brand">In Big Wheels</h1>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Logout</a></li>
+            <li><a href="/tables">Table Management</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
 
 <form method="post" action="/submitCountry">
     <h3>Fields with * are required</h3>
@@ -243,7 +253,7 @@
     <br>
     <br>
 </form>
-<table class="w3-table-all">
+<table class="table table-bordered">
     <tr>
         <th>Country Code</th>
         <th>Country</th>
@@ -257,5 +267,6 @@
     </tr>
     </c:forEach>
 </table>
+</div>
 </body>
 </html>

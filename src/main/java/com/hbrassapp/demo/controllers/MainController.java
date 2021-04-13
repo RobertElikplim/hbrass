@@ -1199,6 +1199,12 @@ public class MainController {
         return mv;
     }
 
+
+
+
+
+
+
     // Delete Functionalities
 
     @RequestMapping(value = "/deleteBrokerCompany/{id}", method = RequestMethod.GET)
@@ -1319,6 +1325,10 @@ public class MainController {
         trailerRepo.deleteById(id);
         return mv;
     }
+
+
+
+
 
     // System Access Login and Registration
 
