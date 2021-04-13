@@ -23,11 +23,9 @@
     </div>
 </nav>
 
-<form class="tbm" method="post" action="/tables">
-    <input type="submit" value="Table Management">
-</form>
 
-<table class="w3-table-all">
+<div class="container-fluid">
+<table class="table table-bordered">
     <tr>
         <th>Broker ID</th>
         <th>Broker Name</th>
@@ -52,6 +50,7 @@
     </tr>
 </c:forEach>
 </table>
+</div>
 <a href="/addBrokerCompany">Add New Record</a>
 </body>
 </html>

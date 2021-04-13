@@ -30,10 +30,14 @@
 body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
-    color: #f5f6f7;
+    color: black;
 }
-p {font-size: 16px;}
-.margin {margin-bottom: 45px;}
+
+p {font-size: 16px;
+}
+.margin {margin-bottom: 45px;
+}
+
 .bg-1 {
     background-color: #1abc9c; /* Green */
     color: #ffffff;
@@ -65,9 +69,7 @@ p {font-size: 16px;}
     letter-spacing: 5px;
 }
 
-.navbar-custom {
-    color: white;
-}
+
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
