@@ -723,6 +723,7 @@ public class MainController {
                                   @RequestParam("eDate") String eDate) {
         ModelAndView mv = new ModelAndView("redirect:/dotInspection");
         Dot_Inspection dinspection = new Dot_Inspection();
+        States states = new States();
         if (dotInspectionID.isEmpty()) {
             dinspection.setTruck_ID_VIN(vin);
             dinspection.setDot_Certification_Date(cDate);
@@ -1355,6 +1356,25 @@ public class MainController {
     public ModelAndView deleteEMP(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("redirect:/employee");
         brokerCompanyRepo.deleteById(id);
+        return mv;
+    }
+
+    @RequestMapping(value = "/deleteIFTA_Sticker/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteIFTA(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/iftaSticker");
+        ifta_stickerRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteTire/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteTire(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/tire");
+        tireRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteTrailer/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteTrailer(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/Trailer");
+        trailerRepo.deleteById(id);
         return mv;
     }
 
