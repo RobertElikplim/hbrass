@@ -3,10 +3,7 @@ package com.hbrassapp.demo.controllers;
 import com.hbrassapp.demo.Models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
@@ -123,7 +120,7 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/brokerCompany")
+    @RequestMapping(value = "/brokerCompany", method = RequestMethod.GET)
     public ModelAndView viewBrokerCompany() {
         ModelAndView mv = new ModelAndView("brokerCompany");
         mv.addObject("brokerCompanyList", brokerCompanyRepo.findAll());
@@ -1043,7 +1040,6 @@ public class MainController {
         ModelAndView mv = new ModelAndView("editBrokerContracts");
         Optional<Broker_Contract> brokerContractRecord = brokerContractRepo.findById(id);
         Broker_Contract brokerContract = brokerContractRecord.get();
-        mv.addObject("brokerCompanyList", brokerCompanyRepo.findAll());
         mv.addObject("Broker_Contract", brokerContract);
         return mv;
     }

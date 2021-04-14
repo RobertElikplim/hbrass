@@ -87,9 +87,8 @@ p {font-size: 16px;
     font-size: 16px;
 }
 .modal-body {
-    padding-top: 5px;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .modal-header {
@@ -99,12 +98,8 @@ p {font-size: 16px;
 }
 
 .modal-footer {
-    padding-top: 20px;
-    padding-bottom: 0px;
-}
-
-.container {
-    padding-top: 70px;
+    padding-top: 10px;
+    text-align: center;
 }
 .fmm{
     font-family: "Arial Black";
@@ -122,4 +117,8 @@ p {font-size: 16px;
 .button-row {
     justify-content: left;
     align-content: center;
+}
+
+.container {
+    padding: 100px;
 }

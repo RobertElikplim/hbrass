@@ -57,7 +57,7 @@
 </table>
 </div>
 
-<!-- Modal -->
+<!-- Add Record Modal -->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -66,11 +66,10 @@
                 <h4 class="modal-title">Add New Record</h4>
             </div>
             <div class="modal-body">
-                <form method="post" action="/submitBrokerCompany">
                         <input type="hidden" name="brokerID">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-sm-4">
                                 <label>Broker Name</label>
                                    <input type="text" name="brokerName" placeholder="*">
                                 <label>Street Address</label>
@@ -78,28 +77,26 @@
                                 <label>State Code</label>
                                    <input type="text" name="stateCode" placeholder="*">
                             </div>
-                                <div class="col-lg-3">
+                                    <div class="col-sm-4">
                                     <label>Zip Code</label>
                                     <input type="text" name="zipCode" placeholder="*">
                                     <label>Phone Number</label>
                                    <input type="text" name="phoneNumber" placeholder="*">
                                     <label>Email</label>
                                    <input type="text" name="email">
-            </div>
-        </div>
+                                </div>
+                        </div>
                     </div>
+                 </div>
+
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="submit" formmethod="post" formaction="/submitBrokerCompany" class="btn btn-primary">Save changes</button>
             </form>
-            </div>
         </div>
     </div>
 </div>
 
 </div>
-
-
-
 
 
 </body>
