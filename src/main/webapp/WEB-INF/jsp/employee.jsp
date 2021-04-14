@@ -50,7 +50,7 @@
                                         <input type="text" name="eMail" placeholder="*">
                                     <label>Street Address</label>
                                         <input type="text" name="sAddy" placeholder="*"><br>
-                                    <label>City</label>
+                                    <label>City</label><br>
                                         <input type="text" name="city" placeholder="*">
                                 </div>
                                 <div class="col-lg-3">
@@ -62,7 +62,7 @@
                                         <input type="text" name="" placeholder="*">
                                     <label>Driver ID</label><br>
                                         <input type="text" name="driverID" placeholder="*">
-                                    <label>Emergency Contact ID</label>
+                                    <label>Emergency Contact</label>
                                         <input type="text" name="eCon" placeholder="*">
                                 </div>
                             </div>

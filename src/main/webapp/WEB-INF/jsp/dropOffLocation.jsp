@@ -70,6 +70,8 @@
                                         <input type="date" name="dDate" placeholder="*">
                                     <label>Street Address</label>
                                         <input type="text" name="sAddy" placeholder="*">
+                                </div>
+                                <div class="col-lg-3">
                                     <label>City</label><br>
                                         <input type="text" name="dCity" placeholder="*">
                                     <label>State Code</label>
