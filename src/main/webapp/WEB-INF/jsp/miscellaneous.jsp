@@ -21,23 +21,11 @@
     </div>
 </nav>
 <div class="container-fluid">
-<form method="post" action="/submitMisc">
-    <h3>Fields with * are required</h3>
-    <input type="hidden" name="miscID">
-    <table>
-        <tr>
-            <td>Cost</td>
-            <td>Description</td>
-        </tr>
-        <tr>
-            <td><input type="text" name="cost" placeholder="*"> </td>
-            <td><input type="text" name="desc" placeholder="*"></td>
-        </tr>
-    </table>
-    <input type="submit" value="Add Entry">
-    <br>
-    <br>
-</form>
+    <div class="button-row">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Record</button>
+    </div>
+
 <table class="table table-bordered">
     <tr>
         <th>Miscellaneous ID</th>
@@ -54,6 +42,34 @@
         </tr>
     </c:forEach>
 </table>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Record</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/submitMisc">
+                        <input type="hidden" name="miscID">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label>Cost</label><br>
+                                        <input type="text" name="cost" placeholder="*">
+                                    <label>Description</label>
+                                        <input type="text" name="desc" placeholder="*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

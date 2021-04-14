@@ -1398,6 +1398,12 @@ public class MainController {
         truckRepo.deleteById(id);
         return mv;
     }
+    @RequestMapping(value = "/deleteEmergency_Contact/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteEmergency_Contact(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/emergencyContacts");
+        emergencyContactRepo.deleteById(id);
+        return mv;
+    }
 
 
 
