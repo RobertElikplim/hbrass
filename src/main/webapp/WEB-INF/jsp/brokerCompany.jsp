@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>Hbrass</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -63,7 +62,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Add New Record</h4>
+                <h1 class="modal-title">Add New Record</h1>
             </div>
             <div class="modal-body">
                         <input type="hidden" name="brokerID">
@@ -97,7 +96,6 @@
 </div>
 
 </div>
-
 
 </body>
 </html>
