@@ -1054,6 +1054,40 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/addtruck", method = RequestMethod.POST)
+    public ModelAndView addEmp(@RequestParam("tId") String tId,
+                               @RequestParam("tVin") String tVin,
+                               @RequestParam("year") String year,
+                               @RequestParam("lPlate") String lPlate,
+                               @RequestParam("vTracker") String vTracker,
+                               @RequestParam("make") String make,
+                               @RequestParam("model") String model,
+                               @RequestParam("pNumber") String pNumber) {
+        ModelAndView mv = new ModelAndView("redirect:/Truck");
+        Truck tru = new Truck();
+        if (tId.isEmpty()) {
+            tru.setTruck_ID_VIN(tVin);
+            tru.setYear(year);
+            tru.setLicense_Plate(lPlate);
+            tru.setVehicle_Tracker(vTracker);
+            tru.setMake(make);
+            tru.setModel(model);
+            tru.setPolicy_Number(pNumber);
+            truckRepo.save(tru);
+        } else {
+            tru.setTruck_ID(tId);
+            tru.setTruck_ID_VIN(tVin);
+            tru.setYear(year);
+            tru.setLicense_Plate(lPlate);
+            tru.setVehicle_Tracker(vTracker);
+            tru.setMake(make);
+            tru.setModel(model);
+            tru.setPolicy_Number(pNumber);
+            truckRepo.save(tru);
+        }
+        return mv;
+    }
+
 
     // Edit Functionalities
 
@@ -1358,7 +1392,12 @@ public class MainController {
         tripExpenseRepo.deleteById(id);
         return mv;
     }
-
+    @RequestMapping(value = "/deleteTruck/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteTruck(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/Truck");
+        truckRepo.deleteById(id);
+        return mv;
+    }
 
 
 

@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table(name = "Truck")
 public class Truck {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "Truck_ID")
+    private String Truck_ID;
     @Column(name = "Truck_ID_VIN")
     private String Truck_ID_VIN;
     @Column(name = "Year")
@@ -21,7 +23,13 @@ public class Truck {
     @Column(name = "Policy_Number")
     private String Policy_Number;
 
-    public Truck(String truck_ID_VIN, String year, String license_Plate, String vehicle_Tracker, String make, String model, String policy_Number) {
+
+    public Truck() {
+
+    }
+
+    public Truck(String truck_ID, String truck_ID_VIN, String year, String license_Plate, String vehicle_Tracker, String make, String model, String policy_Number) {
+        Truck_ID = truck_ID;
         Truck_ID_VIN = truck_ID_VIN;
         Year = year;
         License_Plate = license_Plate;
@@ -31,8 +39,12 @@ public class Truck {
         Policy_Number = policy_Number;
     }
 
-    public Truck() {
+    public String getTruck_ID() {
+        return Truck_ID;
+    }
 
+    public void setTruck_ID(String truck_ID) {
+        Truck_ID = truck_ID;
     }
 
     public String getTruck_ID_VIN() {
