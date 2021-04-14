@@ -85,15 +85,15 @@
                                    <input type="text" name="phoneNumber" placeholder="*">
                                     <label>Email</label>
                                    <input type="text" name="email">
-            </div>
-        </div>
+                                </div>
+                        </div>
                     </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Save changes</button>
             </form>
             </div>
+            </div>
         </div>
-    </div>
 </div>
 
 </div>

@@ -3,23 +3,31 @@
 <html>
 <head>
     <title>Login Page</title>
-    <style><%@include file="../css/style.css"%></style>
+    <style><%@include file="../css/style.css"%></style><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <center>
     <form class="fm" method = "get" action="/get/">
-        <div class="tb">
-            <input type="hidden" name="id" value="">
-            <input type="hidden" name="admin" value="">
-            <label><b>Username </b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <br><br>
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="pwd" required>
+        <div class="col-lg-4" >
+                <input type="hidden" name="id" value="">
+                <input type="hidden" name="admin" value="">
+            <table>
+                <tr>
+                    <td><label>Username </label></td>
+                    <td><input type="text" placeholder="Enter Username" name="uname" required></td>
+                </tr>
+                <tr>
+                    <td><label>Password</label></td>
+                    <td><input type="password" placeholder="Enter Password" name="pwd" required></td>
+                </tr>
+            </table>
         </div>
         <input type="submit" class="btn" value="Login"><br>
         <a href="/signup" style="text-decoration: none;"> New user? Register Here! </a>
-        <input type="text" style="color:red" align="right" size="50" class="ns" name="message" value="${msg}">
     </form>
 </center>
 </body>

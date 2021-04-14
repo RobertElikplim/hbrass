@@ -9,20 +9,28 @@
 <body>
 <center>
     <form class="fm" method = "post" action="/save1/">
-        <div class="tb">
-            <input type="hidden" name="id" value="">
-            <label><b>Admin </b></label>
-            <select  name="admin" required>
-                <option></option>
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-            </select>
-            <br><br>
-            <label><b>Username </b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <br><br>
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="pwd" required>
+        <input type="hidden" name="id" value="">
+        <div class="col-lg-4">
+            <table>
+                <tr>
+                    <td><label><b>Admin </b></label></td>
+                    <td>
+                        <select  name="admin" required>
+                            <option></option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Username </label></td>
+                    <td><input type="text" placeholder="Enter Username" name="uname" required></td>
+                </tr>
+                <tr>
+                    <td><label>Password</label></td>
+                    <td><input type="password" placeholder="Enter Password" name="pwd" required></td>
+                </tr>
+            </table>
         </div>
         <input type="submit" class="btn" value="Register"><br>
         <a href="/" style="text-decoration: none;">Have an account? Login Here!</a></a>
