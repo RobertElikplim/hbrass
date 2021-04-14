@@ -26,7 +26,7 @@
     <h3>Fields with * are required</h3>
     <input type="hidden" name="PickUpLocationID">
 
-    <table class="table table-bordered">
+    <table>
         <tr>
             <td>PickUpTrackerCode</td>
             <td>PickUpDate</td>
@@ -49,7 +49,7 @@
     <br>
 </form>
 
-<table class="w3-table-all">
+<table class="table table-bordered">
     <tr>
         <th>Pick Up ID</th>
         <th>Pick Up Tracker Code</th>
