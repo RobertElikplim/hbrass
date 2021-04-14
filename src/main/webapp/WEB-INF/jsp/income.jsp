@@ -22,30 +22,12 @@
     </div>
 </nav>
 <div class="container-fluid">
+    <div class="button-row">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Record</button>
+    </div>
 
-<form method="post" action="/submitIncome">
-    <h3>Fields with * are required</h3>
-    <input type="hidden" name="incomeID">
-    <input type="hidden" name="loadID" >
-    <input type="hidden" name="tripExpenseID" >
-    <table>
-        <tr>
-            <td>Load Fare</td>
-            <td>Commission</td>
-            <td>Insurance</td>
-            <td>Total Income</td>
-        </tr>
-        <tr>
-            <td><input type="text" name="loadFare" placeholder="*"> </td>
-            <td><input type="text" name="commission" placeholder="*"></td>
-            <td><input type="text" name="insurance" placeholder="*"></td>
-            <td><input type="text" name="totalIncome"></td>
-        </tr>
-    </table>
-    <input type="submit" value="Add Entry">
-    <br>
-    <br>
-</form>
+
 <table class="table table-bordered">
     <tr>
         <th>Income ID</th>
@@ -70,6 +52,44 @@
         </tr>
     </c:forEach>
 </table>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Record</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/submitIncome">
+                        <input type="hidden" name="incomeID">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label>Load ID</label><br>
+                                        <input type="text" name="loadID" placeholder="*">
+                                    <label>Load Fare</label>
+                                        <input type="text" name="loadFare" placeholder="*">
+                                    <label>Commission</label>
+                                        <input type="text" name="commission" placeholder="*">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label>Insurance</label><br>
+                                        <input type="text" name="insurance" placeholder="*">
+                                    <label>Trip Expense</label>
+                                         <input type="text" name="tripExpenseID" placeholder="*">
+                                    <label>Income</label>
+                                        <input type="text" name="totalIncome" placeholder="*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

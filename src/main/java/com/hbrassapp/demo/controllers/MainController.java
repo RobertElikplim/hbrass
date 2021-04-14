@@ -569,20 +569,20 @@ public class MainController {
 
     @RequestMapping(value = "/submitIncome", method = RequestMethod.POST)
     public ModelAndView addIncome(@RequestParam("incomeID") String incomeID,
-                                  //@RequestParam("loadID") String loadID,
+                                  @RequestParam("loadID") String loadID,
                                   @RequestParam("loadFare") String loadFare,
                                   @RequestParam("commission") String commission,
                                   @RequestParam("insurance") String insurance,
-                                  //@RequestParam("tripExpenseID") String tripExpenseID,
+                                  @RequestParam("tripExpenseID") String tripExpenseID,
                                   @RequestParam("totalIncome") String totalIncome) {
         ModelAndView mv = new ModelAndView("redirect:/income");
         Income income = new Income();
         if (incomeID.isEmpty()) {
-            // income.setLoad_ID(loadID);
+            income.setLoad_ID(loadID);
             income.setLoad_Fare(loadFare);
             income.setCommission(commission);
             income.setInsurance(insurance);
-            // income.setTrip_Expense_ID(tripExpenseID);
+            income.setTrip_Expense_ID(tripExpenseID);
             income.setTotal_Income(totalIncome);
             incomeRepo.save(income);
         } else {
