@@ -17,14 +17,19 @@
             <h1 class="navbar-brand">In Big Wheels</h1>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Login</a></li>
             <li><a href="/tables">Table Management</a></li>
+            <li><a href="/">Logout</a></li>
         </ul>
     </div>
 </nav>
 
 
+
 <div class="container-fluid">
+    <div class="button-row">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Record</button>
+    </div>
 <table class="table table-bordered">
     <tr>
         <th>Broker ID</th>
@@ -51,6 +56,51 @@
 </c:forEach>
 </table>
 </div>
-<a href="/addBrokerCompany">Add New Record</a>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add New Record</h4>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="/submitBrokerCompany">
+                        <input type="hidden" name="brokerID">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label>Broker Name</label>
+                                   <input type="text" name="brokerName" placeholder="*">
+                                <label>Street Address</label>
+                                   <input type="text" name="streetAddress" placeholder="*">
+                                <label>State Code</label>
+                                   <input type="text" name="stateCode" placeholder="*">
+                            </div>
+                                <div class="col-lg-3">
+                                    <label>Zip Code</label>
+                                    <input type="text" name="zipCode" placeholder="*">
+                                    <label>Phone Number</label>
+                                   <input type="text" name="phoneNumber" placeholder="*">
+                                    <label>Email</label>
+                                   <input type="text" name="email">
+            </div>
+        </div>
+                    </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
 </body>
 </html>

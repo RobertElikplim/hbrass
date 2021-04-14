@@ -76,7 +76,32 @@ p {font-size: 16px;
 .list-group a:hover {
     color: #1abc9c; !important;
 }
+.btn {
+    background-color: #2f2f2f;
+    border: none;
+    color: white;
+    width: 200px;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+.modal-body {
+    padding-top: 5px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
 
+.modal-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: auto;
+}
+
+.modal-footer {
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
 
 .container {
     padding-top: 70px;
@@ -92,4 +117,9 @@ p {font-size: 16px;
     cursor: pointer;
     margin: 12px 0;
     font-family: "Arial Black";
+}
+
+.button-row {
+    justify-content: left;
+    align-content: center;
 }

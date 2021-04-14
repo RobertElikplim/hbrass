@@ -17,8 +17,8 @@
             <h1 class="navbar-brand">In Big Wheels</h1>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Login</a></li>
             <li><a href="/tables">Table Management</a></li>
+            <li><a href="/">Logout</a></li>
         </ul>
     </div>
 </nav>
