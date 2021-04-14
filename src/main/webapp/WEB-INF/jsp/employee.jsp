@@ -21,43 +21,60 @@
         </ul>
     </div>
 </nav>
+
 <div class="container-fluid">
-<form method="post" action="/addEmployee">
-    <input type="hidden" name="empID">
-    <table>
-        <tr>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Phone Number</td>
-            <td>Email</td>
-            <td>Street Address</td>
-        </tr>
-        <tr>
-            <td><input type="text" name="fName"></td>
-            <td><input type="text" name="lName"></td>
-            <td><input type="text" name="pNumber"></td>
-            <td><input type="text" name="eMail"></td>
-            <td><input type="text" name="sAddy"></td>
-        </tr>
-        <tr>
-            <td>City</td>
-            <td>State Code</td>
-            <td>Zip Code</td>
-            <td>Position ID</td>
-            <td>Driver ID</td>
-            <td>Emergency Contact ID</td>
-        </tr>
-        <tr>
-            <td><input type="text" name="city"></td>
-            <td><input type="text" name="sCode"></td>
-            <td><input type="text" name="zCode"></td>
-            <td><input type="text" name="posID"></td>
-            <td><input type="text" name="driverID"></td>
-            <td><input type="text" name="eCon"></td>
-        </tr>
-    </table>
-    <input type="submit" value="Add Employee">
-</form>
+    <div class="button-row">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Record</button>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Record</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/addEmployee">
+                        <input type="hidden" name="empID">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label>First Name</label><br>
+                                        <input type="text" name="fName" placeholder="*">
+                                    <label>Last Name</label>
+                                        <input type="text" name="lName" placeholder="*">
+                                    <label>Phone Number</label>
+                                         <input type="text" name="pNumber" placeholder="*">
+                                    <label>Email</label><br>
+                                        <input type="text" name="eMail" placeholder="*">
+                                    <label>Street Address</label>
+                                        <input type="text" name="sAddy" placeholder="*"><br>
+                                    <label>City</label>
+                                        <input type="text" name="city" placeholder="*">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label>State Code</label><br>
+                                        <input type="text" name="sCode" placeholder="*">
+                                    <label>Zip Code</label>
+                                        <input type="text" name="zCode" placeholder="*">
+                                    <label>Position ID</label>
+                                        <input type="text" name="" placeholder="*">
+                                    <label>Driver ID</label><br>
+                                        <input type="text" name="driverID" placeholder="*">
+                                    <label>Emergency Contact ID</label>
+                                        <input type="text" name="eCon" placeholder="*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 <table class="table table-bordered">
     <tr>
         <th>Employee ID</th>

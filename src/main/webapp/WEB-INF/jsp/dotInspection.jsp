@@ -20,6 +20,7 @@
         </ul>
     </div>
 </nav>
+
 <div class="container-fluid">
     <div class="button-row">
         <!-- Trigger the modal with a button -->

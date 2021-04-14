@@ -20,32 +20,13 @@
         </ul>
     </div>
 </nav>
+
 <div class="container-fluid">
-<form method="post" action="/submitDOL">
-    <h3>Fields with * are required</h3>
-    <input type="hidden" name="dropOffID">
-    <table>
-        <tr>
-            <td>Drop Off Tracker Code</td>
-            <td>Drop Off Date</td>
-            <td>Street Address</td>
-            <td>City</td>
-            <td>State Code</td>
-            <td>Zip Code</td>
-        </tr>
-        <tr>
-            <td><input type="text" name="tCode" placeholder="*"> </td>
-            <td><input type="date" name="dDate" placeholder="*"></td>
-            <td><input type="text" name="sAddy" placeholder="*"></td>
-            <td><input type="text" name="dCity"></td>
-            <td><input type="text" name="sCode" placeholder="*"></td>
-            <td><input type="text" name="zCode"></td>
-        </tr>
-    </table>
-    <input type="submit" value="Add Entry">
-    <br>
-    <br>
-</form>
+    <div class="button-row">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Record</button>
+    </div>
+
 <table class="table table-bordered">
     <tr>
         <th>Drop Off ID</th>
@@ -70,6 +51,42 @@
         </tr>
     </c:forEach>
 </table>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Record</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/submitDOL">
+                        <input type="hidden" name="dropOffID">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label>Drop Off Tracker Code</label><br>
+                                        <input type="text" name="tCode" placeholder="*">
+                                    <label>Drop Off Date</label>
+                                        <input type="date" name="dDate" placeholder="*">
+                                    <label>Street Address</label>
+                                        <input type="text" name="sAddy" placeholder="*">
+                                    <label>City</label><br>
+                                        <input type="text" name="dCity" placeholder="*">
+                                    <label>State Code</label>
+                                        <input type="text" name="sCode" placeholder="*">
+                                    <label>Zip Code</label>
+                                        <input type="text" name="zCode" placeholder="*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

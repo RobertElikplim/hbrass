@@ -1023,6 +1023,37 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/addTripExpense", method = RequestMethod.POST)
+    public ModelAndView addEmp(@RequestParam("teID") String teID,
+                               @RequestParam("fCost") String fCost,
+                               @RequestParam("sExpense") String sExpense,
+                               @RequestParam("oExpense") String oExpense,
+                               @RequestParam("rExpense") String rExpense,
+                               @RequestParam("tExpense") String tExpense,
+                               @RequestParam("loadID") String loadID) {
+        ModelAndView mv = new ModelAndView("redirect:/TripExpense");
+        Trip_Expense tex = new Trip_Expense();
+        if (teID.isEmpty()) {
+            tex.setFuel_Cost(fCost);
+            tex.setScale_Expense(sExpense);
+            tex.setOther_Expense(oExpense);
+            tex.setRepair_Expense(rExpense);
+            tex.setTotal_Expense(tExpense);
+            tex.setLoad_ID(loadID);
+            tripExpenseRepo.save(tex);
+        } else {
+            tex.setTrip_Expense_ID(teID);
+            tex.setFuel_Cost(fCost);
+            tex.setScale_Expense(sExpense);
+            tex.setOther_Expense(oExpense);
+            tex.setRepair_Expense(rExpense);
+            tex.setTotal_Expense(tExpense);
+            tex.setLoad_ID(loadID);
+            tripExpenseRepo.save(tex);
+        }
+        return mv;
+    }
+
 
     // Edit Functionalities
 
@@ -1319,6 +1350,12 @@ public class MainController {
     public ModelAndView deleteTrailer(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("redirect:/Trailer");
         trailerRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteTrip_Expense/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteTrip_Expense(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/TripExpense");
+        tripExpenseRepo.deleteById(id);
         return mv;
     }
 
