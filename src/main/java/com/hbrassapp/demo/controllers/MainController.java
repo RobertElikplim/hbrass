@@ -1463,7 +1463,7 @@ public class MainController {
         return mv;
     }
 
-    // Need SubmitLoadBoard, submit incident type, submit incident status, submit incident, submit office position
+    // Need SubmitLoadBoard, submit incident type, submit incident status, submit incident, submit office position,truck log
 
 
 }
