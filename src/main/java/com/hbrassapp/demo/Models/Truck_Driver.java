@@ -6,9 +6,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Truck_Driver")
 public class Truck_Driver {
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "Truck_Driver_ID")
-    private String Truck_Driver_ID;
+    @Id
     @Column(name = "Driver_ID")
     private String Driver_ID;
     @Column(name = "License_Type")
@@ -18,20 +16,12 @@ public class Truck_Driver {
 
     public Truck_Driver(){}
 
-    public Truck_Driver(String truck_Driver_ID, String driver_ID, String license_Type, String state_Code) {
-        Truck_Driver_ID = truck_Driver_ID;
+    public Truck_Driver(String driver_ID, String license_Type, String state_Code) {
         Driver_ID = driver_ID;
         License_Type = license_Type;
         State_Code = state_Code;
     }
 
-    public String getTruck_Driver_ID() {
-        return Truck_Driver_ID;
-    }
-
-    public void setTruck_Driver_ID(String truck_Driver_ID) {
-        Truck_Driver_ID = truck_Driver_ID;
-    }
 
     public String getDriver_ID() {
         return Driver_ID;

@@ -868,20 +868,18 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitDriverTruck", method = RequestMethod.POST)
-    public ModelAndView addTdriver(@RequestParam("truckDriverID") String truckDriverID,
-                                   @RequestParam("driverID") String driverID,
+    public ModelAndView addTdriver(@RequestParam("driverID") String driverID,
                                    @RequestParam("driverLicenseType") String driverLicenseType,
                                    @RequestParam("driverStateCode") String driverStateCode) {
 
         ModelAndView mv = new ModelAndView("redirect:/truckDriver");
         Truck_Driver trudriv = new Truck_Driver();
-        if (truckDriverID.isEmpty()) {
+        if (driverID.isEmpty()) {
             trudriv.setDriver_ID(driverID);
             trudriv.setLicense_Type(driverLicenseType);
             trudriv.setState_Code(driverStateCode);
             truckDriverRepo.save(trudriv);
         } else {
-            trudriv.setTruck_Driver_ID(truckDriverID);
             trudriv.setDriver_ID(driverID);
             trudriv.setLicense_Type(driverLicenseType);
             trudriv.setState_Code(driverStateCode);
@@ -1060,7 +1058,7 @@ public class MainController {
                                     @RequestParam("driverID") String driverID,
                                     @RequestParam("usDotID") String usDotID,
                                     @RequestParam("fLevel") String fLevel) {
-        ModelAndView mv = new ModelAndView("redirect:/TruckLog");
+        ModelAndView mv = new ModelAndView("redirect:/trucklog");
         Truck_Log truck_log = new Truck_Log();
         if (logID.isEmpty()) {
             truck_log.setLogID(logID);
