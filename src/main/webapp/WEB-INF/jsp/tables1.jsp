@@ -23,8 +23,6 @@
     <li><a href="/emergencyContacts">Emergency Contacts</a></li>
     <li><a href="/iftaSticker">IFTA Sticker</a></li>
     <li><a href="/incident">Incident</a></li>
-    <li><a href="/incidentStatus">Incident Status</a></li>
-    <li><a href="/incidentType">Incident Type</a></li>
     <li><a href="/invoice">Invoices</a></li>
     <li><a href="/invoiceStatus">Invoice Status</a></li>
     <li><a href="/loadBoard">Load Boards</a></li>
