@@ -1129,14 +1129,14 @@ public class MainController {
         Incident incident = new Incident();
         if (incidentID.isEmpty()) {
             incident.setIncident_ID(incidentID);
-            //incident.setIncident_Status(incidentStatus);
-            //incident.setIncident_Type(incidentType);
+            incident.setIncident_Status(incidentStatus);
+            incident.setIncident_Type(incidentType);
             incident.setRemarks(remarks);
             incidentRepo.save(incident);
         } else {
             incident.setIncident_ID(incidentID);
-            //incident.setIncident_Status(incidentStatus);
-            //incident.setIncident_Type(incidentType);
+            incident.setIncident_Status(incidentStatus);
+            incident.setIncident_Type(incidentType);
             incident.setRemarks(remarks);
             incidentRepo.save(incident);
         }
