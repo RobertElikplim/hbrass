@@ -75,7 +75,7 @@
                                 <label>Tracker Code</label>
                                 <input type="text" name="tCode">
                                 <label>Drop Off Date</label>
-                                <input type="text" name="dDate">
+                                <input type="date" name="dDate">
                                 <label>Street Address</label>
                                 <input type="text" name="sAddy">
                         </div>

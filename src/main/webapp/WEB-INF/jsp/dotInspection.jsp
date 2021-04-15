@@ -67,9 +67,9 @@
                                 <label>VIN</label>
                                 <input type="text" name="vin">
                                 <label>Certification Date</label>
-                                <input type="text" name="cdate">
+                                <input type="date" name="cdate">
                                 <label>Expiration Date</label>
-                                <input type="text" name="eDate">
+                                <input type="date" name="eDate">
                         </div>
                     </div>
                 </div>

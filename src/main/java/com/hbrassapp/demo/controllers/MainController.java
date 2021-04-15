@@ -1260,12 +1260,7 @@ public class MainController {
         mv.addObject("employee", empl);
         return mv;
     }
-
-
-
-
-
-
+    
 
     // Delete Functionalities
 
@@ -1403,6 +1398,12 @@ public class MainController {
     public ModelAndView deleteEmergency_Contact(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("redirect:/emergencyContacts");
         emergencyContactRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteCountry/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteCountry(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/country");
+        countryRepo.deleteById(id);
         return mv;
     }
 

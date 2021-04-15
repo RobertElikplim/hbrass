@@ -70,15 +70,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form action="/submitIncome" method="post">
+                            <div action="/submitIncome" method="post">
                                 <input type="hidden" name="incomeID">
                                 <label>Load ID</label>
-                                <input type="text" name="loadID">
+                                    <input type="text" name="loadID">
                                 <label>Load Fare</label>
-                                <input type="text" name="loadFare">
+                                    <input type="text" name="loadFare">
                                 <label>Commission</label>
-                                <input type="text" name="commision">
-                        </div>
+                                    <input type="text" name="commision">
+                            </div>
                         <div class="col-lg-6">
                             <label>Insurance</label>
                             <input type="text" name="insurance">
@@ -92,7 +92,9 @@
             </div>
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+            </div>
             </div>
         </div>
     </div>
