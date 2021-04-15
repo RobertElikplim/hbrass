@@ -388,6 +388,51 @@ public class MainController {
         }
         return mv;
     }
+    @RequestMapping(value = "/submitOfficePosition", method = RequestMethod.POST)
+    public ModelAndView changesOfficePosition(@RequestParam("OfficePositionID") String OfficePositionID,
+                                              @RequestParam("EmployeePosition") String EmployeePosition)
+    {
+        ModelAndView mv = new ModelAndView("redirect:/officePosition");
+        Office_Position officePosition = new Office_Position();
+        if (OfficePositionID.isEmpty()) {
+            officePosition.setEmployee_Position(EmployeePosition);
+            officePositionRepo.save(officePosition);
+        } else {
+            officePosition.setPosition_ID(OfficePositionID);
+            officePosition.setEmployee_Position(EmployeePosition);
+            officePositionRepo.save(officePosition);
+        }
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitPayroll", method = RequestMethod.POST)
+    public ModelAndView changesPayroll(@RequestParam("PayrollID") String PayrollID,
+                                       @RequestParam("EmployeeID") String EmployeeID,
+                                       @RequestParam("Rate") String Rate,
+                                       @RequestParam("PaymentType") String PaymentType,
+                                       @RequestParam("PayPeriodS") String PayPeriodS,
+                                       @RequestParam("PayPeriodE") String PayPeriodE){
+        ModelAndView mv = new ModelAndView("redirect:/payroll");
+        Payroll payroll = new Payroll();
+        if (PayrollID.isEmpty()) {
+            payroll.setEmployee_ID(EmployeeID);
+            payroll.setRate(Rate);
+            payroll.setPayment_Type(PaymentType);
+            payroll.setPay_Period_Start(PayPeriodS);
+            payroll.setPay_Period_End(PayPeriodE);
+            payrollRepo.save(payroll);
+        } else {
+            payroll.setPayroll_ID(PayrollID);
+            payroll.setEmployee_ID(EmployeeID);
+            payroll.setRate(Rate);
+            payroll.setPayment_Type(PaymentType);
+            payroll.setPay_Period_Start(PayPeriodS);
+            payroll.setPay_Period_End(PayPeriodE);
+            payrollRepo.save(payroll);
+        }
+        return mv;
+    }
+
 
     @RequestMapping(value = "/submitLoads", method = RequestMethod.POST)
     public ModelAndView changesLoads(@RequestParam("loadID") String id,
@@ -1097,22 +1142,6 @@ public class MainController {
             load_board.setWebsite(website);
             load_board.setSubscribed(subscribed);
             loadBoardRepo.save(load_board);
-        }
-        return mv;
-    }
-    @RequestMapping(value = "/submitOfficePosition", method = RequestMethod.POST)
-    public ModelAndView addOfficePos(@RequestParam("positionID") String positionID,
-                                    @RequestParam("employeePosition") String employeePosition){
-        ModelAndView mv = new ModelAndView("redirect:/OfficePosition");
-        Office_Position office_position = new Office_Position();
-        if (positionID.isEmpty()) {
-            office_position.setPosition_ID(positionID);
-            office_position.setEmployee_Position(employeePosition);
-            officePositionRepo.save(office_position);
-        } else {
-            office_position.setPosition_ID(positionID);
-            office_position.setEmployee_Position(employeePosition);
-            officePositionRepo.save(office_position);
         }
         return mv;
     }

@@ -69,23 +69,19 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <form action="/submitPayroll" method="post">
-                                <input type="hidden" name="clientID">
-                                <label>NO SUBMITPAYROLL IN MAIN CONTROLLER</label>
-                                <input type="text" name="clientName">
-                                <label>Street Address</label>
-                                <input type="text" name="streetAddress">
-                                <label>City</label>
-                                <input type="text" name="city">
+                                <input type="hidden" name="PayrollID">
+                                <label>Employee ID</label>
+                                    <input type="text" name="EmployeeID">
+                                <label>Rate</label>
+                                    <input type="text" name="Rate">
+                                <label>Payment Type</label>
+                                    <input type="text" name="PaymentType">
                         </div>
                         <div class="col-lg-6">
-                            <label>State Code</label>
-                            <input type="text" name="stateCode">
-                            <label>Zip Code</label>
-                            <input type="text" name="zipCode">
-                            <label>Phone Number</label>
-                            <input type="text" name="phoneNumber">
-                            <label>Email</label>
-                            <input type="text" name="email">
+                            <label>Period Start</label>
+                                 <input type="text" name="PayPeriodS">
+                            <label>Period End</label>
+                                <input type="text" name="PayPeriodE">
                         </div>
                     </div>
                 </div>
