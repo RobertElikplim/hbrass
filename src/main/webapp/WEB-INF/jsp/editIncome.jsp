@@ -3,7 +3,10 @@
 <html>
 <head>
     <title>Hbrass</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style><%@include file="../css/style.css"%></style>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -21,9 +24,11 @@
         </div>
     </div>
 </nav>
-<form method="post" action="/submitIncome">
-    <td><input type="hidden" name="incomeID" value="${Income.getIncome_ID()}"></td>
-    <table class="w3-table-all">
+
+
+
+<div class="container-fluid">
+    <table class="table table-bordered">
         <tr>
             <td>Load Fare</td>
             <td>Commission</td>
@@ -41,6 +46,7 @@
     <input type="submit" value="Submit Changes">
     <br>
 </form>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
