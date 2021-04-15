@@ -38,10 +38,6 @@ public class MainController {
     @Autowired
     IncidentRepo incidentRepo;
     @Autowired
-    IncidentStatusRepo incidentStatusRepo;
-    @Autowired
-    IncidentTypeRepo incidentTypeRepo;
-    @Autowired
     IncomeRepo incomeRepo;
     @Autowired
     InsuranceRepo insuranceRepo;
@@ -213,21 +209,6 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/incidentStatus")
-    public ModelAndView viewincidentStatus()
-    {
-        ModelAndView mv = new ModelAndView("incidentStatus");
-        mv.addObject("incidentStatusList", incidentStatusRepo.findAll());
-        return mv;
-    }
-
-    @RequestMapping(value = "/incidentType")
-    public ModelAndView viewincidentType()
-    {
-        ModelAndView mv = new ModelAndView("incidentType");
-        mv.addObject("incidentTypeList", incidentTypeRepo.findAll());
-        return mv;
-    }
 
     @RequestMapping(value = "/income")
     public ModelAndView viewincome() {
@@ -759,20 +740,6 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/submitIncidentType", method = RequestMethod.POST) //Method to create new entry
-    public ModelAndView addIncidentType(@RequestParam("incidentTypeID") String incidentTypeID,
-                                        @RequestParam("incidentType") String incidentType) {
-        ModelAndView mv = new ModelAndView("redirect:/incidentType");
-        Incident_Type incident_type = new Incident_Type();
-        if (incidentTypeID.isEmpty()) {
-            incident_type.setType_of_Incident(incidentType);
-            incidentTypeRepo.save(incident_type);
-        } else {
-            incident_type.setType_of_Incident(incidentType);
-            incidentTypeRepo.save(incident_type);
-        }
-        return mv;
-    }
 
     @RequestMapping(value = "/submitInvoiceStatus", method = RequestMethod.POST)
     public ModelAndView addInvoiceStatus(@RequestParam("invoiceStatusID") String invoiceStatusID,
@@ -1273,15 +1240,6 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/editIncidentType/{id}", method = RequestMethod.GET) //Method to edit entry
-    public ModelAndView editIncidentType(@PathVariable("id") String id) {
-        ModelAndView mv = new ModelAndView("editIncidentType");
-        Optional<Incident_Type> editIncidentTypeTable = incidentTypeRepo.findById(id);
-        Incident_Type incidentType = editIncidentTypeTable.get();
-        mv.addObject("IncidentType", incidentType);
-        return mv;
-    }
-
     @RequestMapping(value = "/editTruck_Driver/{id}", method = RequestMethod.GET)
     public ModelAndView editTruckDriver(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editTruckDriver");
@@ -1433,12 +1391,6 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/deleteIncidentType/{id}", method = RequestMethod.GET) //Method to delete entry
-    public ModelAndView deleteIncidentType(@PathVariable("id") String id){
-        ModelAndView mv = new ModelAndView("redirect:/incidentType");
-        incidentTypeRepo.deleteById(id);
-        return mv;
-    }
 
     @RequestMapping(value = "/deleteIncident/{id}", method = RequestMethod.GET) //Method to delete entry
     public ModelAndView deleteIncident(@PathVariable("id") String id){
@@ -1559,8 +1511,6 @@ public class MainController {
         mv.addObject("thelist", systemLoginRepo.findAll());
         return mv;
     }
-
-    // Need submit incident type, submit incident, submit office position
 
 
 }
