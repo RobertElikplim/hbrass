@@ -80,6 +80,7 @@
                                 <input type="text" name="streetAddress">
                                 <label>City</label>
                                 <input type="text" name="city">
+                                </form>
                         </div>
                         <div class="col-lg-6">
                             <label>State Code</label>

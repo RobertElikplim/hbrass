@@ -1087,6 +1087,56 @@ public class MainController {
         }
         return mv;
     }
+    @RequestMapping(value = "/submitTruckLog", method = RequestMethod.POST)
+    public ModelAndView addTruckLog(@RequestParam("logID") String logID,
+                                    @RequestParam("truckVIN") String truckVIN,
+                                    @RequestParam("driverID") String driverID,
+                                    @RequestParam("usDotID") String usDotID,
+                                    @RequestParam("fLevel") String fLevel) {
+        ModelAndView mv = new ModelAndView("redirect:/TruckLog");
+        Truck_Log truck_log = new Truck_Log();
+        if (logID.isEmpty()) {
+            truck_log.setLogID(logID);
+            truck_log.setTruckIDVIN(truckVIN);
+            truck_log.setDriverID(driverID);
+            truck_log.setUsDotID(usDotID);
+            truck_log.setFuelLevel(fLevel);
+            truckLogRepo.save(truck_log);
+        } else {
+            truck_log.setLogID(logID);
+            truck_log.setTruckIDVIN(truckVIN);
+            truck_log.setDriverID(driverID);
+            truck_log.setUsDotID(usDotID);
+            truck_log.setFuelLevel(fLevel);
+            truckLogRepo.save(truck_log);
+        }
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitLoadBoard", method = RequestMethod.POST)
+    public ModelAndView addTruckLog(@RequestParam("loadBoardID") String loadBoardID,
+                                    @RequestParam("boardName") String boardName,
+                                    @RequestParam("website") String website,
+                                    @RequestParam("subscribed") String subscribed){
+        ModelAndView mv = new ModelAndView("redirect:/LoadBoard");
+        Load_Board load_board = new Load_Board();
+        if (loadBoardID.isEmpty()) {
+            load_board.setLoadBoardID(loadBoardID);
+            load_board.setBoardName(boardName);
+            load_board.setWebsite(website);
+            load_board.setSubscribed(subscribed);
+            loadBoardRepo.save(load_board);
+        } else {
+            load_board.setLoadBoardID(loadBoardID);
+            load_board.setBoardName(boardName);
+            load_board.setWebsite(website);
+            load_board.setSubscribed(subscribed);
+            loadBoardRepo.save(load_board);
+        }
+        return mv;
+    }
+
+
 
 
     // Edit Functionalities
