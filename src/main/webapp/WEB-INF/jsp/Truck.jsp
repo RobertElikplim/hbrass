@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style><%@include file="../css/style.css"%></style>
 </head>
-<body style="text-align: center;">
+<body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -22,6 +22,10 @@
     </div>
 </nav>
 <div class="container-fluid">
+    <div class="button-row">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Record</button>
+    </div>
 <table class="table table-bordered">
     <tr>
         <th>VIN</th>
@@ -41,11 +45,52 @@
             <td>${Truck.getMake()}</td>
             <td>${Truck.getModel()}</td>
             <td>${Truck.getPolicy_Number()}</td>
-            <td><a href="/editTruck/${Truck.getTruck_ID_VIN()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
-            <td><a href="/deleteTruck/${Truck.getTruck_ID_VIN()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
+            <td><a href="/editTruck/${Truck.getTruck_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteTruck/${Truck.getTruck_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Record</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/addtruck">
+                        <input type="hidden" name="tId">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label>Turck Vin</label><br>
+                                    <input type="text" name="tVin" placeholder="*">
+                                    <label>Year</label>
+                                    <input type="text" name="year" placeholder="*">
+                                    <label>License Plate</label>
+                                    <input type="text" name="lPlate" placeholder="*">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label>Vehicle Tracker</label><br>
+                                    <input type="text" name="vTracker" placeholder="*">
+                                    <label>Make </label>
+                                    <input type="text" name="make" placeholder="*">
+                                    <label>Model</label>
+                                    <input type="text" name="model" placeholder="*">
+                                    <label>Policy Number</label>
+                                    <input type="text" name="pNumber" placeholder="*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </body>
 </html>

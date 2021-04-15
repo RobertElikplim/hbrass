@@ -578,11 +578,11 @@ public class MainController {
         ModelAndView mv = new ModelAndView("redirect:/income");
         Income income = new Income();
         if (incomeID.isEmpty()) {
-            // income.setLoad_ID(loadID);
+            income.setLoad_ID(loadID);
             income.setLoad_Fare(loadFare);
             income.setCommission(commission);
             income.setInsurance(insurance);
-            // income.setTrip_Expense_ID(tripExpenseID);
+            income.setTrip_Expense_ID(tripExpenseID);
             income.setTotal_Income(totalIncome);
             incomeRepo.save(income);
         } else {
@@ -1023,6 +1023,71 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/addTripExpense", method = RequestMethod.POST)
+    public ModelAndView addEmp(@RequestParam("teID") String teID,
+                               @RequestParam("fCost") String fCost,
+                               @RequestParam("sExpense") String sExpense,
+                               @RequestParam("oExpense") String oExpense,
+                               @RequestParam("rExpense") String rExpense,
+                               @RequestParam("tExpense") String tExpense,
+                               @RequestParam("loadID") String loadID) {
+        ModelAndView mv = new ModelAndView("redirect:/TripExpense");
+        Trip_Expense tex = new Trip_Expense();
+        if (teID.isEmpty()) {
+            tex.setFuel_Cost(fCost);
+            tex.setScale_Expense(sExpense);
+            tex.setOther_Expense(oExpense);
+            tex.setRepair_Expense(rExpense);
+            tex.setTotal_Expense(tExpense);
+            tex.setLoad_ID(loadID);
+            tripExpenseRepo.save(tex);
+        } else {
+            tex.setTrip_Expense_ID(teID);
+            tex.setFuel_Cost(fCost);
+            tex.setScale_Expense(sExpense);
+            tex.setOther_Expense(oExpense);
+            tex.setRepair_Expense(rExpense);
+            tex.setTotal_Expense(tExpense);
+            tex.setLoad_ID(loadID);
+            tripExpenseRepo.save(tex);
+        }
+        return mv;
+    }
+
+    @RequestMapping(value = "/addtruck", method = RequestMethod.POST)
+    public ModelAndView addEmp(@RequestParam("tId") String tId,
+                               @RequestParam("tVin") String tVin,
+                               @RequestParam("year") String year,
+                               @RequestParam("lPlate") String lPlate,
+                               @RequestParam("vTracker") String vTracker,
+                               @RequestParam("make") String make,
+                               @RequestParam("model") String model,
+                               @RequestParam("pNumber") String pNumber) {
+        ModelAndView mv = new ModelAndView("redirect:/Truck");
+        Truck tru = new Truck();
+        if (tId.isEmpty()) {
+            tru.setTruck_ID_VIN(tVin);
+            tru.setYear(year);
+            tru.setLicense_Plate(lPlate);
+            tru.setVehicle_Tracker(vTracker);
+            tru.setMake(make);
+            tru.setModel(model);
+            tru.setPolicy_Number(pNumber);
+            truckRepo.save(tru);
+        } else {
+            tru.setTruck_ID(tId);
+            tru.setTruck_ID_VIN(tVin);
+            tru.setYear(year);
+            tru.setLicense_Plate(lPlate);
+            tru.setVehicle_Tracker(vTracker);
+            tru.setMake(make);
+            tru.setModel(model);
+            tru.setPolicy_Number(pNumber);
+            truckRepo.save(tru);
+        }
+        return mv;
+    }
+
 
     // Edit Functionalities
 
@@ -1322,7 +1387,24 @@ public class MainController {
         trailerRepo.deleteById(id);
         return mv;
     }
-
+    @RequestMapping(value = "/deleteTrip_Expense/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteTrip_Expense(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/TripExpense");
+        tripExpenseRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteTruck/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteTruck(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/Truck");
+        truckRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteEmergency_Contact/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteEmergency_Contact(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/emergencyContacts");
+        emergencyContactRepo.deleteById(id);
+        return mv;
+    }
 
 
 
