@@ -1341,10 +1341,8 @@ public class MainController {
     public ModelAndView deleteClient(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("redirect:/client");
         try {
-            clientRepo.deleteById(id);
-        }
-        catch (Exception ex) {
-        }
+            clientRepo.deleteById(id); }
+        catch (Exception ex) { }
         return mv;
     }
 
@@ -1450,6 +1448,78 @@ public class MainController {
     public ModelAndView deleteCountry(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("redirect:/country");
         countryRepo.deleteById(id);
+        return mv;
+    }
+    /* @RequestMapping(value = "//{id}", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/");
+        countryRepo.deleteById(id);
+        return mv;
+    } */
+    @RequestMapping(value = "/deleteEmployee_Status/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteEmployee_Status(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/employeeStatus");
+        employeeStatusRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteInvoice/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteInvoice(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/invoice");
+        invoiceRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteInvoice_Status/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteInvoice_Status(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/invoiceStatus");
+        invoiceStatusRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteLoads/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteLoads(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/loads");
+        loadsRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteMaintenance/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteMaintenance(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/maintenance");
+        maintenanceRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteOffice_Position/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteOffice_Position(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/officePosition");
+        officePositionRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deletePayroll/{id}", method = RequestMethod.GET)
+    public ModelAndView deletePayrall(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/payroll");
+        payrollRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deletePick_Up_Location/{id}", method = RequestMethod.GET)
+    public ModelAndView deletePick_Up_Location(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/puLocation");
+        pickUpLocationRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteSchedule/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteSchedule(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/schedule");
+        scheduleRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteTire_Vendor/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteTire_Vendor(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/tireVendor");
+        tireVendorRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteTruck_Log/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteTruck_Log(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/trucklog");
+        truckLogRepo.deleteById(id);
         return mv;
     }
 
