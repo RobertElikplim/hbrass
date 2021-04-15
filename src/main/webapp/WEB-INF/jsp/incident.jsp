@@ -33,19 +33,19 @@
     <table class="table table-bordered">
     <tr>
         <th>Incident ID</th>
+        <th>Incident Type</th>
         <th>Load ID</th>
         <th>Employee ID</th>
-        <th>Incident Status ID</th>
-        <th>Incident Type ID</th>
+        <th>Incident Status</th>
         <th>Remarks</th>
     </tr>
     <c:forEach var = "Incident" items = "${incidentList}">
         <tr>
             <td>${Incident.getIncident_ID()}</td>
+            <td>${Incident.getIncident_Type()}</td>
             <td>${Incident.getLoad_ID()}</td>
             <td>${Incident.getEmployee_ID()}</td>
-            <td>${Incident.getIncident_Status_ID()}</td>
-            <td>${Incident.getIncident_Type_ID()}</td>
+            <td>${Incident.getIncident_Status()}</td>
             <td>${Incident.getRemarks()}</td>
             <td><a href="/editIncident/${Incident.getIncident_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
             <td><a href="/deleteIncident/${Incident.getIncident_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
@@ -69,7 +69,7 @@
                             <form action="/submitIncident" method="post">
                                 <input type="hidden" name="clientID">
                                 <label>NEEDS MAPPING IN MAIN CONTROLLER FOR SUBMIT INCIDENT</label>
-
+                            </form>
                         </div>
                         <div class="col-lg-6">
 

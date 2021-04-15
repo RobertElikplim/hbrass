@@ -84,8 +84,6 @@
             <a href="/incident" class="list-group-item">Incident</a>
         </div>
         <div class="col-sm-4">
-            <a href="/incidentStatus" class="list-group-item">Incident Status</a>
-            <a href="/incidentType" class="list-group-item">Incident Type</a>
             <a href="/income" class="list-group-item">Income</a>
             <a href="/insurance" class="list-group-item">Insurance</a>
             <a href="/invoice" class="list-group-item">Invoices</a>
