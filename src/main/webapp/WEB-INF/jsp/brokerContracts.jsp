@@ -42,7 +42,6 @@
         <th>Fare</th>
         <th>Commission</th>
         <th>Contract Status</th>
-        <th>Contract Form</th>
     </tr>
 
 
@@ -55,7 +54,6 @@
             <td>${Broker_Contract.getFare()}</td>
             <td>${Broker_Contract.getCommission()}</td>
             <td>${Broker_Contract.getContract_Status()}</td>
-            <td>${Broker_Contract.getContract_Form()}</td>
             <td><a href="/editBrokerContracts/${Broker_Contract.getBroker_Contract_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
             <td><a href="/deleteBrokerContract/${Broker_Contract.getBroker_Contract_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
