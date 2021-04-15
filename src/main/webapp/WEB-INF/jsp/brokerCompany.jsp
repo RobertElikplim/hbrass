@@ -3,22 +3,25 @@
 <html>
 <head>
     <title>Hbrass</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style><%@include file="../css/style.css"%></style>
+
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <h1 class="navbar-brand">In Big Wheels</h1>
+        <a class="navbar-brand">In Big Wheels</a>
+        <div class="navbar-right" id="navbarSupportedContent">
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/tables">Table Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Logout</a>
+                </li>
+            </ul>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/tables">Table Management</a></li>
-            <li><a href="/">Logout</a></li>
-        </ul>
     </div>
 </nav>
 
@@ -27,7 +30,7 @@
 <div class="container-fluid">
     <div class="button-row">
         <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Record</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New Record</button>
     </div>
 <table class="table table-bordered">
     <tr>
@@ -57,18 +60,20 @@
 </div>
 
 <!-- Add Record Modal -->
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h1 class="modal-title">Add New Record</h1>
+                <h5 class="modal-title" id="exampleModalLabel">Add New Record</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                        <input type="hidden" name="brokerID">
+
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-lg-6">
+                                <form action="/submitBrokerCompany" method="post">
+                                    <input type="hidden" name="brokerID">
                                 <label>Broker Name</label>
                                    <input type="text" name="brokerName" placeholder="*">
                                 <label>Street Address</label>
@@ -76,7 +81,7 @@
                                 <label>State Code</label>
                                    <input type="text" name="stateCode" placeholder="*">
                             </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-lg-6">
                                     <label>Zip Code</label>
                                     <input type="text" name="zipCode" placeholder="*">
                                     <label>Phone Number</label>
@@ -89,13 +94,15 @@
                  </div>
 
             <div class="modal-footer">
-                <button type="submit" formmethod="post" formaction="/submitBrokerCompany" class="btn btn-primary">Save changes</button>
-            </form>
+                <button type="submit" class="btn btn-primary">Save changes</button> </form>
         </div>
     </div>
 </div>
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
 </body>
 </html>

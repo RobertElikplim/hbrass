@@ -408,7 +408,7 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/addLoads", method = RequestMethod.POST)
+    @RequestMapping(value = "/submitLoads", method = RequestMethod.POST)
     public ModelAndView changesLoads(@RequestParam("loadID") String id,
                                      @RequestParam("dateLoads") String dateLoads,
                                      @RequestParam("pickUP") String pickUP,
@@ -569,11 +569,11 @@ public class MainController {
 
     @RequestMapping(value = "/submitIncome", method = RequestMethod.POST)
     public ModelAndView addIncome(@RequestParam("incomeID") String incomeID,
-                                  //@RequestParam("loadID") String loadID,
+                                  @RequestParam("loadID") String loadID,
                                   @RequestParam("loadFare") String loadFare,
                                   @RequestParam("commission") String commission,
                                   @RequestParam("insurance") String insurance,
-                                  //@RequestParam("tripExpenseID") String tripExpenseID,
+                                  @RequestParam("tripExpenseID") String tripExpenseID,
                                   @RequestParam("totalIncome") String totalIncome) {
         ModelAndView mv = new ModelAndView("redirect:/income");
         Income income = new Income();
@@ -977,7 +977,7 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+    @RequestMapping(value = "/submitEmployee", method = RequestMethod.POST)
     public ModelAndView addEmp(@RequestParam("empID") String empID,
                                @RequestParam("fName") String fName,
                                @RequestParam("lName") String lName,
@@ -1031,9 +1031,10 @@ public class MainController {
         ModelAndView mv = new ModelAndView("editBrokerCompany");
         Optional<Broker_Company> brokerCompanyRecord = brokerCompanyRepo.findById(id);
         Broker_Company brokerCompany = brokerCompanyRecord.get();
-        mv.addObject("Broker_Company", brokerCompany);
+        mv.addObject("BrokerCompany", brokerCompany);
         return mv;
     }
+
 
     @RequestMapping(value = "/editBrokerContracts/{id}", method = RequestMethod.GET)
     public ModelAndView editBrokerContracts(@PathVariable("id") String id) {
@@ -1378,5 +1379,8 @@ public class MainController {
         mv.addObject("thelist", systemLoginRepo.findAll());
         return mv;
     }
+
+    // Need SubmitLoadBoard, submit incident type, submit incident status, submit incident, submit office position
+
 
 }

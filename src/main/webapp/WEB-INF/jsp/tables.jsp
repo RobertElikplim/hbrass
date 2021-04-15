@@ -3,23 +3,65 @@
 <html>
 <head>
     <title>Hbrass</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <style><%@include file="../css/style.css"%></style>
 
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <h1 class="navbar-brand">In Big Wheels</h1>
+        <a class="navbar-brand">In Big Wheels</a>
+        <div class="navbar-right" id="navbarSupportedContent">
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/tables">Table Management</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Select
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/brokerCompany">Broker Companies</a></li>
+                        <li><a class="dropdown-item" href="/brokerContracts">Broker Contracts</a></li>
+                        <li><a class="dropdown-item" href="/brokerInfo">Broker Info</a></li>
+                        <li><a class="dropdown-item" href="/client">Clients</a></li>
+                        <li><a class="dropdown-item" href="/country">Countries</a></li>
+                        <li><a class="dropdown-item" href="/dotInspection">DOT Inspections</a></li>
+                        <li><a class="dropdown-item" href="/dropOffLocation">Drop Off Locations</a></li>
+                        <li><a class="dropdown-item" href="/emergencyContacts">Emergency Contacts</a></li>
+                        <li><a class="dropdown-item" href="/employee">Employees</a></li>
+                        <li><a class="dropdown-item" href="/employeeStatus">Employee Status</a></li>
+                        <li><a class="dropdown-item" href="/iftaSticker">IFTA Sticker</a></li>
+                        <li><a class="dropdown-item" href="/income">Income</a></li>
+                        <li><a class="dropdown-item" href="/insurance">Insurance</a></li>
+                        <li><a class="dropdown-item" href="/invoice">Invoices</a></li>
+                        <li><a class="dropdown-item" href="/invoiceStatus">Invoice Status</a></li>
+                        <li><a class="dropdown-item" href="/loadBoard">Load Boards</a></li>
+                        <li><a class="dropdown-item" href="/loads">Loads</a></li>
+                        <li><a class="dropdown-item" href="/maintenance">Maintenance</a></li>
+                        <li><a class="dropdown-item" href="/miscellaneous">Miscellaneous</a></li>
+                        <li><a class="dropdown-item" href="/officePosition">Office Position</a></li>
+                        <li><a class="dropdown-item" href="/payroll">Payroll</a></li>
+                        <li><a class="dropdown-item" href="/puLocation">Pick Up Location</a></li>
+                        <li><a class="dropdown-item" href="/schedule">Schedule</a></li>
+                        <li><a class="dropdown-item" href="/states">States</a></li>
+                        <li><a class="dropdown-item" href="/tire">Tires</a></li>
+                        <li><a class="dropdown-item" href="/tireVendor">Tire Vendors</a></li>
+                        <li><a class="dropdown-item" href="/Trailer">Trailers</a></li>
+                        <li><a class="dropdown-item" href="/TripExpense">Trip Expense</a></li>
+                        <li><a class="dropdown-item" href="/Truck">Trucks</a></li>
+                        <li><a class="dropdown-item" href="/truckDriver">Truck Drivers</a></li>
+                        <li><a class="dropdown-item" href="/trucklog">Truck Log</a></li>
+                        <li><a class="dropdown-item" href="/Vendors">Vendors</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Logout</a>
+                </li>
+            </ul>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/tables">Table Management</a></li>
-            <li><a href="/">Logout</a></li>
-        </ul>
     </div>
 </nav>
 
@@ -72,5 +114,8 @@
 
 </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -9,7 +9,6 @@ public class Insurance {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Insure_ID")
     private String Insure_ID;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Insurance_ID")
     private String Insurance_ID;
     @Column(name = "Insurance_Type")

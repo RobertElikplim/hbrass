@@ -4,12 +4,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: forestgreen;
+    color: #2f2f2f;
     font-family: "Arial Black";
 }
 .tb{
     border-bottom: 1px solid green;
-    color: forestgreen;
+    color: #2f2f2f;
     padding: 8px 0;
     background: whitesmoke;
 }
@@ -88,21 +88,8 @@ p {font-size: 16px;
     text-decoration: none;
     font-size: 16px;
 }
-.modal-body {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
-.modal-header {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: auto;
-}
 
-.modal-footer {
-    padding-top: 10px;
-    text-align: center;
-}
 .fmm{
     font-family: "Arial Black";
     float: right;
