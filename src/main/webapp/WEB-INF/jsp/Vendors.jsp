@@ -67,11 +67,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+
                     <div class="container">
                         <div class="row">
+                            <div class="col-lg-6">
                             <form action="/addVendors" method="post">
-                            <div class="col-lg-8">
-                                    <input type="hidden" name="vendorID">
+                                <input type="hidden" name="vendorID">
                                     <label>Vendor Name</label>
                                         <input type="text" name="nameVendor">
                                     <label>Phone Number</label>
@@ -80,7 +81,8 @@
                                         <input type="text" name="vendorStreetAddress">
                                     <label>City</label>
                                         <input type="text" name="vendorCity">
-                                    <div class="col-lg-8">
+                            </div>
+                                    <div class="col-lg-6">
                                         <label>State Code</label>
                                             <input type="text" name="vendorStateCode">
                                         <label>Zip Code</label>

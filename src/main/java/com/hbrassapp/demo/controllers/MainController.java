@@ -1118,7 +1118,7 @@ public class MainController {
                                     @RequestParam("boardName") String boardName,
                                     @RequestParam("website") String website,
                                     @RequestParam("subscribed") String subscribed){
-        ModelAndView mv = new ModelAndView("redirect:/LoadBoard");
+        ModelAndView mv = new ModelAndView("redirect:/loadBoard");
         Load_Board load_board = new Load_Board();
         if (loadBoardID.isEmpty()) {
             load_board.setLoadBoardID(loadBoardID);
@@ -1318,6 +1318,12 @@ public class MainController {
     public ModelAndView deleteBrokerCompany(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("redirect:/brokerCompany");
         brokerCompanyRepo.deleteById(id);
+        return mv;
+    }
+    @RequestMapping(value = "/deleteLoad_Board/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteLoadBoard(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/loadBoard");
+        loadBoardRepo.deleteById(id);
         return mv;
     }
 

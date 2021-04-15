@@ -51,7 +51,7 @@
 </div>
 <!-- Add Record Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add New Record</h5>
@@ -63,23 +63,13 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <form action="/submitLoadBoard" method="post">
-                                <input type="hidden" name="clientID">
-                                <label>Need SubmitLoadBoard in main controller</label>
-                                <input type="text" name="clientName">
-                                <label>Street Address</label>
-                                <input type="text" name="streetAddress">
-                                <label>City</label>
-                                <input type="text" name="city">
-                        </div>
-                        <div class="col-lg-6">
-                            <label>State Code</label>
-                            <input type="text" name="stateCode">
-                            <label>Zip Code</label>
-                            <input type="text" name="zipCode">
-                            <label>Phone Number</label>
-                            <input type="text" name="phoneNumber">
-                            <label>Email</label>
-                            <input type="text" name="email">
+                                <input type="hidden" name="loadBoardID">
+                                <label>Load Board</label>
+                                <input type="text" name="boardName">
+                                <label>Website</label>
+                                <input type="text" name="website">
+                                <label>Subscribed</label>
+                                <input type="text" name="subscribed">
                         </div>
                     </div>
                 </div>
