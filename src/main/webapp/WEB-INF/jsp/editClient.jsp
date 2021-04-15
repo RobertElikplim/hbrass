@@ -48,6 +48,7 @@
         <td><input type="text" name="phoneNumber" value="${Client.getPhone_Number()}"></td>
         <td><input type="text" name="email" value="${Client.getEmail()}"></td>
         </tr>
+    </form>
 </table>
 <input type="submit" value="Submit Changes">
 </form>

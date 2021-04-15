@@ -35,7 +35,7 @@
         <th>Email</th>
         <th>Phone Number</th>
         <th>Broker ID</th>
-        <th></th><th></th>
+
     </tr>
 
     <tr>
@@ -46,6 +46,7 @@
         <td><input type="text" name="email" value ="${Broker_Info.getEmail()}"></td>
         <td><input type="text" name="phoneNumber" value ="${Broker_Info.getPhoneNumber()}"></td>
         <td><input type="text" name="brokerID" value ="${Broker_Info.getBrokerID()}"></td>
+        </form>
     </tr>
 </table>
 <input type="submit" value="Submit Changes">

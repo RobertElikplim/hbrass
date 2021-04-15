@@ -37,8 +37,10 @@
         <th>Phone Number</th>
         <th>Email Address</th>
     </tr>
+    </table>
 
     <form method="post" action="/submitBrokerCompany">
+        <table>
         <td><input type="text" name="brokerID" value="${Broker_Company.getBroker_ID()}"></td>
         <td><input type="text" name="brokerName" value="${Broker_Company.getBroker_Name()}"></td>
         <td><input type="text" name="streetAddress" value="${Broker_Company.getStreet_Address()}"></td>
@@ -51,7 +53,6 @@
                 <input type="submit" value="Submit Changes">
     </form>
 </div>
-
 
 </body>
 </html>

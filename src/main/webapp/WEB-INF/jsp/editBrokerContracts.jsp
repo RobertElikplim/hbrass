@@ -38,6 +38,7 @@
         <th>Contract Status</th>
         <th>Contract Form</th>
     </tr>
+    </table>
     <form method="post" action="/submitBrokerContract">
         <td><input type="text" name="contractID" value="${Broker_Contract.getBroker_Contract_ID()}"></td>
         <td><input type="text" name="invoiceID" value="${Broker_Contract.getInvoice_ID()}"></td>
@@ -48,7 +49,6 @@
         <td><input type="text" name="contractStatus" value="${Broker_Contract.getContract_Status()}"></td>
         <td><input type="text" name="form"></td>
     </tr>
-</table>
 <input type="submit" value="Submit Changes">
 </form>
 

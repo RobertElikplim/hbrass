@@ -1152,7 +1152,7 @@ public class MainController {
         ModelAndView mv = new ModelAndView("editBrokerCompany");
         Optional<Broker_Company> brokerCompanyRecord = brokerCompanyRepo.findById(id);
         Broker_Company brokerCompany = brokerCompanyRecord.get();
-        mv.addObject("BrokerCompany", brokerCompany);
+        mv.addObject("Broker_Company", brokerCompany);
         return mv;
     }
 
@@ -1169,7 +1169,6 @@ public class MainController {
     @RequestMapping(value = "/editBrokerInfo/{id}", method = RequestMethod.GET)
     public ModelAndView editBrokerInfo(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editBrokerInfo");
-
         Optional<Broker_Info> brokerInfoRecord = brokerInfoRepo.findById(id);
         Broker_Info brokerInfo = brokerInfoRecord.get();
         mv.addObject("Broker_Info", brokerInfo);
