@@ -3,57 +3,32 @@
 <html>
 <head>
     <title>Hbrass</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style><%@include file="../css/style.css"%></style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <h1 class="navbar-brand">In Big Wheels</h1>
+        <a class="navbar-brand">In Big Wheels</a>
+        <div class="navbar-right" id="navbarSupportedContent">
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/tables">Table Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Logout</a>
+                </li>
+            </ul>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Logout</a></li>
-            <li><a href="/tables">Table Management</a></li>
-        </ul>
     </div>
 </nav>
 <div class="container-fluid">
+    <div class="button-row">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New Record</button>
+    </div>
 
-<form method="post" action="/addVendors">
-    <input type="hidden" name="vendorID">
-    <table>
-        <tr>
-            <td>Vendor Name</td>
-            <td>Phone Number</td>
-            <td>Street Address</td>
-            <td>City</td>
-        </tr>
-        <tr>
-            <td><input type="text" name="nameVendor"></td>
-            <td><input type="text" name="vendorPhoneNumber"></td>
-            <td><input type="text" name="vendorStreetAddress"></td>
-            <td><input type="text" name="vendorCity"></td>
-        </tr>
-        <tr>
-            <td>State Code</td>
-            <td>Zip Code</td>
-            <td>Email</td>
-            <td>Vendor Tracker</td>
-        </tr>
-        <tr>
-            <td><input type="text" name="vendorStateCode"></td>
-            <td><input type="text" name="vendorZipCode"></td>
-            <td><input type="text" name="vendorEmail"></td>
-            <td><input type="text" name="vendorTracker"></td>
-        </tr>
-    </table>
-    <input type="submit" value="Add Vendor">
-
-</form>
 <table class="table table-bordered">
     <tr>
         <th>Vendor ID</th>
@@ -84,6 +59,49 @@
     </c:forEach>
 </table>
 </div>
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Record</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <form action="/addVendors" method="post">
+                            <div class="col-lg-8">
+                                    <input type="hidden" name="vendorID">
+                                    <label>Vendor Name</label>
+                                        <input type="text" name="nameVendor">
+                                    <label>Phone Number</label>
+                                        <input type="text" name="vendorPhoneNumber">
+                                    <label>Street Address</label>
+                                        <input type="text" name="vendorStreetAddress">
+                                    <label>City</label>
+                                        <input type="text" name="vendorCity">
+                                    <div class="col-lg-8">
+                                        <label>State Code</label>
+                                            <input type="text" name="vendorStateCode">
+                                        <label>Zip Code</label>
+                                            <input type="text" name="vendorZipCode">
+                                        <label>Email</label>
+                                             <input type="text" name="vendorEmail">
+                                        <label>Vendor Tracker</label>
+                                            <input type="text" name="vendorTracker">
+                                    </div>
+                            </div>
+                        </div>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save changes</button></form>
+                        </div>
+                     </div>
+                </div>
+            </div>
+    </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 </html>
