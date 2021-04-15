@@ -1114,7 +1114,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitLoadBoard", method = RequestMethod.POST)
-    public ModelAndView addTruckLog(@RequestParam("loadBoardID") String loadBoardID,
+    public ModelAndView addLoadBoard(@RequestParam("loadBoardID") String loadBoardID,
                                     @RequestParam("boardName") String boardName,
                                     @RequestParam("website") String website,
                                     @RequestParam("subscribed") String subscribed){
@@ -1135,6 +1135,47 @@ public class MainController {
         }
         return mv;
     }
+    @RequestMapping(value = "/submitOfficePosition", method = RequestMethod.POST)
+    public ModelAndView addOfficePos(@RequestParam("positionID") String positionID,
+                                    @RequestParam("employeePosition") String employeePosition){
+        ModelAndView mv = new ModelAndView("redirect:/OfficePosition");
+        Office_Position office_position = new Office_Position();
+        if (positionID.isEmpty()) {
+            office_position.setPosition_ID(positionID);
+            office_position.setEmployee_Position(employeePosition);
+            officePositionRepo.save(office_position);
+        } else {
+            office_position.setPosition_ID(positionID);
+            office_position.setEmployee_Position(employeePosition);
+            officePositionRepo.save(office_position);
+        }
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitIncident", method = RequestMethod.POST)
+    public ModelAndView addIncident(@RequestParam("incidentID") String incidentID,
+                                     @RequestParam("employeeID") String employeeID,
+                                    @RequestParam("incidentStatus") String incidentStatus,
+                                    @RequestParam("incidentType") String incidentType,
+                                    @RequestParam("remarks") String remarks){
+        ModelAndView mv = new ModelAndView("redirect:/Incident");
+        Incident incident = new Incident();
+        if (incidentID.isEmpty()) {
+            incident.setIncident_ID(incidentID);
+            //incident.setIncident_Status(incidentStatus);
+            //incident.setIncident_Type(incidentType);
+            incident.setRemarks(remarks);
+            incidentRepo.save(incident);
+        } else {
+            incident.setIncident_ID(incidentID);
+            //incident.setIncident_Status(incidentStatus);
+            //incident.setIncident_Type(incidentType);
+            incident.setRemarks(remarks);
+            incidentRepo.save(incident);
+        }
+        return mv;
+    }
+
 
 
 
@@ -1513,7 +1554,7 @@ public class MainController {
         return mv;
     }
 
-    // Need SubmitLoadBoard, submit incident type, submit incident status, submit incident, submit office position,truck log
+    // Need submit incident type, submit incident, submit office position
 
 
 }
