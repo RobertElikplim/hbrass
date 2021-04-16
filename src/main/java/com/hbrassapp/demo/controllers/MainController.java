@@ -162,6 +162,7 @@ public class MainController {
         return mv;
     }
 
+
     @RequestMapping(value = "/dotInspection")
     public ModelAndView viewDotInspection() {
         ModelAndView mv = new ModelAndView("dotInspection");
@@ -356,6 +357,7 @@ public class MainController {
     public ModelAndView viewtripExpense() {
         ModelAndView mv = new ModelAndView("TripExpense");
         mv.addObject("tripExpenseList", tripExpenseRepo.findAll());
+        mv.addObject("loadList", loadsRepo.findAll());
         return mv;
     }
 
@@ -370,6 +372,8 @@ public class MainController {
     public ModelAndView viewtruckDriver() {
         ModelAndView mv = new ModelAndView("truckDriver");
         mv.addObject("truckdriverList", truckDriverRepo.findAll());
+        mv.addObject("driverList", employeerepo.findAll());
+        mv.addObject("stateList", statesRepo.findAll());
         return mv;
     }
 
@@ -377,6 +381,9 @@ public class MainController {
     public ModelAndView viewtruckLog() {
         ModelAndView mv = new ModelAndView("trucklog");
         mv.addObject("trucklogList", truckLogRepo.findAll());
+        mv.addObject("truckList",truckRepo.findAll());
+        mv.addObject("driverList",truckDriverRepo.findAll());
+        mv.addObject("dotList",dotInspectionRepo.findAll());
         return mv;
     }
 

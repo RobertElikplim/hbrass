@@ -62,33 +62,29 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form method="post" action="/addtruck">
-                                <input type="text" name="tId">
-                                <label>Truck Vin</label><br>
-                                <input type="text" name="tVin" placeholder="*">
-                                <label>Year</label>
-                                <input type="text" name="year" placeholder="*">
-                                <label>License Plate</label>
-                                <input type="text" name="lPlate" placeholder="*">
-                                <label>Vehicle Tracker</label><br>
-                                <input type="text" name="vTracker" placeholder="*">
-                        </div>
-                        <div class="col-lg-6">
-                            <label>Make </label>
-                            <input type="text" name="make" placeholder="*">
-                            <label>Model</label>
-                            <input type="text" name="model" placeholder="*">
-                            <label>Policy Number</label>
-                            <input type="text" name="pNumber" placeholder="*">
+                            <form method="post" action="/submitDriverTruck">
+                                <label>Driver ID</label><br>
+                                <input type="text" name="driverID" >
+                                <label>License Type</label>
+                                    <input type="text" name="driverLicenseType" placeholder="*">
+                                <label>State Code</label>
+                                <select class="form-select" name="driverStateCode">
+                                    <c:forEach var = "States" items = "${stateList}">
+                                        <option value="${States.getState_Code()}">${States.getState_Name()}</option>
+                                    </c:forEach>
+                                </select>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Save changes</button> </form>
-                </div>
             </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
         </div>
     </div>
+</div>
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

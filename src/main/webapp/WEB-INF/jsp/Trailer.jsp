@@ -64,19 +64,18 @@
             <div class="modal-body">
 
                 <div class="container">
-
                             <form action="/submitTrailer" method="post">
                                 <div class="row">
                                     <div class="col-lg-8">
                                 <input class="form-control" type="hidden" name="cID">
                                 <label>Trailer ID:</label>
-                                <input class="form-control" type="text" name="trailerID">
+                                    <input class="form-control" type="text" name="trailerID">
                                 <label>Trailer Code:</label>
-                                <input class="form-control" type="text" name="tc">
+                                    <input class="form-control" type="text" name="tc">
                                 <label>Weight:</label>
-                                <input class="form-control" type="text" name="weight">
+                                    <input class="form-control" type="text" name="weight">
                                 <label>License Plate:</label>
-                                <input class="form-control" type="text" name="lcp">
+                                    <input class="form-control" type="text" name="lcp">
                                     </div>
                                 </div>
                 </div>

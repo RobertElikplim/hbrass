@@ -70,28 +70,37 @@
                                     <div class="col-lg-8">
                                 <input type="hidden" name="logID">
                                 <label>Truck VIN</label>
-                                <input type="text" name="truckVIN">
+                                        <select class="form-select" name="truckVin">
+                                            <c:forEach var = "Truck" items = "${truckList}">
+                                                <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Driver ID</label>
-                                <input type="text" name="driverID">
+                                        <select class="form-select" name="driverID">
+                                            <c:forEach var = "Truck_Driver" items = "${driverList}">
+                                                <option value="${Truck_Driver.getDriver_ID()}">${Truck_Driver.getDriver_ID()}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </select>
                                 <label>US DOT ID</label>
-                                <input type="text" name="usDotID">
-                                <label>Fuel Level</label>
-                                <input type="text" name="fLevel">
-                        </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                    </div>
+                                        <select class="form-select" name="usDotID">
+                                            <c:forEach var = "Dot_Inspection" items = "${dotList}">
+                                                <option value="${Dot_Inspection.getDot_Inspection_ID()}">${Dot_Inspection.getDot_Inspection_ID()}</option>
+                                            </c:forEach>
+                                        </select>
+                                        <label>Fuel Level</label>
+                                        <input type="text" name="fLevel">
+                                            </div>
                                 </div>
-                            </form>
-                </div>
-                    </div>
                 </div>
             </div>
-
-
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
         </div>
     </div>
-
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

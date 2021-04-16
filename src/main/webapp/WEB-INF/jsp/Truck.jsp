@@ -72,8 +72,12 @@
                             <div class="col-lg-6">
                     <form method="post" action="/addtruck">
                         <input type="hidden" name="tId">
-                                    <label>Turck Vin</label><br>
-                                    <input type="text" name="tVin" placeholder="*">
+                                    <label>Truck Vin</label><br>
+                        <select class="form-select" name="tVin">
+                            <c:forEach var = "Truck" items = "${truckList}">
+                                <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
+                            </c:forEach>
+                        </select>
                                     <label>Year</label>
                                     <input type="text" name="year" placeholder="*">
                                     <label>License Plate</label>
@@ -87,16 +91,23 @@
                                     <label>Model</label>
                                     <input type="text" name="model" placeholder="*">
                                     <label>Policy Number</label>
-                                    <input type="text" name="pNumber" placeholder="*">
+                                    <select class="form-select" name="pNumber">
+                                        <c:forEach var = "Insurance" items = "${insuranceList}">
+                                            <option value="${Insurance.getPolicy_Number()}">${Insurance.getPolicy_Number()}</option>
+                                        </c:forEach>
+                                    </select>
                                 </div>
-                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Save changes</button> </form>
-                        </div>
+                    </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+                </form>
             </div>
         </div>
+    </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
