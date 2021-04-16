@@ -60,9 +60,9 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
                             <form method="post" action="/addtruck">
+                                <div class="row">
+                                    <div class="col-lg-6">
                                 <label>Driver ID</label><br>
                                     <input type="text" name="driverID" placeholder="*">
                                 <label>License Type</label>
@@ -134,11 +134,15 @@
                                 <option value="AE">Armed Forces Others</option>
                                 </select>
                         </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Save changes</button> </form>
-                </div>
+
             </div>
         </div>
     </div>

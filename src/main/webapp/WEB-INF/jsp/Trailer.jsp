@@ -64,9 +64,10 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8">
+
                             <form action="/submitTrailer" method="post">
+                                <div class="row">
+                                    <div class="col-lg-8">
                                 <input type="hidden" name="cID">
                                 <label>Trailer ID:</label>
                                 <input type="text" name="trailerID">
@@ -77,13 +78,17 @@
                                 <label>License Plate:</label>
                                 <input type="text" name="lcp">
                         </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                </div>
                     </div>
                 </div>
             </div>
 
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
-            </div>
+
         </div>
     </div>
 

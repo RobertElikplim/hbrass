@@ -64,9 +64,10 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8">
+
                             <form action="/submitTruckLog" method="post">
+                                <div class="row">
+                                    <div class="col-lg-8">
                                 <input type="hidden" name="logID">
                                 <label>Truck VIN</label>
                                 <input type="text" name="truckVIN">
@@ -77,13 +78,17 @@
                                 <label>Fuel Level</label>
                                 <input type="text" name="fLevel">
                         </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                </div>
                     </div>
                 </div>
             </div>
 
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
-            </div>
+
         </div>
     </div>
 

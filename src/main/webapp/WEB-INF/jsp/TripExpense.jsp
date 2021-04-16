@@ -67,9 +67,10 @@
                 <div class="modal-body">
 
                     <div class="container">
+
+                    <form method="post" action="/addTripExpense">
                         <div class="row">
                             <div class="col-lg-6">
-                    <form method="post" action="/addTripExpense">
                         <input type="hidden" name="teID">
                                     <label>Fuel Cost</label>
                                         <input type="text" name="fCost" placeholder="*">
@@ -86,12 +87,16 @@
                                     <label>Load ID</label>
                                         <input type="text" name="loadID" placeholder="*">
                                 </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
                             </div>
                         </div>
                     </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Save changes</button>  </form>
-                        </div>
+
                 </div>
             </div>
         </div>
