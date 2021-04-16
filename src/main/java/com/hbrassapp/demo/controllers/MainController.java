@@ -647,6 +647,32 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/submitInvoice", method = RequestMethod.POST)
+    public ModelAndView addInvoice(@RequestParam("invoiceID") String invoiceID,
+                                  @RequestParam("clientID") String clientID,
+                                  @RequestParam("bcID") String bcID,
+                                  @RequestParam("iDate") String iDate,
+                                  @RequestParam("istatus") String istatus) {
+        ModelAndView mv = new ModelAndView("redirect:/invoice");
+        Invoice invoice = new Invoice();
+        States states = new States();
+        if (invoiceID.isEmpty()) {
+            invoice.setClientID(clientID);
+            invoice.setBrokerContractID(bcID);
+            invoice.setInvoiceDate(iDate);
+            invoice.setInvoiceStatusID(istatus);
+            invoiceRepo.save(invoice);
+        } else {
+            invoice.setInvoiceID(invoiceID);
+            invoice.setClientID(clientID);
+            invoice.setBrokerContractID(bcID);
+            invoice.setInvoiceDate(iDate);
+            invoice.setInvoiceStatusID(istatus);
+            invoiceRepo.save(invoice);
+        }
+        return mv;
+    }
+
     @RequestMapping(value = "/submitMisc", method = RequestMethod.POST)
     public ModelAndView addIncome(@RequestParam("miscID") String miscID,
                                   @RequestParam("cost") String cost,
