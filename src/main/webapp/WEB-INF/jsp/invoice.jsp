@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Invoices</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -53,7 +53,7 @@
 </div>
 <!-- Add Record Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add New Record</h5>
@@ -61,35 +61,44 @@
             </div>
             <div class="modal-body">
 
-                <div class="container">
+                <div class="container" style="padding: 50px;">
                             <form action="/submitInvoice" method="post">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-sm-8">
                                 <input type="hidden" name="invoiceID">
                                 <label>Client ID</label>
-                                    <input type="text" name="clientID">
+                                        <select class="form-select" name="clientID">
+                                            <c:forEach var = "Client" items = "${clientList}">
+                                                <option value="${Client.getClient_ID()}">${Client.getClient_ID()}-${Client.getClient_Name()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Broker Contract ID</label>
-                                    <input type="text" name="bcID">
+                                        <select class="form-select" name="bcID">
+                                            <c:forEach var = "Broker_Contract" items = "${brokerContractList}">
+                                                <option value="${Broker_Contract.getBroker_Contract_ID()}">${Broker_Contract.getBroker_Contract_ID()}</option>
+                                            </c:forEach>
+                                        </select>
+                                        <label>Date</label>
+                                        <input class="form-control" type="date" name="iDate">
+                                        <label>Status</label>
+                                        <input class="form-control" type="text" name="istatus">
+                                    </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <label>Date</label><br>
-                                        <input type="date" name="iDate">
-                                    <label>Status</label>
-                                        <input type="text" name="istatus">
-                                </div>
+                            </div>
+            </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
-                                </div>
                             </form>
-                </div>
+                                </div>
+                            </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-</div>
+
+
+
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

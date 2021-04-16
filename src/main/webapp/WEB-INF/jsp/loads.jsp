@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Loads</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -83,44 +83,60 @@
                                     <div class="col-lg-6">
                                 <input type="hidden" name="loadID">
                                 <label>Date</label>
-                                <input type="text" name="dateLoads">
+                                <input class="form-control" type="date" name="dateLoads">
                                 <label>Pick Up Tracker</label>
-                                <input type="text" name="pickUP">
+                                        <select class="form-select" name="pickUP">
+                                            <c:forEach var = "Pick_Up_location" items = "${pickUpList}">
+                                                <option value="${Pick_Up_location.getPuTrackerCode()}">${Pick_Up_location.getPuTrackerCode()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Drop of Tracker</label>
-                                <input type="text" name="dropOff">
+                                        <select class="form-select" name="dropOff">
+                                            <c:forEach var = "Drop_Off_Location" items = "${dropOffList}">
+                                                <option value="${Drop_Off_Location.getDrop_Off_Tracker_Code()}">${Drop_Off_Location.getDrop_Off_Tracker_Code()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>VIN</label>
-                                <input type="text" name="vinNumber">
+                                        <select class="form-select" name="vinNumber">
+                                            <c:forEach var = "Truck" items = "${truckList}">
+                                                <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Trailer ID</label>
-                                <input type="text" name="trailerID">
+                                        <select class="form-select" name="trailerID">
+                                            <c:forEach var = "Trailer" items = "${trailerList}">
+                                                <option value="${Trailer.getTrailer_ID()}">${Trailer.getTrailer_Code()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Driver ID</label>
-                                <input type="text" name="driverID">
+                                        <select class="form-select" name="driverID">
+                                            <c:forEach var = "Truck_Driver" items = "${driverList}">
+                                                <option value="${Truck_Driver.getDriver_ID()}">${Truck_Driver.getDriver_ID()}</option>
+                                            </c:forEach>
+                                        </select>
                         </div>
                         <div class="col-lg-6">
                             <label>Dead Head</label>
-                            <input type="text" name="deadHD">
+                            <input class="form-control" type="text" name="deadHD">
                             <label>Loaded Miles</label>
-                            <input type="text" name="loadedMiles">
+                            <input class="form-control" type="text" name="loadedMiles">
                             <label>Total Miles</label>
-                            <input type="text" name="totalMiles">
+                            <input class="form-control" type="text" name="totalMiles">
                             <label>Driver Pay</label>
-                            <input type="text" name="driverPay">
+                            <input class="form-control" type="text" name="driverPay">
                             <label>Remarks</label>
-                            <input type="text" name="remakrs">
+                            <input class="form-control" type="text" name="remakrs">
                         </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                    </div>
                                 </div>
-                            </form>
-                </div>
-                    </div>
                 </div>
             </div>
-
-
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
         </div>
     </div>
-
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

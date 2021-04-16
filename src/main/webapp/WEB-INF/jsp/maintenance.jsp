@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Maintenance</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -71,30 +71,32 @@
                                     <div class="col-lg-6">
                                 <input type="hidden" name="MaintenanceID">
                                 <label>Mileage</label>
-                                <input type="text" name="Mileage">
+                                <input class="form-control" type="text" name="Mileage">
                                 <label>Service Date</label>
-                                <input type="text" name="ServiceDate">
+                                <input class="form-control" type="text" name="ServiceDate">
                                 <label>Service</label>
-                                <input type="text" name="Service">
+                                <input class="form-control" type="text" name="Service">
                         </div>
                         <div class="col-lg-6">
                             <label>Service Fee</label>
-                            <input type="text" name="ServiceFee">
+                            <input class="form-control" type="text" name="ServiceFee">
                             <label>Truck VIN</label>
-                            <input type="text" name="TruckIdVin">
+                            <select class="form-select" name="TruckIdVin">
+                                <c:forEach var = "Truck" items = "${truckList}">
+                                    <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
+                                </c:forEach>
+                            </select>
                         </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                    </div>
                                 </div>
-                            </form>
-                </div>
-                    </div>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
         </div>
     </div>
-
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

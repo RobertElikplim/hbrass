@@ -217,6 +217,8 @@ public class MainController {
     public ModelAndView viewincident()
     {
         ModelAndView mv = new ModelAndView("incident");
+        mv.addObject("loadList", loadsRepo.findAll());
+        mv.addObject("employeeList", employeerepo.findAll());
         mv.addObject("incidentList", incidentRepo.findAll());
         return mv;
     }
@@ -225,6 +227,8 @@ public class MainController {
     @RequestMapping(value = "/income")
     public ModelAndView viewincome() {
         ModelAndView mv = new ModelAndView("income");
+        mv.addObject("tripExpenseList", tripExpenseRepo.findAll());
+        mv.addObject("loadList", loadsRepo.findAll());
         mv.addObject("incomeList", incomeRepo.findAll());
         return mv;
     }
@@ -239,6 +243,8 @@ public class MainController {
     @RequestMapping(value = "/invoice")
     public ModelAndView viewinvoice() {
         ModelAndView mv = new ModelAndView("invoice");
+        mv.addObject("clientList", clientRepo.findAll());
+        mv.addObject("brokerContractList", brokerContractRepo.findAll());
         mv.addObject("invoiceList", invoiceRepo.findAll());
         return mv;
     }
@@ -246,6 +252,8 @@ public class MainController {
     @RequestMapping(value = "/invoiceStatus")
     public ModelAndView viewinvoiceStatus() {
         ModelAndView mv = new ModelAndView("invoiceStatus");
+        mv.addObject("brokerContractList", brokerContractRepo.findAll());
+        mv.addObject("clientList", clientRepo.findAll());
         mv.addObject("invoiceStatusList", invoiceStatusRepo.findAll());
         return mv;
     }
@@ -260,6 +268,11 @@ public class MainController {
     @RequestMapping(value = "/loads")
     public ModelAndView viewLoads() {
         ModelAndView mv = new ModelAndView("loads");
+        mv.addObject("trailerList", trailerRepo.findAll());
+        mv.addObject("dropOffList", dropOffLocationRepo.findAll());
+        mv.addObject("truckList", truckRepo.findAll());
+        mv.addObject("driverList", truckDriverRepo.findAll());
+        mv.addObject("pickUpList", pickUpLocationRepo.findAll());
         mv.addObject("loadsList", loadsRepo.findAll());
         return mv;
     }
@@ -267,6 +280,7 @@ public class MainController {
     @RequestMapping(value = "/maintenance")
     public ModelAndView viewmaintenance() {
         ModelAndView mv = new ModelAndView("maintenance");
+        mv.addObject("truckList", truckRepo.findAll());
         mv.addObject("maintenanceList", maintenanceRepo.findAll());
         return mv;
     }
@@ -1228,9 +1242,10 @@ public class MainController {
 
     @RequestMapping(value = "/submitIncident", method = RequestMethod.POST)
     public ModelAndView addIncident(@RequestParam("incidentID") String incidentID,
+                                     @RequestParam("incidentType") String incidentType,
+                                     @RequestParam("loadID") String loadID,
                                      @RequestParam("employeeID") String employeeID,
                                     @RequestParam("incidentStatus") String incidentStatus,
-                                    @RequestParam("incidentType") String incidentType,
                                     @RequestParam("remarks") String remarks){
         ModelAndView mv = new ModelAndView("redirect:/Incident");
         Incident incident = new Incident();

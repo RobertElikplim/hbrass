@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Income</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -74,7 +74,11 @@
                                     <div class="col-lg-6">
                                 <input type="hidden" name="incomeID">
                                 <label>Load ID</label>
-                                    <input type="text" name="loadID">
+                                        <select class="form-select" name="loadID">
+                                            <c:forEach var = "Loads" items = "${loadList}">
+                                                <option value="${Loads.getLoad_ID()}">${Loads.getLoad_ID()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Load Fare</label>
                                     <input type="text" name="loadFare">
                                 <label>Commission</label>
@@ -84,7 +88,11 @@
                                     <label>Insurance</label>
                                     <input type="text" name="insurance">
                                     <label>Trip Expense ID</label>
-                                    <input type="text" name="tripExpenseID">
+                                <select class="form-select" name="tripExpenseID">
+                                    <c:forEach var = "Trip_Expense" items = "${tripExpenseList}">
+                                        <option value="${Trip_Expense.getTrip_Expense_ID()}">${Trip_Expense.getTrip_Expense_ID()}</option>
+                                    </c:forEach>
+                                </select>
                                     <label>Total Income</label>
                                     <input type="text" name="totalIncome">
                             </div>

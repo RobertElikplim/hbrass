@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Incidents</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -64,12 +64,29 @@
             <div class="modal-body">
 
                 <div class="container">
-                            <form action="/submitIncident" method="post">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                <input type="hidden" name="clientID">
-                                <label>NEEDS MAPPING IN MAIN CONTROLLER FOR SUBMIT INCIDENT</label>
-                        </div>
+                    <form action="/submitIncident" method="post">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="hidden" name="incidentID">
+                                <label>Incident Type</label>
+                                <input type="text" name="incidentType" placeholder="*">
+                                <label>Load ID</label>
+                                <select class="form-select" name="loadID">
+                                        <c:forEach var = "Loads" items = "${loadList}">
+                                            <option value="${Loads.getLoad_ID()}">${Loads.getLoad_ID()}</option>
+                                        </c:forEach>
+                                    </select>
+                                <label>Employee ID</label>
+                                <select class="form-select" name="employeeID">
+                                        <c:forEach var = "employee" items = "${employeeList}">
+                                            <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}-${employee.getLast_Name()}, ${employee.getFirst_Name()}</option>
+                                        </c:forEach>
+                                    </select>
+                                <label>Incident Status</label>
+                                    <input type="text" name="incidentStatus" placeholder="*">
+                                <label>Remarks</label>
+                                <input type="text" name="remarks" placeholder="*">
+                            </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
