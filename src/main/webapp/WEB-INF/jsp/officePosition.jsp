@@ -66,13 +66,17 @@
                                 <label>Employee Position</label>
                                     <input type="text" name="EmployeePosition">
                         </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </form>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
-            </div>
+
         </div>
     </div>
 

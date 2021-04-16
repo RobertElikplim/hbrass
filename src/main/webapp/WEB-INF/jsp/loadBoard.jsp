@@ -60,9 +60,9 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8">
                             <form action="/submitLoadBoard" method="post">
+                                <div class="row">
+                                    <div class="col-lg-8">
                                 <input type="hidden" name="loadBoardID">
                                 <label>Load Board</label>
                                 <input type="text" name="boardName">
@@ -71,12 +71,14 @@
                                 <label>Subscribed</label>
                                 <input type="text" name="subscribed">
                         </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
             </div>
         </div>
     </div>

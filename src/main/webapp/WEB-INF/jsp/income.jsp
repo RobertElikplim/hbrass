@@ -68,9 +68,10 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div action="/submitIncome" method="post">
+
+                            <form action="/submitIncome" method="post">
+                                <div class="row">
+                                    <div class="col-lg-6">
                                 <input type="hidden" name="incomeID">
                                 <label>Load ID</label>
                                     <input type="text" name="loadID">
@@ -78,23 +79,26 @@
                                     <input type="text" name="loadFare">
                                 <label>Commission</label>
                                     <input type="text" name="commision">
+                                    </div>
+                            <div class="col-lg-6">
+                                    <label>Insurance</label>
+                                    <input type="text" name="insurance">
+                                    <label>Trip Expense ID</label>
+                                    <input type="text" name="tripExpenseID">
+                                    <label>Total Income</label>
+                                    <input type="text" name="totalIncome">
                             </div>
-                        <div class="col-lg-6">
-                            <label>Insurance</label>
-                            <input type="text" name="insurance">
-                            <label>Trip Expense ID</label>
-                            <input type="text" name="tripExpenseID">
-                            <label>Total Income</label>
-                            <input type="text" name="totalIncome">
-                        </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                </div>
                     </div>
                 </div>
             </div>
 
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button>
-                </form>
-            </div>
+
             </div>
         </div>
     </div>

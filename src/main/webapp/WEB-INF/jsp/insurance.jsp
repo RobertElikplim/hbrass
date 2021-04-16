@@ -62,23 +62,25 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8">
                             <form action="/submitInsuranceTable" method="post">
+                                <div class="row">
+                                    <div class="col-lg-8">
                                 <input type="hidden" name="insureID">
                                 <label>Insurance ID</label>
                                 <input type="text" name="insuranceID">
                                 <label>Insurance Type</label>
                                 <input type="text" name="insuranceType">
                                 <label>Expiration</label>
-                                <input type="text" name="coverageExpiration">
+                                <input type="date" name="coverageExpiration">
                         </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
             </div>
         </div>
     </div>
