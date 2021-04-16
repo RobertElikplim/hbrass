@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Payroll</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -72,33 +72,32 @@
                                     <div class="col-lg-6">
                                 <input type="hidden" name="PayrollID">
                                 <label>Employee ID</label>
-                                    <input type="text" name="EmployeeID">
+                                        <select class="form-select" name="EmployeeID">
+                                            <c:forEach var = "employee" items = "${employeeList}">
+                                                <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}-${employee.getLast_Name()}, ${employee.getFirst_Name()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Rate</label>
-                                    <input type="text" name="Rate">
+                                    <input class="form-control" type="text" name="Rate">
                                 <label>Payment Type</label>
-                                    <input type="text" name="PaymentType">
+                                    <input class="form-control" type="text" name="PaymentType">
                         </div>
                         <div class="col-lg-6">
                             <label>Period Start</label>
-                                 <input type="date" name="PayPeriodS">
+                                 <input class="form-control" type="date" name="PayPeriodS">
                             <label>Period End</label>
-                                <input type="date" name="PayPeriodE">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                <input class="form-control" type="date" name="PayPeriodE">
                         </div>
                                 </div>
-                        </form>
-                    </div>
-
-                    </div>
                 </div>
             </div>
-
-
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
         </div>
     </div>
-
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

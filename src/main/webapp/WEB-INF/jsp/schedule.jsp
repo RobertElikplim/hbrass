@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Schedule</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -69,30 +69,30 @@
                                     <div class="col-lg-6">
                                         <input type="hidden" name="scheduleID">
                                         <label>Employee ID</label>
-                                        <input type="text" name="empID">
+                                        <select class="form-select" name="empID">
+                                            <c:forEach var = "employee" items = "${employeeList}">
+                                                <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}-${employee.getLast_Name()}, ${employee.getFirst_Name()}</option>
+                                            </c:forEach>
+                                        </select>
                                         <label>Request</label>
-                                        <input type="text" name="tor">
+                                        <input class="form-control" type="text" name="tor">
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Vacation Start Date</label>
-                                        <input type="date" name="sDate">
+                                        <input class="form-control" type="date" name="sDate">
                                         <label>Vacation End Date</label>
-                                        <input type="date" name="eDate">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <input class="form-control" type="date" name="eDate">
                                     </div>
                                 </div>
-                            </form>
-                </div>
-                    </div>
                 </div>
             </div>
-
-
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
         </div>
     </div>
-
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

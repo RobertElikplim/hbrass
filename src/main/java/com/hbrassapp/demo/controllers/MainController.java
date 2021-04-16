@@ -302,6 +302,7 @@ public class MainController {
     @RequestMapping(value = "/payroll")
     public ModelAndView viewpayroll() {
         ModelAndView mv = new ModelAndView("payroll");
+        mv.addObject("employeeList", employeerepo.findAll());
         mv.addObject("payrollList", payrollRepo.findAll());
         return mv;
     }
@@ -316,6 +317,7 @@ public class MainController {
     @RequestMapping(value = "/schedule")
     public ModelAndView viewschedule() {
         ModelAndView mv = new ModelAndView("schedule");
+        mv.addObject("employeeList", employeerepo.findAll());
         mv.addObject("scheduleList", scheduleRepo.findAll());
         return mv;
     }
@@ -330,6 +332,7 @@ public class MainController {
     @RequestMapping(value = "/tire")
     public ModelAndView viewtire() {
         ModelAndView mv = new ModelAndView("tire");
+        mv.addObject("tireVendorList", tireVendorRepo.findAll());
         mv.addObject("tireList", tireRepo.findAll());
         return mv;
     }
@@ -337,6 +340,7 @@ public class MainController {
     @RequestMapping(value = "/tireVendor")
     public ModelAndView viewtireVendor() {
         ModelAndView mv = new ModelAndView("tireVendor");
+        mv.addObject("vendorList", vendorRepo.findAll());
         mv.addObject("tireVendorList", tireVendorRepo.findAll());
         return mv;
     }

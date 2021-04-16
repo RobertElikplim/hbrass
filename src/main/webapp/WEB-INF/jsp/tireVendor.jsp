@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Tire Vendors</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -32,6 +32,9 @@
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New Record</button>
     </div>
+</div>
+<div class="container-fluid">
+
     <table class="table table-bordered">
     <tr>
         <th>Tire Vendor ID</th>

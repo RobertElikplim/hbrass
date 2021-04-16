@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Tires</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -32,6 +32,8 @@
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New Record</button>
     </div>
+</div>
+<div class="container-fluid">
     <table class="table table-bordered">
     <tr>
         <th>Tire Vendor ID</th>
@@ -62,24 +64,20 @@
                             <form action="/submitClient" method="post">
                                 <div class="row">
                                     <div class="col-lg-8">
-                                <input type="hidden" name="clientID">
+                                <input type="hidden" name="tireVendorID">
                                 <label>Tire</label>
-                                <input type="text" name="tire">
-                        </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                <input class="form-control" type="text" name="tire">
                                     </div>
                                 </div>
-                            </form>
-                </div>
-                    </div>
                 </div>
             </div>
-
-
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
         </div>
     </div>
-
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
