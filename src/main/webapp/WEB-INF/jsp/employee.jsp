@@ -78,9 +78,9 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
                             <form action="/submitEmployee" method="post">
+                                <div class="row">
+                                <div class="col-lg-6">
                                 <input type="hidden" name="empID">
                                 <label>First Name</label>
                                 <input type="text" name="fName">
@@ -171,13 +171,17 @@
                             <label>Emergency Contact</label>
                             <input type="text" name="eCon">
                         </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </form>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
-            </div>
+
         </div>
     </div>
 

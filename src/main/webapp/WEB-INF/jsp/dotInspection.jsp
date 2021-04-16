@@ -70,13 +70,14 @@
                                 <input type="date" name="cdate">
                                 <label>Expiration Date</label>
                                 <input type="date" name="eDate">
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
             </div>
         </div>
     </div>

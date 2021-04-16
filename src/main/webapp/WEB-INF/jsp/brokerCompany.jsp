@@ -70,9 +70,9 @@
             <div class="modal-body">
 
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
                                 <form action="/submitBrokerCompany" method="post">
+                                    <div class="row">
+                                        <div class="col-lg-6">
                                     <input type="hidden" name="brokerID">
                                 <label>Broker Name</label>
                                    <input type="text" name="brokerName" placeholder="*">
@@ -153,15 +153,14 @@
                                     <label>Email</label>
                                    <input type="text" name="email">
                                 </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </form>
                         </div>
                     </div>
                  </div>
-
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-                </form>
-
     </div>
 </div>
 </div>

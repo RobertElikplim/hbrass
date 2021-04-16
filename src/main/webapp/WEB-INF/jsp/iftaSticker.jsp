@@ -62,23 +62,25 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8">
                             <form action="/submitIfta" method="post">
+                                <div class="row">
+                                    <div class="col-lg-8">
                                 <input type="hidden" name="iftaID">
                                 <label>IFTA Status</label>
                                 <input type="text" name="ifta">
                                 <label>VIN</label>
                                 <input type="text" name="vin">
                                 <label>Expiration Date</label>
-                                <input type="text" name="eDate">
+                                <input type="date" name="eDate">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </form>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
             </div>
         </div>
     </div>

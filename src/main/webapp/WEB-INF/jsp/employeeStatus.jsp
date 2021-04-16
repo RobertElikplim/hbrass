@@ -58,20 +58,21 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8">
                             <form action="/submitEmployeeStatus" method="post">
+                                <div class="row">
+                                    <div class="col-lg-8">
                                 <label>Employee ID</label>
                                 <input type="text" name="empID">
                                 <label>Status</label>
                                 <input type="text" name="eStatus">
                     </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </form>
                 </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>

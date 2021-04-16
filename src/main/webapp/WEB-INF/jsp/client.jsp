@@ -70,9 +70,9 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
                             <form action="/submitClient" method="post">
+                                <div class="row">
+                                    <div class="col-lg-6">
                                 <input type="hidden" name="clientID">
                                 <label>Client Name</label>
                                 <input type="text" name="clientName">
@@ -80,7 +80,6 @@
                                 <input type="text" name="streetAddress">
                                 <label>City</label>
                                 <input type="text" name="city">
-                                </form>
                         </div>
                         <div class="col-lg-6">
                             <label>State Code</label>
@@ -156,12 +155,14 @@
                             <label>Email</label>
                             <input type="text" name="email">
                         </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+
+                            </form>
                     </div>
                 </div>
             </div>
-
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
             </div>
         </div>
     </div>
