@@ -685,6 +685,32 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/submitSchedule", method = RequestMethod.POST)
+    public ModelAndView addSchedule(@RequestParam("scheduleID") String scheduleID,
+                                   @RequestParam("empID") String empID,
+                                   @RequestParam("tor") String tor,
+                                   @RequestParam("sDate") String sDate,
+                                   @RequestParam("eDate") String eDate) {
+        ModelAndView mv = new ModelAndView("redirect:/schedule");
+        Schedule schedule = new Schedule();
+        States states = new States();
+        if (scheduleID.isEmpty()) {
+            schedule.setEmployeeID(empID);
+            schedule.setTimeOffRequest(tor);
+            schedule.setVacationStart(sDate);
+            schedule.setVacationEnd(eDate);
+            scheduleRepo.save(schedule);
+        } else {
+            schedule.setScheduleID(scheduleID);
+            schedule.setEmployeeID(empID);
+            schedule.setTimeOffRequest(tor);
+            schedule.setVacationStart(sDate);
+            schedule.setVacationEnd(eDate);
+            scheduleRepo.save(schedule);
+        }
+        return mv;
+    }
+
     @RequestMapping(value = "/submitMisc", method = RequestMethod.POST)
     public ModelAndView addIncome(@RequestParam("miscID") String miscID,
                                   @RequestParam("cost") String cost,
