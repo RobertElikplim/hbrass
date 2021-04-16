@@ -68,8 +68,8 @@
                                 <label>License Type</label>
                                     <input type="text" name="driverLicenseType" placeholder="*">
                                 <label>State Code</label>
-                                <select name="driverStateCode>
-                            <option value="01" selected>Alabama</option>
+                                <select name="driverStateCode">
+                                <option value="01" selected>Alabama</option>
                                 <option value="02">Alaska</option>
                                 <option value="04">Arizona</option>
                                 <option value="05">Arkansas</option>

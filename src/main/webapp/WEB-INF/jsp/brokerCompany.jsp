@@ -79,7 +79,7 @@
                                 <label>Street Address</label>
                                    <input type="text" name="streetAddress" placeholder="*">
                                 <label>State Code</label>
-                                    <select name="stateCode>
+                                    <select name="stateCode">
                                         <option value="01" selected>Alabama</option>
                                         <option value="02">Alaska</option>
                                         <option value="04">Arizona</option>
@@ -158,11 +158,12 @@
                  </div>
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button> </form>
-        </div>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+                </form>
+
     </div>
 </div>
-
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

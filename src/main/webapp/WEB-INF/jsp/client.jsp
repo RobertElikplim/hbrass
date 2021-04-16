@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-lg-6">
                             <label>State Code</label>
-                            <select name="stateCode>
+                            <select name="stateCode">
                             <option value="01" selected>Alabama</option>
                             <option value="02">Alaska</option>
                             <option value="04">Arizona</option>

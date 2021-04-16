@@ -97,7 +97,7 @@
                             <label>City</label>
                             <input type="text" name="city">
                             <label>State Code</label>
-                            <select name="stateCode>
+                            <select name="stateCode">
                             <option value="01" selected>Alabama</option>
                             <option value="02">Alaska</option>
                             <option value="04">Arizona</option>
