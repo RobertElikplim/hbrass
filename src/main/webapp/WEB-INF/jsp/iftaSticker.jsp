@@ -69,7 +69,11 @@
                                 <label>IFTA Status</label>
                                 <input type="text" name="ifta">
                                 <label>VIN</label>
-                                <input type="text" name="vin">
+                                        <select class="form-select" name="vin">
+                                            <c:forEach var = "Truck" items = "${truckList}">
+                                                <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Expiration Date</label>
                                 <input type="date" name="eDate">
                         </div>

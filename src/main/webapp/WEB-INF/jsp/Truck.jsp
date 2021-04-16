@@ -68,10 +68,9 @@
                 <div class="modal-body">
 
                     <div class="container">
-
-                    <form method="post" action="/addtruck">
                         <div class="row">
                             <div class="col-lg-6">
+                    <form method="post" action="/addtruck">
                         <input type="hidden" name="tId">
                                     <label>Turck Vin</label><br>
                                     <input type="text" name="tVin" placeholder="*">
@@ -90,15 +89,11 @@
                                     <label>Policy Number</label>
                                     <input type="text" name="pNumber" placeholder="*">
                                 </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
-                    </form>
-                    </div>
-                            </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button> </form>
                         </div>
-
                 </div>
             </div>
         </div>

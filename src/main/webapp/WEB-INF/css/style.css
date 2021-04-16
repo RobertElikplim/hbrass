@@ -13,15 +13,8 @@
     padding: 8px 0;
     background: whitesmoke;
 }
-.btn{
-    width: 50%;
-    border: 2px solid greenyellow;
-    color: green;
-    padding: 5px;
-    cursor: pointer;
-    margin: 12px 0;
-    font-family: "Arial Black";
-}
+
+
 .ns{
     border: none;
 
@@ -55,7 +48,7 @@ p {font-size: 16px;
     color: #fff;
 }
 .container-fluid {
-    padding-top: 45px;
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 .navbar {
@@ -80,13 +73,10 @@ p {font-size: 16px;
 }
 .btn {
     background-color: #2f2f2f;
-    border: none;
     color: white;
-    width: 200px;
-    padding: 15px 15px;
+    width: 150px;
     text-align: center;
-    text-decoration: none;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 
@@ -103,11 +93,11 @@ p {font-size: 16px;
     font-family: "Arial Black";
 }
 
-.button-row {
-    justify-content: left;
-    align-content: center;
+.container {
+    padding: 40px;
 }
 
-.container {
-    padding: 100px;
+.container-tables-listgroup {
+   padding-top: 50px;
 }
+

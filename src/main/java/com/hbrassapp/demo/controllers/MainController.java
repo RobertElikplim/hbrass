@@ -133,6 +133,8 @@ public class MainController {
     @RequestMapping(value = "/brokerContracts")
     public ModelAndView viewContracts() {
         ModelAndView mv = new ModelAndView("brokerContracts");
+        mv.addObject("brokerList", brokerCompanyRepo.findAll());
+        mv.addObject("invoiceList", invoiceRepo.findAll());
         mv.addObject("brokerContractList", brokerContractRepo.findAll());
         return mv;
     }
@@ -140,6 +142,7 @@ public class MainController {
     @RequestMapping(value = "/brokerInfo")
     public ModelAndView viewBrokerInfo() {
         ModelAndView mv = new ModelAndView("brokerInfo");
+        mv.addObject("brokerList", brokerCompanyRepo.findAll());
         mv.addObject("brokerInfoList", brokerInfoRepo.findAll());
         return mv;
     }
@@ -147,6 +150,7 @@ public class MainController {
     @RequestMapping(value = "/client")
     public ModelAndView viewClient() {
         ModelAndView mv = new ModelAndView("client");
+        mv.addObject("stateList", statesRepo.findAll());
         mv.addObject("clientList", clientRepo.findAll());
         return mv;
     }
@@ -161,6 +165,7 @@ public class MainController {
     @RequestMapping(value = "/dotInspection")
     public ModelAndView viewDotInspection() {
         ModelAndView mv = new ModelAndView("dotInspection");
+        mv.addObject("truckList", truckRepo.findAll());
         mv.addObject("dotInspectionList", dotInspectionRepo.findAll());
         return mv;
     }
@@ -168,6 +173,7 @@ public class MainController {
     @RequestMapping(value = "/dropOffLocation")
     public ModelAndView viewDropOffLocation() {
         ModelAndView mv = new ModelAndView("dropOffLocation");
+        mv.addObject("stateList", statesRepo.findAll());
         mv.addObject("dropOffLocationList", dropOffLocationRepo.findAll());
         return mv;
     }
@@ -183,6 +189,10 @@ public class MainController {
     @RequestMapping(value = "/employee")
     public ModelAndView viewEmployee() {
         ModelAndView mv = new ModelAndView("employee");
+        mv.addObject("stateList", statesRepo.findAll());
+        mv.addObject("posList", officePositionRepo.findAll());
+        mv.addObject("driverList", truckDriverRepo.findAll());
+        mv.addObject("emergencyList", emergencyContactRepo.findAll());
         mv.addObject("employeeList", employeerepo.findAll());
         return mv;
     }
@@ -190,6 +200,7 @@ public class MainController {
     @RequestMapping(value = "/employeeStatus")
     public ModelAndView viewemployeeStatus() {
         ModelAndView mv = new ModelAndView("employeeStatus");
+        mv.addObject("employeeList", employeerepo.findAll());
         mv.addObject("employeeStatusList", employeeStatusRepo.findAll());
         return mv;
     }
@@ -197,6 +208,7 @@ public class MainController {
     @RequestMapping(value = "/iftaSticker")
     public ModelAndView viewiftaSticker() {
         ModelAndView mv = new ModelAndView("iftaSticker");
+        mv.addObject("truckList", truckRepo.findAll());
         mv.addObject("iftaStickerList", ifta_stickerRepo.findAll());
         return mv;
     }
@@ -1211,10 +1223,6 @@ public class MainController {
         }
         return mv;
     }
-
-
-
-
 
     // Edit Functionalities
 

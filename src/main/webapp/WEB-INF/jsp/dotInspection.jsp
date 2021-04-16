@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">DOT Inspections</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -65,7 +65,11 @@
                             <form action="/submitDotInspection" method="post">
                                 <input type="hidden" name="dotInspectionID">
                                 <label>VIN</label>
-                                <input type="text" name="vin">
+                                <select class="form-select" name="vin">
+                                    <c:forEach var = "Truck" items = "${truckList}">
+                                        <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
+                                    </c:forEach>
+                                </select>
                                 <label>Certification Date</label>
                                 <input type="date" name="cdate">
                                 <label>Expiration Date</label>

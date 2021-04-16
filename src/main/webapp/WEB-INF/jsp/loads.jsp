@@ -77,7 +77,7 @@
             </div>
             <div class="modal-body">
 
-                <div class="container">
+                <div class="container" style="padding: 45px;">
                             <form action="/submitLoads" method="post">
                                 <div class="row">
                                     <div class="col-lg-6">

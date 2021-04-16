@@ -11,7 +11,8 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Broker Companys</a>
+
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -26,12 +27,14 @@
 </nav>
 
 
-
 <div class="container-fluid">
     <div class="button-row">
         <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New Record</button>
+        <button type="button" class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#myModal">Add New Record</button>
     </div>
+</div>
+
+    <div class="container-fluid">
 <table class="table table-bordered">
     <tr>
         <th>Broker ID</th>
@@ -59,6 +62,7 @@
 </table>
 </div>
 
+
 <!-- Add Record Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -67,9 +71,9 @@
                 <h5 class="modal-title" id="exampleModalLabel">Add New Record</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
 
-                    <div class="container">
+            <div class="modal-body">
+                <div class="container">
                                 <form action="/submitBrokerCompany" method="post">
                                     <div class="row">
                                         <div class="col-lg-6">

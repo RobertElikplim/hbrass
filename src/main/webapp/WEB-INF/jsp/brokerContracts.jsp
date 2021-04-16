@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Broker Contracts</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -25,13 +25,14 @@
 </nav>
 
 
+<div class="container-fluid">
+    <div class="button-row">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#myModal">Add New Record</button>
+    </div>
+</div>
 
 <div class="container-fluid">
-
-        <div class="button-row">
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New Record</button>
-        </div>
 
 <table class="table table-bordered">
     <tr>
@@ -76,9 +77,17 @@
                                     <div class="col-lg-6">
                                 <input type="hidden" name="contractID">
                                 <label>Invoice ID</label>
-                                <input type="text" name="invoiceID" placeholder="*">
+                                <select class="form-select" name="invoiceID">
+                                    <c:forEach var = "Invoice" items = "${invoiceList}">
+                                        <option value="${Invoice.getInvoiceID()}">${Invoice.getInvoiceID()}</option>
+                                        </c:forEach>
+                                </select>
                                 <label>Broker ID</label>
-                                <input type="text" name="brokerID" placeholder="*">
+                                   <select class="form-select" name="brokerID">
+                                      <c:forEach var = "Broker_Company" items = "${brokerList}">
+                                        <option value="${Broker_Company.getBroker_ID()}">${Broker_Company.getBroker_ID()}-${Broker_Company.getBroker_Name()}</option>
+                                            </c:forEach>
+                                   </select>
                                 <label>Rate</label>
                                 <input type="text" name="rate" placeholder="*">
                         </div>

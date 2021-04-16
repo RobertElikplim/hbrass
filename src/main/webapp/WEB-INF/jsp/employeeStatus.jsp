@@ -52,7 +52,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add New Record</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Employee Status</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -62,7 +62,11 @@
                                 <div class="row">
                                     <div class="col-lg-8">
                                 <label>Employee ID</label>
-                                <input type="text" name="empID">
+                                        <select class="form-select" name="empID">
+                                            <c:forEach var = "employee" items = "${employeeList}">
+                                                <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}-${employee.getLast_Name()}, ${employee.getFirst_Name()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Status</label>
                                 <input type="text" name="eStatus">
                     </div>

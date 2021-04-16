@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Broker Info</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -80,7 +80,11 @@
                             <label>Phone Number</label>
                             <input type="text" name="phoneNumber" placeholder="*">
                             <label>Broker ID</label>
-                            <input type="text" name="brokerID" placeholder="*">
+                            <select class="form-select" name="brokerID">
+                                <c:forEach var = "Broker_Company" items = "${brokerList}">
+                                    <option value="${Broker_Company.getBroker_ID()}">${Broker_Company.getBroker_ID()}-${Broker_Company.getBroker_Name()}</option>
+                                </c:forEach>
+                            </select>
                         </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
