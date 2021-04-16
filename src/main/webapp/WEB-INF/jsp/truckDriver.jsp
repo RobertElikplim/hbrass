@@ -60,7 +60,7 @@
             <div class="modal-body">
 
                 <div class="container">
-                            <form method="post" action="/addtruck">
+                            <form method="post" action="/submitDriverTruck">
                                 <div class="row">
                                     <div class="col-lg-6">
                                 <label>Driver ID</label><br>

@@ -530,7 +530,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitBrokerInfo", method = RequestMethod.POST)
-    public ModelAndView submitBrokerInfo(@RequestParam("contactID") String contactID,
+    public ModelAndView changesBrokerInfo(@RequestParam("contactID") String contactID,
                                          @RequestParam("firstName") String firstName,
                                          @RequestParam("lastName") String lastName,
                                          @RequestParam("email") String email,
@@ -559,7 +559,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitClient", method = RequestMethod.POST)
-    public ModelAndView submitClient(@RequestParam("clientID") String clientID,
+    public ModelAndView changesClient(@RequestParam("clientID") String clientID,
                                      @RequestParam("clientName") String clientName,
                                      @RequestParam("streetAddress") String streetAddress,
                                      @RequestParam("city")String city,
@@ -849,7 +849,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitTire", method = RequestMethod.POST)
-    public ModelAndView addIfta(@RequestParam("tireID") String tireID,
+    public ModelAndView addTire(@RequestParam("tireID") String tireID,
                                 @RequestParam("tire") String tire){
 
         ModelAndView mv = new ModelAndView("redirect:/tire");
@@ -861,6 +861,22 @@ public class MainController {
             tire1.setTire_ID(tireID);
             tire1.setTire_Name(tire);
             tireRepo.save(tire1);
+        }
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitTireVendor", method = RequestMethod.POST)
+    public ModelAndView addTV(@RequestParam("tireVID") String tireVID,
+                                @RequestParam("vID") String vID){
+        ModelAndView mv = new ModelAndView("redirect:/tireVendor");
+        Tire_Vendor tireV = new Tire_Vendor();
+        if (tireVID.isEmpty()) {
+            tireV.setVendor_ID(tireVID);
+            tireVendorRepo.save(tireV);
+        } else {
+            tireV.setTire_Vendor_ID(tireVID);
+            tireV.setVendor_ID(vID);
+            tireVendorRepo.save(tireV);
         }
         return mv;
     }
@@ -1479,12 +1495,7 @@ public class MainController {
         countryRepo.deleteById(id);
         return mv;
     }
-    /* @RequestMapping(value = "//{id}", method = RequestMethod.GET)
-    public ModelAndView delete(@PathVariable("id") String id) {
-        ModelAndView mv = new ModelAndView("redirect:/");
-        countryRepo.deleteById(id);
-        return mv;
-    } */
+
     @RequestMapping(value = "/deleteEmployee_Status/{id}", method = RequestMethod.GET)
     public ModelAndView deleteEmployee_Status(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("redirect:/employeeStatus");
@@ -1607,6 +1618,5 @@ public class MainController {
         mv.addObject("thelist", systemLoginRepo.findAll());
         return mv;
     }
-
 
 }
