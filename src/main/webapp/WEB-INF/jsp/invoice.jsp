@@ -64,7 +64,7 @@
                 <div class="container">
                             <form action="/submitInvoice" method="post">
                                 <div class="row">
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-6">
                                 <input type="hidden" name="invoiceID">
                                 <label>Client ID</label>
                                     <input type="text" name="clientID">
@@ -72,7 +72,7 @@
                                     <input type="text" name="bcID">
                                 </div>
                                 <div class="col-lg-6">
-                                    <label>Date</label>
+                                    <label>Date</label><br>
                                         <input type="date" name="iDate">
                                     <label>Status</label>
                                         <input type="text" name="istatus">

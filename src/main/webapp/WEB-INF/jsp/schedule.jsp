@@ -64,28 +64,21 @@
             <div class="modal-body">
 
                 <div class="container">
-
                             <form action="/submitSchedule" method="post">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                <input type="hidden" name="clientID">
-                                <label>NO SUBMIT SCHEDULE IN MAIN CONTROLLER</label>
-                                <input type="text" name="clientName">
-                                <label>Street Address</label>
-                                <input type="text" name="streetAddress">
-                                <label>City</label>
-                                <input type="text" name="city">
-                        </div>
-                        <div class="col-lg-6">
-                            <label>State Code</label>
-                            <input type="text" name="stateCode">
-                            <label>Zip Code</label>
-                            <input type="text" name="zipCode">
-                            <label>Phone Number</label>
-                            <input type="text" name="phoneNumber">
-                            <label>Email</label>
-                            <input type="text" name="email">
-                        </div>
+                                        <input type="hidden" name="scheduleID">
+                                        <label>Employee ID</label>
+                                        <input type="text" name="empID">
+                                        <label>Request</label>
+                                        <input type="text" name="tor">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Vacation Start Date</label>
+                                        <input type="date" name="sDate">
+                                        <label>Vacation End Date</label>
+                                        <input type="date" name="eDate">
+                                    </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
