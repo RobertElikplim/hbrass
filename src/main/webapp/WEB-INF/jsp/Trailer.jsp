@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">In Big Wheels</a>
+        <a class="navbar-brand">Trailer</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -68,30 +68,26 @@
                             <form action="/submitTrailer" method="post">
                                 <div class="row">
                                     <div class="col-lg-8">
-                                <input type="hidden" name="cID">
+                                <input class="form-control" type="hidden" name="cID">
                                 <label>Trailer ID:</label>
-                                <input type="text" name="trailerID">
+                                <input class="form-control" type="text" name="trailerID">
                                 <label>Trailer Code:</label>
-                                <input type="text" name="tc">
+                                <input class="form-control" type="text" name="tc">
                                 <label>Weight:</label>
-                                <input type="text" name="weight">
+                                <input class="form-control" type="text" name="weight">
                                 <label>License Plate:</label>
-                                <input type="text" name="lcp">
-                        </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                <input class="form-control" type="text" name="lcp">
                                     </div>
                                 </div>
-                            </form>
-                </div>
-                    </div>
                 </div>
             </div>
-
-
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
         </div>
     </div>
-
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

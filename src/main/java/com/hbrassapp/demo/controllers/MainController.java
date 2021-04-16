@@ -383,6 +383,9 @@ public class MainController {
     @RequestMapping(value = "/Vendors")
     public ModelAndView viewvendor() {
         ModelAndView mv = new ModelAndView("Vendors");
+        mv.addObject("driverList", truckDriverRepo.findAll());
+        mv.addObject("truckList", truckRepo.findAll());
+        mv.addObject("dotList", truckRepo.findAll());
         mv.addObject("vendorList", vendorRepo.findAll());
         return mv;
     }
