@@ -81,9 +81,9 @@
             <a href="/employee" class="list-group-item">Employees</a>
             <a href="/employeeStatus" class="list-group-item">Employee Status</a>
             <a href="/iftaSticker" class="list-group-item">IFTA Sticker</a>
-            <a href="/incident" class="list-group-item">Incident</a>
         </div>
         <div class="col-sm-4">
+            <a href="/incident" class="list-group-item">Incident</a>
             <a href="/income" class="list-group-item">Income</a>
             <a href="/insurance" class="list-group-item">Insurance</a>
             <a href="/invoice" class="list-group-item">Invoices</a>
