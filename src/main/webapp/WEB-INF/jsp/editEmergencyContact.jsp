@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">Country Edit</a>
+        <a class="navbar-brand">Emergency Contact Edit</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -26,23 +26,29 @@
 </nav>
 
 <div class="container-fluid">
-
-    <table class="table table-bordered">
+    <table>
         <tr>
-            <td>Country Code</td>
-            <td>Country </td>
-        </tr>
-        <tr>
-            <td><input class="form-control" type="text" name="cc" value ="${Country.getCountry_Code()}"></td>
-            <td><input class="form-control" type="text" name="c" value ="${Country.getCountry_Name()}"></td>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Relationship</th>
+        <th>Phone Number</th>
+        <th>Street Address</th>
+    </tr>
+        <tr><form action="/editEmergencyContact" method="post">
+            <input type="hidden" name="EmergencyContactID">
+            <td><input type="text" name="firstName"></td>
+            <td><input type="text" name="LastName"></td>
+            <td><input type="text" name="Relationship"></td>
+            <td><input type="text" name="PhoneNumber"></td>
+            <td><input type="text" name="streetAddress"></td>
         </tr>
     </table>
-    <input class="btn btn-primary" type="submit" value="Submit Change">
-</form>
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
+
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
 </body>
 </html>

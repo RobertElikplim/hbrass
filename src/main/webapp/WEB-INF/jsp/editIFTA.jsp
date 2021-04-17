@@ -34,9 +34,9 @@
             <td>Expiration Date</td>
         </tr>
         <tr>
-            <td><input type="text" name="ifta" value ="${IFTA_Sticker.getIFTA_Status()}"></td>
-            <td><input type="text" name="vin" value ="${IFTA_Sticker.getTruck_ID_VIN()}"></td>
-            <td><input type="date" name="eDate" value ="${IFTA_Sticker.getIFTA_Expiration_Date()}"></td>
+            <td><input class="form-control" type="text" name="ifta" value ="${IFTA_Sticker.getIFTA_Status()}"></td>
+            <td><input class="form-control" type="text" name="vin" value ="${IFTA_Sticker.getTruck_ID_VIN()}"></td>
+            <td><input class="form-control" type="date" name="eDate" value ="${IFTA_Sticker.getIFTA_Expiration_Date()}"></td>
         </tr>
         <br>
     </table>

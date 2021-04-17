@@ -26,6 +26,7 @@
 </nav>
 
 <div class="container-fluid">
+    <form action="/submitDotInspection" method="post">
 
     <table class="table table-bordered">
         <tr>
@@ -34,14 +35,20 @@
             <td>Expiration Date</td>
         </tr>
         <tr>
-            <td><input type="text" name="vin" value ="${Dot_Inspection.getTruck_ID_VIN()}"></td>
-            <td><input type="date" name="cDate" value ="${Dot_Inspection.getDot_Certification_Date()}"></td>
-            <td><input type="date" name="eDate" value ="${Dot_Inspection.getDot_Expiration_Date()}"></td>
+            <td>
+                <input type="hidden" name=dotInspectionID value="${Dot_Inspection.getDot_Inspection_ID()}">
+                <select class="form-select" name="vin">
+                <selected option>${Dot_Inspection.getTruck_ID_VIN()}</selected>
+                <c:forEach var = "Truck" items = "${truckList}">
+                    <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
+                </c:forEach>
+            </select></td>
+            <td><input class="form-control" type="date" name="cDate" value ="${Dot_Inspection.getDot_Certification_Date()}"></td>
+            <td><input class="form-control" type="date" name="eDate" value ="${Dot_Inspection.getDot_Expiration_Date()}"></td>
         </tr>
-        <br>
     </table>
-    <input type="submit" value="Submit Changes">
-    <br>
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
+
 </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

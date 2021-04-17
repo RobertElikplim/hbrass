@@ -34,7 +34,7 @@
         </tr>
         </tr>
         <tr>
-            <td><input type="text" name="eStatus" value ="${Employee_Status.getEmployee_Status()}"></td>
+            <td><input class="form-control" type="text" name="eStatus" value ="${Employee_Status.getEmployee_Status()}"></td>
         </tr>
         <br>
     </table>

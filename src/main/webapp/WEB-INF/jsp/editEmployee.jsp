@@ -36,11 +36,13 @@
             <td>Street Address</td>
         </tr>
         <tr>
-            <td><input type="text" name="fName" value ="${employee.getFirst_Name()}"></td>
-            <td><input type="text" name="lName" value ="${employee.getLast_Name()}"></td>
-            <td><input type="text" name="pNumber" value ="${employee.getPhone_Number()}"></td>
-            <td><input type="text" name="eMail" value ="${employee.getEmail()}"></td>
-            <td><input type="text" name="sAddy" value ="${employee.getStreet_Address()}"></td>
+            <form action="/submitEmployee" method="post">
+                <input type="hidden" name="empID" value="${employee.getEmployee_ID()}">
+            <td><input class="form-control" type="text" name="fName" value ="${employee.getFirst_Name()}"></td>
+            <td><input class="form-control" type="text" name="lName" value ="${employee.getLast_Name()}"></td>
+            <td><input class="form-control" type="text" name="pNumber" value ="${employee.getPhone_Number()}"></td>
+            <td><input class="form-control" type="text" name="eMail" value ="${employee.getEmail()}"></td>
+            <td><input class="form-control" type="text" name="sAddy" value ="${employee.getStreet_Address()}"></td>
         </tr>
         <tr>
             <td>City</td>
@@ -51,16 +53,21 @@
             <td>Emergency Contact ID</td>
         </tr>
         <tr>
-            <td><input type="text" name="city" value ="${employee.getCity()}"></td>
-            <td><input type="text" name="sCode" value ="${employee.getState_Code()}"></td>
-            <td><input type="text" name="zCode" value ="${employee.getZip_Code()}"></td>
-            <td><input type="text" name="posID" value ="${employee.getPosition_ID()}"></td>
-            <td><input type="text" name="driverID" value ="${employee.getDriver_ID()}"></td>
-            <td><input type="text" name="eCon" value ="${employee.getEmergency_Contact_ID()}"></td>
+            <td><input class="form-control" type="text" name="city" value ="${employee.getCity()}"></td>
+            <td> <select class="form-select" name="sCode">
+                <option selected value="${employee.getState_Code()}">${employee.getState_Code()}</option>
+                <c:forEach var = "States" items = "${stateList}">
+                    <option value="${States.getState_Code()}">${States.getState_Name()}</option>
+                </c:forEach>
+            </select></td>
+            <td><input class="form-control" type="text" name="zCode" value ="${employee.getZip_Code()}"></td>
+            <td><input class="form-control" type="text" name="posID" value ="${employee.getPosition_ID()}"></td>
+            <td><input class="form-control" type="text" name="driverID" value ="${employee.getDriver_ID()}"></td>
+            <td><input class="form-control" type="text" name="eCon" value ="${employee.getEmergency_Contact_ID()}"></td>
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Changes">
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
     <br>
 </form>
 </div>

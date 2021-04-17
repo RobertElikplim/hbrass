@@ -1295,6 +1295,8 @@ public class MainController {
     @RequestMapping(value = "/editBrokerContracts/{id}", method = RequestMethod.GET)
     public ModelAndView editBrokerContracts(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editBrokerContracts");
+        mv.addObject("brokerList", brokerCompanyRepo.findAll());
+        mv.addObject("invoiceList", invoiceRepo.findAll());
         Optional<Broker_Contract> brokerContractRecord = brokerContractRepo.findById(id);
         Broker_Contract brokerContract = brokerContractRecord.get();
         mv.addObject("Broker_Contract", brokerContract);
@@ -1304,6 +1306,7 @@ public class MainController {
     @RequestMapping(value = "/editBrokerInfo/{id}", method = RequestMethod.GET)
     public ModelAndView editBrokerInfo(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editBrokerInfo");
+        mv.addObject("brokerList", brokerCompanyRepo.findAll());
         Optional<Broker_Info> brokerInfoRecord = brokerInfoRepo.findById(id);
         Broker_Info brokerInfo = brokerInfoRecord.get();
         mv.addObject("Broker_Info", brokerInfo);
@@ -1313,6 +1316,7 @@ public class MainController {
     @RequestMapping(value = "/editClient/{id}", method = RequestMethod.GET)
     public ModelAndView editClient(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editClient");
+        mv.addObject("stateList", statesRepo.findAll());
         Optional<Client> clientInfoRecord = clientRepo.findById(id);
         Client client = clientInfoRecord.get();
         mv.addObject("Client", client);
@@ -1331,6 +1335,8 @@ public class MainController {
     @RequestMapping(value = "/editDot_Inspection/{id}", method = RequestMethod.GET)
     public ModelAndView editDI(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editDotInspection");
+        mv.addObject("truckList", truckRepo.findAll());
+
         Optional<Dot_Inspection> editDI = dotInspectionRepo.findById(id);
         Dot_Inspection dinspection = editDI.get();
         mv.addObject("Dot_Inspection", dinspection);
@@ -1339,6 +1345,7 @@ public class MainController {
     @RequestMapping(value = "/editDrop_Off_Location/{id}", method = RequestMethod.GET)
     public ModelAndView editDOL(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editDOL");
+        mv.addObject("stateList", statesRepo.findAll());
         Optional<Drop_Off_Location> editDrol = dropOffLocationRepo.findById(id);
         Drop_Off_Location dol = editDrol.get();
         mv.addObject("Drop_Off_Location", dol);
@@ -1436,9 +1443,19 @@ public class MainController {
     @RequestMapping(value = "/editEmployee/{id}", method = RequestMethod.GET)
     public ModelAndView editEmployee(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editEmployee");
+        mv.addObject("stateList", statesRepo.findAll());
         Optional<employee> emp = employeerepo.findById(id);
         employee empl = emp.get();
         mv.addObject("employee", empl);
+        return mv;
+    }
+
+    @RequestMapping(value = "/editEmergencyContact/{id}", method = RequestMethod.GET)
+    public ModelAndView editEmergencyContact(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editEmergencyContact");
+        Optional<Emergency_Contact> emContact = emergencyContactRepo.findById(id);
+        Emergency_Contact emgContact = emContact.get();
+        mv.addObject("Emergency_Contact", emgContact);
         return mv;
     }
     

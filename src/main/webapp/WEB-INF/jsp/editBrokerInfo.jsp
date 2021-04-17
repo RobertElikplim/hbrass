@@ -40,16 +40,20 @@
 
     <tr>
         <form method="post" action="/submitBrokerInfo">
-        <td><input type="text" name="contactID" value="${Broker_Info.getContact_ID()}"></td>
-        <td><input type="text" name="firstName" value="${Broker_Info.getFirstName()}"></td>
-        <td><input type="text" name="lastName" value ="${Broker_Info.getLastName()}"></td>
-        <td><input type="text" name="email" value ="${Broker_Info.getEmail()}"></td>
-        <td><input type="text" name="phoneNumber" value ="${Broker_Info.getPhoneNumber()}"></td>
-        <td><input type="text" name="brokerID" value ="${Broker_Info.getBrokerID()}"></td>
+        <td><input class="form-control" type="text" name="contactID" value="${Broker_Info.getContact_ID()}"></td>
+        <td><input class="form-control" type="text" name="firstName" value="${Broker_Info.getFirstName()}"></td>
+        <td><input class="form-control" type="text" name="lastName" value ="${Broker_Info.getLastName()}"></td>
+        <td><input class="form-control" type="text" name="email" value ="${Broker_Info.getEmail()}"></td>
+        <td><input class="form-control" type="text" name="phoneNumber" value ="${Broker_Info.getPhoneNumber()}"></td>
+        <td><select class="form-select" name="brokerID">
+            <c:forEach var = "Broker_Company" items = "${brokerList}">
+                <option value="${Broker_Company.getBroker_ID()}">${Broker_Company.getBroker_ID()}-${Broker_Company.getBroker_Name()}</option>
+            </c:forEach>
+        </select></td>
         </form>
     </tr>
 </table>
-<input type="submit" value="Submit Changes">
+<input class="btn btn-primary" type="submit" value="Submit Changes">
 </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

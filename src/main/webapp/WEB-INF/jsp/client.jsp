@@ -75,11 +75,11 @@
                             <form action="/submitClient" method="post">
                                 <input type="hidden" name="clientID">
                                 <label>Client Name</label>
-                                <input type="text" name="clientName">
+                                <input class="form-control" type="text" name="clientName">
                                 <label>Street Address</label>
-                                <input type="text" name="streetAddress">
+                                <input class="form-control" type="text" name="streetAddress">
                                 <label>City</label>
-                                <input type="text" name="city">
+                                <input class="form-control" type="text" name="city">
                                 </form>
                         </div>
                         <div class="col-lg-6">
@@ -90,11 +90,11 @@
                                 </c:forEach>
                             </select>
                             <label>Zip Code</label>
-                            <input type="text" name="zipCode">
+                            <input class="form-control" type="text" name="zipCode">
                             <label>Phone Number</label>
-                            <input type="text" name="phoneNumber">
+                            <input class="form-control" type="text" name="phoneNumber">
                             <label>Email</label>
-                            <input type="text" name="email">
+                            <input class="form-control" type="text" name="email">
                         </div>
                     </div>
                 </div>

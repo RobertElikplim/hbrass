@@ -34,9 +34,9 @@
             <td>Remarks</td>
         </tr>
         <tr>
-            <td><input type="text" name="loadID" value ="${Incident.getLoad_ID()}"></td>
-            <td><input type="text" name="employeeID" value ="${Income.getEmployee_ID()}"></td>
-            <td><input type="text" name="remarks" value ="${Income.getRemarks()}"></td>
+            <td><input class="form-control" type="text" name="loadID" value ="${Incident.getLoad_ID()}"></td>
+            <td><input class="form-control" type="text" name="employeeID" value ="${Income.getEmployee_ID()}"></td>
+            <td><input class="form-control" type="text" name="remarks" value ="${Income.getRemarks()}"></td>
 
         </tr>
         <br>

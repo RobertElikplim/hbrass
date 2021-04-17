@@ -38,34 +38,29 @@
         <th>Contract Status</th>
         <th>Contract Form</th>
     </tr>
-    </table>
     <form method="post" action="/submitBrokerContract">
-        <td><input type="text" name="contractID" value="${Broker_Contract.getBroker_Contract_ID()}"></td>
-        <td><input type="text" name="invoiceID" value="${Broker_Contract.getInvoice_ID()}"></td>
-        <td><input type="text" name="brokerID" value="${Broker_Contract.getBroker_ID()}"></td>
-        <td><input type="text" name="rate" value="${Broker_Contract.getRate()}"></td>
-        <td><input type="text" name="fare" value="${Broker_Contract.getFare()}"></td>
-        <td><input type="text" name="commission" value="${Broker_Contract.getCommission()}"></td>
-        <td><input type="text" name="contractStatus" value="${Broker_Contract.getContract_Status()}"></td>
-        <td><input type="text" name="form"></td>
-    </tr>
-<input type="submit" value="Submit Changes">
-</form>
-
-<table>
-            <tr>
-                <th>Broker ID</th>
-                <th>Broker Name</th>
-
-            </tr>
-            <tr>
-            <c:forEach var = "Broker_Company" items = "${brokerCompanyList}">
-            <td>${Broker_Company.getBroker_ID()}</td>
-            <td>${Broker_Company.getBroker_Name()}</td>
-
-            </tr>
+        <td><input class="form-control" type="text" name="contractID" value="${Broker_Contract.getBroker_Contract_ID()}"></td>
+        <td><select class="form-select" name="invoiceID">
+            <c:forEach var = "Invoice" items = "${invoiceList}">
+                <option value="${Invoice.getInvoiceID()}">${Invoice.getInvoiceID()}</option>
             </c:forEach>
+        </select> </td>
+        <td>
+            <select class="form-select" name="brokerID">
+                <c:forEach var = "Broker_Company" items = "${brokerList}">
+                    <option value="${Broker_Company.getBroker_ID()}">${Broker_Company.getBroker_ID()}-${Broker_Company.getBroker_Name()}</option>
+                </c:forEach>
+            </select>
+            </td>
+        <td><input class="form-control" type="text" name="rate" value="${Broker_Contract.getRate()}"></td>
+        <td><input class="form-control" type="text" name="fare" value="${Broker_Contract.getFare()}"></td>
+        <td><input class="form-control" type="text" name="commission" value="${Broker_Contract.getCommission()}"></td>
+        <td><input class="form-control" type="text" name="contractStatus" value="${Broker_Contract.getContract_Status()}"></td>
+        <td><input class="form-control" type="text" name="form"></td>
+    </tr>
 </table>
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
+</form>
 </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

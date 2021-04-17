@@ -39,34 +39,23 @@
         <th>Email</th>
     </tr>
     <form method="post" action="/submitClient">
-        <td><input type="text" name="clientID" value="${Client.getClient_ID()}"></td>
-        <td><input type="text" name="clientName" value="${Client.getClient_Name()}"></td>
-        <td><input type="text" name="streetAddress" value="${Client.getCity()}"></td>
-        <td><input type="text" name="city" value="${Client.getCity()}"></td>
-        <td><input type="text" name="stateCode" value="${Client.getState_Code()}"></td>
-        <td><input type="text" name="zipCode" value="${Client.getZip_Code()}"></td>
-        <td><input type="text" name="phoneNumber" value="${Client.getPhone_Number()}"></td>
-        <td><input type="text" name="email" value="${Client.getEmail()}"></td>
+        <td><input class="form-control" type="text" name="clientID" value="${Client.getClient_ID()}"></td>
+        <td><input class="form-control" type="text" name="clientName" value="${Client.getClient_Name()}"></td>
+        <td><input class="form-control" type="text" name="streetAddress" value="${Client.getCity()}"></td>
+        <td><input class="form-control" type="text" name="city" value="${Client.getCity()}"></td>
+        <td><select class="form-select" name="stateCode">
+            <c:forEach var = "States" items = "${stateList}">
+                <option value="${States.getState_Code()}">${States.getState_Name()}</option>
+            </c:forEach>
+        </select></td>
+        <td><input class="form-control" type="text" name="zipCode" value="${Client.getZip_Code()}"></td>
+        <td><input class="form-control" type="text" name="phoneNumber" value="${Client.getPhone_Number()}"></td>
+        <td><input class="form-control" type="text" name="email" value="${Client.getEmail()}"></td>
         </tr>
     </form>
 </table>
-<input type="submit" value="Submit Changes">
+<input class="btn btn-primary" type="submit" value="Submit Changes">
 </form>
-
-<table>
-    <tr>
-        <th>Broker ID</th>
-        <th>Broker Name</th>
-
-    </tr>
-    <tr>
-        <c:forEach var = "Broker_Company" items = "${brokerCompanyList}">
-        <td>${Broker_Company.getBroker_ID()}</td>
-        <td>${Broker_Company.getBroker_Name()}</td>
-
-    </tr>
-    </c:forEach>
-</table>
 </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

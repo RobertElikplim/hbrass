@@ -77,13 +77,13 @@
                                 <form action="/submitBrokerCompany" method="post">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                    <input type="hidden" name="brokerID">
+                                    <input class="form-control" type="hidden" name="brokerID">
                                 <label>Broker Name</label>
-                                   <input type="text" name="brokerName" placeholder="*">
+                                   <input class="form-control" type="text" name="brokerName" placeholder="*">
                                 <label>Street Address</label>
-                                   <input type="text" name="streetAddress" placeholder="*">
+                                   <input class="form-control" type="text" name="streetAddress" placeholder="*">
                                 <label>State Code</label>
-                                    <select name="stateCode">
+                                    <select class="form-control" name="stateCode">
                                         <option value="01" selected>Alabama</option>
                                         <option value="02">Alaska</option>
                                         <option value="04">Arizona</option>
@@ -151,11 +151,11 @@
                             </div>
                                     <div class="col-lg-6">
                                     <label>Zip Code</label>
-                                    <input type="text" name="zipCode" placeholder="*">
+                                    <input class="form-control" type="text" name="zipCode" placeholder="*">
                                     <label>Phone Number</label>
-                                   <input type="text" name="phoneNumber" placeholder="*">
+                                   <input class="form-control" type="text" name="phoneNumber" placeholder="*">
                                     <label>Email</label>
-                                   <input type="text" name="email">
+                                   <input class="form-control" type="text" name="email">
                                     </div>
                                     </div>
                 </div>

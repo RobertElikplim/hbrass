@@ -58,7 +58,7 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <label>Country Code</label><br>
-                                    <select name="cc">
+                                    <select class="form-control" name="cc">
                                         <option data-countryCode="US" value="1" selected>USA (+1)</option>
                                         <option data-countryCode="GB" value="44">UK (+44)</option>
                                         <option data-countryCode="DZ" value="213">Algeria (+213)</option>
@@ -271,7 +271,7 @@
                                         <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                                     </select>
                                     <label>Country</label>
-                                    <input type="text" name="c" placeholder="*">
+                                    <input class="form-control" type="text" name="c" placeholder="*">
                                 </div>
                             </div>
                         </div>

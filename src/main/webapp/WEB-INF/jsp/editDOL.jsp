@@ -26,7 +26,7 @@
 </nav>
 
 <div class="container-fluid">
-
+<form action="/submitDOL" method="post">
     <table class="table table-bordered">
         <tr>
             <td>Drop Off Tracker Code</td>
@@ -36,18 +36,22 @@
             <td>State Code</td>
             <td>Zip Code</td>
         </tr>
-        <tr>
-            <td><input type="text" name="tCode" value ="${Drop_Off_Location.getDrop_Off_Tracker_Code()}"></td>
-            <td><input type="date" name="dDate" value ="${Drop_Off_Location.getDrop_Off_Date()}"></td>
-            <td><input type="text" name="sAddy" value ="${Drop_Off_Location.getStreet_Address()}"></td>
-            <td><input type="text" name="dCity" value ="${Drop_Off_Location.getCity()}"></td>
-            <td><input type="text" name="sCode" value ="${Drop_Off_Location.getState_Code()}"></td>
-            <td><input type="text" name="zCode" value ="${Drop_Off_Location.getZip_Code()}"></td>
+        <tr><input type="hidden" name="dropOffID" value="${Drop_Off_Location.getDrop_Off_ID()}">
+            <td><input class="form-control" type="text" name="tCode" value ="${Drop_Off_Location.getDrop_Off_Tracker_Code()}"></td>
+            <td><input class="form-control" type="date" name="dDate" value ="${Drop_Off_Location.getDrop_Off_Date()}"></td>
+            <td><input class="form-control" type="text" name="sAddy" value ="${Drop_Off_Location.getStreet_Address()}"></td>
+            <td><input class="form-control" type="text" name="dCity" value ="${Drop_Off_Location.getCity()}"></td>
+            <td><select class="form-select" name="sCode">
+                <option selected value="${Drop_Off_Location.getState_Code()}">${Drop_Off_Location.getState_Code()}</option>
+                <c:forEach var = "States" items = "${stateList}">
+                    <option value="${States.getState_Code()}">${States.getState_Name()}</option>
+                </c:forEach>
+            </select></td>
+            <td><input class="form-control" type="text" name="zCode" value ="${Drop_Off_Location.getZip_Code()}"></td>
         </tr>
-        <br>
+
     </table>
-    <input type="submit" value="Submit Change">
-    <br>
+    <input class="btn btn-primary" type="submit" value="Submit Change">
 </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

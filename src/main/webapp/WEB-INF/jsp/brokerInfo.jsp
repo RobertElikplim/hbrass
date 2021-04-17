@@ -70,15 +70,15 @@
                                     <div class="col-lg-6">
                                 <input type="hidden" name="contactID">
                                 <label>First Name</label>
-                                <input type="text" name="firstName" placeholder="*">
+                                <input class="form-control" type="text" name="firstName" placeholder="*">
                                 <label>Last Name</label>
-                                <input type="text" name="lastName" placeholder="*">
+                                <input class="form-control" type="text" name="lastName" placeholder="*">
                                 <label>Email</label>
-                                <input type="text" name="email" placeholder="*">
+                                <input class="form-control" type="text" name="email" placeholder="*">
                         </div>
                         <div class="col-lg-6">
                             <label>Phone Number</label>
-                            <input type="text" name="phoneNumber" placeholder="*">
+                            <input class="form-control" type="text" name="phoneNumber" placeholder="*">
                             <label>Broker ID</label>
                             <select class="form-select" name="brokerID">
                                 <c:forEach var = "Broker_Company" items = "${brokerList}">

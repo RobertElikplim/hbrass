@@ -73,15 +73,15 @@
                                     <div class="col-lg-6">
                                 <input type="hidden" name="dropOffID">
                                 <label>Tracker Code</label>
-                                <input type="text" name="tCode">
+                                <input class="form-control" type="text" name="tCode">
                                 <label>Drop Off Date</label>
-                                <input type="date" name="dDate">
+                                <input class="form-control" type="date" name="dDate">
                                 <label>Street Address</label>
-                                <input type="text" name="sAddy">
+                                <input class="form-control" type="text" name="sAddy">
                         </div>
                         <div class="col-lg-6">
                             <label>City</label>
-                            <input type="text" name="city">
+                            <input class="form-control" type="text" name="city">
                             <label>State Code</label>
                             <select class="form-select" name="sCode">
                                 <c:forEach var = "States" items = "${stateList}">
@@ -89,7 +89,7 @@
                                 </c:forEach>
                             </select>
                             <label>Zip Code</label>
-                            <input type="text" name="zipCode">
+                            <input class="form-control" type="text" name="zipCode">
                         </div>
                                 </div>
                 </div>

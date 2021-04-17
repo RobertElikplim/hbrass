@@ -89,15 +89,15 @@
                                             </c:forEach>
                                    </select>
                                 <label>Rate</label>
-                                <input type="text" name="rate" placeholder="*">
+                                <input class="form-control" type="text" name="rate" placeholder="*">
                         </div>
                         <div class="col-lg-6">
                             <label>Fare</label>
-                            <input type="text" name="fare" placeholder="*">
+                            <input class="form-control" type="text" name="fare" placeholder="*">
                             <label>Commission</label>
-                            <input type="text" name="commission" placeholder="*">
+                            <input class="form-control" type="text" name="commission" placeholder="*">
                             <label>Contract Status</label>
-                            <input type="text" name="contractStatus">
+                            <input class="form-control" type="text" name="contractStatus">
                         </div>
                                 </div>
                 </div>
