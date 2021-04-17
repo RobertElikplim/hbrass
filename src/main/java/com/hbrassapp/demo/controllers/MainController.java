@@ -394,6 +394,7 @@ public class MainController {
         mv.addObject("truckList", truckRepo.findAll());
         mv.addObject("dotList", truckRepo.findAll());
         mv.addObject("vendorList", vendorRepo.findAll());
+        mv.addObject("stateList", statesRepo.findAll());
         return mv;
     }
 

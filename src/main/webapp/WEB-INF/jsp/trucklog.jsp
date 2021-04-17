@@ -89,7 +89,7 @@
                                             </c:forEach>
                                         </select>
                                         <label>Fuel Level</label>
-                                        <input type="text" name="fLevel">
+                                        <input class="form-select" type="text" name="fLevel">
                                             </div>
                                 </div>
                 </div>
