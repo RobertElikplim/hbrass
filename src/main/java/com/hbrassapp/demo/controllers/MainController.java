@@ -365,6 +365,7 @@ public class MainController {
     public ModelAndView viewtruck() {
         ModelAndView mv = new ModelAndView("Truck");
         mv.addObject("truckList", truckRepo.findAll());
+        mv.addObject("insuranceList", insuranceRepo.findAll());
         return mv;
     }
 

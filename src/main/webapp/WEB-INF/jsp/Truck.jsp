@@ -93,7 +93,7 @@
                                     <label>Policy Number</label>
                                     <select class="form-select" name="pNumber">
                                         <c:forEach var = "Insurance" items = "${insuranceList}">
-                                            <option value="${Insurance.getPolicy_Number()}">${Insurance.getPolicy_Number()}</option>
+                                            <option value="${Insurance.getInsurance_ID()}">${Insurance.getInsurance_ID()}</option>
                                         </c:forEach>
                                     </select>
                                 </div>
