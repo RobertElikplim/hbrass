@@ -33,14 +33,15 @@
             <td>VIN</td>
             <td>Expiration Date</td>
         </tr>
-        <tr>
+        <tr><form action="/submitIfta" method="post">
+            <input type="hidden" name="iftaID" value="${IFTA_Sticker.getIFTA_ID()}">
             <td><input class="form-control" type="text" name="ifta" value ="${IFTA_Sticker.getIFTA_Status()}"></td>
             <td><input class="form-control" type="text" name="vin" value ="${IFTA_Sticker.getTruck_ID_VIN()}"></td>
             <td><input class="form-control" type="date" name="eDate" value ="${IFTA_Sticker.getIFTA_Expiration_Date()}"></td>
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Change">
+    <input class="btn btn-primary" type="submit" value="Submit Change"> </form>
     <br>
 </form>
 </div>

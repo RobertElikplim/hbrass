@@ -75,7 +75,7 @@
                                     <div class="col-lg-6">
                                 <input type="hidden" name="EmergencyContactID">
                                 <label>First Name</label>
-                                <input type="text" name="firstName">
+                                <input type="text" name="FirstName">
                                 <label>Last Name</label>
                                 <input type="text" name="LastName">
                                 <label>Relationship</label>
@@ -85,7 +85,7 @@
                             <label>Phone Number</label>
                             <input type="text" name="PhoneNumber">
                             <label>Street Address</label>
-                            <input type="text" name="streetAddress">
+                            <input type="text" name="StreetAddress">
                         </div>
                                 </div>
                 </div>

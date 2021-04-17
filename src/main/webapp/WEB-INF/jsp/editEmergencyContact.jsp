@@ -26,7 +26,7 @@
 </nav>
 
 <div class="container-fluid">
-    <table>
+    <table class="table table-bordered">
         <tr>
         <th>First Name</th>
         <th>Last Name</th>
@@ -34,16 +34,16 @@
         <th>Phone Number</th>
         <th>Street Address</th>
     </tr>
-        <tr><form action="/editEmergencyContact" method="post">
-            <input type="hidden" name="EmergencyContactID">
-            <td><input type="text" name="firstName"></td>
-            <td><input type="text" name="LastName"></td>
-            <td><input type="text" name="Relationship"></td>
-            <td><input type="text" name="PhoneNumber"></td>
-            <td><input type="text" name="streetAddress"></td>
+        <tr><form action="/submitEmergencyContact" method="post">
+            <input type="hidden" name="EmergencyContactID" value="${Emergency_Contact.getEmergency_Contact_ID()}">
+            <td><input class="form-control" type="text" name="FirstName" value="${Emergency_Contact.getFirst_Name()}"></td>
+            <td><input class="form-control" type="text" name="LastName" value="${Emergency_Contact.getLast_Name()}"></td>
+            <td><input class="form-control" type="text" name="Relationship" value="${Emergency_Contact.getRelationship()}"></td>
+            <td><input class="form-control" type="text" name="PhoneNumber" value="${Emergency_Contact.getPhone_Number()}"></td>
+            <td><input class="form-control" type="text" name="StreetAddress" value="${Emergency_Contact.getStreet_Address()}"></td>
         </tr>
     </table>
-    <input class="btn btn-primary" type="submit" value="Submit Changes">
+    <input class="btn btn-primary" type="submit" value="Submit Changes"></form>
 
 </div>
 

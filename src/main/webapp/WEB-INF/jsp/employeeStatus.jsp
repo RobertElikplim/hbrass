@@ -41,7 +41,7 @@
         <tr>
             <td>${Employee_Status.getEmployee_ID()}</td>
             <td>${Employee_Status.getEmployee_Status()}</td>
-            <td><a href="/editEmployee_Status/${Employee_Status.getEmployee_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/editEmployeeStatus/${Employee_Status.getEmployee_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
             <td><a href="/deleteEmployee_Status/${Employee_Status.getEmployee_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
