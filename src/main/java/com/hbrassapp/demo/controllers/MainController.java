@@ -1470,23 +1470,6 @@ public class MainController {
         mv.addObject("Truck_Log", ees);
         return mv;
     }
-    @RequestMapping(value = "/editTruck_Driver/{id}", method = RequestMethod.GET)
-    public ModelAndView editTruck_Driver(@PathVariable("id") String id) {
-        ModelAndView mv = new ModelAndView("editTruckDriver");
-        Optional<Truck_Driver> editTruck_Driver = truckDriverRepo.findById(id);
-        Truck_Driver ees = editTruck_Driver.get();
-        mv.addObject("Truck_Driver", ees);
-        return mv;
-    }
-    @RequestMapping(value = "/editVendor/{id}", method = RequestMethod.GET)
-    public ModelAndView editVendor(@PathVariable("id") String id) {
-        ModelAndView mv = new ModelAndView("editVendor");
-        Optional<Vendor> editVendor = vendorRepo.findById(id);
-        Vendor vendor = editVendor.get();
-        mv.addObject("Vendor", vendor);
-        return mv;
-    }
-
 
     @RequestMapping(value = "/editDot_Inspection/{id}", method = RequestMethod.GET)
     public ModelAndView editDI(@PathVariable("id") String id) {
