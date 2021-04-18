@@ -1382,11 +1382,116 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/editEmployeeStatus/{id}", method = RequestMethod.GET)
+    public ModelAndView editEmployeeStatus(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editEmployeeStatus");
+        Optional<Employee_Status> editEmployeeStatus = employeeStatusRepo.findById(id);
+        Employee_Status ees = editEmployeeStatus.get();
+        mv.addObject("Employee_Status", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editInvoice_Status/{id}", method = RequestMethod.GET)
+    public ModelAndView editInvoice_Status(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editInvoiceStatus");
+        Optional<Invoice_Status> editInv = invoiceStatusRepo.findById(id);
+        Invoice_Status inv = editInv.get();
+        mv.addObject("Invoice_Status", inv);
+        return mv;
+    }
+    @RequestMapping(value = "/editLoad_Board/{id}", method = RequestMethod.GET)
+    public ModelAndView editLoad_Board(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editLoadBoard");
+        Optional<Load_Board> editLoad_Board = loadBoardRepo.findById(id);
+        Load_Board lb = editLoad_Board.get();
+        mv.addObject("Load_Board", lb);
+        return mv;
+    }
+    @RequestMapping(value = "/editLoads/{id}", method = RequestMethod.GET)
+    public ModelAndView editLoads(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editLoads");
+        Optional<Loads> editLoads = loadsRepo.findById(id);
+        Loads ees = editLoads.get();
+        mv.addObject("Loads", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editOffice_Position/{id}", method = RequestMethod.GET)
+    public ModelAndView editOffice_Position(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editOfficePosition");
+        Optional<Office_Position> editOfficePosition = officePositionRepo.findById(id);
+        Office_Position ees = editOfficePosition.get();
+        mv.addObject("Office_Position", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editPayroll/{id}", method = RequestMethod.GET)
+    public ModelAndView editPayroll(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editPayroll");
+        Optional<Payroll> editPayroll = payrollRepo.findById(id);
+        Payroll ees = editPayroll.get();
+        mv.addObject("Payroll", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editPick_Up_Location/{id}", method = RequestMethod.GET)
+    public ModelAndView editPick_Up_Location(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editPickUpLocation");
+        Optional<Pick_Up_location> editPick_Up_Location = pickUpLocationRepo.findById(id);
+        Pick_Up_location ees = editPick_Up_Location.get();
+        mv.addObject("Pick_Up_location", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editSchedule/{id}", method = RequestMethod.GET)
+    public ModelAndView editSchedule(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editSchedule");
+        Optional<Schedule> editSchedule = scheduleRepo.findById(id);
+        Schedule ees = editSchedule.get();
+        mv.addObject("Employee_Status", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editTire_Vendor/{id}", method = RequestMethod.GET)
+    public ModelAndView editTire_Vendor(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editTireVendor");
+        Optional<Tire_Vendor> editTire_Vendor = tireVendorRepo.findById(id);
+        Tire_Vendor ees = editTire_Vendor.get();
+        mv.addObject("Tire_Vendor", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editTrip_Expense/{id}", method = RequestMethod.GET)
+    public ModelAndView editTrip_Expense(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editTripExpense");
+        Optional<Trip_Expense> editTrip_Expense = tripExpenseRepo.findById(id);
+        Trip_Expense ees = editTrip_Expense.get();
+        mv.addObject("Trip_Expense", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editTruck_Log/{id}", method = RequestMethod.GET)
+    public ModelAndView editTruck_Log(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editTruckLog");
+        Optional<Truck_Log> editTruck_Log = truckLogRepo.findById(id);
+        Truck_Log ees = editTruck_Log.get();
+        mv.addObject("Truck_Log", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editTruck_Driver/{id}", method = RequestMethod.GET)
+    public ModelAndView editTruck_Driver(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editTruckDriver");
+        Optional<Truck_Driver> editTruck_Driver = truckDriverRepo.findById(id);
+        Truck_Driver ees = editTruck_Driver.get();
+        mv.addObject("Truck_Driver", ees);
+        return mv;
+    }
+    @RequestMapping(value = "/editVendor/{id}", method = RequestMethod.GET)
+    public ModelAndView editVendor(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editVendor");
+        Optional<Vendor> editVendor = vendorRepo.findById(id);
+        Vendor vendor = editVendor.get();
+        mv.addObject("Vendor", vendor);
+        return mv;
+    }
+
+
     @RequestMapping(value = "/editDot_Inspection/{id}", method = RequestMethod.GET)
     public ModelAndView editDI(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editDotInspection");
         mv.addObject("truckList", truckRepo.findAll());
-
         Optional<Dot_Inspection> editDI = dotInspectionRepo.findById(id);
         Dot_Inspection dinspection = editDI.get();
         mv.addObject("Dot_Inspection", dinspection);

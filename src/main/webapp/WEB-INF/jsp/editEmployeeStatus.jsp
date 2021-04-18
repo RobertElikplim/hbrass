@@ -26,7 +26,7 @@
 </nav>
 
 <div class="container-fluid">
-
+    <form method="post" action="/submitEmployeeStatus">
     <table class="table table-bordered">
         <tr>
         <tr>
