@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table(name = "Dot_Inspection")
 public class Dot_Inspection {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -14,6 +17,8 @@ public class Dot_Inspection {
     private String Dot_Certification_Date;
     @Column(name = "Dot_Expiration_Date")
     private String Dot_Expiration_Date;
+    @Column(name = "active")
+    private boolean active;
 
     public Dot_Inspection(){
 
@@ -24,6 +29,14 @@ public class Dot_Inspection {
         Truck_ID_VIN = truck_ID_VIN;
         Dot_Certification_Date = dot_Certification_Date;
         Dot_Expiration_Date = dot_Expiration_Date;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getDot_Inspection_ID() {

@@ -50,7 +50,6 @@
                 <option value="${Broker_Company.getBroker_ID()}">${Broker_Company.getBroker_ID()}-${Broker_Company.getBroker_Name()}</option>
             </c:forEach>
         </select></td>
-        </form>
     </tr>
 </table>
 <input class="btn btn-primary" type="submit" value="Submit Changes">

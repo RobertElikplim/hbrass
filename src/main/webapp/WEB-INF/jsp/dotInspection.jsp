@@ -71,7 +71,7 @@
                                     </c:forEach>
                                 </select>
                                 <label>Certification Date</label>
-                                <input class="form-control" type="date" name="cdate">
+                                <input class="form-control" type="date" name="cDate">
                                 <label>Expiration Date</label>
                                 <input class="form-control" type="date" name="eDate">
                         </div>

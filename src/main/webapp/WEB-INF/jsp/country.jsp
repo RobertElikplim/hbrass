@@ -39,8 +39,8 @@
         <c:forEach var = "Country" items = "${countryList}">
         <td>${Country.getCountry_Code()}</td>
         <td>${Country.getCountry_Name()}</td>
-            <td><a href="/editCountry/${Country.getColumn_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
-            <td><a href="/deleteCountry/${Country.getColumn_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
+            <td><a href="/editCountry/${Country.getCountry_Code()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteCountry/${Country.getCountry_Code()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
     </tr>
     </c:forEach>
 </table>

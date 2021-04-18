@@ -39,6 +39,7 @@
         <th>Email</th>
     </tr>
     <form method="post" action="/submitClient">
+        <tr>
         <td><input class="form-control" type="text" name="clientID" value="${Client.getClient_ID()}"></td>
         <td><input class="form-control" type="text" name="clientName" value="${Client.getClient_Name()}"></td>
         <td><input class="form-control" type="text" name="streetAddress" value="${Client.getCity()}"></td>
@@ -52,7 +53,6 @@
         <td><input class="form-control" type="text" name="phoneNumber" value="${Client.getPhone_Number()}"></td>
         <td><input class="form-control" type="text" name="email" value="${Client.getEmail()}"></td>
         </tr>
-    </form>
 </table>
 <input class="btn btn-primary" type="submit" value="Submit Changes">
 </form>

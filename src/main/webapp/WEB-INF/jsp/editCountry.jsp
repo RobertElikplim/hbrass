@@ -32,6 +32,7 @@
             <td>Country Code</td>
             <td>Country </td>
         </tr>
+        <form method="post" action="/submitCountry">
         <tr>
             <td><input class="form-control" type="text" name="cc" value ="${Country.getCountry_Code()}"></td>
             <td><input class="form-control" type="text" name="c" value ="${Country.getCountry_Name()}"></td>

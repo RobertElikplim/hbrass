@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table
 public class Pick_Up_location {
 
@@ -21,6 +24,8 @@ public class Pick_Up_location {
     private String stateCode;
     @Column(name = "Zip_Code")
     private String zipCode;
+    @Column(name = "active")
+    private boolean active;
 
     public Pick_Up_location (){
 
@@ -34,6 +39,14 @@ public class Pick_Up_location {
         this.city = city;
         this.stateCode = stateCode;
         this.zipCode = zipCode;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getPickUpID() {

@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table
 public class Load_Board {
 
@@ -15,6 +18,8 @@ public class Load_Board {
     private String website;
     @Column(name = "Subscribed")
     private String subscribed;
+    @Column(name = "active")
+    private boolean active;
 
     public Load_Board (){
 
@@ -25,6 +30,14 @@ public class Load_Board {
         this.boardName = boardName;
         this.website = website;
         this.subscribed = subscribed;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getLoadBoardID() {

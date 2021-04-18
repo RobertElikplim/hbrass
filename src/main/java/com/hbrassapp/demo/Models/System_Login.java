@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table
 public class System_Login {
 
@@ -15,6 +18,8 @@ public class System_Login {
     private String privileges;
     @Column(name = "Password")
     private String password;
+    @Column(name = "active")
+    private boolean active;
 
     public System_Login () {
 
@@ -25,6 +30,14 @@ public class System_Login {
         this.username = username;
         this.privileges = privileges;
         this.password = password;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getLoginID() {

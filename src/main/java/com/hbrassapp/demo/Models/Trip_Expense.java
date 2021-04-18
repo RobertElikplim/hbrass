@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table(name = "Trip_Expense")
 public class Trip_Expense {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -20,6 +23,8 @@ public class Trip_Expense {
     private String Total_Expense;
     @Column(name = "Load_ID")
     private String Load_ID;
+    @Column(name = "active")
+    private boolean active;
 
     public Trip_Expense(String trip_Expense_ID, String fuel_Cost, String scale_Expense, String other_Expense, String repair_Expense, String total_Expense, String load_ID) {
         Trip_Expense_ID = trip_Expense_ID;
@@ -33,6 +38,14 @@ public class Trip_Expense {
 
     public Trip_Expense() {
 
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getTrip_Expense_ID() {

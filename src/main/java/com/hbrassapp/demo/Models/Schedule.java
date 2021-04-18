@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table
 public class Schedule {
 
@@ -17,6 +20,8 @@ public class Schedule {
     private String vacationStart;
     @Column(name = "Vacation_Time_End")
     private String vacationEnd;
+    @Column(name = "active")
+    private boolean active;
 
     public Schedule (){
 
@@ -28,6 +33,14 @@ public class Schedule {
         this.timeOffRequest = timeOffRequest;
         this.vacationStart = vacationStart;
         this.vacationEnd = vacationEnd;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getScheduleID() {

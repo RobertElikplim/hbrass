@@ -83,7 +83,7 @@
                                 <label>Street Address</label>
                                    <input class="form-control" type="text" name="streetAddress" placeholder="*">
                                 <label>State Code</label>
-                                    <select class="form-control" name="stateCode">
+                                    <select class="form-select" name="stateCode">
                                         <option value="01" selected>Alabama</option>
                                         <option value="02">Alaska</option>
                                         <option value="04">Arizona</option>

@@ -66,16 +66,16 @@
                                 <div class="row">
                                     <div class="col-lg-8">
                                 <input type="hidden" name="iftaID">
-                                <label>IFTA Status</label>
-                                <input type="text" name="ifta">
                                 <label>VIN</label>
                                         <select class="form-select" name="vin">
                                             <c:forEach var = "Truck" items = "${truckList}">
                                                 <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
                                             </c:forEach>
                                         </select>
+                                        <label>IFTA Status</label>
+                                        <input class="form-control" type="text" name="ifta">
                                 <label>Expiration Date</label>
-                                <input type="date" name="eDate">
+                                <input class="form-control" type="date" name="eDate">
                                     </div>
                                 </div>
                 </div>

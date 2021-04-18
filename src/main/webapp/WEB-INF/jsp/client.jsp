@@ -73,14 +73,14 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <form action="/submitClient" method="post">
-                                <input type="hidden" name="clientID">
+                                <label>Client ID</label>
+                                <input class="form-control" type="text" name="clientID">
                                 <label>Client Name</label>
                                 <input class="form-control" type="text" name="clientName">
                                 <label>Street Address</label>
                                 <input class="form-control" type="text" name="streetAddress">
                                 <label>City</label>
                                 <input class="form-control" type="text" name="city">
-                                </form>
                         </div>
                         <div class="col-lg-6">
                             <label>State Code</label>

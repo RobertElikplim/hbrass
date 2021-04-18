@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table(name="Maintenance")
 public class Maintenance {
 
@@ -19,6 +22,8 @@ public class Maintenance {
     private String serviceFee;
     @Column (name = "Truck_ID_VIN")
     private String truckIDVIN;
+    @Column(name = "active")
+    private boolean active;
 
     public Maintenance() {
 
@@ -31,6 +36,14 @@ public class Maintenance {
         this.service = service;
         this.serviceFee = serviceFee;
         this.truckIDVIN = truckIDVIN;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getMaintenanceID() {

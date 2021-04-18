@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table
 public class IFTA_Sticker {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -14,6 +17,8 @@ public class IFTA_Sticker {
     private String IFTA_Status;
     @Column(name = "IFTA_Expiration_Date")
     private String IFTA_Expiration_Date;
+    @Column(name = "active")
+    private boolean active;
 
     public IFTA_Sticker(){}
 
@@ -22,6 +27,14 @@ public class IFTA_Sticker {
         Truck_ID_VIN = truck_ID_VIN;
         this.IFTA_Status = IFTA_Status;
         this.IFTA_Expiration_Date = IFTA_Expiration_Date;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getIFTA_ID() {

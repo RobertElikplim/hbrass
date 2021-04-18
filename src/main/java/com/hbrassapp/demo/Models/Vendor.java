@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table(name = "Vendor")
 public class Vendor {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -24,6 +27,8 @@ public class Vendor {
     private String Email;
     @Column(name = "Vendor_Tracker")
     private String Vendor_Tracker;
+    @Column(name = "active")
+    private boolean active;
 
     public Vendor(){}
 
@@ -37,6 +42,14 @@ public class Vendor {
         Zip_Code = zip_Code;
         Email = email;
         Vendor_Tracker = vendor_Tracker;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getVendor_ID() {

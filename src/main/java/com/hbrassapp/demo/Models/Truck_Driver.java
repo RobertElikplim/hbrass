@@ -1,9 +1,12 @@
 package com.hbrassapp.demo.Models;
 
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table(name = "Truck_Driver")
 public class Truck_Driver {
     @Id
@@ -13,6 +16,8 @@ public class Truck_Driver {
     private String License_Type;
     @Column(name = "State_Code")
     private String State_Code;
+    @Column(name = "active")
+    private boolean active;
 
     public Truck_Driver(){}
 
@@ -22,6 +27,13 @@ public class Truck_Driver {
         State_Code = state_Code;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 
     public String getDriver_ID() {
         return Driver_ID;

@@ -75,17 +75,17 @@
                                     <div class="col-lg-6">
                                 <input type="hidden" name="EmergencyContactID">
                                 <label>First Name</label>
-                                <input type="text" name="FirstName">
+                                <input class="form-control" type="text" name="FirstName">
                                 <label>Last Name</label>
-                                <input type="text" name="LastName">
+                                <input class="form-control" type="text" name="LastName">
                                 <label>Relationship</label>
-                                <input type="text" name="Relationship">
+                                <input class="form-control" type="text" name="Relationship">
                         </div>
                         <div class="col-lg-6">
                             <label>Phone Number</label>
-                            <input type="text" name="PhoneNumber">
+                            <input class="form-control" type="text" name="PhoneNumber">
                             <label>Street Address</label>
-                            <input type="text" name="StreetAddress">
+                            <input class="form-control" type="text" name="StreetAddress">
                         </div>
                                 </div>
                 </div>

@@ -42,8 +42,8 @@
         <td><input class="form-control" type="text" name="brokerID" value="${Broker_Company.getBroker_ID()}"></td>
         <td><input class="form-control" type="text" name="brokerName" value="${Broker_Company.getBroker_Name()}"></td>
         <td><input class="form-control" type="text" name="streetAddress" value="${Broker_Company.getStreet_Address()}"></td>
-        <td><label>State Code</label>
-            <select class="form-control" name="stateCode">
+        <td>
+            <select class="form-select" name="stateCode">
                 <option value="01" selected>Alabama</option>
                 <option value="02">Alaska</option>
                 <option value="04">Arizona</option>

@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table(name = "Office_Position")
 public class Office_Position {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -10,6 +13,8 @@ public class Office_Position {
     private String Position_ID;
     @Column(name = "Employee_Position")
     private String Employee_Position;
+    @Column(name = "active")
+    private boolean active;
 
     public Office_Position(String position_ID, String employee_Position) {
         Position_ID = position_ID;
@@ -18,6 +23,14 @@ public class Office_Position {
 
     public Office_Position() {
 
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getPosition_ID() {

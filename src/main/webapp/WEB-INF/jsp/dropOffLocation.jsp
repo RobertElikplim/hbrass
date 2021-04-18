@@ -81,7 +81,7 @@
                         </div>
                         <div class="col-lg-6">
                             <label>City</label>
-                            <input class="form-control" type="text" name="city">
+                            <input class="form-control" type="text" name="dCity">
                             <label>State Code</label>
                             <select class="form-select" name="sCode">
                                 <c:forEach var = "States" items = "${stateList}">
@@ -89,7 +89,7 @@
                                 </c:forEach>
                             </select>
                             <label>Zip Code</label>
-                            <input class="form-control" type="text" name="zipCode">
+                            <input class="form-control" type="text" name="zCode">
                         </div>
                                 </div>
                 </div>

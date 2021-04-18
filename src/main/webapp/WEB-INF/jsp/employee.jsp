@@ -81,29 +81,29 @@
                             <form action="/submitEmployee" method="post">
                                 <div class="row">
                                 <div class="col-lg-6">
-                                <input type="hidden" name="empID">
+                                <input class="form-control" type="hidden" name="empID">
                                 <label>First Name</label>
-                                <input type="text" name="fName">
+                                <input class="form-control" type="text" name="fName">
                                 <label>Last Name</label>
-                                <input type="text" name="lName">
+                                <input class="form-control" type="text" name="lName">
                                 <label>Phone Number</label>
-                                <input type="text" name="pNumber">
+                                <input class="form-control" type="text" name="pNumber">
                                 <label>Email</label>
-                                <input type="text" name="email">
+                                <input class="form-control" type="text" name="eMail">
                                 <label>Street Address</label>
-                                <input type="text" name="sAddy">
+                                <input class="form-control" type="text" name="sAddy">
                         </div>
                         <div class="col-lg-6">
                             <label>City</label>
-                            <input type="text" name="city">
+                            <input class="form-control" type="text" name="city">
                             <label>State Code</label>
-                            <select class="form-select" name="stateCode">
+                            <select class="form-select" name="sCode">
                                 <c:forEach var = "States" items = "${stateList}">
                                     <option value="${States.getState_Code()}">${States.getState_Name()}</option>
                                 </c:forEach>
                             </select>
                             <label>Zip Code</label>
-                            <input type="text" name="zipCode">
+                            <input class="form-control" type="text" name="zCode">
                             <label>Position ID</label>
                             <select class="form-select" name="posID">
                                 <c:forEach var = "Office_Position" items = "${posList}">
@@ -117,7 +117,7 @@
                                 </c:forEach>
                             </select>
                             <label>Emergency Contact</label>
-                            <input type="text" name="eCon">
+                            <input class="form-control" type="text" name="eCon">
                         </div>
                                 </div>
                 </div>

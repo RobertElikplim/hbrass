@@ -1,8 +1,11 @@
 package com.hbrassapp.demo.Models;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
+@Where(clause = "active = 1")
 @Table(name = "Drop_Off_Location")
 public class Drop_Off_Location {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -20,6 +23,8 @@ public class Drop_Off_Location {
     private String State_Code;
     @Column(name = "Zip_Code")
     private String Zip_Code;
+    @Column(name = "active")
+    private boolean active;
 
     public Drop_Off_Location() {
 
@@ -33,6 +38,14 @@ public class Drop_Off_Location {
         City = city;
         State_Code = state_Code;
         Zip_Code = zip_Code;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getDrop_Off_ID() {
