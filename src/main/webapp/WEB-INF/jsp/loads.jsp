@@ -87,7 +87,7 @@
                                 <label>Pick Up Tracker</label>
                                         <select class="form-select" name="pickUP">
                                             <c:forEach var = "Pick_Up_location" items = "${pickUpList}">
-                                                <option value="${Pick_Up_location.getPuTrackerCode()}">${Pick_Up_location.getPuTrackerCode()}</option>
+                                                <option value="${Pick_Up_location.getPickUpID()}">${Pick_Up_location.getPickUpID()}</option>
                                             </c:forEach>
                                         </select>
                                 <label>Drop of Tracker</label>

@@ -72,8 +72,12 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                 <input type="hidden" name="PickUpLocationID">
-                                <label>Tracker Code</label>
-                                <input class="form-control"type="text" name="PickUpTrackerCode">
+                                        <label>Pick Up Tracker</label>
+                                        <select class="form-select" name="PickUpTrackerCode">
+                                            <c:forEach var = "Pick_Up_location" items = "${puLocationList}">
+                                                <option value="${Pick_Up_location.getPickUpID()}">${Pick_Up_location.getPickUpID()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Pick Up Date</label>
                                 <input class="form-control" type="date" name="PickUpDate">
                                 <label>Street Address</label>
@@ -83,7 +87,7 @@
                             <label>City</label>
                             <input class="form-control" type="text" name="City">
                             <label>State Code</label>
-                            <select class="form-control" name="StateCode">
+                            <select class="form-select" name="StateCode">
                             <option value="01" selected>Alabama</option>
                             <option value="02">Alaska</option>
                             <option value="04">Arizona</option>

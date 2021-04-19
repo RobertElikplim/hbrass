@@ -40,7 +40,7 @@
             <tr>
                 <td>
                     <input type="hidden" name="PickUpLocationID" value="${Pick_Up_location.getPickUpID()}">
-                    <input type-="text" name="PickUpTrackerCode" value="${Pick_Up_location.getPuTrackerCode()}">
+                    <input type-="text" class="form-control" name="PickUpTrackerCode" value="${Pick_Up_location.getPuTrackerCode()}">
                 </td>
                 <td><input class="form-control" type="date" name="PickUpDate" value ="${Pick_Up_location.getPuDate()}"></td>
                 <td><input class="form-control" type="text" name="StreetAddress" value ="${Pick_Up_location.getStreetAddress()}"></td>
