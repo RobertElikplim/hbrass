@@ -36,7 +36,7 @@
         </tr>
         <tr>
             <td>
-                <input type="hidden" name=dotInspectionID value="${Dot_Inspection.getDot_Inspection_ID()}">
+                <input type="hidden" name="dotInspectionID" value="${Dot_Inspection.getDot_Inspection_ID()}">
                 <select class="form-select" name="vin">
                 <selected option>${Dot_Inspection.getTruck_ID_VIN()}</selected>
                 <c:forEach var = "Truck" items = "${truckList}">

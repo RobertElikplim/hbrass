@@ -1445,11 +1445,11 @@ public class MainController {
     }
     @RequestMapping(value = "/editPick_Up_Location/{id}", method = RequestMethod.GET)
     public ModelAndView editPick_Up_Location(@PathVariable("id") String id) {
-        ModelAndView mv = new ModelAndView("editPickUpLocation");
+        ModelAndView mv = new ModelAndView("editPickup");
         Optional<Pick_Up_location> editPick_Up_Location = pickUpLocationRepo.findById(id);
         Pick_Up_location ees = editPick_Up_Location.get();
         mv.addObject("puList", pickUpLocationRepo.findAll());
-        mv.addObject("doList", dropOffLocationRepo.findAll());
+        mv.addObject("stateList", statesRepo.findAll());
         mv.addObject("Pick_Up_location", ees);
         return mv;
     }

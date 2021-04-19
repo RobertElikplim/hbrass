@@ -83,7 +83,7 @@
                             <label>City</label>
                             <input class="form-control" type="text" name="City">
                             <label>State Code</label>
-                            <select class="form-control" name="stateCode">
+                            <select class="form-control" name="StateCode">
                             <option value="01" selected>Alabama</option>
                             <option value="02">Alaska</option>
                             <option value="04">Arizona</option>
@@ -149,7 +149,7 @@
                             <option value="AE">Armed Forces Others</option>
                             </select>
                             <label>Zip Code</label>
-                            <input class="form-control" type="text" name="ZipCode">
+                            <input class="form-control" type="text" name="Zipcode">
                         </div>
                                 </div>
                 </div>
