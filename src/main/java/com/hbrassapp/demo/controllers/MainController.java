@@ -1982,4 +1982,11 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/report")
+    public ModelAndView report() {
+        ModelAndView mv = new ModelAndView("report");
+
+        return mv;
+    }
+
 }
