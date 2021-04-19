@@ -70,22 +70,22 @@
                 <div class="container">
 
                             <form action="/submitIncome" method="post">
+                                        <input type="hidden" name="incomeID">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                <input type="hidden" name="incomeID">
-                                <label>Load ID</label>
-                                        <select class="form-select" name="loadID">
-                                            <c:forEach var = "Loads" items = "${loadList}">
-                                                <option value="${Loads.getLoad_ID()}">${Loads.getLoad_ID()}</option>
-                                            </c:forEach>
-                                        </select>
-                                <label>Load Fare</label>
-                                    <input type="text" name="loadFare">
-                                <label>Commission</label>
-                                    <input type="text" name="commision">
+                                        <label>Load ID</label>
+                                            <select class="form-select" name="loadID">
+                                                    <c:forEach var = "Loads" items = "${loadList}">
+                                                        <option value="${Loads.getLoad_ID()}">${Loads.getLoad_ID()}</option>
+                                                    </c:forEach>
+                                            </select>
+                                        <label>Load Fare</label><br>
+                                            <input type="text" name="loadFare">
+                                        <label>Commission</label>
+                                            <input type="text" name="commission">
                                     </div>
                             <div class="col-lg-6">
-                                    <label>Insurance</label>
+                                    <label>Insurance</label><br>
                                     <input type="text" name="insurance">
                                     <label>Trip Expense ID</label>
                                 <select class="form-select" name="tripExpenseID">
@@ -101,9 +101,6 @@
                                     </div>
                                 </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
             </form>
         </div>

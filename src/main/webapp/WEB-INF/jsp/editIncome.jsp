@@ -28,17 +28,37 @@
 
 
 <div class="container-fluid">
+    <form action="/submitIncome" method="post">
     <table class="table table-bordered">
         <tr>
+            <td>Load ID</td>
             <td>Load Fare</td>
             <td>Commission</td>
             <td>Insurance</td>
+            <td>Trip Expense ID</td>
             <td>Total Income</td>
         </tr>
         <tr>
+            <td>
+                <input type="hidden" name="incomeID">
+                <select class="form-select" name="loadID">
+                    <selected option>${Income.getLoad_ID()}</selected>
+                    <c:forEach var = "Loads" items = "${loadList}">
+                        <option value="${Loads.getLoad_ID()}">${Loads.getLoad_ID()}</option>
+                    </c:forEach>
+                </select>
+            </td>
             <td><input type="text" name="loadFare" value ="${Income.getLoad_Fare()}"></td>
             <td><input type="text" name="commission" value ="${Income.getCommission()}"></td>
             <td><input type="text" name="insurance" value ="${Income.getInsurance()}"></td>
+            <td>
+                <select class="form-select" name="tripExpenseID">
+                    <selected option>${Income.getTrip_Expense_ID()}</selected>
+                    <c:forEach var = "Trip_Expense" items = "${tripEL}">
+                        <option value="${Trip_Expense.getTrip_Expense_ID()}">${Trip_Expense.getTrip_Expense_ID()}</option>
+                    </c:forEach>
+                </select>
+            </td>
             <td><input type="text" name="totalIncome" value ="${Income.getTotal_Income()}"></td>
         </tr>
         <br>

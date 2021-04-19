@@ -69,8 +69,8 @@
                                 <label>Insurance ID</label>
                                 <input type="text" name="insuranceID">
                                 <label>Insurance Type</label>
-                                <input type="text" name="insuranceType">
-                                <label>Expiration</label>
+                                <input type="text" name="insuranceType"><br>
+                                <label>Expiration</label><br>
                                 <input type="date" name="coverageExpiration">
                                     </div>
                                 </div>

@@ -125,7 +125,7 @@
                             <label>Driver Pay</label>
                             <input class="form-control" type="text" name="driverPay">
                             <label>Remarks</label>
-                            <input class="form-control" type="text" name="remakrs">
+                            <input class="form-control" type="text" name="remarks">
                         </div>
                                 </div>
                 </div>
