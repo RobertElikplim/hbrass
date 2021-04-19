@@ -1287,7 +1287,6 @@ public class MainController {
         ModelAndView mv = new ModelAndView("redirect:/loadBoard");
         Load_Board load_board = new Load_Board();
         if (loadBoardID.isEmpty()) {
-            load_board.setLoadBoardID(loadBoardID);
             load_board.setBoardName(boardName);
             load_board.setWebsite(website);
             load_board.setSubscribed(subscribed);
@@ -1618,6 +1617,8 @@ public class MainController {
     public ModelAndView editInvoice(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editInvoice");
         Optional<Invoice> invoice = invoiceRepo.findById(id);
+        mv.addObject("clientList", clientRepo.findAll());
+        mv.addObject("brokerContractList", brokerContractRepo.findAll());
         Invoice inv = invoice.get();
         mv.addObject("Invoice", inv);
         return mv;
