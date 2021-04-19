@@ -27,7 +27,6 @@
 
 <div class="container-fluid">
     <form action="/submitSchedule" method="post">
-
         <table class="table table-bordered">
             <tr>
                 <td>Employee ID</td>
