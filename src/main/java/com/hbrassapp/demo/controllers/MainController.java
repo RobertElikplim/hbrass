@@ -1376,6 +1376,8 @@ public class MainController {
     @RequestMapping(value = "/editIncome/{id}", method = RequestMethod.GET)
     public ModelAndView editIncome(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editIncome");
+        mv.addObject("loadList", loadsRepo.findAll());
+        mv.addObject("tripEL", tripExpenseRepo.findAll());
         Optional<Income> editIncomeTable = incomeRepo.findById(id);
         Income income = editIncomeTable.get();
         mv.addObject("Income", income);
