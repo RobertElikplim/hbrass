@@ -40,7 +40,7 @@
         </tr>
         <tr>
             <td>
-                <input type="hidden" name="incomeID">
+                <input type="hidden" name="incomeID" value="${Income.getIncome_ID()}">
                 <select class="form-select" name="loadID">
                     <selected option>${Income.getLoad_ID()}</selected>
                     <c:forEach var = "Loads" items = "${loadList}">
@@ -63,7 +63,7 @@
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Changes">
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
     <br>
 </form>
 </div>

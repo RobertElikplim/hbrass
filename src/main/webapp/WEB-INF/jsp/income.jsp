@@ -46,11 +46,11 @@
         <tr>
             <td>${Income.getIncome_ID()}</td>
             <td>${Income.getLoad_ID()}</td>
-            <td>${Income.getLoad_Fare()}</td>
-            <td>${Income.getCommission()}</td>
-            <td>${Income.getInsurance()}</td>
-            <td>${Income.getTrip_Expense_ID()}</td>
-            <td>${Income.getTotal_Income()}</td>
+            <td>$ ${Income.getLoad_Fare()}</td>
+            <td>$ ${Income.getCommission()}</td>
+            <td>$ ${Income.getInsurance()}</td>
+            <td>$ ${Income.getTrip_Expense_ID()}</td>
+            <td>$ ${Income.getTotal_Income()}</td>
             <td><a href="/editIncome/${Income.getIncome_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
             <td><a href="/deleteIncome/${Income.getIncome_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
@@ -80,13 +80,13 @@
                                                     </c:forEach>
                                             </select>
                                         <label>Load Fare</label><br>
-                                            <input type="text" name="loadFare">
+                                            <input class="form-control" type="text" name="loadFare">
                                         <label>Commission</label>
-                                            <input type="text" name="commission">
+                                            <input class="form-control" type="text" name="commission">
                                     </div>
                             <div class="col-lg-6">
                                     <label>Insurance</label><br>
-                                    <input type="text" name="insurance">
+                                    <input class="form-control" type="text" name="insurance">
                                     <label>Trip Expense ID</label>
                                 <select class="form-select" name="tripExpenseID">
                                     <c:forEach var = "Trip_Expense" items = "${tripExpenseList}">
@@ -94,7 +94,7 @@
                                     </c:forEach>
                                 </select>
                                     <label>Total Income</label>
-                                    <input type="text" name="totalIncome">
+                                    <input class="form-control" type="text" name="totalIncome">
                             </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
