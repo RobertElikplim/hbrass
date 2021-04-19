@@ -1418,7 +1418,6 @@ public class MainController {
         mv.addObject("truckList", truckRepo.findAll());
         mv.addObject("driverList", truckDriverRepo.findAll());
         mv.addObject("pickUpList", pickUpLocationRepo.findAll());
-        mv.addObject("loadsList", loadsRepo.findAll());
         mv.addObject("vinList", truckRepo.findAll());
         Optional<Loads> editLoads = loadsRepo.findById(id);
         Loads ees = editLoads.get();

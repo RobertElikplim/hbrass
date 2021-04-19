@@ -93,7 +93,7 @@
                                 <label>Drop of Tracker</label>
                                         <select class="form-select" name="dropOff">
                                             <c:forEach var = "Drop_Off_Location" items = "${dropOffList}">
-                                                <option value="${Drop_Off_Location.getDrop_Off_Tracker_Code()}">${Drop_Off_Location.getDrop_Off_Tracker_Code()}</option>
+                                                <option value="${Drop_Off_Location.getDrop_Off_ID()}">${Drop_Off_Location.getDrop_Off_ID()}</option>
                                             </c:forEach>
                                         </select>
                                 <label>VIN</label>
