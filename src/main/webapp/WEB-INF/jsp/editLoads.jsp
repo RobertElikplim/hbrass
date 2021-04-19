@@ -49,7 +49,7 @@
                         <select class="form-select" name="pickUP">
                             <selected option>${Loads.getPick_Up_ID()}</selected>
                             <c:forEach var = "Pick_Up_location" items = "${pickUpList}">
-                                <option value="${Pick_Up_location.getPuTrackerCode()}">${Pick_Up_location.getPuTrackerCode()}</option>
+                                <option value="${Pick_Up_location.getPickUpID()}">${Pick_Up_location.getPickUpID()}</option>
                             </c:forEach>
                         </select>
                 </td>
@@ -57,7 +57,7 @@
                     <select class="form-select" name="dropOff">
                         <selected option>${Loads.getDrop_Off_ID()}</selected>
                             <c:forEach var = "Drop_Off_Location" items = "${dropOffList}">
-                                <option value="${Drop_Off_Location.getDrop_Off_Tracker_Code()}">${Drop_Off_Location.getDrop_Off_Tracker_Code()}</option>
+                                <option value="${Drop_Off_Location.getDrop_Off_ID()}}">${Drop_Off_Location.getDrop_Off_ID()}</option>
                             </c:forEach>
                     </select>
                 </td>
@@ -72,7 +72,7 @@
                 <td>
                     <select class="form-select" name="trailerID">
                         <selected option>${Loads.getTrailer_ID()}</selected>
-                        <c:forEach var = "Trailer" items = "${traList}">
+                        <c:forEach var = "Trailer" items = "${trailerList}">
                             <option value="${Trailer.getTrailer_ID()}">${Trailer.getTrailer_ID()}</option>
                         </c:forEach>
                     </select>
@@ -80,7 +80,7 @@
                 <td>
                     <select class="form-select" name="driverID">
                         <selected option>${Loads.getDriver_ID()}</selected>
-                        <c:forEach var = "Truck_Driver" items = "${driList}">
+                        <c:forEach var = "Truck_Driver" items = "${driverList}">
                             <option value="${Truck_Driver.getDriver_ID()}">${Truck_Driver.getDriver_ID()}</option>
                         </c:forEach>
                     </select>

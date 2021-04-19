@@ -30,8 +30,8 @@
             </tr>
             <tr>
                 <td>
-                    <input type="hidden" name="OfficePositionID">
-                    <input type="text" name="EmployeePosition">
+                    <input type="hidden" name="OfficePositionID" value="${Office_Position.getPosition_ID()}">
+                    <input type="text" name="EmployeePosition" value="${Office_Position.getEmployee_Position()}">
                 </td>
             </tr>
 

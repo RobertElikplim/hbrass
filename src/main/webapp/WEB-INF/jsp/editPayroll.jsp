@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="hidden" name="PayrollID">
+                    <input type="hidden" name="PayrollID" value="${Payroll.getPayroll_ID()}">
                     <input type="text" name="EmployeeID" value ="${Payroll.getEmployee_ID()}">
                 </td>
                 <td><input type="text" name="Rate" value ="${Payroll.getRate()}"></td>
