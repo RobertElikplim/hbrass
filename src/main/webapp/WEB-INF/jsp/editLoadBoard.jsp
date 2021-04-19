@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">DOT Edit</a>
+        <a class="navbar-brand">Load Board Edit</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -33,7 +33,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="hidden" name="loadBoardID">
+                    <input type="hidden" name="loadBoardID" value="${Load_Board.getLoadBoardID()}">
                     <input class="form-control" type="text" name="boardName" value ="${Load_Board.getBoardName()}">
                 </td>
                 <td><input class="form-control" type="text" name="website" value ="${Load_Board.getWebsite()}"></td>

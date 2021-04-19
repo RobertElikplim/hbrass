@@ -1287,7 +1287,6 @@ public class MainController {
         ModelAndView mv = new ModelAndView("redirect:/loadBoard");
         Load_Board load_board = new Load_Board();
         if (loadBoardID.isEmpty()) {
-            load_board.setLoadBoardID(loadBoardID);
             load_board.setBoardName(boardName);
             load_board.setWebsite(website);
             load_board.setSubscribed(subscribed);
