@@ -1310,10 +1310,9 @@ public class MainController {
                                      @RequestParam("employeeID") String employeeID,
                                     @RequestParam("incidentStatus") String incidentStatus,
                                     @RequestParam("remarks") String remarks){
-        ModelAndView mv = new ModelAndView("redirect:/Incident");
+        ModelAndView mv = new ModelAndView("redirect:/incident");
         Incident incident = new Incident();
         if (incidentID.isEmpty()) {
-            incident.setIncident_ID(incidentID);
             incident.setIncident_Status(incidentStatus);
             incident.setIncident_Type(incidentType);
             incident.setRemarks(remarks);

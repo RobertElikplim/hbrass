@@ -28,21 +28,25 @@
 <div class="container-fluid">
 
     <table class="table table-bordered">
+        <tr><form method="post" action="/submitIncident">
         <tr>
+            <td>Incident ID</td>
+            <td>Incident Type</td>
             <td>Load ID</td>
             <td>Employee ID</td>
+            <td>Incident Status</td>
             <td>Remarks</td>
         </tr>
-        <tr>
+        <td><input class= form-control" type="text" name="incidentID" value="${Incident.getIncident_ID()}"></td>
+            <td><input class="form-control" type="text" name ="incidentType" value ="${Incident.getIncident_Type()}"></td>
             <td><input class="form-control" type="text" name="loadID" value ="${Incident.getLoad_ID()}"></td>
-            <td><input class="form-control" type="text" name="employeeID" value ="${Income.getEmployee_ID()}"></td>
-            <td><input class="form-control" type="text" name="remarks" value ="${Income.getRemarks()}"></td>
+            <td><input class="form-control" type="text" name="employeeID" value ="${Incident.getEmployee_ID()}"></td>
+            <td><input class="form-control" type="text" name="incidentStatus" value ="${Incident.getIncident_Status()}"></td>
+            <td><input class="form-control" type="text" name="remarks" value ="${Incident.getRemarks()}"></td>
 
         </tr>
-        <br>
     </table>
-    <input type="submit" value="Submit Changes">
-    <br>
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
 </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
