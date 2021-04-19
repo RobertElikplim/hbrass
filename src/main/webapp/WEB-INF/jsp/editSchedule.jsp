@@ -45,7 +45,7 @@
                         </c:forEach>
                     </select>
                 </td>
-                <td><input class="form-control" type="text" name="tor"   value ="${Schedule.getTimeOffRequest()}"></td>
+                <td><input class="form-control" type="text" name="tor"  value ="${Schedule.getTimeOffRequest()}"></td>
                 <td><input class="form-control" type="date" name="sDate" value ="${Schedule.getVacationStart()}"></td>
                 <td><input class="form-control" type="date" name="eDate" value ="${Schedule.getVacationEnd()}"></td>
             </tr>

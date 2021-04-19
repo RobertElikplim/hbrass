@@ -1458,7 +1458,7 @@ public class MainController {
         mv.addObject("empList", employeerepo.findAll());
         Optional<Schedule> editSchedule = scheduleRepo.findById(id);
         Schedule ees = editSchedule.get();
-        mv.addObject("Employee_Status", ees);
+        mv.addObject("Schedule", ees);
         return mv;
     }
     @RequestMapping(value = "/editTire_Vendor/{id}", method = RequestMethod.GET)
