@@ -1618,6 +1618,8 @@ public class MainController {
     public ModelAndView editInvoice(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editInvoice");
         Optional<Invoice> invoice = invoiceRepo.findById(id);
+        mv.addObject("clientList", clientRepo.findAll());
+        mv.addObject("brokerContractList", brokerContractRepo.findAll());
         Invoice inv = invoice.get();
         mv.addObject("Invoice", inv);
         return mv;
