@@ -1310,7 +1310,7 @@ public class MainController {
                                      @RequestParam("employeeID") String employeeID,
                                     @RequestParam("incidentStatus") String incidentStatus,
                                     @RequestParam("remarks") String remarks){
-        ModelAndView mv = new ModelAndView("redirect:/Incident");
+        ModelAndView mv = new ModelAndView("redirect:/incident");
         Incident incident = new Incident();
         if (incidentID.isEmpty()) {
             incident.setIncident_ID(incidentID);
@@ -1500,8 +1500,10 @@ public class MainController {
     }
 
     @RequestMapping(value = "/editIncident/{id}", method = RequestMethod.GET) //Method to edit entry
-    public ModelAndView editIncident(@PathVariable("id") String id) {
+    public ModelAndView editInc(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editIncident");
+        mv.addObject("loadList", loadsRepo.findAll());
+        mv.addObject("employeeList", employeerepo.findAll());
         Optional<Incident> editIncidentTable = incidentRepo.findById(id);
         Incident incident = editIncidentTable.get();
         mv.addObject("Incident", incident);
@@ -1596,7 +1598,25 @@ public class MainController {
         mv.addObject("Emergency_Contact", emgContact);
         return mv;
     }
-    
+
+    @RequestMapping(value = "/editInvoice/{id}", method = RequestMethod.GET)
+    public ModelAndView editInvoice(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editInvoice");
+        Optional<Invoice> invoice = invoiceRepo.findById(id);
+        Invoice inv = invoice.get();
+        mv.addObject("Invoice", inv);
+        return mv;
+    }
+
+    @RequestMapping(value = "/editTruck/{id}", method = RequestMethod.GET)
+    public ModelAndView editTruck(@PathVariable("id") String id) {
+        ModelAndView mv = new ModelAndView("editTruck");
+        Optional<Truck> invoice = truckRepo.findById(id);
+        Truck trk = invoice.get();
+        mv.addObject("Truck", trk);
+        return mv;
+    }
+
 
     // Delete Functionalities
 

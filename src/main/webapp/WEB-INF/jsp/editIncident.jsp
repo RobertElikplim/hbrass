@@ -26,24 +26,42 @@
 </nav>
 
 <div class="container-fluid">
-
+    <form method="post" action="/submitIncident">
     <table class="table table-bordered">
         <tr>
-            <td>Load ID</td>
-            <td>Employee ID</td>
-            <td>Remarks</td>
+            <th>Incident Type</th>
+            <th>Load ID</th>
+            <th>Employee ID</th>
+            <th>Incident Status</th>
+            <th>Remarks</th>
         </tr>
         <tr>
-            <td><input class="form-control" type="text" name="loadID" value ="${Incident.getLoad_ID()}"></td>
-            <td><input class="form-control" type="text" name="employeeID" value ="${Income.getEmployee_ID()}"></td>
-            <td><input class="form-control" type="text" name="remarks" value ="${Income.getRemarks()}"></td>
-
+            <td>
+                <input type="hidden" name="incidentID">
+                <input class="form-control" type="text" name="incidentType" value ="${Incident.getIncident_Type()}">
+            </td>
+            <td>
+                <select class="form-select" name="loadID">
+                    <selected option>${Incident.getLoad_ID()}</selected>
+                        <c:forEach var = "Loads" items = "${loadList}">
+                            <option value="${Loads.getLoad_ID()}">${Loads.getLoad_ID()}</option>
+                        </c:forEach>
+                </select>
+            </td>
+            <td>
+                <select class="form-select" name="employeeID">
+                    <selected option>${Incident.getEmployee_ID()}</selected>
+                    <c:forEach var = "employee" items = "${employeeList}">
+                        <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}-${employee.getLast_Name()}, ${employee.getFirst_Name()}</option>
+                    </c:forEach>
+                </select>
+            </td>
+            <td><input class="form-control" type="text" name="incidentStatus" value ="${Incident.getIncident_Status()}"></td>
+            <td><input class="form-control" type="text" name="remarks" value ="${Incident.getRemarks()}"></td>
         </tr>
-        <br>
     </table>
-    <input type="submit" value="Submit Changes">
-    <br>
-</form>
+        <input class="btn btn-primary" type="submit" value="Submit Changes">
+    </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
