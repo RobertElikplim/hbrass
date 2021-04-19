@@ -1429,7 +1429,7 @@ public class MainController {
     }
     @RequestMapping(value = "/editOffice_Position/{id}", method = RequestMethod.GET)
     public ModelAndView editOffice_Position(@PathVariable("id") String id) {
-        ModelAndView mv = new ModelAndView("editOfficePosition");
+        ModelAndView mv = new ModelAndView("editOfficePos");
         Optional<Office_Position> editOfficePosition = officePositionRepo.findById(id);
         Office_Position ees = editOfficePosition.get();
         mv.addObject("Office_Position", ees);
