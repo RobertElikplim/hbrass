@@ -1414,11 +1414,11 @@ public class MainController {
     @RequestMapping(value = "/editLoads/{id}", method = RequestMethod.GET)
     public ModelAndView editLoads(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editLoads");
-        mv.addObject("traList", trailerRepo.findAll());
-        mv.addObject("doList", dropOffLocationRepo.findAll());
+        mv.addObject("trailerList", trailerRepo.findAll());
+        mv.addObject("dropOffList", dropOffLocationRepo.findAll());
         mv.addObject("truckList", truckRepo.findAll());
-        mv.addObject("driList", truckDriverRepo.findAll());
-        mv.addObject("puList", pickUpLocationRepo.findAll());
+        mv.addObject("driverList", truckDriverRepo.findAll());
+        mv.addObject("pickUpList", pickUpLocationRepo.findAll());
         mv.addObject("loadsList", loadsRepo.findAll());
         mv.addObject("vinList", truckRepo.findAll());
         Optional<Loads> editLoads = loadsRepo.findById(id);
