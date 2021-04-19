@@ -1413,11 +1413,11 @@ public class MainController {
     @RequestMapping(value = "/editLoads/{id}", method = RequestMethod.GET)
     public ModelAndView editLoads(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editLoads");
-        mv.addObject("traList", trailerRepo.findAll());
-        mv.addObject("doList", dropOffLocationRepo.findAll());
+        mv.addObject("trailerList", trailerRepo.findAll());
+        mv.addObject("dropOffList", dropOffLocationRepo.findAll());
         mv.addObject("truckList", truckRepo.findAll());
-        mv.addObject("driList", truckDriverRepo.findAll());
-        mv.addObject("puList", pickUpLocationRepo.findAll());
+        mv.addObject("driverList", truckDriverRepo.findAll());
+        mv.addObject("pickUpList", pickUpLocationRepo.findAll());
         mv.addObject("loadsList", loadsRepo.findAll());
         mv.addObject("vinList", truckRepo.findAll());
         Optional<Loads> editLoads = loadsRepo.findById(id);
@@ -1444,9 +1444,11 @@ public class MainController {
     @RequestMapping(value = "/editPick_Up_Location/{id}", method = RequestMethod.GET)
     public ModelAndView editPick_Up_Location(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editPickup");
+
+
         Optional<Pick_Up_location> editPick_Up_Location = pickUpLocationRepo.findById(id);
         Pick_Up_location ees = editPick_Up_Location.get();
-        mv.addObject("puList", pickUpLocationRepo.findAll());
+
         mv.addObject("stateList", statesRepo.findAll());
         mv.addObject("Pick_Up_location", ees);
         return mv;

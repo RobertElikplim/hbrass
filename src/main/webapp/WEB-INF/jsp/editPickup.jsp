@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">DOT Edit</a>
+        <a class="navbar-brand">Pick Up Location Edit</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -39,26 +39,21 @@
             </tr>
             <tr>
                 <td>
-                    <input type="hidden" name="PickUpLocationID">
-                    <select class="form-select" name="PickUpTrackerCode">
-                        <selected option>${Pick_Up_Location.getPuTrackerCode()}</selected>
-                        <c:forEach var = "Pick_Up_Location" items = "${puList}">
-                            <option value="${Pick_Up_Location.getPuTrackerCode()}">${Pick_Up_Location.getPuTrackerCode()}</option>
-                        </c:forEach>
-                    </select>
+                    <input type="hidden" name="PickUpLocationID" value="${Pick_Up_location.getPickUpID()}">
+                    <input type-="text" name="PickUpTrackerCode" value="${Pick_Up_location.getPuTrackerCode()}">
                 </td>
-                <td><input class="form-control" type="date" name="PickUpDate" value ="${Pick_Up_Location.getPuDate()}"></td>
-                <td><input class="form-control" type="text" name="StreetAddress" value ="${Pick_Up_Location.getStreetAddress()}"></td>
-                <td><input class="form-control" type="text" name="City" value ="${Pick_Up_Location.getCity()}"></td>
+                <td><input class="form-control" type="date" name="PickUpDate" value ="${Pick_Up_location.getPuDate()}"></td>
+                <td><input class="form-control" type="text" name="StreetAddress" value ="${Pick_Up_location.getStreetAddress()}"></td>
+                <td><input class="form-control" type="text" name="City" value ="${Pick_Up_location.getCity()}"></td>
                 <td>
                     <select class="form-select" name="StateCode">
-                        <selected option>${Pick_Up_Location.getStateCode()}</selected>
+                        <selected option>${Pick_Up_location.getStateCode()}</selected>
                         <c:forEach var = "States" items = "${stateList}">
                             <option value="${States.getState_Code()}">${States.getState_Code()}</option>
                         </c:forEach>
                     </select>
                 </td>
-                <td><input class="form-control" type="text" name="Zipcode" value ="${Pick_Up_Location.getZipCode()}"></td>
+                <td><input class="form-control" type="text" name="Zipcode" value ="${Pick_Up_location.getZipCode()}"></td>
             </tr>
         </table>
         <input class="btn btn-primary" type="submit" value="Submit Changes">

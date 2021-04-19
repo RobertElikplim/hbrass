@@ -46,19 +46,19 @@
                     <input type="date" name="dateLoads" value ="${Loads.getDate()}" >
                 </td>
                 <td>
-                    <select class="form-select" name="pickUP">
-                        <selected option>${Loads.getPick_Up_ID()}</selected>
-                        <c:forEach var = "Pick_Up_location" items = "${puList}">
-                            <option value="${Pick_Up_location.getPickUpID()}">${Pick_Up_location.getPickUpID()}</option>
-                        </c:forEach>
-                    </select>
+                        <select class="form-select" name="pickUP">
+                            <selected option>${Loads.getPick_Up_ID()}</selected>
+                            <c:forEach var = "Pick_Up_location" items = "${pickUpList}">
+                                <option value="${Pick_Up_location.getPuTrackerCode()}">${Pick_Up_location.getPuTrackerCode()}</option>
+                            </c:forEach>
+                        </select>
                 </td>
                 <td>
                     <select class="form-select" name="dropOff">
                         <selected option>${Loads.getDrop_Off_ID()}</selected>
-                        <c:forEach var = "Drop_Off_Location" items = "${doList}">
-                            <option value="${Drop_Off_Location.getDrop_Off_ID()}">${Drop_Off_Location.getDrop_Off_ID()}</option>
-                        </c:forEach>
+                            <c:forEach var = "Drop_Off_Location" items = "${dropOffList}">
+                                <option value="${Drop_Off_Location.getDrop_Off_Tracker_Code()}">${Drop_Off_Location.getDrop_Off_Tracker_Code()}</option>
+                            </c:forEach>
                     </select>
                 </td>
                 <td>
