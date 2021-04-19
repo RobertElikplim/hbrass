@@ -39,8 +39,16 @@
         </tr>
         <td><input class= form-control" type="text" name="incidentID" value="${Incident.getIncident_ID()}"></td>
             <td><input class="form-control" type="text" name ="incidentType" value ="${Incident.getIncident_Type()}"></td>
-            <td><input class="form-control" type="text" name="loadID" value ="${Incident.getLoad_ID()}"></td>
-            <td><input class="form-control" type="text" name="employeeID" value ="${Incident.getEmployee_ID()}"></td>
+            <td><select class="form-select" name="loadID">
+                <c:forEach var = "Loads" items = "${loadList}">
+                    <option value="${Loads.getLoad_ID()}">${Loads.getLoad_ID()}</option>
+                </c:forEach>
+            </select></td>
+            <td><select class="form-select" name="employeeID">
+                    <c:forEach var = "employee" items = "${employeeList}">
+                        <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}-${employee.getLast_Name()}, ${employee.getFirst_Name()}</option>
+                    </c:forEach>
+                </select></td>
             <td><input class="form-control" type="text" name="incidentStatus" value ="${Incident.getIncident_Status()}"></td>
             <td><input class="form-control" type="text" name="remarks" value ="${Incident.getRemarks()}"></td>
 
