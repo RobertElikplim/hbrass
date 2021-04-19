@@ -1314,8 +1314,9 @@ public class MainController {
         ModelAndView mv = new ModelAndView("redirect:/incident");
         Incident incident = new Incident();
         if (incidentID.isEmpty()) {
-            incident.setIncident_ID(incidentID);
             incident.setIncident_Status(incidentStatus);
+            incident.setLoad_ID(loadID);
+            incident.setEmployee_ID(employeeID);
             incident.setIncident_Type(incidentType);
             incident.setRemarks(remarks);
             incident.setActive(true);
@@ -1324,6 +1325,8 @@ public class MainController {
             incident.setIncident_ID(incidentID);
             incident.setIncident_Status(incidentStatus);
             incident.setIncident_Type(incidentType);
+            incident.setLoad_ID(loadID);
+            incident.setEmployee_ID(employeeID);
             incident.setRemarks(remarks);
             incident.setActive(true);
             incidentRepo.save(incident);
