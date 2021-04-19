@@ -735,7 +735,6 @@ public class MainController {
                                    @RequestParam("eDate") String eDate) {
         ModelAndView mv = new ModelAndView("redirect:/schedule");
         Schedule schedule = new Schedule();
-        States states = new States();
         if (scheduleID.isEmpty()) {
             schedule.setEmployeeID(empID);
             schedule.setTimeOffRequest(tor);
@@ -1455,6 +1454,7 @@ public class MainController {
     @RequestMapping(value = "/editSchedule/{id}", method = RequestMethod.GET)
     public ModelAndView editSchedule(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editSchedule");
+        mv.addObject("empList", employeerepo.findAll());
         Optional<Schedule> editSchedule = scheduleRepo.findById(id);
         Schedule ees = editSchedule.get();
         mv.addObject("Employee_Status", ees);

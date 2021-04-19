@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">DOT Edit</a>
+        <a class="navbar-brand">Schedule Edit</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -26,29 +26,32 @@
 </nav>
 
 <div class="container-fluid">
-    <form action="/submitDotInspection" method="post">
-    <table class="table table-bordered">
-        <tr>
-            <td>VIN</td>
-            <td>Certification Date</td>
-            <td>Expiration Date</td>
-        </tr>
-        <tr>
-            <td>
-                <input type="hidden" name="dotInspectionID" value="${Dot_Inspection.getDot_Inspection_ID()}">
-                <select class="form-select" name="vin">
-                <selected option>${Dot_Inspection.getTruck_ID_VIN()}</selected>
-                <c:forEach var = "Truck" items = "${truckList}">
-                    <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
-                </c:forEach>
-            </select></td>
-            <td><input class="form-control" type="date" name="cDate" value ="${Dot_Inspection.getDot_Certification_Date()}"></td>
-            <td><input class="form-control" type="date" name="eDate" value ="${Dot_Inspection.getDot_Expiration_Date()}"></td>
-        </tr>
-    </table>
-    <input class="btn btn-primary" type="submit" value="Submit Changes">
+    <form action="/submitSchedule" method="post">
 
-</form>
+        <table class="table table-bordered">
+            <tr>
+                <td>Employee ID</td>
+                <td>Time off Request</td>
+                <td>Vacation Start</td>
+                <td>Vacation End</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="scheduleID"  value ="${Schedule.getScheduleID()}" >
+                    <select class="form-select" name="empID">
+                        <selected option>${Schedule.getEmployeeID()}</selected>
+                        <c:forEach var = "employee" items = "${empList}">
+                            <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}</option>
+                        </c:forEach>
+                    </select>
+                </td>
+                <td><input class="form-control" type="text" name="tor"   value ="${Schedule.getTimeOffRequest()}"></td>
+                <td><input class="form-control" type="date" name="sDate" value ="${Schedule.getVacationStart()}"></td>
+                <td><input class="form-control" type="date" name="eDate" value ="${Schedule.getVacationEnd()}"></td>
+            </tr>
+        </table>
+        <input class="btn btn-primary" type="submit" value="Submit Changes">
+    </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

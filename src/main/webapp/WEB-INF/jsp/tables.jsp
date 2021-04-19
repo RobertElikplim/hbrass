@@ -106,7 +106,6 @@
             <a href="/truckDriver" class="list-group-item">Truck Drivers</a>
             <a href="/trucklog" class="list-group-item">Truck Log</a>
             <a href="/Vendors" class="list-group-item">Vendors</a>
-            <a href="/report" class="list-group-item">Vendors</a>
         </div>
     </div>
 
