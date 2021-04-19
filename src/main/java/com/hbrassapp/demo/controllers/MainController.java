@@ -276,6 +276,7 @@ public class MainController {
         mv.addObject("driverList", truckDriverRepo.findAll());
         mv.addObject("pickUpList", pickUpLocationRepo.findAll());
         mv.addObject("loadsList", loadsRepo.findAll());
+        mv.addObject("vinList", truckRepo.findAll());
         return mv;
     }
 
@@ -1411,6 +1412,13 @@ public class MainController {
     @RequestMapping(value = "/editLoads/{id}", method = RequestMethod.GET)
     public ModelAndView editLoads(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editLoads");
+        mv.addObject("traList", trailerRepo.findAll());
+        mv.addObject("doList", dropOffLocationRepo.findAll());
+        mv.addObject("truckList", truckRepo.findAll());
+        mv.addObject("driList", truckDriverRepo.findAll());
+        mv.addObject("puList", pickUpLocationRepo.findAll());
+        mv.addObject("loadsList", loadsRepo.findAll());
+        mv.addObject("vinList", truckRepo.findAll());
         Optional<Loads> editLoads = loadsRepo.findById(id);
         Loads ees = editLoads.get();
         mv.addObject("Loads", ees);
@@ -1437,6 +1445,8 @@ public class MainController {
         ModelAndView mv = new ModelAndView("editPickUpLocation");
         Optional<Pick_Up_location> editPick_Up_Location = pickUpLocationRepo.findById(id);
         Pick_Up_location ees = editPick_Up_Location.get();
+        mv.addObject("puList", pickUpLocationRepo.findAll());
+        mv.addObject("doList", dropOffLocationRepo.findAll());
         mv.addObject("Pick_Up_location", ees);
         return mv;
     }
