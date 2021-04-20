@@ -1,6 +1,7 @@
 package com.hbrassapp.demo.controllers;
 
 import com.hbrassapp.demo.Models.*;
+import org.dom4j.rule.Mode;
 import org.jboss.jandex.Main;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -2023,7 +2024,16 @@ public class MainController {
         }
     }
 
-    @RequestMapping(value = "/addSystemLogin", method = RequestMethod.POST)
+    @RequestMapping(value ="/editSystemLogin/{id}", method = RequestMethod.GET)
+    public ModelAndView editSystemLogin(@PathVariable ("id") String id) {
+        ModelAndView mv = new ModelAndView("editSystemLogin");
+        Optional<System_Login> sysLogin = systemLoginRepo.findById(id);
+        System_Login login = sysLogin.get();
+        mv.addObject("System_Login", login);
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitSystemLogin", method = RequestMethod.POST)
     public ModelAndView addSystemLogin(@RequestParam("id") String id,
                              @RequestParam("uname") String uname,
                              @RequestParam("pwd") String pwd,

@@ -45,8 +45,8 @@
             <td>${System_Login.getUsername()}</td>
             <td>${System_Login.getPrivileges()}</td>
             <td>${System_Login.getPassword()}</td>
-            <td><a href="/editSystem_Login/${System_Login.getLoginID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
-            <td><a href="/deleteSystem_Login/${System_Login.getLoginID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
+            <td><a href="/editSystemLogin/${System_Login.getLoginID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteSystemLogin/${System_Login.getLoginID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>
@@ -64,7 +64,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
-                            <form action="/addSystemLogin" method="post">
+                            <form action="/submitSystemLogin" method="post">
                                 <input class="form-control" type="hidden" name="id">
                                 <label>Username</label>
                                 <input class="form-control" type="text" name="uname">
