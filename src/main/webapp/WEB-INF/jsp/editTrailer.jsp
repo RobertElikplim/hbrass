@@ -27,7 +27,7 @@
 
 <div class="container-fluid">
 <form method="post" action="/submitTrailer">
-    <td><input type="hidden" name="cID" value="${Trailer.getColumn_ID()}"></td>
+    <td><input type="hidden" name="cID" value="${Trailer.getTrailer_ID()}"></td>
     <table class="table table-bordered">
         <tr>
             <td>Trailer ID</td>

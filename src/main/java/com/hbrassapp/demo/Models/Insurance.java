@@ -9,9 +9,7 @@ import javax.persistence.*;
 @Where(clause = "active = 1")
 @Table(name = "Insurance")
 public class Insurance {
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "Insure_ID")
-    private String Insure_ID;
+    @Id
     @Column(name = "Insurance_ID")
     private String Insurance_ID;
     @Column(name = "Insurance_Type")
@@ -28,7 +26,6 @@ public class Insurance {
         Insurance_ID = insurance_ID;
         Insurance_Type = insurance_Type;
         Coverage_Expiration = coverage_Expiration;
-        Insure_ID = insure_ID;
     }
 
     public boolean isActive() {
@@ -63,11 +60,4 @@ public class Insurance {
         Coverage_Expiration = coverage_Expiration;
     }
 
-    public String getInsure_ID() {
-        return Insure_ID;
-    }
-
-    public void setInsure_ID(String insure_ID) {
-        Insure_ID = insure_ID;
-    }
 }

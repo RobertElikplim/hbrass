@@ -27,7 +27,7 @@
 
 <div class="container-fluid">
 <form method="post" action="/submitInsuranceTable">
-    <td><input type="hidden" name="insureID" value="${Insurance.getInsure_ID()}"></td>
+    <input type="hidden" name="insuranceID" value="${Insurance.getInsurance_ID()}">
     <table class="table table-bordered">
         <tr>
             <td>Insurance ID</td>
@@ -35,13 +35,13 @@
             <td>Coverage Expiration</td>
         </tr>
         <tr>
-            <td><input type="text" name="insuranceID" value ="${Insurance.getInsurance_ID()}"></td>
-            <td><input type="text" name="insuranceType" value ="${Insurance.getInsurance_Type()}"></td>
-            <td><input type="text" name="coverageExpiration" value ="${Insurance.getCoverage_Expiration()}"></td>
+            <td><input class="form-control" type="text"  value ="${Insurance.getInsurance_ID()}" disabled></td>
+            <td><input class="form-control" type="text" name="insuranceType" value ="${Insurance.getInsurance_Type()}"></td>
+            <td><input class="form-control" type="text" name="coverageExpiration" value ="${Insurance.getCoverage_Expiration()}"></td>
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Changes">
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
     <br>
 </form>
 </div>

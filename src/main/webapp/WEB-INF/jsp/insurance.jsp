@@ -44,9 +44,8 @@
             <td>${Insurance.getInsurance_ID()}</td>
             <td>${Insurance.getInsurance_Type()}</td>
             <td>${Insurance.getCoverage_Expiration()}</td>
-            <td>${Insurance.getInsure_ID()}</td>
-            <td><a href="/editInsurance/${Insurance.getInsure_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
-            <td><a href="/deleteInsurance/${Insurance.getInsure_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
+            <td><a href="/editInsurance/${Insurance.getInsurance_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteInsurance/${Insurance.getInsurance_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>
@@ -65,7 +64,6 @@
                             <form action="/submitInsuranceTable" method="post">
                                 <div class="row">
                                     <div class="col-lg-8">
-                                <input type="hidden" name="insureID">
                                 <label>Insurance ID</label>
                                 <input type="text" name="insuranceID">
                                 <label>Insurance Type</label>

@@ -925,20 +925,18 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitInsuranceTable", method = RequestMethod.POST)
-    public ModelAndView addInsu(@RequestParam("insureID") String insureID,
-                                @RequestParam("insuranceID") String insuranceID,
+    public ModelAndView addInsu(@RequestParam("insuranceID") String insuranceID,
                                 @RequestParam("insuranceType") String insuranceType,
                                 @RequestParam("coverageExpiration") String coverageExpiration){
         ModelAndView mv = new ModelAndView("redirect:/insurance");
         Insurance insur = new Insurance();
-        if (insureID.isEmpty()) {
+        if (insuranceID.isEmpty()) {
             insur.setInsurance_ID(insuranceID);
             insur.setInsurance_Type(insuranceType);
             insur.setCoverage_Expiration(coverageExpiration);
             insur.setActive(true);
             insuranceRepo.save(insur);
         } else {
-            insur.setInsure_ID(insureID);
             insur.setInsurance_ID(insuranceID);
             insur.setInsurance_Type(insuranceType);
             insur.setCoverage_Expiration(coverageExpiration);
@@ -1011,15 +1009,14 @@ public class MainController {
     }
 
     @RequestMapping(value = "/submitTrailer", method = RequestMethod.POST)
-    public ModelAndView addTrailer(@RequestParam("cID") String cID,
-                                   @RequestParam("trailerID") String trailerID,
+    public ModelAndView addTrailer(@RequestParam("trailerID") String trailerID,
                                    @RequestParam("tc") String tc,
                                    @RequestParam("tot") String tot,
                                    @RequestParam("weight") String weight,
                                    @RequestParam("lcp") String lcp){
         ModelAndView mv = new ModelAndView("redirect:/Trailer");
         Trailer trailer = new Trailer();
-        if (cID.isEmpty()) {
+        if (trailerID.isEmpty()) {
             trailer.setTrailer_ID(trailerID);
             trailer.setTrailer_Code(tc);
             trailer.setType_Of_Trailer(tot);
@@ -1028,7 +1025,6 @@ public class MainController {
             trailer.setActive(true);
             trailerRepo.save(trailer);
         } else {
-            trailer.setColumn_ID(cID);
             trailer.setTrailer_ID(trailerID);
             trailer.setTrailer_Code(tc);
             trailer.setType_Of_Trailer(tot);

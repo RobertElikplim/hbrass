@@ -47,8 +47,8 @@
             <td>${Trailer.getType_Of_Trailer()}</td>
             <td>${Trailer.getWeight_Of_Trailer()}</td>
             <td>${Trailer.getLicense_Plate()}</td>
-            <td><a href="/editTrailer/${Trailer.getColumn_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
-            <td><a href="/deleteTrailer/${Trailer.getColumn_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
+            <td><a href="/editTrailer/${Trailer.getTrailer_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteTrailer/${Trailer.getTrailer_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>
@@ -67,7 +67,6 @@
                             <form action="/submitTrailer" method="post">
                                 <div class="row">
                                     <div class="col-lg-8">
-                                <input class="form-control" type="hidden" name="cID">
                                 <label>Trailer ID:</label>
                                     <input class="form-control" type="text" name="trailerID">
                                 <label>Trailer Code:</label>
