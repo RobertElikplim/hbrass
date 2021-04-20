@@ -1443,11 +1443,8 @@ public class MainController {
     @RequestMapping(value = "/editPick_Up_Location/{id}", method = RequestMethod.GET)
     public ModelAndView editPick_Up_Location(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editPickup");
-
-
         Optional<Pick_Up_location> editPick_Up_Location = pickUpLocationRepo.findById(id);
         Pick_Up_location ees = editPick_Up_Location.get();
-
         mv.addObject("stateList", statesRepo.findAll());
         mv.addObject("Pick_Up_location", ees);
         return mv;
@@ -1539,6 +1536,7 @@ public class MainController {
     @RequestMapping(value = "/editTruck_Driver/{id}", method = RequestMethod.GET)
     public ModelAndView editTruckDriver(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editTruckDriver");
+        mv.addObject("stateList",statesRepo.findAll());
         Optional<Truck_Driver> editTD = truckDriverRepo.findById(id);
         Truck_Driver tdv = editTD.get();
         mv.addObject("Truck_Driver", tdv);

@@ -25,8 +25,6 @@
     </div>
 </nav>
 
-
-
 <div class="container-fluid">
     <form action="/submitIncome" method="post">
     <table class="table table-bordered">

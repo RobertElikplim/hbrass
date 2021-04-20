@@ -27,7 +27,6 @@
 
 <div class="container-fluid">
 <form method="post" action="/submitDriverTruck">
-    <td><input type="hidden" name="truckDriverID" value="${Truck_Driver.getTruck_Driver_ID()}"></td>
     <table class="table table-bordered">
         <tr>
             <td>Driver ID</td>
@@ -35,9 +34,16 @@
             <td>State Code</td>
         </tr>
         <tr>
-            <td><input type="text" name="driverID" value ="${Truck_Driver.getDriver_ID()}"></td>
+            <td><input type="text" name="driverID" value="${Truck_Driver.getDriver_ID()}"></td>
             <td><input type="text" name="driverLicenseType" value ="${Truck_Driver.getLicense_Type()}"></td>
-            <td><input type="text" name="driverStateCode" value ="${Truck_Driver.getState_Code()}"></td>
+            <td>
+                <select class="form-select" name="driverStateCode">
+                    <selected option>${Truck_Driver.getState_Code()}</selected>
+                    <c:forEach var = "States" items = "${stateList}">
+                        <option value="${States.getState_Code()}">${States.getState_Code()}</option>
+                    </c:forEach>
+                </select>
+            </td>
         </tr>
         <br>
     </table>
