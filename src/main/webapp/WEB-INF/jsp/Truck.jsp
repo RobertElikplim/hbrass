@@ -38,7 +38,7 @@
         <th>Year</th>
         <th>License Type</th>
         <th>Vehicle Tracker</th>
-        <th>Maker</th>
+        <th>Make</th>
         <th>Model</th>
         <th>Policy Number</th>
     </tr>
@@ -51,8 +51,8 @@
             <td>${Truck.getMake()}</td>
             <td>${Truck.getModel()}</td>
             <td>${Truck.getPolicy_Number()}</td>
-            <td><a href="/editTruck/${Truck.getTruck_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
-            <td><a href="/deleteTruck/${Truck.getTruck_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
+            <td><a href="/editTruck/${Truck.getTruck_ID_VIN()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
+            <td><a href="/deleteTruck/${Truck.getTruck_ID_VIN()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
     </c:forEach>
 </table>
@@ -70,26 +70,21 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6">
-                    <form method="post" action="/addtruck">
-                        <input type="hidden" name="tId">
-                                    <label>Truck Vin</label><br>
-                        <select class="form-select" name="tVin">
-                            <c:forEach var = "Truck" items = "${truckList}">
-                                <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
-                            </c:forEach>
-                        </select>
+                    <form method="post" action="/addTruck">
+                                    <label>Truck Vin</label>
+                                    <input class="form-control" type="text" name="tVin" placeholder="*">
                                     <label>Year</label>
-                                    <input type="text" name="year" placeholder="*">
+                                    <input class="form-control" type="text" name="year" placeholder="*">
                                     <label>License Plate</label>
-                                    <input type="text" name="lPlate" placeholder="*">
+                                    <input class="form-control" type="text" name="lPlate" placeholder="*">
                                     <label>Vehicle Tracker</label><br>
-                                    <input type="text" name="vTracker" placeholder="*">
+                                    <input class="form-control" type="text" name="vTracker" placeholder="*">
                                 </div>
                                 <div class="col-lg-6">
                                     <label>Make </label>
-                                    <input type="text" name="make" placeholder="*">
+                                    <input class="form-control" type="text" name="make" placeholder="*">
                                     <label>Model</label>
-                                    <input type="text" name="model" placeholder="*">
+                                    <input class="form-control" type="text" name="model" placeholder="*">
                                     <label>Policy Number</label>
                                     <select class="form-select" name="pNumber">
                                         <c:forEach var = "Insurance" items = "${insuranceList}">

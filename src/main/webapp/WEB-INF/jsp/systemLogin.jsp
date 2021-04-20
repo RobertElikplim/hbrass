@@ -64,24 +64,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
-                            <form action="/save1" method="post">
-                                <input type="hidden" name="id">
+                            <form action="/addSystemLogin" method="post">
+                                <input class="form-control" type="hidden" name="id">
                                 <label>Username</label>
-                                <input type="text" name="uname">
+                                <input class="form-control" type="text" name="uname">
                                 <label>Password</label>
-                                <input type="text" name="pwd">
+                                <input class="form-control" type="text" name="pwd">
                                 <label>Admin Priviledges</label>
-                                <input type="text" name="admin">
-                        </div>
-                        <div class="col-lg-6">
-                            <label>State Code</label>
-                            <input type="text" name="stateCode">
-                            <label>Zip Code</label>
-                            <input type="text" name="zipCode">
-                            <label>Phone Number</label>
-                            <input type="text" name="phoneNumber">
-                            <label>Email</label>
-                            <input type="text" name="email">
+                                <input class="form-control" type="text" name="admin">
+
                         </div>
                     </div>
                 </div>

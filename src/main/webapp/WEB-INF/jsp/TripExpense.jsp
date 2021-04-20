@@ -73,17 +73,17 @@
                             <div class="col-lg-6">
                         <input type="hidden" name="teID">
                                     <label>Fuel Cost</label>
-                                        <input type="text" name="fCost" placeholder="*">
+                                        <input class="form-control" type="text" name="fCost" placeholder="*">
                                     <label>Scale Expense</label>
-                                        <input type="text" name="sExpense" placeholder="*">
+                                        <input class="form-control" type="text" name="sExpense" placeholder="*">
                                     <label>Other Expense</label>
-                                        <input type="text" name="oExpense" placeholder="*">
+                                        <input class="form-control" type="text" name="oExpense" placeholder="*">
                                 </div>
                                 <div class="col-lg-6">
                                     <label>Repair Expense</label>
-                                        <input type="text" name="rExpense" placeholder="*">
+                                        <input class="form-control" type="text" name="rExpense" placeholder="*">
                                     <label>Total Expense</label>
-                                        <input type="text" name="tExpense" placeholder="*">
+                                        <input class="form-control" type="text" name="tExpense" placeholder="Added Automatically" disabled>
                                     <label>Load ID</label>
                                     <select class="form-select" name="loadID">
                                         <c:forEach var = "Loads" items = "${loadList}">

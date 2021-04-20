@@ -68,9 +68,9 @@
                             <form action="/submitTruckLog" method="post">
                                 <div class="row">
                                     <div class="col-lg-8">
-                                <input type="hidden" name="logID">
+                                        <input type="hidden" name="logID">
                                 <label>Truck VIN</label>
-                                        <select class="form-select" name="truckVin">
+                                        <select class="form-select" name="truckVIN">
                                             <c:forEach var = "Truck" items = "${truckList}">
                                                 <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
                                             </c:forEach>
@@ -89,8 +89,13 @@
                                             </c:forEach>
                                         </select>
                                         <label>Fuel Level</label>
-                                        <input class="form-select" type="text" name="fLevel">
-                                            </div>
+                                        <select class="form-select" type="text" name="fLevel">
+                                                <option value="Full">Full</option>
+                                                <option value="3/4">3/4</option>
+                                                <option value="1/2">1/2</option>
+                                                <option value="1/4">1/4</option>
+                                    </select>
+                                    </div>
                                 </div>
                 </div>
             </div>

@@ -34,8 +34,8 @@
             <td>State Code</td>
         </tr>
         <tr>
-            <td><input type="text" name="driverID" value="${Truck_Driver.getDriver_ID()}"></td>
-            <td><input type="text" name="driverLicenseType" value ="${Truck_Driver.getLicense_Type()}"></td>
+            <td><input class="form-control" type="text" name="driverID" value="${Truck_Driver.getDriver_ID()}"></td>
+            <td><input class="form-control" type="text" name="driverLicenseType" value ="${Truck_Driver.getLicense_Type()}"></td>
             <td>
                 <select class="form-select" name="driverStateCode">
                     <selected option>${Truck_Driver.getState_Code()}</selected>
@@ -47,7 +47,7 @@
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Changes">
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
     <br>
 </form>
 </div>

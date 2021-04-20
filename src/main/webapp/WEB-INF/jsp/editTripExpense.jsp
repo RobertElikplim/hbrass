@@ -24,35 +24,36 @@
         </div>
     </div>
 </nav>
-
 <div class="container-fluid">
-    <form action="/addTruck" method="post">
-        <input type="hidden" name="tVin" value="${Truck.getTruck_ID_VIN()}">
+    <form action="/addTripExpense" method="post">
+        <input type="hidden" name="teID" value="${Trip_Expense.getTrip_Expense_ID()}">
         <table class="table table-bordered">
             <tr>
-                <td>VIN</td>
-                <td>Year</td>
-                <td>License Type</td>
-                <td>Vehicle Tracker</td>
-                <td>Make</td>
-                <td>Model</td>
-                <td>Policy Number</td>
+                <td>Fuel Cost</td>
+                <td>Scale Expense</td>
+                <td>Other Expense</td>
+                <td>Repair Expense</td>
+                <td>Total Expense</td>
+                <td>Load ID</td>
             </tr>
             <tr>
-                <td><input class="form-control" type="text" value="${Truck.getTruck_ID_VIN()}" disabled> </td>
-                <td><input class="form-control" type-="text" name="year" value="${Truck.getYear()}"></td>
-                <td><input class="form-control" type="text" name="lPlate" value ="${Truck.getLicense_Plate()}"></td>
-                <td><input class="form-control" type="text" name="vTracker" value ="${Truck.getVehicle_Tracker()}"></td>
-                <td><input class="form-control" type="text" name="make" value ="${Truck.getMake()}"></td>
-                <td><input class="form-control" type="text" name="model" value ="${Truck.getModel()}"></td>
-                <td><input class="form-control" type="text" name="pNumber" value ="${Truck.getPolicy_Number()}"></td>
+                <td><input type-="text" class="form-control" name="fCost" value="${Trip_Expense.getFuel_Cost()}"></td>
+                <td><input class="form-control" type="text" name="sExpense" value ="${Trip_Expense.getScale_Expense()}"></td>
+                <td><input class="form-control" type="text" name="oExpense" value ="${Trip_Expense.getOther_Expense()}"></td>
+                <td><input class="form-control" type="text" name="rExpense" value ="${Trip_Expense.getRepair_Expense()}"></td>
+                <td><input type="text" class="form-control" name="tExpense" placeholder="Added Automatically" disabled>
+                <td> <select class="form-select" name="loadID">
+                    <c:forEach var = "Loads" items = "${loadList}">
+                        <option value="${Loads.getLoad_ID()}">${Loads.getLoad_ID()}</option>
+                    </c:forEach>
+                </select></td>
             </tr>
         </table>
         <input class="btn btn-primary" type="submit" value="Submit Changes">
-
     </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
 </body>
 </html>

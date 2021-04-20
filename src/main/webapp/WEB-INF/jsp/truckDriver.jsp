@@ -64,9 +64,9 @@
                         <div class="col-lg-6">
                             <form method="post" action="/submitDriverTruck">
                                 <label>Driver ID</label><br>
-                                <input type="text" name="driverID" >
+                                <input class="form-control" type="text" name="driverID" >
                                 <label>License Type</label>
-                                    <input type="text" name="driverLicenseType" placeholder="*">
+                                    <input class="form-control" type="text" name="driverLicenseType" placeholder="*">
                                 <label>State Code</label>
                                 <select class="form-select" name="driverStateCode">
                                     <c:forEach var = "States" items = "${stateList}">

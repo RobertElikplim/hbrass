@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Where(clause = "active = 1")
 @Table(name = "States")
 public class States {
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Id
     @Column(name = "State_Code")
     private String State_Code;
     @Column(name = "State_Name")

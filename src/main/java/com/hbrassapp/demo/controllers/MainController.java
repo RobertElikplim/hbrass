@@ -4,6 +4,7 @@ import com.hbrassapp.demo.Models.*;
 import org.jboss.jandex.Main;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -1095,6 +1096,18 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/submitState", method = RequestMethod.POST)
+    public ModelAndView addState (@RequestParam ("stateID") String stateID,
+                                    @RequestParam ("stateName") String stateName) {
+        ModelAndView mv = new ModelAndView("redirect:/states");
+        States state = new States();
+        state.setState_Code(stateID);
+        state.setState_Name(stateName);
+        state.setActive(true);
+        statesRepo.save(state);
+        return mv;
+    }
+
     @RequestMapping(value = "/addVendors", method = RequestMethod.POST)
     public ModelAndView changesVendor(@RequestParam("vendorID") String vendorID,
                                       @RequestParam("nameVendor") String nameVendor,
@@ -1188,16 +1201,17 @@ public class MainController {
                                @RequestParam("sExpense") String sExpense,
                                @RequestParam("oExpense") String oExpense,
                                @RequestParam("rExpense") String rExpense,
-                               @RequestParam("tExpense") String tExpense,
                                @RequestParam("loadID") String loadID) {
         ModelAndView mv = new ModelAndView("redirect:/TripExpense");
         Trip_Expense tex = new Trip_Expense();
+
+        double totalExp = Double.valueOf(sExpense) + Double.valueOf(oExpense) + Double.valueOf(rExpense) + Double.valueOf(fCost);
         if (teID.isEmpty()) {
             tex.setFuel_Cost(fCost);
             tex.setScale_Expense(sExpense);
             tex.setOther_Expense(oExpense);
             tex.setRepair_Expense(rExpense);
-            tex.setTotal_Expense(tExpense);
+            tex.setTotal_Expense(String.valueOf(totalExp));
             tex.setLoad_ID(loadID);
             tex.setActive(true);
             tripExpenseRepo.save(tex);
@@ -1207,7 +1221,7 @@ public class MainController {
             tex.setScale_Expense(sExpense);
             tex.setOther_Expense(oExpense);
             tex.setRepair_Expense(rExpense);
-            tex.setTotal_Expense(tExpense);
+            tex.setTotal_Expense(String.valueOf(totalExp));
             tex.setLoad_ID(loadID);
             tex.setActive(true);
             tripExpenseRepo.save(tex);
@@ -1215,9 +1229,8 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/addtruck", method = RequestMethod.POST)
-    public ModelAndView addEmp(@RequestParam("tId") String tId,
-                               @RequestParam("tVin") String tVin,
+    @RequestMapping(value = "/addTruck", method = RequestMethod.POST)
+    public ModelAndView addEmp(@RequestParam("tVin") String tVin,
                                @RequestParam("year") String year,
                                @RequestParam("lPlate") String lPlate,
                                @RequestParam("vTracker") String vTracker,
@@ -1226,7 +1239,7 @@ public class MainController {
                                @RequestParam("pNumber") String pNumber) {
         ModelAndView mv = new ModelAndView("redirect:/Truck");
         Truck tru = new Truck();
-        if (tId.isEmpty()) {
+        if (tVin.isEmpty()) {
             tru.setTruck_ID_VIN(tVin);
             tru.setYear(year);
             tru.setLicense_Plate(lPlate);
@@ -1237,7 +1250,6 @@ public class MainController {
             tru.setActive(true);
             truckRepo.save(tru);
         } else {
-            tru.setTruck_ID(tId);
             tru.setTruck_ID_VIN(tVin);
             tru.setYear(year);
             tru.setLicense_Plate(lPlate);
@@ -1259,7 +1271,6 @@ public class MainController {
         ModelAndView mv = new ModelAndView("redirect:/trucklog");
         Truck_Log truck_log = new Truck_Log();
         if (logID.isEmpty()) {
-            truck_log.setLogID(logID);
             truck_log.setTruckIDVIN(truckVIN);
             truck_log.setDriverID(driverID);
             truck_log.setUsDotID(usDotID);
@@ -1473,6 +1484,7 @@ public class MainController {
         ModelAndView mv = new ModelAndView("editTripExpense");
         Optional<Trip_Expense> editTrip_Expense = tripExpenseRepo.findById(id);
         Trip_Expense ees = editTrip_Expense.get();
+        mv.addObject("loadList", loadsRepo.findAll());
         mv.addObject("Trip_Expense", ees);
         return mv;
     }
@@ -1481,6 +1493,9 @@ public class MainController {
         ModelAndView mv = new ModelAndView("editTruckLog");
         Optional<Truck_Log> editTruck_Log = truckLogRepo.findById(id);
         Truck_Log ees = editTruck_Log.get();
+        mv.addObject("dotList",dotInspectionRepo.findAll());
+        mv.addObject("truckList",truckRepo.findAll());
+        mv.addObject("driverList",truckDriverRepo.findAll());
         mv.addObject("Truck_Log", ees);
         return mv;
     }
@@ -1963,6 +1978,16 @@ public class MainController {
         return mv;
     }
 
+    @RequestMapping(value = "/deleteState/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteState(@PathVariable ("id") String id) {
+        ModelAndView mv = new ModelAndView("redirect:/states");
+        Optional<States> states = statesRepo.findById(id);
+        States active = states.get();
+        active.setActive(false);
+        statesRepo.save(active);
+        return mv;
+    }
+
 
 
 
@@ -1996,6 +2021,31 @@ public class MainController {
             ModelAndView mv = new ModelAndView("redirect:/");
             return mv;
         }
+    }
+
+    @RequestMapping(value = "/addSystemLogin", method = RequestMethod.POST)
+    public ModelAndView addSystemLogin(@RequestParam("id") String id,
+                             @RequestParam("uname") String uname,
+                             @RequestParam("pwd") String pwd,
+                             @RequestParam("admin") String admin) {
+        ModelAndView mv = new ModelAndView("redirect:/systemLogin");
+
+        System_Login sysLogin = new System_Login();
+        if (id.isEmpty()) {
+            sysLogin.setUsername(uname);
+            sysLogin.setPassword(pwd);
+            sysLogin.setPrivileges(admin);
+            sysLogin.setActive(true);
+            systemLoginRepo.save(sysLogin);
+        } else {
+            sysLogin.setLoginID(id);
+            sysLogin.setUsername(uname);
+            sysLogin.setPassword(pwd);
+            sysLogin.setPrivileges(admin);
+            sysLogin.setActive(true);
+            systemLoginRepo.save(sysLogin);
+        }
+        return mv;
     }
 
     @RequestMapping(value = "/save1", method = RequestMethod.POST)
