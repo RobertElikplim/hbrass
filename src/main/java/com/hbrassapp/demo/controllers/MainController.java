@@ -1465,6 +1465,8 @@ public class MainController {
     public ModelAndView editTire_Vendor(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editTireVendor");
         Optional<Tire_Vendor> editTire_Vendor = tireVendorRepo.findById(id);
+        mv.addObject("vendorList", vendorRepo.findAll());
+
         Tire_Vendor ees = editTire_Vendor.get();
         mv.addObject("Tire_Vendor", ees);
         return mv;

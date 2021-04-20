@@ -72,6 +72,8 @@
                                     <input class="form-control" type="text" name="trailerID">
                                 <label>Trailer Code:</label>
                                     <input class="form-control" type="text" name="tc">
+                                        <label>Type Of Trailer</label>
+                                        <input class="form-control" type="text" name="tot">
                                 <label>Weight:</label>
                                     <input class="form-control" type="text" name="weight">
                                 <label>License Plate:</label>

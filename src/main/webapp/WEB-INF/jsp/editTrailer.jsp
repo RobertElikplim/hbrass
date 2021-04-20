@@ -37,15 +37,16 @@
             <td>License Plate</td>
         </tr>
         <tr>
-            <td><input type="text" name="trailerID" value ="${Trailer.getTrailer_ID()}"></td>
-            <td><input type="text" name="tc" value ="${Trailer.getTrailer_Code()}"></td>
-            <td><input type="text" name="tot" value ="${Trailer.getType_Of_Trailer()}"></td>
-            <td><input type="text" name="weight" value ="${Trailer.getWeight_Of_Trailer()}"></td>
-            <td><input type="text" name="lcp" value ="${Trailer.getLicense_Plate()}"></td>
+            <td><input class="form-control" type="text" name="trailerID" value ="${Trailer.getTrailer_ID()}"></td>
+            <td><input class="form-control" type="text" name="tc" value ="${Trailer.getTrailer_Code()}"></td>
+            <td><input class="form-control" type="text" name="tot" value ="${Trailer.getType_Of_Trailer()}"></td>
+            <td><input class="form-control" type="text" name="weight" value ="${Trailer.getWeight_Of_Trailer()}"></td>
+            <td><input class="form-control" type="text" name="lcp" value ="${Trailer.getLicense_Plate()}"></td>
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Change">
+    <input type="submit" class="btn btn-control" value="Submit Change">
+
     <br>
 </form>
 </div>

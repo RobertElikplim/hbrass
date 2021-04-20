@@ -34,11 +34,11 @@
             <td>Tire Company Name</td>
         </tr>
         <tr>
-            <td><input type="text" name="tire" value ="${Tire.getTire_Name()}"></td>
+            <td><input type="text" class="form-control" name="tire" value ="${Tire.getTire_Name()}"></td>
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Change">
+    <input type="submit" class="btn btn-primary" value="Submit Change">
     <br>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
