@@ -337,7 +337,7 @@ public class MainController {
     @RequestMapping(value = "/tire")
     public ModelAndView viewtire() {
         ModelAndView mv = new ModelAndView("tire");
-        mv.addObject("tireVendorList", tireVendorRepo.findAll());
+        mv.addObject("vendorList", vendorRepo.findAll());
         mv.addObject("tireList", tireRepo.findAll());
         return mv;
     }
@@ -973,17 +973,20 @@ public class MainController {
 
     @RequestMapping(value = "/submitTire", method = RequestMethod.POST)
     public ModelAndView addTire(@RequestParam("tireID") String tireID,
-                                @RequestParam("tire") String tire){
+                                @RequestParam("tire") String tire,
+                                @RequestParam("vendorID") String vendorID ){
 
         ModelAndView mv = new ModelAndView("redirect:/tire");
         Tire tire1 = new Tire();
         if (tireID.isEmpty()) {
             tire1.setTire_Name(tire);
+            tire1.setVendor_ID(vendorID);
             tire1.setActive(true);
             tireRepo.save(tire1);
         } else {
             tire1.setTire_ID(tireID);
             tire1.setTire_Name(tire);
+            tire1.setVendor_ID(vendorID);
             tire1.setActive(true);
             tireRepo.save(tire1);
         }
@@ -1074,24 +1077,7 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/submitEmployeeStatus", method = RequestMethod.POST)
-    public ModelAndView addEmpStatus(@RequestParam("empID") String empID,
-                                     @RequestParam("eStatus") String eStatus){
 
-        ModelAndView mv = new ModelAndView("redirect:/employeeStatus");
-        Employee_Status es = new Employee_Status();
-        if (empID.isEmpty()) {
-            es.setEmployee_Status(eStatus);
-            es.setActive(true);
-            employeeStatusRepo.save(es);
-        } else {
-            es.setEmployee_ID(empID);
-            es.setEmployee_Status(eStatus);
-            es.setActive(true);
-            employeeStatusRepo.save(es);
-        }
-        return mv;
-    }
 
     @RequestMapping(value = "/submitState", method = RequestMethod.POST)
     public ModelAndView addState (@RequestParam ("stateID") String stateID,
@@ -1156,7 +1142,8 @@ public class MainController {
                                @RequestParam("zCode") String zCode,
                                @RequestParam("posID") String posID,
                                @RequestParam("driverID") String driverID,
-                               @RequestParam("eCon") String eCon) {
+                               @RequestParam("eCon") String eCon,
+                               @RequestParam("eStatus") String eStatus) {
         ModelAndView mv = new ModelAndView("redirect:/employee");
         employee emp = new employee();
         if (empID.isEmpty()) {
@@ -1171,6 +1158,7 @@ public class MainController {
             emp.setPosition_ID(posID);
             emp.setDriver_ID(driverID);
             emp.setEmergency_Contact_ID(eCon);
+            emp.setEmployee_Status(eStatus);
             emp.setActive(true);
             employeerepo.save(emp);
         } else {
@@ -1186,6 +1174,7 @@ public class MainController {
             emp.setPosition_ID(posID);
             emp.setDriver_ID(driverID);
             emp.setEmergency_Contact_ID(eCon);
+            emp.setEmployee_Status(eStatus);
             emp.setActive(true);
             employeerepo.save(emp);
         }
@@ -1594,6 +1583,7 @@ public class MainController {
         ModelAndView mv = new ModelAndView("editTire");
         Optional<Tire> editTire = tireRepo.findById(id);
         Tire tire = editTire.get();
+        mv.addObject("vendorList", vendorRepo.findAll());
         mv.addObject("Tire", tire);
         return mv;
     }

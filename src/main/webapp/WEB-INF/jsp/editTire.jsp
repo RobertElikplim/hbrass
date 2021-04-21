@@ -32,11 +32,18 @@
     <table class="table table-bordered">
         <tr>
             <td>Tire Company Name</td>
+            <td>Vendor ID</td>
         </tr>
         <tr>
             <td><input type="text" class="form-control" name="tire" value ="${Tire.getTire_Name()}"></td>
+            <td> <select class="form-select" name="vendorID">
+                <selected option value="${Tire.getVendor_ID()}">${Tire.getVendor_ID()}</selected>
+                <c:forEach var = "Vendor" items = "${vendorList}">
+                    <option value="${Vendor.getVendor_ID()}">${Vendor.getVendor_ID()}-${Vendor.getVendor_Name()}</option>
+                </c:forEach>
+            </select></td>
         </tr>
-        <br>
+
     </table>
     <input type="submit" class="btn btn-primary" value="Submit Change">
     <br>

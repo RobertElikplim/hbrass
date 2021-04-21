@@ -46,6 +46,7 @@
         <th>Position ID</th>
         <th>Driver ID</th>
         <th>Emergency Contact ID</th>
+        <th>Employee Status</th>
     </tr>
     <c:forEach var = "employee" items = "${employeeList}">
         <tr>
@@ -61,6 +62,7 @@
             <td>${employee.getPosition_ID()}</td>
             <td>${employee.getDriver_ID()}</td>
             <td>${employee.getEmergency_Contact_ID()}</td>
+            <td>${employee.getEmployee_Status()}</td>
             <td><a href="/editEmployee/${employee.getEmployee_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
             <td><a href="/deleteEmployee/${employee.getEmployee_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
@@ -118,6 +120,8 @@
                             </select>
                             <label>Emergency Contact</label>
                             <input class="form-control" type="text" name="eCon">
+                            <label>Employee Status</label>
+                            <input class="form-control" type="text" name="eStatus">
                         </div>
                                 </div>
                 </div>

@@ -48,7 +48,6 @@
                         <li><a class="dropdown-item" href="/schedule">Schedule</a></li>
                         <li><a class="dropdown-item" href="/states">States</a></li>
                         <li><a class="dropdown-item" href="/tire">Tires</a></li>
-                        <li><a class="dropdown-item" href="/tireVendor">Tire Vendors</a></li>
                         <li><a class="dropdown-item" href="/Trailer">Trailers</a></li>
                         <li><a class="dropdown-item" href="/TripExpense">Trip Expense</a></li>
                         <li><a class="dropdown-item" href="/Truck">Trucks</a></li>
@@ -78,7 +77,6 @@
             <a href="/dropOffLocation"class="list-group-item">Drop Off Locations</a>
             <a href="/emergencyContacts" class="list-group-item">Emergency Contacts</a>
             <a href="/employee" class="list-group-item">Employees</a>
-            <a href="/employeeStatus" class="list-group-item">Employee Status</a>
             <a href="/iftaSticker" class="list-group-item">IFTA Sticker</a>
         </div>
         <div class="col-sm-4">
@@ -86,7 +84,6 @@
             <a href="/income" class="list-group-item">Income</a>
             <a href="/insurance" class="list-group-item">Insurance</a>
             <a href="/invoice" class="list-group-item">Invoices</a>
-            <a href="/invoiceStatus" class="list-group-item">Invoice Status</a>
             <a href="/loadBoard" class="list-group-item">Load Boards</a>
             <a href="/loads" class="list-group-item">Loads</a>
             <a href="/maintenance" class="list-group-item">Maintenance</a>
@@ -99,7 +96,6 @@
             <a href="/states" class="list-group-item">States</a>
             <a href="/schedule" class="list-group-item">Schedule</a>
             <a href="/tire" class="list-group-item">Tires</a>
-            <a href="/tireVendor" class="list-group-item">Tire Vendors</a>
             <a href="/Trailer" class="list-group-item">Trailers</a>
             <a href="/TripExpense" class="list-group-item">Trip Expense</a>
             <a href="/Truck" class="list-group-item">Trucks</a>

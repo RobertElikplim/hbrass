@@ -51,6 +51,7 @@
             <td>Position ID</td>
             <td>Driver ID</td>
             <td>Emergency Contact ID</td>
+            <td>Employee Status</td>
         </tr>
         <tr>
             <td><input class="form-control" type="text" name="city" value ="${employee.getCity()}"></td>
@@ -64,6 +65,7 @@
             <td><input class="form-control" type="text" name="posID" value ="${employee.getPosition_ID()}"></td>
             <td><input class="form-control" type="text" name="driverID" value ="${employee.getDriver_ID()}"></td>
             <td><input class="form-control" type="text" name="eCon" value ="${employee.getEmergency_Contact_ID()}"></td>
+            <td><input class="form-control" type="text" name="eStatus" value ="${employee.getEmployee_Status()}"></td>
         </tr>
         <br>
     </table>

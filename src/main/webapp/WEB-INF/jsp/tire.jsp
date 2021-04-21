@@ -38,11 +38,13 @@
     <tr>
         <th>Tire Vendor ID</th>
         <th>Tire Company Name</th>
+        <th>Vendor ID</th>
     </tr>
     <c:forEach var = "Tire" items = "${tireList}">
         <tr>
             <td>${Tire.getTire_ID()}</td>
             <td>${Tire.getTire_Name()}</td>
+            <td>${Tire.getVendor_ID()}</td>
             <td><a href="/editTire/${Tire.getTire_ID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
             <td><a href="/deleteTire/${Tire.getTire_ID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>
@@ -67,6 +69,12 @@
                                 <input type="hidden" name="tireID">
                                 <label>Tire</label>
                                 <input class="form-control" type="text" name="tire">
+                                        <label>Vendor ID</label>
+                                        <select class="form-select" name="vendorID">
+                                            <c:forEach var = "Vendor" items = "${vendorList}">
+                                                <option value="${Vendor.getVendor_ID()}">${Vendor.getVendor_ID()}-${Vendor.getVendor_Name()}</option>
+                                            </c:forEach>
+                                        </select>
                                     </div>
                                 </div>
                 </div>

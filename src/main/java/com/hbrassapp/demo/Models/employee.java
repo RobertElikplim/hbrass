@@ -33,10 +33,12 @@ public class employee {
     private String Driver_ID;
     @Column(name = "Emergency_Contact_ID")
     private String Emergency_Contact_ID;
+    @Column(name = "Employee_Status")
+    private String Employee_Status;
     @Column(name = "active")
     private boolean active;
 
-    public employee(String employee_ID, String first_Name, String last_Name, String phone_Number, String email, String street_Address, String city, String state_Code, String zip_Code, String position_ID, String driver_ID, String emergency_Contact_ID) {
+    public employee(String employee_ID, String first_Name, String last_Name, String phone_Number, String email, String street_Address, String city, String state_Code, String zip_Code, String position_ID, String driver_ID, String emergency_Contact_ID, String employee_Status, boolean active) {
         Employee_ID = employee_ID;
         First_Name = first_Name;
         Last_Name = last_Name;
@@ -49,10 +51,20 @@ public class employee {
         Position_ID = position_ID;
         Driver_ID = driver_ID;
         Emergency_Contact_ID = emergency_Contact_ID;
+        Employee_Status = employee_Status;
+        this.active = active;
     }
 
     public employee() {
 
+    }
+
+    public String getEmployee_Status() {
+        return Employee_Status;
+    }
+
+    public void setEmployee_Status(String employee_Status) {
+        Employee_Status = employee_Status;
     }
 
     public boolean isActive() {

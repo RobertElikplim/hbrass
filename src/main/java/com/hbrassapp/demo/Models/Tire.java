@@ -13,16 +13,27 @@ public class Tire {
     private String Tire_ID;
     @Column(name = "Tire_Name")
     private String Tire_Name;
+    @Column(name = "Vendor_ID")
+    private String Vendor_ID;
     @Column(name = "active")
     private boolean active;
 
-    public Tire(String tire_ID, String tire_Name) {
+    public Tire(String tire_ID, String tire_Name, String Vendor_ID) {
         Tire_ID = tire_ID;
         Tire_Name = tire_Name;
+        this.Vendor_ID = Vendor_ID;
     }
 
     public Tire() {
 
+    }
+
+    public String getVendor_ID() {
+        return Vendor_ID;
+    }
+
+    public void setVendor_ID(String vendor_ID) {
+        Vendor_ID = vendor_ID;
     }
 
     public boolean isActive() {
