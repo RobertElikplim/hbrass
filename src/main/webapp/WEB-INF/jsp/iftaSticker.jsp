@@ -73,8 +73,11 @@
                                             </c:forEach>
                                         </select>
                                         <label>IFTA Status</label>
-                                        <input class="form-control" type="text" name="ifta">
-                                <label>Expiration Date</label>
+                                        <select class="form-select" name="ifta">
+                                        <option value="Expired">Expired</option>
+                                        <option value="Current">Current</option>
+                                    </select>
+                                        <label>Expiration Date</label>
                                 <input class="form-control" type="date" name="eDate">
                                     </div>
                                 </div>

@@ -40,15 +40,19 @@
         </tr>
 
         <tr>
-            <td><input type="text" name="Mileage" value="${Maintenance.getMileage()}"></td>
-            <td><input type="date" name="ServiceDate" value ="${Maintenance.getServiceDate()}"></td>
-            <td><input type="text" name="Service" value ="${Maintenance.getService()}"></td>
-            <td><input type="text" name="ServiceFee" value ="${Maintenance.getServiceFee()}"></td>
-            <td><input type="text" name="TruckIdVin" value ="${Maintenance.getTruckIDVIN()}"></td>
+            <td><input class="form-control" type="text" name="Mileage" value="${Maintenance.getMileage()}"></td>
+            <td><input class="form-control" type="date" name="ServiceDate" value ="${Maintenance.getServiceDate()}"></td>
+            <td><input class="form-control" type="text" name="Service" value ="${Maintenance.getService()}"></td>
+            <td><input class="form-control" type="text" name="ServiceFee" value ="${Maintenance.getServiceFee()}"></td>
+            <td>  <select class="form-select" name="TruckIdVin">
+                <c:forEach var = "Truck" items = "${truckList}">
+                    <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
+                </c:forEach>
+            </select></td>
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Changes">
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
     <br>
 </form>
 </form>

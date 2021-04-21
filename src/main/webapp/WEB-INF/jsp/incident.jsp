@@ -67,9 +67,9 @@
                     <form action="/submitIncident" method="post">
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="hidden" name="incidentID">
+                                <input class="form-control" type="hidden" name="incidentID">
                                 <label>Incident Type</label>
-                                <input type="text" name="incidentType" placeholder="*">
+                                <input class="form-control" type="text" name="incidentType" placeholder="*">
                                 <label>Load ID</label>
                                 <select class="form-select" name="loadID">
                                         <c:forEach var = "Loads" items = "${loadList}">
@@ -83,9 +83,9 @@
                                         </c:forEach>
                                     </select>
                                 <label>Incident Status</label>
-                                    <input type="text" name="incidentStatus" placeholder="*">
+                                    <input class="form-control" type="text" name="incidentStatus" placeholder="*">
                                 <label>Remarks</label>
-                                <input type="text" name="remarks" placeholder="*">
+                                <input class="form-control" type="text" name="remarks" placeholder="*">
                             </div>
                         </div>
                 </div>

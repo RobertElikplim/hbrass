@@ -718,7 +718,7 @@ public class MainController {
             invoice.setClientID(clientID);
             invoice.setBrokerContractID(bcID);
             invoice.setInvoiceDate(iDate);
-            invoice.setInvoiceStatusID(istatus);
+            invoice.setInvoiceStatus(istatus);
             invoice.setActive(true);
             invoiceRepo.save(invoice);
         } else {
@@ -726,7 +726,7 @@ public class MainController {
             invoice.setClientID(clientID);
             invoice.setBrokerContractID(bcID);
             invoice.setInvoiceDate(iDate);
-            invoice.setInvoiceStatusID(istatus);
+            invoice.setInvoiceStatus(istatus);
             invoice.setActive(true);
             invoiceRepo.save(invoice);
         }
@@ -1532,6 +1532,7 @@ public class MainController {
         ModelAndView mv = new ModelAndView("editMaintenance");
         Optional<Maintenance> editMaintenance = maintenanceRepo.findById(id);
         Maintenance maintenance = editMaintenance.get();
+        mv.addObject("truckList", truckRepo.findAll());
         mv.addObject("Maintenance", maintenance);
         return mv;
     }

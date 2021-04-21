@@ -65,11 +65,11 @@
                                 <div class="row">
                                     <div class="col-lg-8">
                                 <label>Insurance ID</label>
-                                <input type="text" name="insuranceID">
+                                <input class="form-control" type="text" name="insuranceID">
                                 <label>Insurance Type</label>
-                                <input type="text" name="insuranceType"><br>
-                                <label>Expiration</label><br>
-                                <input type="date" name="coverageExpiration">
+                                <input class="form-control" type="text" name="insuranceType">
+                                <label>Expiration</label>
+                                <input class="form-control" type="date" name="coverageExpiration">
                                     </div>
                                 </div>
                 </div>

@@ -47,7 +47,7 @@
             </c:forEach>
         </select></td>
         <td><input class="form-control" type="date" name="iDate" value="${Invoice.getInvoiceDate()}"></td>
-        <td><input class="form-control" type="text" name="istatus" value="${Invoice.getInvoiceStatusID()}"></td>
+        <td><input class="form-control" type="text" name="istatus" value="${Invoice.getInvoiceStatus()}"></td>
         </tr>
     </table>
     <input class="btn btn-primary" type="submit" value="Submit Changes">

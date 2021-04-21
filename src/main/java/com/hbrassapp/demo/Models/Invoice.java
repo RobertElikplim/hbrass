@@ -18,8 +18,8 @@ public class Invoice {
     private String brokerContractID;
     @Column(name = "Invoice_Date")
     private String invoiceDate;
-    @Column(name = "Invoice_Status_ID")
-    private String InvoiceStatusID;
+    @Column(name = "Invoice_Status")
+    private String InvoiceStatus;
     @Column(name = "active")
     private boolean active;
 
@@ -27,12 +27,12 @@ public class Invoice {
 
     }
 
-    public Invoice(String invoiceID, String clientID, String brokerContractID, String invoiceDate, String invoiceStatusID) {
+    public Invoice(String invoiceID, String clientID, String brokerContractID, String invoiceDate, String invoiceStatus) {
         this.invoiceID = invoiceID;
         this.clientID = clientID;
         this.brokerContractID = brokerContractID;
         this.invoiceDate = invoiceDate;
-        InvoiceStatusID = invoiceStatusID;
+        InvoiceStatus = invoiceStatus;
     }
 
     public boolean isActive() {
@@ -75,11 +75,11 @@ public class Invoice {
         this.invoiceDate = invoiceDate;
     }
 
-    public String getInvoiceStatusID() {
-        return InvoiceStatusID;
+    public String getInvoiceStatus() {
+        return InvoiceStatus;
     }
 
-    public void setInvoiceStatusID(String invoiceStatusID) {
-        InvoiceStatusID = invoiceStatusID;
+    public void setInvoiceStatus(String invoiceStatus) {
+        InvoiceStatus = invoiceStatus;
     }
 }

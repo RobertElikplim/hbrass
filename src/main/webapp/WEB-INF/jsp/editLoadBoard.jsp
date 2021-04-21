@@ -37,7 +37,11 @@
                     <input class="form-control" type="text" name="boardName" value ="${Load_Board.getBoardName()}">
                 </td>
                 <td><input class="form-control" type="text" name="website" value ="${Load_Board.getWebsite()}"></td>
-                <td><input class="form-control" type="text" name="subscribed" value ="${Load_Board.getSubscribed()}"></td>
+                <td> <select class="form-select" name="subscribed">
+                    <option selected>${Load_Board.getSubscribed()}<option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
             </tr>
         </table>
         <input class="btn btn-primary" type="submit" value="Submit Changes">

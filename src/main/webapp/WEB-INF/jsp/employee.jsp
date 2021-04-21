@@ -94,10 +94,10 @@
                                 <input class="form-control" type="text" name="eMail">
                                 <label>Street Address</label>
                                 <input class="form-control" type="text" name="sAddy">
+                                    <label>City</label>
+                                    <input class="form-control" type="text" name="city">
                         </div>
                         <div class="col-lg-6">
-                            <label>City</label>
-                            <input class="form-control" type="text" name="city">
                             <label>State Code</label>
                             <select class="form-select" name="sCode">
                                 <c:forEach var = "States" items = "${stateList}">

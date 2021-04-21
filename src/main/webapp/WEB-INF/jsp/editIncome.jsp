@@ -46,9 +46,9 @@
                     </c:forEach>
                 </select>
             </td>
-            <td><input type="text" name="loadFare" value ="${Income.getLoad_Fare()}"></td>
-            <td><input type="text" name="commission" value ="${Income.getCommission()}"></td>
-            <td><input type="text" name="insurance" value ="${Income.getInsurance()}"></td>
+            <td><input class="form-control" type="text" name="loadFare" value ="${Income.getLoad_Fare()}"></td>
+            <td><input class="form-control" type="text" name="commission" value ="${Income.getCommission()}"></td>
+            <td><input class="form-control" type="text" name="insurance" value ="${Income.getInsurance()}"></td>
             <td>
                 <select class="form-select" name="tripExpenseID">
                     <selected option>${Income.getTrip_Expense_ID()}</selected>
@@ -57,7 +57,7 @@
                     </c:forEach>
                 </select>
             </td>
-            <td><input type="text" name="totalIncome" value ="${Income.getTotal_Income()}"></td>
+            <td><input class="form-control" type="text" name="totalIncome" value ="${Income.getTotal_Income()}"></td>
         </tr>
         <br>
     </table>

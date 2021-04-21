@@ -44,7 +44,7 @@
             <td>${Invoice.getClientID()}</td>
             <td>${Invoice.getBrokerContractID()}</td>
             <td>${Invoice.getInvoiceDate()}</td>
-            <td>${Invoice.getInvoiceStatusID()}</td>
+            <td>${Invoice.getInvoiceStatus()}</td>
             <td><a href="/editInvoice/${Invoice.getInvoiceID()}"><img src="../../img/edit.jpg" alt="edit_image" ></a></td>
             <td><a href="/deleteInvoice/${Invoice.getInvoiceID()}"><img src="../../img/delete.jpg" alt="delete_image" ></a></td>
         </tr>

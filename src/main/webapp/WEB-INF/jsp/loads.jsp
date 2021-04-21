@@ -47,6 +47,8 @@
         <th>Total Miles</th>
         <th>Driver Pay</th>
         <th>Remarks</th>
+        <th></th>
+        <th></th>
     </tr>
     <c:forEach var = "Loads" items = "${loadsList}">
         <tr>

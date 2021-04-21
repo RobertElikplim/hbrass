@@ -65,11 +65,14 @@
                                     <div class="col-lg-8">
                                 <input type="hidden" name="loadBoardID">
                                 <label>Load Board</label>
-                                <input type="text" name="boardName">
+                                <input class="form-control" type="text" name="boardName">
                                 <label>Website</label>
-                                <input type="text" name="website">
+                                <input class="form-control" type="text" name="website">
                                 <label>Subscribed</label>
-                                <input type="text" name="subscribed">
+                                <select class="form-select" name="subscribed">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
                                     </div>
                                 </div>
                 </div>

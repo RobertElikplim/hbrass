@@ -44,21 +44,23 @@
     </tr>
     </c:forEach>
 </table>
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
+    <!-- Add Record Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Countries</h4>
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Record</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
                     <form method="post" action="/submitCountry">
                         <input type="hidden" name="colID">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-4">
                                     <label>Country Code</label><br>
-                                    <select class="form-control" name="cc">
+                                    <select class="form-select" name="cc">
                                         <option data-countryCode="US" value="1" selected>USA (+1)</option>
                                         <option data-countryCode="GB" value="44">UK (+44)</option>
                                         <option data-countryCode="DZ" value="213">Algeria (+213)</option>

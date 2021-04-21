@@ -73,7 +73,7 @@
                                 <label>Mileage</label>
                                 <input class="form-control" type="text" name="Mileage">
                                 <label>Service Date</label>
-                                <input class="form-control" type="text" name="ServiceDate">
+                                <input class="form-control" type="date" name="ServiceDate">
                                 <label>Service</label>
                                 <input class="form-control" type="text" name="Service">
                         </div>

@@ -34,6 +34,7 @@
             <td>Phone Number</td>
             <td>Email</td>
             <td>Street Address</td>
+            <td>City</td>
         </tr>
         <tr>
             <form action="/submitEmployee" method="post">
@@ -43,9 +44,9 @@
             <td><input class="form-control" type="text" name="pNumber" value ="${employee.getPhone_Number()}"></td>
             <td><input class="form-control" type="text" name="eMail" value ="${employee.getEmail()}"></td>
             <td><input class="form-control" type="text" name="sAddy" value ="${employee.getStreet_Address()}"></td>
+                <td><input class="form-control" type="text" name="city" value ="${employee.getCity()}"></td>
         </tr>
         <tr>
-            <td>City</td>
             <td>State Code</td>
             <td>Zip Code</td>
             <td>Position ID</td>
@@ -54,7 +55,6 @@
             <td>Employee Status</td>
         </tr>
         <tr>
-            <td><input class="form-control" type="text" name="city" value ="${employee.getCity()}"></td>
             <td> <select class="form-select" name="sCode">
                 <option selected value="${employee.getState_Code()}">${employee.getState_Code()}</option>
                 <c:forEach var = "States" items = "${stateList}">

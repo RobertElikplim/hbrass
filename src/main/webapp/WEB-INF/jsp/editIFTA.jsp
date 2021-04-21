@@ -35,7 +35,12 @@
         </tr>
         <tr><form action="/submitIfta" method="post">
             <input type="hidden" name="iftaID" value="${IFTA_Sticker.getIFTA_ID()}">
-            <td><input class="form-control" type="text" name="ifta" value ="${IFTA_Sticker.getIFTA_Status()}"></td>
+            <td> <select class="form-select" name="ifta">
+                <selected value ="${IFTA_Sticker.getIFTA_Status()}">
+                <option value="Expired">Expired</option>
+                <option value="Current">Current</option>
+            </select>
+            </td>
             <td><input class="form-control" type="text" name="vin" value ="${IFTA_Sticker.getTruck_ID_VIN()}"></td>
             <td><input class="form-control" type="date" name="eDate" value ="${IFTA_Sticker.getIFTA_Expiration_Date()}"></td>
         </tr>

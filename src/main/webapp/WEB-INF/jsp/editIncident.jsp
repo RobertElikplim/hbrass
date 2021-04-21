@@ -37,7 +37,7 @@
             <td>Incident Status</td>
             <td>Remarks</td>
         </tr>
-        <td><input class= form-control" type="text" name="incidentID" value="${Incident.getIncident_ID()}"></td>
+        <td><input class="form-control" type="text" name="incidentID" value="${Incident.getIncident_ID()}"></td>
             <td><input class="form-control" type="text" name ="incidentType" value ="${Incident.getIncident_Type()}"></td>
             <td><select class="form-select" name="loadID">
                 <c:forEach var = "Loads" items = "${loadList}">
