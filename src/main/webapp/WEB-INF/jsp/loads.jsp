@@ -35,6 +35,7 @@
     <table class="table table-bordered">
     <tr>
         <th>Load ID</th>
+        <th>Client ID</th>
         <th>Date</th>
         <th>Pick Up ID</th>
         <th>Drop Off ID</th>
@@ -50,6 +51,7 @@
     <c:forEach var = "Loads" items = "${loadsList}">
         <tr>
             <td>${Loads.getLoad_ID()}</td>
+            <td>${Loads.getClient_ID()}</td>
             <td>${Loads.getDate()}</td>
             <td>${Loads.getPick_Up_ID()}</td>
             <td>${Loads.getDrop_Off_ID()}</td>
@@ -82,6 +84,12 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                 <input type="hidden" name="loadID">
+                                <label>Client ID</label>
+                                        <select class="form-select" name="clientID">
+                                            <c:forEach var = "Client" items = "${clientList}">
+                                                <option value="${Client.getClient_ID()}">${Client.getClient_ID()}-${Client.getClient_Name()}</option>
+                                            </c:forEach>
+                                        </select>
                                 <label>Date</label>
                                 <input class="form-control" type="date" name="dateLoads">
                                 <label>Pick Up Tracker</label>

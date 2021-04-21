@@ -272,6 +272,7 @@ public class MainController {
     @RequestMapping(value = "/loads")
     public ModelAndView viewLoads() {
         ModelAndView mv = new ModelAndView("loads");
+        mv.addObject("clientList", clientRepo.findAll());
         mv.addObject("trailerList", trailerRepo.findAll());
         mv.addObject("dropOffList", dropOffLocationRepo.findAll());
         mv.addObject("truckList", truckRepo.findAll());
@@ -489,6 +490,7 @@ public class MainController {
 
     @RequestMapping(value = "/submitLoads", method = RequestMethod.POST)
     public ModelAndView changesLoads(@RequestParam("loadID") String id,
+                                     @RequestParam("clientID") String clientID,
                                      @RequestParam("dateLoads") String dateLoads,
                                      @RequestParam("pickUP") String pickUP,
                                      @RequestParam("dropOff") String dropOff,
@@ -503,6 +505,7 @@ public class MainController {
         ModelAndView mv = new ModelAndView("redirect:/loads");
         Loads loads = new Loads();
         if (id.isEmpty()) {
+            loads.setClient_ID(clientID);
             loads.setDate(dateLoads);
             loads.setPick_Up_ID(pickUP);
             loads.setDrop_Off_ID(dropOff);
@@ -517,6 +520,7 @@ public class MainController {
             loads.setActive(true);
             loadsRepo.save(loads);
         } else {
+            loads.setClient_ID(clientID);
             loads.setLoad_ID(id);
             loads.setDate(dateLoads);
             loads.setPick_Up_ID(pickUP);
@@ -1216,10 +1220,9 @@ public class MainController {
     }
 
     @RequestMapping(value = "/addTruck", method = RequestMethod.POST)
-    public ModelAndView addEmp(@RequestParam("tVin") String tVin,
+    public ModelAndView addTruck(@RequestParam("tVin") String tVin,
                                @RequestParam("year") String year,
                                @RequestParam("lPlate") String lPlate,
-                               @RequestParam("vTracker") String vTracker,
                                @RequestParam("make") String make,
                                @RequestParam("model") String model,
                                @RequestParam("pNumber") String pNumber) {
@@ -1229,7 +1232,6 @@ public class MainController {
             tru.setTruck_ID_VIN(tVin);
             tru.setYear(year);
             tru.setLicense_Plate(lPlate);
-            tru.setVehicle_Tracker(vTracker);
             tru.setMake(make);
             tru.setModel(model);
             tru.setPolicy_Number(pNumber);
@@ -1239,7 +1241,6 @@ public class MainController {
             tru.setTruck_ID_VIN(tVin);
             tru.setYear(year);
             tru.setLicense_Plate(lPlate);
-            tru.setVehicle_Tracker(vTracker);
             tru.setMake(make);
             tru.setModel(model);
             tru.setPolicy_Number(pNumber);
@@ -1410,6 +1411,7 @@ public class MainController {
     @RequestMapping(value = "/editLoads/{id}", method = RequestMethod.GET)
     public ModelAndView editLoads(@PathVariable("id") String id) {
         ModelAndView mv = new ModelAndView("editLoads");
+        mv.addObject("clientList", clientRepo.findAll());
         mv.addObject("trailerList", trailerRepo.findAll());
         mv.addObject("dropOffList", dropOffLocationRepo.findAll());
         mv.addObject("truckList", truckRepo.findAll());

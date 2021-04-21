@@ -33,7 +33,6 @@
                 <td>VIN</td>
                 <td>Year</td>
                 <td>License Type</td>
-                <td>Vehicle Tracker</td>
                 <td>Make</td>
                 <td>Model</td>
                 <td>Policy Number</td>
@@ -42,7 +41,6 @@
                 <td><input class="form-control" type="text" value="${Truck.getTruck_ID_VIN()}" disabled> </td>
                 <td><input class="form-control" type-="text" name="year" value="${Truck.getYear()}"></td>
                 <td><input class="form-control" type="text" name="lPlate" value ="${Truck.getLicense_Plate()}"></td>
-                <td><input class="form-control" type="text" name="vTracker" value ="${Truck.getVehicle_Tracker()}"></td>
                 <td><input class="form-control" type="text" name="make" value ="${Truck.getMake()}"></td>
                 <td><input class="form-control" type="text" name="model" value ="${Truck.getModel()}"></td>
                 <td><input class="form-control" type="text" name="pNumber" value ="${Truck.getPolicy_Number()}"></td>

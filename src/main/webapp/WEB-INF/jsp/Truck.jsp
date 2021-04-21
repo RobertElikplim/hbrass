@@ -37,7 +37,6 @@
         <th>VIN</th>
         <th>Year</th>
         <th>License Type</th>
-        <th>Vehicle Tracker</th>
         <th>Make</th>
         <th>Model</th>
         <th>Policy Number</th>
@@ -47,7 +46,6 @@
             <td>${Truck.getTruck_ID_VIN()}</td>
             <td>${Truck.getYear()}</td>
             <td>${Truck.getLicense_Plate()}</td>
-            <td>${Truck.getVehicle_Tracker()}</td>
             <td>${Truck.getMake()}</td>
             <td>${Truck.getModel()}</td>
             <td>${Truck.getPolicy_Number()}</td>
@@ -77,8 +75,6 @@
                                     <input class="form-control" type="text" name="year" placeholder="*">
                                     <label>License Plate</label>
                                     <input class="form-control" type="text" name="lPlate" placeholder="*">
-                                    <label>Vehicle Tracker</label><br>
-                                    <input class="form-control" type="text" name="vTracker" placeholder="*">
                                 </div>
                                 <div class="col-lg-6">
                                     <label>Make </label>

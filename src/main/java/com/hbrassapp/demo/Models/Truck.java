@@ -15,8 +15,6 @@ public class Truck {
     private String Year;
     @Column(name = "License_Plate")
     private String License_Plate;
-    @Column(name = "Vehicle_Tracker")
-    private String Vehicle_Tracker;
     @Column(name = "Make")
     private String Make;
     @Column(name = "Model")
@@ -31,12 +29,11 @@ public class Truck {
 
     }
 
-    public Truck( String truck_ID_VIN, String year, String license_Plate, String vehicle_Tracker, String make, String model, String policy_Number) {
+    public Truck( String truck_ID_VIN, String year, String license_Plate, String make, String model, String policy_Number) {
 
         Truck_ID_VIN = truck_ID_VIN;
         Year = year;
         License_Plate = license_Plate;
-        Vehicle_Tracker = vehicle_Tracker;
         Make = make;
         Model = model;
         Policy_Number = policy_Number;
@@ -75,13 +72,6 @@ public class Truck {
         License_Plate = license_Plate;
     }
 
-    public String getVehicle_Tracker() {
-        return Vehicle_Tracker;
-    }
-
-    public void setVehicle_Tracker(String vehicle_Tracker) {
-        Vehicle_Tracker = vehicle_Tracker;
-    }
 
     public String getMake() {
         return Make;

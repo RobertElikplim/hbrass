@@ -11,6 +11,8 @@ public class Loads {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Load_ID")
     private String Load_ID;
+    @Column(name = "Client_ID")
+    private String Client_ID;
     @Column(name = "Date")
     private String Date;
     @Column(name = "Pick_Up_ID")
@@ -38,8 +40,9 @@ public class Loads {
 
     public Loads(){}
 
-    public Loads(String load_ID, String date, String pick_Up_ID, String drop_Off_ID, String truck_ID_VIN, String trailer_ID, String driver_ID, String dead_Head, String loaded_Miles, String total_Miles, String driver_Pay, String remarks) {
+    public Loads(String load_ID, String client_ID, String date, String pick_Up_ID, String drop_Off_ID, String truck_ID_VIN, String trailer_ID, String driver_ID, String dead_Head, String loaded_Miles, String total_Miles, String driver_Pay, String remarks, boolean active) {
         Load_ID = load_ID;
+        Client_ID = client_ID;
         Date = date;
         Pick_Up_ID = pick_Up_ID;
         Drop_Off_ID = drop_Off_ID;
@@ -51,6 +54,15 @@ public class Loads {
         Total_Miles = total_Miles;
         Driver_Pay = driver_Pay;
         Remarks = remarks;
+        this.active = active;
+    }
+
+    public String getClient_ID() {
+        return Client_ID;
+    }
+
+    public void setClient_ID(String client_ID) {
+        Client_ID = client_ID;
     }
 
     public boolean isActive() {

@@ -28,6 +28,7 @@
     <form action="/submitLoads" method="post">
         <table class="table table-bordered">
             <tr>
+                <th>Client ID</th>
                 <th>Date</th>
                 <th>Pick Up ID</th>
                 <th>Drop Off ID</th>
@@ -41,9 +42,15 @@
                 <th>Remarks</th>
             </tr>
             <tr>
+                <td><select class="form-select" name="clientID">
+                    <selected option>${Loads.getClient_ID()}</selected>
+                    <c:forEach var = "Client" items = "${clientList}">
+                        <option value="${Client.getClient_ID()}">${Client.getClient_ID()}-${Client.getClient_Name()}</option>
+                    </c:forEach>
+                </select></td>
                 <td>
                     <input type="hidden" name="loadID">
-                    <input type="date" name="dateLoads" value ="${Loads.getDate()}" >
+                    <input class="form-control" type="date" name="dateLoads" value ="${Loads.getDate()}" >
                 </td>
                 <td>
                         <select class="form-select" name="pickUP">
