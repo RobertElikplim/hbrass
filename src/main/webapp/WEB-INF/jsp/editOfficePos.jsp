@@ -31,7 +31,7 @@
             <tr>
                 <td>
                     <input type="hidden" name="OfficePositionID" value="${Office_Position.getPosition_ID()}">
-                    <input type="text" name="EmployeePosition" value="${Office_Position.getEmployee_Position()}">
+                    <input class="form-control" type="text" name="EmployeePosition" value="${Office_Position.getEmployee_Position()}">
                 </td>
             </tr>
 

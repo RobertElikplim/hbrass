@@ -40,18 +40,18 @@
             <td>Vendor Tracker</td>
         </tr>
         <tr>
-            <td><input type="text" name="nameVendor" value ="${Vendor.getVendor_Name()}"></td>
-            <td><input type="text" name="vendorPhoneNumber" value ="${Vendor.getPhone_Number()}"></td>
-            <td><input type="text" name="vendorStreetAddress" value ="${Vendor.getStreet_Address()}"></td>
-            <td><input type="text" name="vendorCity" value ="${Vendor.getCity()}"></td>
-            <td><input type="text" name="vendorStateCode" value ="${Vendor.getState_Code()}"></td>
-            <td><input type="text" name="vendorZipCode" value ="${Vendor.getZip_Code()}"></td>
-            <td><input type="text" name="vendorEmail" value ="${Vendor.getEmail()}"></td>
-            <td><input type="text" name="vendorTracker" value ="${Vendor.getVendor_Tracker()}"></td>
+            <td><input class="form-control" type="text" name="nameVendor" value ="${Vendor.getVendor_Name()}"></td>
+            <td><input class="form-control" type="text" name="vendorPhoneNumber" value ="${Vendor.getPhone_Number()}"></td>
+            <td><input class="form-control" type="text" name="vendorStreetAddress" value ="${Vendor.getStreet_Address()}"></td>
+            <td><input class="form-control" type="text" name="vendorCity" value ="${Vendor.getCity()}"></td>
+            <td><input class="form-control" type="text" name="vendorStateCode" value ="${Vendor.getState_Code()}"></td>
+            <td><input class="form-control" type="text" name="vendorZipCode" value ="${Vendor.getZip_Code()}"></td>
+            <td><input class="form-control" type="text" name="vendorEmail" value ="${Vendor.getEmail()}"></td>
+            <td><input class="form-control" type="text" name="vendorTracker" value ="${Vendor.getVendor_Tracker()}"></td>
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Changes">
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
     <br>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

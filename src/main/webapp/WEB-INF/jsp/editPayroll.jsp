@@ -9,7 +9,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">DOT Edit</a>
+        <a class="navbar-brand">Payroll Edit</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -35,12 +35,12 @@
             <tr>
                 <td>
                     <input type="hidden" name="PayrollID" value="${Payroll.getPayroll_ID()}">
-                    <input type="text" name="EmployeeID" value ="${Payroll.getEmployee_ID()}">
+                    <input class="form-control" type="text" name="EmployeeID" value ="${Payroll.getEmployee_ID()}">
                 </td>
-                <td><input type="text" name="Rate" value ="${Payroll.getRate()}"></td>
-                <td><input type="text" name="PaymentType" value ="${Payroll.getPayment_Type()}"></td>
-                <td><input type="date" name="PayPeriodS" value ="${Payroll.getPay_Period_Start()}"></td>
-                <td><input type="date" name="PayPeriodE" value ="${Payroll.getPay_Period_End()}"></td>
+                <td><input class="form-control" type="text" name="Rate" value ="${Payroll.getRate()}"></td>
+                <td><input class="form-control" type="text" name="PaymentType" value ="${Payroll.getPayment_Type()}"></td>
+                <td><input class="form-control" type="date" name="PayPeriodS" value ="${Payroll.getPay_Period_Start()}"></td>
+                <td><input class="form-control" type="date" name="PayPeriodE" value ="${Payroll.getPay_Period_End()}"></td>
             </tr>
         </table>
         <input class="btn btn-primary" type="submit" value="Submit Changes">

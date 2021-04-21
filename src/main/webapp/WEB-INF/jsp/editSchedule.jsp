@@ -40,7 +40,7 @@
                     <select class="form-select" name="empID">
                         <selected option>${Schedule.getEmployeeID()}</selected>
                         <c:forEach var = "employee" items = "${empList}">
-                            <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}</option>
+                            <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}-${employee.getLast_Name()},${employee.getFirst_Name()}</option>
                         </c:forEach>
                     </select>
                 </td>

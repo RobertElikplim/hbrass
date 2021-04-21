@@ -43,7 +43,7 @@
             </tr>
             <tr>
                 <td><select class="form-select" name="clientID">
-                    <option selected>${Loads.getClient_ID()}</option>
+                    <option selected value="${Loads.getClient_ID()}">${Loads.getClient_ID()}</option>
                     <c:forEach var = "Client" items = "${clientList}">
                         <option value="${Client.getClient_ID()}">${Client.getClient_ID()}-${Client.getClient_Name()}</option>
                     </c:forEach>
@@ -54,7 +54,7 @@
                 </td>
                 <td>
                         <select class="form-select" name="pickUP">
-                            <option selected>${Loads.getPick_Up_ID()}</option>
+                            <option selected value="${Loads.getPick_Up_ID()}">${Loads.getPick_Up_ID()}</option>
                             <c:forEach var = "Pick_Up_location" items = "${pickUpList}">
                                 <option value="${Pick_Up_location.getPickUpID()}">${Pick_Up_location.getPickUpID()}</option>
                             </c:forEach>
@@ -62,7 +62,7 @@
                 </td>
                 <td>
                     <select class="form-select" name="dropOff">
-                        <option selected>${Loads.getDrop_Off_ID()}</option>>
+                        <option selected value="${Loads.getDrop_Off_ID()}">${Loads.getDrop_Off_ID()}</option>>
                             <c:forEach var = "Drop_Off_Location" items = "${dropOffList}">
                                 <option value="${Drop_Off_Location.getDrop_Off_ID()}}">${Drop_Off_Location.getDrop_Off_ID()}</option>
                             </c:forEach>
@@ -70,7 +70,7 @@
                 </td>
                 <td>
                     <select class="form-select" name="vinNumber">
-                        <option selected>${Loads.getTruck_ID_VIN()}</option>
+                        <option selected value="${Loads.getTruck_ID_VIN()}">${Loads.getTruck_ID_VIN()}</option>
                         <c:forEach var = "Truck" items = "${vinList}">
                             <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
                         </c:forEach>
@@ -78,7 +78,7 @@
                 </td>
                 <td>
                     <select class="form-select" name="trailerID">
-                        <option selected>${Loads.getTrailer_ID()}<option>
+                        <option selected value="${Loads.getTrailer_ID()}">${Loads.getTrailer_ID()}<option>
                         <c:forEach var = "Trailer" items = "${trailerList}">
                             <option value="${Trailer.getTrailer_ID()}">${Trailer.getTrailer_ID()}</option>
                         </c:forEach>
@@ -86,7 +86,7 @@
                 </td>
                 <td>
                     <select class="form-select" name="driverID">
-                        <option selected>${Loads.getDriver_ID()}</option>
+                        <option selected value="${Loads.getDriver_ID()}">${Loads.getDriver_ID()}</option>
                         <c:forEach var = "Truck_Driver" items = "${driverList}">
                             <option value="${Truck_Driver.getDriver_ID()}">${Truck_Driver.getDriver_ID()}</option>
                         </c:forEach>

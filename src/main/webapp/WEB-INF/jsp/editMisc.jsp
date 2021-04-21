@@ -35,12 +35,12 @@
             <td>Description</td>
         </tr>
         <tr>
-            <td><input type="text" name="cost" value ="${Miscellaneous.getCost()}"></td>
-            <td><input type="text" name="desc" value ="${Miscellaneous.getDescription()}"></td>
+            <td><input class="form-control" type="text" name="cost" value ="${Miscellaneous.getCost()}"></td>
+            <td><input class="form-control" type="text" name="desc" value ="${Miscellaneous.getDescription()}"></td>
         </tr>
         <br>
     </table>
-    <input type="submit" value="Submit Changes">
+    <input class="btn btn-primary" type="submit" value="Submit Changes">
     <br>
 </form>
 </div>

@@ -65,9 +65,9 @@
                                     <div class="col-lg-8">
                                 <input type="hidden" name="miscID">
                                 <label>Cost</label>
-                                <input type="text" name="cost">
+                                <input class="form-control" type="text" name="cost">
                                 <label>Description</label>
-                                <input type="text" name="desc">
+                                <input class="form-control" type="text" name="desc">
                                     </div>
                                 </div>
                 </div>
