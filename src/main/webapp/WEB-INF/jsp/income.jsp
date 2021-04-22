@@ -82,7 +82,7 @@
                                         <label>Load Fare</label><br>
                                             <input class="form-control" type="text" name="loadFare">
                                         <label>Commission</label>
-                                            <input class="form-control" type="text" name="commission">
+                                            <input class="form-control" type="text" name="commission" placeholder="Added Automatically" disabled>
                                     </div>
                             <div class="col-lg-6">
                                     <label>Insurance</label><br>
@@ -94,7 +94,7 @@
                                     </c:forEach>
                                 </select>
                                     <label>Total Income</label>
-                                    <input class="form-control" type="text" name="totalIncome">
+                                    <input class="form-control" type="text" name="totalIncome" placeholder="Added Automatically" disabled>
                             </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
@@ -110,8 +110,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
-
 
 </body>
 </html>
