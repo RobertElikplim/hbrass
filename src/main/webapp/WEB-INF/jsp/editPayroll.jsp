@@ -35,9 +35,9 @@
             <tr>
                 <td>
                     <input type="hidden" name="PayrollID" value="${Payroll.getPayroll_ID()}">
-                    <input class="form-control" type="text" name="EmployeeID" value ="${Payroll.getEmployee_ID()}">
+                    <input class="form-control" type="text" name="Rate" value ="${Payroll.getRate()}">
                 </td>
-                <td><input class="form-control" type="text" name="Rate" value ="${Payroll.getRate()}"></td>
+                <td><input class="form-control" type="text" name="EmployeeID" value ="${Payroll.getEmployee_ID()}"></td>
                 <td><input class="form-control" type="text" name="PaymentType" value ="${Payroll.getPayment_Type()}"></td>
                 <td><input class="form-control" type="date" name="PayPeriodS" value ="${Payroll.getPay_Period_Start()}"></td>
                 <td><input class="form-control" type="date" name="PayPeriodE" value ="${Payroll.getPay_Period_End()}"></td>

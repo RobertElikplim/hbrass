@@ -45,7 +45,8 @@
             <td><input class="form-control" type="text" name="Service" value ="${Maintenance.getService()}"></td>
             <td><input class="form-control" type="text" name="ServiceFee" value ="${Maintenance.getServiceFee()}"></td>
             <td>  <select class="form-select" name="TruckIdVin">
-                <c:forEach var = "Truck" items = "${truckList}">
+                <option selected value="${Maintenance.getTruckIDVIN()}">${Maintenance.getTruckIDVIN()}</option>
+                <c:forEach var = "Truck" items = "${vinList}">
                     <option value="${Truck.getTruck_ID_VIN()}">${Truck.getTruck_ID_VIN()}</option>
                 </c:forEach>
             </select></td>

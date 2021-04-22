@@ -41,12 +41,14 @@
     <form method="post" action="/submitBrokerContract">
         <td><input class="form-control" type="text" name="contractID" value="${Broker_Contract.getBroker_Contract_ID()}"></td>
         <td><select class="form-select" name="invoiceID">
+            <option selected value="${Broker_Contract.getInvoice_ID()}">${Broker_Contract.getInvoice_ID()}</option>
             <c:forEach var = "Invoice" items = "${invoiceList}">
                 <option value="${Invoice.getInvoiceID()}">${Invoice.getInvoiceID()}</option>
             </c:forEach>
         </select> </td>
         <td>
             <select class="form-select" name="brokerID">
+                <option selected value="${Broker_Contract.getBroker_ID()}">${Broker_Contract.getBroker_ID()}</option>
                 <c:forEach var = "Broker_Company" items = "${brokerList}">
                     <option value="${Broker_Company.getBroker_ID()}">${Broker_Company.getBroker_ID()}-${Broker_Company.getBroker_Name()}</option>
                 </c:forEach>

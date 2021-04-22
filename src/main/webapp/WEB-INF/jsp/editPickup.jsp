@@ -47,7 +47,7 @@
                 <td><input class="form-control" type="text" name="City" value ="${Pick_Up_location.getCity()}"></td>
                 <td>
                     <select class="form-select" name="StateCode">
-                        <selected option>${Pick_Up_location.getStateCode()}</selected>
+                        <option selected value="${Pick_Up_location.getStateCode()}">${Pick_Up_location.getStateCode()}</selected>
                         <c:forEach var = "States" items = "${stateList}">
                             <option value="${States.getState_Code()}">${States.getState_Code()}</option>
                         </c:forEach>

@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">Pick Up Location Edit</a>
+        <a class="navbar-brand">Trip Expense Edit</a>
         <div class="navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
@@ -43,6 +43,7 @@
                 <td><input class="form-control" type="text" name="rExpense" value ="${Trip_Expense.getRepair_Expense()}"></td>
                 <td><input type="text" class="form-control" name="tExpense" placeholder="Added Automatically" disabled>
                 <td> <select class="form-select" name="loadID">
+                    <option selected value="${Trip_Expense.getLoad_ID()}">${Trip_Expense.getLoad_ID()}</option>
                     <c:forEach var = "Loads" items = "${loadList}">
                         <option value="${Loads.getLoad_ID()}">${Loads.getLoad_ID()}</option>
                     </c:forEach>

@@ -38,7 +38,7 @@
                 <td>
                     <input type="hidden" name="scheduleID"  value ="${Schedule.getScheduleID()}" >
                     <select class="form-select" name="empID">
-                        <selected option>${Schedule.getEmployeeID()}</selected>
+                        <option selected value="${Schedule.getEmployeeID()}">${Schedule.getEmployeeID()}</selected>
                         <c:forEach var = "employee" items = "${empList}">
                             <option value="${employee.getEmployee_ID()}">${employee.getEmployee_ID()}-${employee.getLast_Name()},${employee.getFirst_Name()}</option>
                         </c:forEach>

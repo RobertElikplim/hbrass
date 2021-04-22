@@ -42,6 +42,7 @@
             </c:forEach>
         </select></td>
         <td><select class="form-select" name="bcID">
+            <option selected value="${Invoice.getBrokerContractID()}">${Invoice.getBrokerContractID()}</option>
             <c:forEach var = "Broker_Contract" items = "${brokerContractList}">
                 <option value="${Broker_Contract.getBroker_Contract_ID()}">${Broker_Contract.getBroker_Contract_ID()}</option>
             </c:forEach>

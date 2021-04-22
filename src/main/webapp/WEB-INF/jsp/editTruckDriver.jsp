@@ -38,7 +38,7 @@
             <td><input class="form-control" type="text" name="driverLicenseType" value ="${Truck_Driver.getLicense_Type()}"></td>
             <td>
                 <select class="form-select" name="driverStateCode">
-                    <selected option>${Truck_Driver.getState_Code()}</selected>
+                    <option selected value="${Truck_Driver.getState_Code()}">${Truck_Driver.getState_Code()}</selected>
                     <c:forEach var = "States" items = "${stateList}">
                         <option value="${States.getState_Code()}">${States.getState_Code()}</option>
                     </c:forEach>
