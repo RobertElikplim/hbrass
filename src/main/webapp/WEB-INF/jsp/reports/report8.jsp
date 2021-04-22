@@ -28,7 +28,7 @@
                     url = "jdbc:sqlserver://172.26.54.48:1433;database=HBRASS"
                     user = "Hbrass"  password = "123"/>
 <sql:query   var = "report">
-    select loads.Load_ID,employee.First_Name, employee.Last_Name, Truck_Driver.State_Name, Trip_Expense.Total_Expense, Income.Total_Income
+    select loads.Load_ID,employee.First_Name, employee.Last_Name, Truck_Driver.State_Code, Trip_Expense.Total_Expense, Income.Total_Income
     from Loads
     join Truck_Driver on
     Truck_Driver.Driver_ID = Loads.Driver_ID
@@ -44,7 +44,7 @@
         <th>Load ID</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>State Name</th>
+        <th>State Code</th>
         <th>Total Expense</th>
         <th>Total Income</th>
     </tr>
@@ -53,7 +53,7 @@
             <td><c:out value = "${row.Load_ID}"/></td>
             <td><c:out value = "${row.First_Name}"/></td>
             <td><c:out value = "${row.Last_Name}"/></td>
-            <td><c:out value = "${row.State_Name}"/></td>
+            <td><c:out value = "${row.State_Code}"/></td>
             <td><c:out value = "${row.Total_Expense}"/></td>
             <td><c:out value = "${row.Total_Income}"/></td>
         </tr>

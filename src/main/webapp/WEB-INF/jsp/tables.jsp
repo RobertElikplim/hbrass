@@ -18,44 +18,6 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/tables">Table Management</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Select
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/brokerCompany">Broker Companies</a></li>
-                        <li><a class="dropdown-item" href="/brokerContracts">Broker Contracts</a></li>
-                        <li><a class="dropdown-item" href="/brokerInfo">Broker Info</a></li>
-                        <li><a class="dropdown-item" href="/client">Clients</a></li>
-                        <li><a class="dropdown-item" href="/country">Countries</a></li>
-                        <li><a class="dropdown-item" href="/dotInspection">DOT Inspections</a></li>
-                        <li><a class="dropdown-item" href="/dropOffLocation">Drop Off Locations</a></li>
-                        <li><a class="dropdown-item" href="/emergencyContacts">Emergency Contacts</a></li>
-                        <li><a class="dropdown-item" href="/employee">Employees</a></li>
-                        <li><a class="dropdown-item" href="/employeeStatus">Employee Status</a></li>
-                        <li><a class="dropdown-item" href="/iftaSticker">IFTA Sticker</a></li>
-                        <li><a class="dropdown-item" href="/income">Income</a></li>
-                        <li><a class="dropdown-item" href="/insurance">Insurance</a></li>
-                        <li><a class="dropdown-item" href="/invoice">Invoices</a></li>
-                        <li><a class="dropdown-item" href="/invoiceStatus">Invoice Status</a></li>
-                        <li><a class="dropdown-item" href="/loadBoard">Load Boards</a></li>
-                        <li><a class="dropdown-item" href="/loads">Loads</a></li>
-                        <li><a class="dropdown-item" href="/maintenance">Maintenance</a></li>
-                        <li><a class="dropdown-item" href="/miscellaneous">Miscellaneous</a></li>
-                        <li><a class="dropdown-item" href="/officePosition">Office Position</a></li>
-                        <li><a class="dropdown-item" href="/payroll">Payroll</a></li>
-                        <li><a class="dropdown-item" href="/puLocation">Pick Up Location</a></li>
-                        <li><a class="dropdown-item" href="/schedule">Schedule</a></li>
-                        <li><a class="dropdown-item" href="/states">States</a></li>
-                        <li><a class="dropdown-item" href="/tire">Tires</a></li>
-                        <li><a class="dropdown-item" href="/Trailer">Trailers</a></li>
-                        <li><a class="dropdown-item" href="/TripExpense">Trip Expense</a></li>
-                        <li><a class="dropdown-item" href="/Truck">Trucks</a></li>
-                        <li><a class="dropdown-item" href="/truckDriver">Truck Drivers</a></li>
-                        <li><a class="dropdown-item" href="/trucklog">Truck Log</a></li>
-                        <li><a class="dropdown-item" href="/Vendors">Vendors</a></li>
-                    </ul>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/">Logout</a>
                 </li>

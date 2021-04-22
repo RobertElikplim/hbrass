@@ -2070,7 +2070,7 @@ public class MainController {
 
     @RequestMapping(value = "/report")
     public ModelAndView report() {
-        ModelAndView mv = new ModelAndView("report");
+        ModelAndView mv = new ModelAndView("reports/report");
         return mv;
     }
     @RequestMapping(value = "/report1")

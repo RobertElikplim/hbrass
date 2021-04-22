@@ -28,7 +28,7 @@
                    url = "jdbc:sqlserver://172.26.54.48:1433;database=HBRASS"
                    user = "Hbrass"  password = "123"/>
 <sql:query   var = "report">
-    sselect Loads.Total_Miles, Drop_Off_Location.Drop_Off_Tracker_Code, Pick_Up_location.Pick_Up_Tracker_Code, States.State_Name
+    select Loads.Total_Miles, Drop_Off_Location.Drop_Off_Tracker_Code, Pick_Up_location.Pick_Up_Tracker_Code, States.State_Name
     from Loads
     join Drop_Off_Location
     on Drop_Off_Location.Drop_Off_ID = Loads.Drop_Off_ID
@@ -47,10 +47,10 @@
     </tr>
     <c:forEach var = "row" items = "${report.rows}">
         <tr>
-            <td><c:out value = "${row.Load_ID}"/></td>
-            <td><c:out value = "${row.Drop_Off_ID}"/></td>
-            <td><c:out value = "${row.State_Code}"/></td>
-            <td><c:out value = "${row.Zipcode}"/></td>
+            <td><c:out value = "${row.Total_Miles}"/></td>
+            <td><c:out value = "${row.Drop_Off_Tracker_Code}"/></td>
+            <td><c:out value = "${row.Pick_Up_Tracker_Code}"/></td>
+            <td><c:out value = "${row.State_Name}"/></td>
         </tr>
     </c:forEach>
 </table>

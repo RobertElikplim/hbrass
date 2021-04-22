@@ -36,7 +36,7 @@
     ON employee.Employee_ID = Incident.Employee_ID
     FULL OUTER JOIN Truck_Driver
     ON Truck_Driver.Driver_ID = employee.Driver_ID
-    WHERE Incident_Status = 'Unresolved';
+    WHERE Incident_Status = 'Unresolved'
 </sql:query>
 <table class="table table-bordered">
     <tr>
