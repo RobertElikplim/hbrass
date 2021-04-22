@@ -28,32 +28,33 @@
                     url = "jdbc:sqlserver://172.26.54.48:1433;database=HBRASS"
                     user = "Hbrass"  password = "123"/>
 <sql:query   var = "report">
-    select Loads.Driver_Pay, employee.First_Name, Trip_Expense.Total_Expense, Income.Total_Income
-    from Loads
-    join employee
-    on employee.Driver_ID = Loads.Driver_ID
-    join Income
-    on Income.Load_ID = Loads.Load_ID
-    join Trip_Expense
-    on Trip_Expense.Load_ID = Income.Load_ID
-    WHERE Loads.Load_ID = Trip_Expense.Load_ID
+    select employee.Last_Name, employee.First_Name, Emergency_Contact.Phone_Number, Truck_Driver.Driver_ID, Incident.Incident_Type, Incident.Remarks
+    from Employee
+    join Emergency_Contact
+    on Emergency_Contact.Emergency_Contact_ID = employee.Emergency_Contact_ID
+    join Truck_Driver
+    on Truck_Driver.Driver_ID = employee.Driver_ID
+    join Incident
+    on Incident.Employee_ID = employee.Employee_ID
+    WHERE Incident.Incident_Type = 'Truck' or Incident.Incident_Type = 'Driver '
 </sql:query>
 <table class="table table-bordered">
     <tr>
-        <th>Driver Pay</th>
+        <th>Last_Name</th>
         <th>First Name</th>
-        <th>Total Expense</th>
-        <th>Total Income</th>
-        <th>Gross Profit</th>
-        <th>Gross Profit</th>
+        <th>Phone_Number</th>
+        <th>Driver_ID</th>
+        <th>Incident Type</th>
+        <th>Remarks</th>
     </tr>
     <c:forEach var = "row" items = "${report.rows}">
         <tr>
-            <td><c:out value = "${row.Driver_Pay}"/></td>
+            <td><c:out value = "${row.Last_Name}"/></td>
             <td><c:out value = "${row.First_Name}"/></td>
-            <td><c:out value = "${row.Total_Expense}"/></td>
-            <td><c:out value = "${row.Total_Income}"/></td>
-
+            <td><c:out value = "${row.Phone_Number}"/></td>
+            <td><c:out value = "${row.Driver_ID}"/></td>
+            <td><c:out value = "${row.Incident_Type}"/></td>
+            <td><c:out value = "${row.Remarks}"/></td>
         </tr>
     </c:forEach>
 </table>

@@ -29,10 +29,10 @@
     <div class="list-group">
         <div class="row">
             <div class="col-sm-4">
-                <a href="/report" class="list-group-item">Loads with drop and pick up in same state</a>
-                <a href="/report1" class="list-group-item">Invoice Status Per Client & Date</a>
-                <a href="/report2" class="list-group-item">Invoice</a>
-                <a href="/report3" class="list-group-item">Invoice</a>
+                <a href="/report" class="list-group-item">Loads with less than 100 Total miles delivered in different states </a>
+                <a href="/report1" class="list-group-item">Trips where losses were incurred</a>
+                <a href="/report2" class="list-group-item">All Incidents related to Truck or Driver</a>
+                <a href="/report3" class="list-group-item">Trips with fuel cost more than half total costs</a>
                 <a href="/report4" class="list-group-item">Drivers with different addresses from emergency contact</a>
                 <a href="/report5" class="list-group-item">Unresolved Incidents</a>
                 <a href="/report6" class="list-group-item">Trips With Repair Expense</a>

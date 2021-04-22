@@ -28,7 +28,7 @@
                    url = "jdbc:sqlserver://172.26.54.48:1433;database=HBRASS"
                    user = "Hbrass"  password = "123"/>
 <sql:query   var = "report">
-    select Loads.Load_ID, Drop_Off_Location.Drop_Off_ID, States.State_Code, Pick_Up_location.Zipcode
+    sselect Loads.Total_Miles, Drop_Off_Location.Drop_Off_Tracker_Code, Pick_Up_location.Pick_Up_Tracker_Code, States.State_Name
     from Loads
     join Drop_Off_Location
     on Drop_Off_Location.Drop_Off_ID = Loads.Drop_Off_ID
@@ -36,7 +36,7 @@
     on States.State_Code = Drop_Off_Location.State_Code
     join Pick_Up_location
     on Pick_Up_location.Pick_Up_ID = Drop_Off_Location.Drop_Off_ID
-    WHERE Drop_Off_Location.City <> Pick_Up_location.City
+    WHERE Drop_Off_Location.State_Code = Pick_Up_location.State_code and Total_Miles > 100
 </sql:query>
 <table class="table table-bordered">
     <tr>

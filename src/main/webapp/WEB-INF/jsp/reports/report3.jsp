@@ -28,21 +28,33 @@
                     url = "jdbc:sqlserver://172.26.54.48:1433;database=HBRASS"
                     user = "Hbrass"  password = "123"/>
 <sql:query   var = "report">
-
+    select Trip_Expense.Total_Expense, Fuel_Cost,  employee.First_Name, Last_Name, Loads.Total_Miles, Client.Client_Name
+    from Trip_Expense
+    full outer join Loads
+    on Trip_Expense.Load_ID = Loads.Load_ID
+    full outer join employee
+    on employee.Driver_ID = Loads.Driver_ID
+    full outer join Client
+    on Client.Client_ID = Loads.Client_ID
+    Where Fuel_Cost > Total_Expense/2
 </sql:query>
 <table class="table table-bordered">
     <tr>
-        <th>Load ID</th>
-        <th>Drop Off ID</th>
-        <th>State Code</th>
-        <th>Zip Code</th>
+        <th>Total Expense</th>
+        <th>Fuel Cost</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Total Miles</th>
+        <th>Client Name</th>
     </tr>
     <c:forEach var = "row" items = "${report.rows}">
         <tr>
-            <td><c:out value = "${row._}"/></td>
-            <td><c:out value = "${row._}"/></td>
-            <td><c:out value = "${row._}"/></td>
-            <td><c:out value = "${row._}"/></td>
+            <td><c:out value = "${row.Total_Expense}"/></td>
+            <td><c:out value = "${row.Fuel_Cost}"/></td>
+            <td><c:out value = "${row.First_Name}"/></td>
+            <td><c:out value = "${row.Last_Name}"/></td>
+            <td><c:out value = "${row.Total_Miles}"/></td>
+            <td><c:out value = "${row.Client_Name}"/></td>
         </tr>
     </c:forEach>
 </table>

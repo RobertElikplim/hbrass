@@ -28,29 +28,31 @@
                     url = "jdbc:sqlserver://172.26.54.48:1433;database=HBRASS"
                     user = "Hbrass"  password = "123"/>
 <sql:query   var = "report">
-    select Invoice.Invoice_Date, Client.Client_Name, Broker_Contract.Invoice_ID, Invoice_Status.Invoice_Status
-    from Invoice
-    join Client
-    on Client.Client_ID = Invoice.Client_ID
-    join Broker_Contract
-    on Broker_Contract.Broker_Contract_ID = Invoice.Broker_Contract_ID
-    join Invoice_Status
-    on Invoice_Status.Invoice_Status_ID = Invoice.Invoice_ID
-    WHERE Client.Client_ID = Invoice.Client_ID
+    select Loads.Driver_Pay, employee.First_Name, Last_Name, Trip_Expense.Total_Expense, Income.Total_Income
+    from Loads
+    join employee
+    on employee.Driver_ID = Loads.Driver_ID
+    join Income
+    on Income.Load_ID = Loads.Load_ID
+    join Trip_Expense
+    on Trip_Expense.Load_ID = Income.Load_ID
+    WHERE Loads.Load_ID = Trip_Expense.Load_ID and Driver_Pay > Total_Income - Total_Expense
 </sql:query>
 <table class="table table-bordered">
     <tr>
-        <th>Invoice Date</th>
-        <th>Client Name</th>
-        <th>Invoice ID</th>
-        <th>Invoice Status </th>
+        <th>Driver_Pay</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Total Expense</th>
+        <th>Total Income</th>
     </tr>
     <c:forEach var = "row" items = "${report.rows}">
         <tr>
-            <td><c:out value = "${row.Invoice_Date}"/></td>
-            <td><c:out value = "${row.Client_Name}"/></td>
-            <td><c:out value = "${row.Invoice_ID}"/></td>
-            <td><c:out value = "${row.Invoice_Status}"/></td>
+            <td><c:out value = "${row.Driver_Pay}"/></td>
+            <td><c:out value = "${row.First_Name}"/></td>
+            <td><c:out value = "${row.Last_Name}"/></td>
+            <td><c:out value = "${row.Total_Expense}"/></td>
+            <td><c:out value = "${row.Total_Income}"/></td>
         </tr>
     </c:forEach>
 </table>
