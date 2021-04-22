@@ -651,29 +651,29 @@ public class MainController {
     public ModelAndView addIncome(@RequestParam("incomeID") String incomeID,
                                   @RequestParam("loadID") String loadID,
                                   @RequestParam("loadFare") String loadFare,
-                                  @RequestParam("commission") String commission,
                                   @RequestParam("insurance") String insurance,
-                                  @RequestParam("tripExpenseID") String tripExpenseID,
-                                  @RequestParam("totalIncome") String totalIncome) {
+                                  @RequestParam("tripExpenseID") String tripExpenseID) {
         ModelAndView mv = new ModelAndView("redirect:/income");
         Income income = new Income();
+        double commission = 0.13 * Double.valueOf(loadFare);
+        double totalIncome = Double.valueOf(loadFare) + Double.valueOf(commission) + Double.valueOf(insurance);
         if (incomeID.isEmpty()) {
             income.setLoad_ID(loadID);
             income.setLoad_Fare(loadFare);
-            income.setCommission(commission);
+            income.setCommission(String.valueOf(commission));
             income.setInsurance(insurance);
             income.setTrip_Expense_ID(tripExpenseID);
-            income.setTotal_Income(totalIncome);
+            income.setTotal_Income(String.valueOf(totalIncome));
             income.setActive(true);
             incomeRepo.save(income);
         } else {
             income.setIncome_ID(incomeID);
             income.setLoad_ID(loadID);
             income.setLoad_Fare(loadFare);
-            income.setCommission(commission);
+            income.setCommission(String.valueOf(commission));
             income.setInsurance(insurance);
             income.setTrip_Expense_ID(tripExpenseID);
-            income.setTotal_Income(totalIncome);
+            income.setTotal_Income(String.valueOf(totalIncome));
             income.setActive(true);
             incomeRepo.save(income);
         }
@@ -2071,7 +2071,176 @@ public class MainController {
     @RequestMapping(value = "/report")
     public ModelAndView report() {
         ModelAndView mv = new ModelAndView("report");
+        return mv;
+    }
+    @RequestMapping(value = "/report1")
+    public ModelAndView report1() {
+        ModelAndView mv = new ModelAndView("reports/report1");
+        return mv;
+    }
+    @RequestMapping(value = "/report2")
+    public ModelAndView report2() {
+        ModelAndView mv = new ModelAndView("reports/report2");
 
+        return mv;
+    }
+    @RequestMapping(value = "/report3")
+    public ModelAndView report3() {
+        ModelAndView mv = new ModelAndView("reports/report3");
+        return mv;
+    }
+    @RequestMapping(value = "/report4")
+    public ModelAndView report4() {
+        ModelAndView mv = new ModelAndView("reports/report4");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report5")
+    public ModelAndView report5() {
+        ModelAndView mv = new ModelAndView("reports/report5");
+        return mv;
+    }
+    @RequestMapping(value = "/report6")
+    public ModelAndView report6() {
+        ModelAndView mv = new ModelAndView("reports/report6");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report7")
+    public ModelAndView report7() {
+        ModelAndView mv = new ModelAndView("reports/report7");
+        return mv;
+    }
+    @RequestMapping(value = "/report8")
+    public ModelAndView report8() {
+        ModelAndView mv = new ModelAndView("reports/report8");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report9")
+    public ModelAndView report9() {
+        ModelAndView mv = new ModelAndView("reports/report9");
+        return mv;
+    }
+    @RequestMapping(value = "/report10")
+    public ModelAndView report10() {
+        ModelAndView mv = new ModelAndView("reports/report10");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report11")
+    public ModelAndView report11() {
+        ModelAndView mv = new ModelAndView("reports/report11");
+        return mv;
+    }
+    @RequestMapping(value = "/report12")
+    public ModelAndView report12() {
+        ModelAndView mv = new ModelAndView("reports/report12");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report13")
+    public ModelAndView report13() {
+        ModelAndView mv = new ModelAndView("reports/report13");
+        return mv;
+    }
+    @RequestMapping(value = "/report14")
+    public ModelAndView report14() {
+        ModelAndView mv = new ModelAndView("reports/report14");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report15")
+    public ModelAndView report15() {
+        ModelAndView mv = new ModelAndView("reports/report15");
+        return mv;
+    }
+    @RequestMapping(value = "/report16")
+    public ModelAndView report16() {
+        ModelAndView mv = new ModelAndView("reports/report16");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report17")
+    public ModelAndView report17() {
+        ModelAndView mv = new ModelAndView("reports/report17");
+        return mv;
+    }
+    @RequestMapping(value = "/report18")
+    public ModelAndView report18() {
+        ModelAndView mv = new ModelAndView("reports/report18");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report19")
+    public ModelAndView report19() {
+        ModelAndView mv = new ModelAndView("reports/report19");
+        return mv;
+    }
+    @RequestMapping(value = "/report20")
+    public ModelAndView report20() {
+        ModelAndView mv = new ModelAndView("reports/report20");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report21")
+    public ModelAndView report21() {
+        ModelAndView mv = new ModelAndView("reports/report21");
+        return mv;
+    }
+    @RequestMapping(value = "/report22")
+    public ModelAndView report22() {
+        ModelAndView mv = new ModelAndView("reports/report22");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report23")
+    public ModelAndView report23() {
+        ModelAndView mv = new ModelAndView("reports/report23");
+        return mv;
+    }
+    @RequestMapping(value = "/report24")
+    public ModelAndView report24() {
+        ModelAndView mv = new ModelAndView("reports/report24");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report25")
+    public ModelAndView report25() {
+        ModelAndView mv = new ModelAndView("reports/report25");
+        return mv;
+    }
+    @RequestMapping(value = "/report26")
+    public ModelAndView report26() {
+        ModelAndView mv = new ModelAndView("reports/report26");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report27")
+    public ModelAndView report27() {
+        ModelAndView mv = new ModelAndView("reports/report27");
+        return mv;
+    }
+    @RequestMapping(value = "/report28")
+    public ModelAndView report28() {
+        ModelAndView mv = new ModelAndView("reports/report28");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report29")
+    public ModelAndView report29() {
+        ModelAndView mv = new ModelAndView("reports/report29");
+        return mv;
+    }
+    @RequestMapping(value = "/report30")
+    public ModelAndView report30() {
+        ModelAndView mv = new ModelAndView("reports/report30");
+
+        return mv;
+    }
+    @RequestMapping(value = "/report31")
+    public ModelAndView report31() {
+        ModelAndView mv = new ModelAndView("reports/report31");
         return mv;
     }
 
